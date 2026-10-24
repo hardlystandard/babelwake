@@ -1,0 +1,10 @@
+/** Metropolitan French spelling reference, maintained independently of context text.
+ * Homographs (a/à, ou/où, sur/sûr) need sentence-level native review. */
+export const referenceForms = [
+ 'être','êtes','été','clé','clés','boîte','boîtes','fenêtre','fenêtres','fermée','fermées','fermé','fermés','bleue','bleues','jaune','rouge','verte','vertes','crayon','crayons','livre','livres','chaise','chaises','porte','portes','petite','grande',
+ 'marché','marchés','achète','achètes','achètent','coûter','coûte','coûtent','fraîche','fraîches','œuf','œufs','eau','eaux','pomme','pommes','pain','pains','fromage','fromages','légume','légumes','panier','paniers','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize','vingt','trente','quarante','cinquante','soixante','cent',
+ 'café','cafés','thé','thés','tasse','tasses','verre','verres','cuillère','cuillères','s’il vous plaît','bonjour','bonsoir','merci','où','combien','qu’est-ce que','est-ce que','répondre','réponds','répond','répondez','à bientôt','très','après','êtes','garçon','français','française',
+ 'gare','train','billet','quai','départ','départs','arrivée','arrivées','derrière','à côté de','gauche','droite','midi','demie','heure','minute','demain','aujourd’hui','à gauche','à droite','à quelle heure','nord','sud','pont','rue','place',
+ 'mère','père','frère','sœur','fille','fils','famille','voisine','maison','jardin','fenêtre','étage','chambre','cuisine','salon','lit','fleur','fleurs','manteau','manteaux','beau','belle','beaux','belles','vieux','vieille','vieilles','nouveau','nouvelle','nouveaux','nouvelles',
+ 'lettre','lettres','écrire','écris','écrit','écrivons','écrivez','écrivent','écrite','écrites','lire','lu','lus','lue','lues','pris','prise','prises','trouvé','trouvée','trouvés','trouvées','cherché','cherchée','donné','donnée','donnés','données','perdu','perdue','perdus','perdues','vu','vue','vus','vues','hier','matin','soir','ensemble','déjà','maintenant','puis','avant','après'
+];

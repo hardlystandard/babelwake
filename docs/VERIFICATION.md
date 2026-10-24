@@ -1,6 +1,6 @@
 # Release verification — 24 October 2026
 
-The art direction was changed at the user’s request to a cozy top-down life-sim style. Earlier first-person browser results below are historical; the final top-down browser result is recorded separately.
+The final art direction follows the user’s request: a cozy top-down life-sim style with an orthographic camera, visible traveler, earthy, shaded village, and keyboard/gamepad/click-to-walk movement.
 
 ## Authored scope
 
@@ -16,22 +16,27 @@ The art direction was changed at the user’s request to a cozy top-down life-si
 Runtime: Node.js 24.19.0, strict TypeScript, Vite production build.
 
 - `npm run check`: **passed** content validation, **38/38 Vitest tests**, strict TypeScript, and production build on the expanded game.
-- **Historical expanded first-person production Playwright run: 12/12 passed in 2.7 minutes.** Six zone golden paths, finite-form journal tiles, all-or-nothing page rejection, IndexedDB reload, debug guard, physical mechanism operation, individual station-scene navigation, installed offline loading of every zone, annotation/search/drag/click matching, text size and contrast all passed.
-- Earlier production run, before the vocabulary expansion: 11/11 browser cases passed, followed by 2/2 affected UI/offline retests. These earlier checks are not substituted for the final expanded run.
+- **Final top-down production Playwright run: 12/12 passed in 4.2 minutes.** This includes six zone golden paths, finite-form journal tiles, all-or-nothing page rejection, IndexedDB reload, debug guard, physical mechanisms, individual station scenes, installed offline loading of every zone, annotation/search/drag/click matching, text size, and contrast.
 - Install/offline behavior checks use the real generated service worker and real IndexedDB. The service worker precaches all lazy chapter chunks, local fonts, and icons. The cache lookup handles static `Vary: Origin` responses.
 - Screenshots in `artifacts/` show the title, exploration, evidence, and journal. Browser captures check uncaught page errors.
 
 ## Final top-down verification
 
-TOP_DOWN_FINAL_RESULT_PENDING
+The production browser checks assert orthographic/top-down metadata and a nonempty WebGL canvas. They exercise actual WASD movement, click-to-walk and synthetic Gamepad API movement through normal input, reading only the exposed player position to verify movement. Station arrows reveal scenes one at a time and never auto-encounter siblings. The final title, world, evidence, journal, station and touch-tablet captures contain no uncaught page errors. The complete static output remains below 1 MiB uncompressed; the main JavaScript chunk is about 182 kB gzip. No frame-rate or loading-time benchmark is claimed.
+
+## Earthy palette revision
+
+The user subsequently requested a less bright palette. Foliage now uses forest and olive greens; cottages and props use walnut, muted clay, ochre, and tan plaster; water is slate blue. Scene exposure is .95 with lower ambient/sun intensities. Menus use dark forest panels and the journal uses aged parchment. Named French color cues remain distinct.
+
+After this palette-only change, `npm run check` again passed all **38 tests**, content validation, strict TypeScript and the production build. **3/3 targeted production browser tests** passed: offline reload/all-zone loading, keyboard/mouse/gamepad walking plus station navigation, and annotation/search/matching/settings. The full 12-case result above precedes this palette revision; content, puzzles, layouts and controls were unchanged. Title/world/evidence and journal previews were inspected. Refreshed desktop and touch-tablet captures, including tap-to-walk, journal and evidence, passed with no page errors.
 
 ## Browser evidence and limits
 
 - Chromium/Chrome engine: full production test suite with WebGL via SwiftShader on this host.
-- Chromium touch/tablet viewport, 1024×768: start, journal, evidence inspection and real WebGL passed without page errors on the pre-expansion build. A post-expansion visual smoke is reported with the final run when available.
-- Firefox 157 engine: start, evidence, journal confirmation, contrast and zero-error smoke passed using the graceful fallback. Host GL-driver initialization failed, so **Firefox 3D rendering is not verified here**.
+- Final cozy build, Chromium touch/tablet viewport 1024×768: trusted taps start the journey, walk the avatar, open/close the journal, and inspect evidence. Real WebGL, visible avatar movement and zero page errors passed. Updated tablet screenshots are in artifacts/.
+- Firefox 157 engine: an earlier pre-redesign start/evidence/journal/contrast smoke passed using the graceful fallback. Host GL-driver initialization failed. **The final cozy Firefox renderer remains unverified here**; earlier UI smoke is not substituted for final renderer coverage.
 - WebKit 27.2 engine: launch blocked by missing host libraries (`gtk-4`, `graphene`, `harfbuzz-icu`, `manette`, `hyphen`, `GLESv2`). **Safari/WebKit remains unverified**. This is a host dependency limitation, not a passing compatibility claim.
-- Physical gamepad hardware was not exercised. Gamepad controls and modal focus navigation are implemented; keyboard, mouse, drag-and-drop and click matching have browser coverage.
+- Physical gamepad hardware was not exercised. Synthetic Gamepad API avatar movement passed; real device ergonomics and button mappings still need hardware verification. Keyboard, mouse, drag-and-drop, click matching and modal controls have browser coverage.
 
 ## Human acceptance still required
 
@@ -41,4 +46,4 @@ No native-speaker sign-off or zero-French participant playtest has taken place. 
 
 The workspace began empty. The source history has four playable review milestones; each of the first three snapshot variants ran content validation, logic tests, strict TypeScript and a production build. The final milestone adds the offline lifecycle and release verification. MILESTONES.md contains review descriptions, design calls, limitations, and French-review flags.
 
-No GitHub PR or public deployment is claimed. A private Sites project was provisioned, but automatic approval review rejected forwarding a source credential to its Git remote because that publishing destination and credential handling lacked explicit user authorization. No push or publication followed that rejection. The tested local static build is independently deployable; remote publication is pending that approval.
+No retrospective GitHub pull requests or public game deployment are claimed. The tested static build is independently deployable. Publishing the source repository and publishing a playable website are separate operations.

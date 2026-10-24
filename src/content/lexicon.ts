@@ -1,4 +1,5 @@
 import type { Lexeme } from './types';
+/** French lexical data. First form is an encountered representative; lemma links annotations. */
 export const lexicon:Lexeme[] = [
   {
     "id": "clé",

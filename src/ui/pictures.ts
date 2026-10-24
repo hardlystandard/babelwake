@@ -1,10 +1,10 @@
 import type { Picture } from '../content/types';
 
-const ink = '#24413c';
-const cream = '#faf3df';
-const ochre = '#dfa95d';
-const teal = '#609b8b';
-const coral = '#d0785f';
+const ink = '#263b30';
+const cream = '#d6c7a8';
+const ochre = '#b68a45';
+const teal = '#496e5d';
+const coral = '#a95f47';
 const esc = (value: string): string => value.replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const colorValue = (value?: string): string => {
   const named: Record<string, string> = { rouge: '#cc5b4a', bleu: '#538eae', vert: '#639478', jaune: '#e2bd52', blanc: '#fffdf5', noir: '#263b36', rose: '#d99b9b', orange: '#d88943', gris: '#a7aaa3', marron: '#916d4c' };
@@ -31,26 +31,26 @@ function object(kind: string, p: Picture = {kind}): string {
     }
     case 'room': return p.detail==='cuisine' ? `<path d="M-56-38H55V45H-56Z" fill="${cream}"/><path d="M-56-3H55M4-3V45M-56 12H4M-12 3H-4M11 7V17" fill="none"/><ellipse cx="-27" cy="-12" rx="17" ry="6" fill="${ink}"/><path d="M20-32V-9H47V-32ZM28-32V-39Q38-48 42-37" fill="${teal}"/>` : `<path d="M-58 40V-25H-47V2H50V40M-48 4V-18H-18V4Z" fill="${cream}"/><path d="M-47 5H50V29H-47Z" fill="${teal}"/><path d="M-49 40V49M43 40V49M-58-31V-42"/><path d="M-68-42H-48L-52-57H-64Z" fill="${ochre}"/>`;
     case 'bottle': if(p.detail==='full-empty') {
-      const clearBottle=(outline:string,full:boolean):string=>`<path d="M-10-48H10V-32L22-15V42Q0 51-22 42V-15L-10-32Z" fill="${cream}" stroke="${outline}" stroke-width="4"/>${full?'<path d="M-18-4Q-7-10 1-4Q10 2 18-4V39Q0 46-18 39Z" fill="#7fb6c7" stroke="none"/>':''}<path d="M-11-48H11V-40H-11Z" fill="${outline}" stroke="${outline}"/><path d="M-14-14V-4" fill="none" stroke="#d6e4dd"/>`;
+      const clearBottle=(outline:string,full:boolean):string=>`<path d="M-10-48H10V-32L22-15V42Q0 51-22 42V-15L-10-32Z" fill="${cream}" stroke="${outline}" stroke-width="4"/>${full?'<path d="M-18-4Q-7-10 1-4Q10 2 18-4V39Q0 46-18 39Z" fill="#7fb6c7" stroke="none"/>':''}<path d="M-11-48H11V-40H-11Z" fill="${outline}" stroke="${outline}"/><path d="M-14-14V-4" fill="none" stroke="#8faa98"/>`;
       return at(clearBottle(colorValue('bleu'),true),-43,1,.72)+at(clearBottle(colorValue('rouge'),false),4,1,.72)+at(object('basket',{kind:'basket',detail:'empty'}),48,27,.37)+at(clearBottle(colorValue('vert'),true),48,-10,.48);
     } return `<path d="M-10-48H10V-32L22-15V42Q0 51-22 42V-15L-10-32Z" fill="${color}"/><path d="M-11-48H11V-42H-11Z" fill="${ochre}"/><path d="M-20-1H20V25H-20Z" fill="${cream}"/>`;
     case 'cup': return `<ellipse cx="0" cy="29" rx="40" ry="7" fill="${ochre}"/><path d="M22-19Q52-24 47-2Q45 13 25 11" fill="none"/><path d="M-29-22H29L24 23Q0 35-24 23Z" fill="${p.color ? color : cream}"/><ellipse cx="0" cy="-22" rx="29" ry="6" fill="${coral}"/>`;
     case 'coffee': if(p.detail==='service') return `<ellipse cx="0" cy="39" rx="61" ry="11" fill="${ochre}"/>`+at(object('coffee'),-24,12,.6)+at(object('milk'),28,4,.57); return object('cup',p)+`<path d="M-11-40Q-22-50-12-60M4-40Q-6-50 4-60" fill="none" opacity=".55"/>`;
     case 'tea': if(p.detail==='terrace') return at(object('table'),0,16,1)+at(object('tea'),-18,-15,.5)+`<path d="M39-54V39M12-24Q40-69 68-24Z" fill="${coral}"/>`; return object('cup',p)+`<path d="M17-20L25-2L35 1V18H22V2L25-2" fill="${ochre}"/><path d="M-10-41Q-22-52-11-61" fill="none"/>`;
-    case 'plate': case 'assiette': return `<ellipse cy="8" rx="55" ry="28" fill="${cream}"/><ellipse cy="8" rx="42" ry="20" fill="none"/><path d="M-41 2Q-21-10-5-9" fill="none" stroke="#e0d7c2"/>`;
-    case 'spoon': case 'cuillère': return `<g transform="rotate(25)"><ellipse cy="-30" rx="17" ry="24" fill="#c8d5ca"/><path d="M-5-7H5L8 46Q0 59-8 46Z" fill="#c8d5ca"/></g>`;
-    case 'sugar': case 'sucre': return `<path d="M-43-11L-23-25L-3-11V12L-23 24L-43 12Z" fill="#fffef7"/><path d="M-43-11L-23 0L-3-11M-23 0V24" fill="none"/><path d="M-6 18L14 4L34 18V41L14 53L-6 41Z" fill="#fffef7"/><path d="M-6 18L14 29L34 18M14 29V53" fill="none"/><path d="M1-35L21-49L41-35V-12L21 0L1-12Z" fill="#fffef7"/><path d="M1-35L21-24L41-35M21-24V0" fill="none"/>`;
+    case 'plate': case 'assiette': return `<ellipse cy="8" rx="55" ry="28" fill="${cream}"/><ellipse cy="8" rx="42" ry="20" fill="none"/><path d="M-41 2Q-21-10-5-9" fill="none" stroke="#b6a98e"/>`;
+    case 'spoon': case 'cuillère': return `<g transform="rotate(25)"><ellipse cy="-30" rx="17" ry="24" fill="#93aa96"/><path d="M-5-7H5L8 46Q0 59-8 46Z" fill="#93aa96"/></g>`;
+    case 'sugar': case 'sucre': return `<path d="M-43-11L-23-25L-3-11V12L-23 24L-43 12Z" fill="#e3d5b9"/><path d="M-43-11L-23 0L-3-11M-23 0V24" fill="none"/><path d="M-6 18L14 4L34 18V41L14 53L-6 41Z" fill="#e3d5b9"/><path d="M-6 18L14 29L34 18M14 29V53" fill="none"/><path d="M1-35L21-49L41-35V-12L21 0L1-12Z" fill="#e3d5b9"/><path d="M1-35L21-24L41-35M21-24V0" fill="none"/>`;
     case 'menu': return object('book',{kind:'book',detail:'menu'});
     case 'receipt': case 'addition': return `<path d="M-29-51H29V51L19 43L9 51L-1 43L-11 51L-21 43L-29 51Z" fill="${cream}"/><path d="M-20-33H19M-20-16H5M12-16H21M-20 1H5M12 1H21M-21 17H21" fill="none"/>`+t('8 €',6,35,18);
     case 'fruit': return at(object('apple'),-24,11,.62)+at(object('apple',{kind:'apple',color:'vert'}),22,10,.57)+`<path d="M-22-20Q11 13 43-25Q43 10 15 18Q-11 20-22-20Z" fill="#e5bd55"/>`;
     case 'vegetable': return `<g transform="rotate(26)"><path d="M-5-20Q21-38 29-16L7 45Z" fill="#d78c49"/><path d="M8-24Q-13-57-20-31M13-25Q20-60 29-42M16-23Q47-44 43-22" fill="none" stroke="${teal}" stroke-width="6"/><path d="M7-8L19-6M7 9L14 11" fill="none"/></g>`+at(`<circle r="25" fill="${teal}"/><path d="M-15-18Q4-1-8 20M13-16Q-7 0 14 17" fill="none"/>`,-29,15,.8);
-    case 'glass': return `<path d="M-30-43H30L23 42H-23Z" fill="${cream}"/><path d="M-22-33L-18 15M-23 34H23" fill="none" stroke="#b8d6d2" stroke-width="4"/>`;
+    case 'glass': return `<path d="M-30-43H30L23 42H-23Z" fill="${cream}"/><path d="M-22-33L-18 15M-23 34H23" fill="none" stroke="#7c9f96" stroke-width="4"/>`;
     case 'note': return `<path d="M-41-49H24L42-31V49H-41Z" fill="${cream}"/><path d="M24-49V-31H42M-28-17H27M-28-3H22M-28 11H27M-28 25H14" fill="none"/><circle cx="0" cy="-39" r="5" fill="${coral}"/>`;
-    case 'water': return `<path d="M-28-39H28L22 40H-22Z" fill="${cream}"/><path d="M-24-8Q-12-16 0-8Q12 0 24-8L21 39H-21Z" fill="#8ebbc3"/><path d="M-34-54Q-44-37-34-33Q-23-37-34-54Z" fill="#8ebbc3"/>`;
-    case 'milk': return `<path d="M-23-34L-10-50H17L30-34V44H-23Z" fill="${cream}"/><path d="M-23-34H30M17-50V-34M-23-20H30V20H-23Z" fill="#9bbbc3"/><path d="M-13-12L-8 13L0-4L9 13L16-12" fill="none"/>`;
+    case 'water': return `<path d="M-28-39H28L22 40H-22Z" fill="${cream}"/><path d="M-24-8Q-12-16 0-8Q12 0 24-8L21 39H-21Z" fill="#628b98"/><path d="M-34-54Q-44-37-34-33Q-23-37-34-54Z" fill="#628b98"/>`;
+    case 'milk': return `<path d="M-23-34L-10-50H17L30-34V44H-23Z" fill="${cream}"/><path d="M-23-34H30M17-50V-34M-23-20H30V20H-23Z" fill="#6a8b95"/><path d="M-13-12L-8 13L0-4L9 13L16-12" fill="none"/>`;
     case 'key': return `<g transform="rotate(-32)"><circle cx="-21" cy="-13" r="20" fill="${ochre}"/><circle cx="-21" cy="-13" r="7" fill="${cream}"/><path d="M-3-9H44V1H34V11H23V1H-3Z" fill="${ochre}"/></g>`;
     case 'door': if(p.detail==='key') return at(object('door'),30,0,.9)+at(object('key'),-42,-11,.55)+arrow(-11,-4,18,-4); return `<path d="M-38 48V-49H38V48M-29 48V-40H28V48" fill="${ochre}"/><path d="M-28-39L12-48V44L-28 48Z" fill="#a7714f"/><circle cx="3" cy="7" r="3" fill="${cream}"/><path d="M-44 49H45"/>`;
-    case 'window': if(p.detail==='open-close') return `<path d="M-55-40h44v81h-44Z" fill="#b2d3d0"/><path d="M-53-36l29-8v82l-29 8Z" fill="#a6c8c2"/><path d="M10-40h44v81H10ZM32-40V41M10 0H54" fill="#b2d3d0"/>`+arrow(-2,-56,-41,-56)+arrow(10,55,50,55); return `<rect x="-43" y="-46" width="86" height="89" rx="2" fill="#b2d3d0"/><path d="M-33 34V-36H33V34ZM0-36V34M-33 0H33" fill="none"/><path d="M-49 44H49"/><circle cx="19" cy="-22" r="8" fill="#e4be63" stroke="none"/>`;
+    case 'window': if(p.detail==='open-close') return `<path d="M-55-40h44v81h-44Z" fill="#72958e"/><path d="M-53-36l29-8v82l-29 8Z" fill="#7a9f95"/><path d="M10-40h44v81H10ZM32-40V41M10 0H54" fill="#72958e"/>`+arrow(-2,-56,-41,-56)+arrow(10,55,50,55); return `<rect x="-43" y="-46" width="86" height="89" rx="2" fill="#72958e"/><path d="M-33 34V-36H33V34ZM0-36V34M-33 0H33" fill="none"/><path d="M-49 44H49"/><circle cx="19" cy="-22" r="8" fill="#c09b4f" stroke="none"/>`;
     case 'table': if(p.detail==='cafe') return at(object('table'),0,14,1.05)+at(object('coffee'),-27,-17,.42)+at(object('tea'),26,-17,.42); if(p.detail==='lunch') return at(object('table'),0,17,1.05)+at(object('soup'),-19,-17,.48)+at(object('bread'),36,-19,.36); if(p.detail==='food') return at(object('table'),0,12,1)+at(object('bread'),-33,-22,.35)+at(object('apple'),0,-20,.33)+at(object('cheese'),27,-18,.33)+at(object('water'),49,-24,.26); if(p.detail==='key-book-box') {
       const closedDoor=`<rect x="-27" y="-45" width="54" height="91" fill="${ochre}"/><rect x="-19" y="-37" width="38" height="83" fill="#a7714f"/><circle cx="12" cy="7" r="3" fill="${cream}"/><path d="M-34 47H34"/>`;
       const openBox=`<path d="M-34-19L0-35L34-19L0-2Z" fill="#b38352"/><path d="M-34-19L-46-37L-12-53L0-35M0-35L15-51L49-35L34-19" fill="${ochre}"/><path d="M-34-19L0-2L34-19V23L0 41L-34 23Z" fill="${ochre}"/><path d="M-29-16L0-30L29-16L0-2Z" fill="${cream}"/>${at(object('key'),-1,-16,.43)}<path d="M-34-19L0-2L34-19V23L0 41L-34 23Z" fill="none"/><path d="M0-2V41" fill="none"/>`;
@@ -60,21 +60,21 @@ function object(kind: string, p: Picture = {kind}): string {
     case 'book': if(p.detail==='menu') return object('book')+at(object('cup'),-24,0,.32)+at(object('bread'),24,0,.32); if(p.detail==='colors') return ['rouge','bleu','jaune','vert'].map((color,i)=>`<path d="M${-56+i*29}-34h25v72h-25Z" fill="${colorValue(color)}"/><path d="M${-52+i*29}-27v57" fill="none" stroke="${cream}"/>`).join(''); return `<path d="M0-30Q-27-45-49-30V37Q-24 23 0 38Q25 23 49 37V-30Q27-45 0-30Z" fill="${cream}"/><path d="M0-29V37M-39-18L-12-17M-39-5L-12-4M-39 8L-12 9M13-17L39-18M13-4L39-5M13 9L39 8" fill="none"/>`;
     case 'box': if(p.detail==='open')return `<path d="M-35-13L0-31L35-13L0 5Z" fill="#a97b4f"/><path d="M-35-13L-49-32L-14-50L0-31M0-31L15-49L50-31L35-13" fill="${ochre}"/><path d="M-35-13L0 5L35-13V28L0 46L-35 28Z" fill="${ochre}"/><path d="M0 5V46" fill="none"/>`; return `<path d="M-43-24L0-45L45-24V30L0 51L-43 30Z" fill="${ochre}"/><path d="M-43-24L0-2L45-24M0-2V51M-21-35L23-13V6L10 12V-18" fill="none"/>`;
     case 'pencil': return `<g transform="rotate(36)"><path d="M-8-49H8V30L0 51L-8 30Z" fill="${ochre}"/><path d="M-8-36H8M-8 30H8M0-35V29" fill="none"/><path d="M-3 43L0 51L3 43Z" fill="${ink}"/></g>`;
-    case 'bread': return `<g transform="rotate(-20)"><path d="M-52 3Q-50-24-25-27H33Q60-22 54 8Q52 30 25 30H-31Q-53 27-52 3Z" fill="${ochre}"/><path d="M-29-18L-17 2M-7-20L5 0M16-19L28 1" fill="none" stroke="#fff1cd" stroke-width="5"/></g>`;
+    case 'bread': return `<g transform="rotate(-20)"><path d="M-52 3Q-50-24-25-27H33Q60-22 54 8Q52 30 25 30H-31Q-53 27-52 3Z" fill="${ochre}"/><path d="M-29-18L-17 2M-7-20L5 0M16-19L28 1" fill="none" stroke="#e0c998" stroke-width="5"/></g>`;
     case 'apple': return `<path d="M0-25Q-28-49-42-21Q-54 3-31 32Q-18 47 0 38Q22 48 36 24Q58-12 33-30Q18-40 0-25Z" fill="${p.color ? color : coral}"/><path d="M0-25Q-8-42-1-51M0-34Q20-55 28-41Q19-26 0-34" fill="${teal}"/>`;
-    case 'cheese': return `<path d="M-48 17L16-35L49-9V36L-48 45Z" fill="#edcd76"/><path d="M-48 17L49-9M16-35V1" fill="none"/><circle cx="18" cy="18" r="7" fill="${ochre}"/><circle cx="-18" cy="28" r="5" fill="${ochre}"/><path d="M40 2Q28 15 48 20" fill="${ochre}"/>`;
+    case 'cheese': return `<path d="M-48 17L16-35L49-9V36L-48 45Z" fill="#c7a352"/><path d="M-48 17L49-9M16-35V1" fill="none"/><circle cx="18" cy="18" r="7" fill="${ochre}"/><circle cx="-18" cy="28" r="5" fill="${ochre}"/><path d="M40 2Q28 15 48 20" fill="${ochre}"/>`;
     case 'soup': return `<path d="M-49-11H49Q42 40 0 40Q-42 40-49-11Z" fill="${cream}"/><ellipse cx="0" cy="-11" rx="49" ry="12" fill="${coral}"/><path d="M17-15L46-46" fill="none"/><path d="M-22-32Q-34-43-21-55M1-32Q-11-43 2-55" fill="none" opacity=".5"/>`;
     case 'egg': return `<path d="M0-49Q31-26 32 9Q31 44 0 44Q-31 44-32 9Q-31-26 0-49Z" fill="${cream}"/>`;
-    case 'fish': return `<path d="M-44 1Q-1-44 39-7L58-24V25L39 10Q-1 45-44 1Z" fill="#8ebbc3"/><circle cx="-25" cy="-1" r="3" fill="${ink}"/><path d="M2-18Q-10 0 2 21" fill="none"/>`;
+    case 'fish': return `<path d="M-44 1Q-1-44 39-7L58-24V25L39 10Q-1 45-44 1Z" fill="#628b98"/><circle cx="-25" cy="-1" r="3" fill="${ink}"/><path d="M2-18Q-10 0 2 21" fill="none"/>`;
     case 'money': if(p.detail==='timbre') return at(object('money'),-19,15,.65)+at(object('envelope',{kind:'envelope',detail:'timbre'}),40,-16,.56); return `<rect x="-51" y="-26" width="91" height="53" rx="4" fill="${teal}"/><circle cx="-5" cy="0" r="17" fill="${cream}"/>${t('€',-5,7,23)}<circle cx="37" cy="26" r="20" fill="${ochre}"/>${t('€',37,33,21)}`;
     case 'clock': if(p.label==='60 s' || p.detail==='minute'){let ticks='';for(let i=0;i<60;i++){const a=i*Math.PI/30;ticks+=`<path d="M${Math.sin(a)*42} ${-Math.cos(a)*42}L${Math.sin(a)*46} ${-Math.cos(a)*46}" stroke-width="${i%5===0?2:1}"/>`;}return `<circle r="49" fill="${cream}"/>${ticks}<path d="M0 0V-40" stroke="${coral}"/><circle r="3" fill="${coral}"/>`;} return clock(p.label ?? '10:00');
-    case 'train': return `<rect x="-42" y="-45" width="84" height="78" rx="16" fill="${teal}"/><path d="M-32-28H32V2H-32Z" fill="#cce1d9"/><path d="M0-28V2M-22 35L-38 53M22 35L38 53M-30 45H30" fill="none"/><circle cx="-24" cy="19" r="5" fill="${ochre}"/><circle cx="24" cy="19" r="5" fill="${ochre}"/>`;
+    case 'train': return `<rect x="-42" y="-45" width="84" height="78" rx="16" fill="${teal}"/><path d="M-32-28H32V2H-32Z" fill="#8faa9b"/><path d="M0-28V2M-22 35L-38 53M22 35L38 53M-30 45H30" fill="none"/><circle cx="-24" cy="19" r="5" fill="${ochre}"/><circle cx="24" cy="19" r="5" fill="${ochre}"/>`;
     case 'station': if(p.detail==='quai') return `<path d="M-58 25L12-30H56L-17 36Z" fill="${ochre}"/><path d="M-58 25V40L-17 51V36L56-20V-30M-58 16L6-35M-47 55L63-28" fill="none"/><path d="M2-55H40V-31H2ZM21-31V-4" fill="${cream}"/>${t('3',21,-36,19)}`; return `<path d="M-56 43V-22L0-49L56-22V43Z" fill="${cream}"/><path d="M-62-22L0-55L62-22M-18 43V8H18V43" fill="${ochre}"/><circle cx="0" cy="-19" r="15" fill="${cream}"/><path d="M0-30V-19L9-15" fill="none"/><path d="M-45 4H-31V21H-45ZM31 4H45V21H31Z" fill="${teal}"/>`;
     case 'house': return `<path d="M-44-7V46H44V-7L0-45Z" fill="${cream}"/><path d="M-57-4L0-55L57-4" fill="none" stroke="${coral}" stroke-width="8"/><path d="M-9 46V12H14V46" fill="${ochre}"/><path d="M-33-8H-13V12H-33ZM18-8H35V12H18Z" fill="${teal}"/>`;
     case 'envelope': {
       if(p.detail==='timbre') return at(object('envelope'),-29,19,.55)+`<path d="M8-50L15-54L22-50L29-54L36-50L43-54L50-50L57-54V-47L61-40L57-33L61-26L57-19L61-12L57-5L61 2H8L4-5L8-12L4-19L8-26L4-33L8-40L4-47Z" fill="${cream}"/><path d="M14-43H51V-6H14Z" fill="${coral}"/><path d="M19-14L29-31L37-21L44-34L49-14Z" fill="${ochre}"/>`+arrow(0,9,21,-5);
       const body=`<rect x="-56" y="-35" width="112" height="73" rx="4" fill="${cream}"/>`;
-      if(p.detail==='adresse') return body+`<rect x="33" y="-27" width="15" height="18" fill="${coral}"/><rect x="-39" y="-4" width="80" height="33" rx="3" fill="#e7c989" stroke="${coral}"/>`+t('Claire',0,9,13)+t('3, rue de la Gare',0,22,10);
+      if(p.detail==='adresse') return body+`<rect x="33" y="-27" width="15" height="18" fill="${coral}"/><rect x="-39" y="-4" width="80" height="33" rx="3" fill="#c3a064" stroke="${coral}"/>`+t('Claire',0,9,13)+t('3, rue de la Gare',0,22,10);
       if(p.detail==='sans-timbre') return body+`<path d="M31-29H50V-7H31Z" fill="none" stroke-dasharray="3 4"/><path d="M30-30L51-6M51-30L30-6" stroke="${coral}"/><path d="M-31 1H20M-31 13H13" fill="none"/>`;
       if(p.detail==='écrire') return object('envelope',{kind:'envelope',detail:'adresse'})+at(object('pencil'),38,26,.45);
       return body+`<path d="M-55-34L0 7L55-34M-55 37L-17-3M55 37L17-3" fill="none"/><rect x="32" y="-27" width="16" height="18" fill="${coral}" stroke="none"/>`;
@@ -82,7 +82,7 @@ function object(kind: string, p: Picture = {kind}): string {
     case 'calendar': {
       const detail=p.detail??'aujourd’hui'; const target=detail==='hier'?14:detail==='demain'?16:15;
       if(p.count) return `<rect x="-38" y="-49" width="76" height="93" rx="4" fill="${cream}"/><path d="M-38-29H38V-45H-38Z" fill="${coral}"/><path d="M-22-57V-39M22-57V-39" fill="none"/>`+t(String(target),0,21,43)+`<path d="M-57 55H57" fill="none"/>`+arrow(target===14?-5:-46,55,target===16?53:target===14?-51:5,55);
-      return [14,15,16].map((day,i)=>{const x=-72+i*49;return `<g transform="translate(${x} -40)"><rect x="0" y="0" width="44" height="80" rx="3" fill="${day===target?'#ecd192':cream}" stroke="${day===target?coral:ink}" stroke-width="${day===target?4:2}"/><path d="M0 18H44V2H0Z" fill="${coral}"/><path d="M10-7V8M33-7V8" fill="none"/>${t(String(day),22,54,25)}${day===15?'<path d="M13 69H31" stroke-width="4"/>':''}</g>`;}).join('')+arrow(-54,53,55,53)+`<circle cx="${target===14?-50:target===15?-1:48}" cy="53" r="5" fill="${coral}"/>`;
+      return [14,15,16].map((day,i)=>{const x=-72+i*49;return `<g transform="translate(${x} -40)"><rect x="0" y="0" width="44" height="80" rx="3" fill="${day===target?'#c3a363':cream}" stroke="${day===target?coral:ink}" stroke-width="${day===target?4:2}"/><path d="M0 18H44V2H0Z" fill="${coral}"/><path d="M10-7V8M33-7V8" fill="none"/>${t(String(day),22,54,25)}${day===15?'<path d="M13 69H31" stroke-width="4"/>':''}</g>`;}).join('')+arrow(-54,53,55,53)+`<circle cx="${target===14?-50:target===15?-1:48}" cy="53" r="5" fill="${coral}"/>`;
     }
     case 'letter': return `<g transform="rotate(-7)"><rect x="-51" y="-33" width="102" height="68" rx="4" fill="${cream}"/><path d="M-50-31L0 7L50-31M-50 34L-16 2M50 34L16 2" fill="none"/><rect x="27" y="-23" width="14" height="16" fill="${coral}" stroke="none"/></g>`;
     case 'map': return `<path d="M-55-39L-18-47L19-36L55-44V40L19 48L-18 36L-55 44Z" fill="${cream}"/><path d="M-18-47V36M19-36V48" fill="none" opacity=".3"/><path d="M-43 21L-24 7L-5 12L18-5L39-21" fill="none" stroke="${coral}" stroke-dasharray="4 5"/><circle cx="-43" cy="21" r="5" fill="${teal}"/><path d="M34-26L45-16M45-26L34-16"/>`;
@@ -103,13 +103,13 @@ function object(kind: string, p: Picture = {kind}): string {
       if(p.detail==='greeting') return human(0,8,.94)+`<path d="M20 12L35-21L29-34M35-21L42-32M45-38L50-44M53-24L61-26" fill="none"/>`;
       if(p.detail==='thanks') return human(-29,11,.8,true,coral)+human(35,4,.9)+`<path d="M-13-48Q-3-61 5-50Q17-61 24-48Q24-37 5-26Q-13-37-13-48Z" fill="${coral}" stroke="none"/>`;
       if(p.detail==='friends') return human(-29,9,.86)+human(29,9,.86,true,coral)+`<path d="M-18-44Q0-57 18-44M-17-43L-11-36M17-43L11-36" fill="none"/>`;
-      if(p.detail==='server') return human(7,8,.97,false,'#d8d6c7')+`<path d="M0-4L7 4L14-4L8 19Z" fill="${ink}"/><path d="M-14 7L-40-4M-59-4H-23" fill="none"/>`+at(object('cup'),-42,-16,.34);
+      if(p.detail==='server') return human(7,8,.97,false,'#b4b29a')+`<path d="M0-4L7 4L14-4L8 19Z" fill="${ink}"/><path d="M-14 7L-40-4M-59-4H-23" fill="none"/>`+at(object('cup'),-42,-16,.34);
       if(p.detail==='cafe') return human(-29,5,.85)+at(object('table'),18,28,.74)+at(object('coffee'),34,-1,.4);
       if(p.detail==='offer') return human(-29,7,.83)+at(object('soup'),32,17,.54)+arrow(-8,-3,20,-3);
       if(p.detail==='dinner') return human(0,-6,.83)+at(object('soup'),0,29,.6)+`<path d="M-47 12V46M-53 12V24H-41V12M43 12V46M43 12Q56 22 43 30" fill="none"/>`;
       if(p.detail==='giving') return action('donner');
       if(p.detail==='delivery') return human(-39,3,.8,true,coral)+human(35,3,.8)+at(object('book'),-41,17,.33)+at(object('box'),9,20,.36)+at(object('key'),46,-7,.25);
-      if(['grand','grande','petit','petite'].includes(p.detail??'')) {const small=p.detail?.startsWith('petit');return human(-31,small?28:6,small?.5:1,p.detail?.endsWith('e'),coral)+`<path d="M29-37V46M23-37H35M23 46H35" stroke-dasharray="3 3" fill="none"/>`+human(35,12,.8,false,'#d4d5c9');}
+      if(['grand','grande','petit','petite'].includes(p.detail??'')) {const small=p.detail?.startsWith('petit');return human(-31,small?28:6,small?.5:1,p.detail?.endsWith('e'),coral)+`<path d="M29-37V46M23-37H35M23 46H35" stroke-dasharray="3 3" fill="none"/>`+human(35,12,.8,false,'#afb5a0');}
       return human(0,0,1,p.detail === 'female' || p.detail === 'elle');
     }
     case 'portrait': return `<rect x="-46" y="-53" width="92" height="107" rx="3" fill="${ochre}"/><rect x="-37" y="-44" width="74" height="89" fill="${cream}"/>${human(0,6,.78,p.detail==='female' || p.detail==='mère')}`;
@@ -258,7 +258,7 @@ export function pictureSvg(p: Picture): string {
     default: drawing=object(p.kind,p);
   }
   const showLabel=p.label && p.kind!=='time' && p.kind!=='price' && (p.kind!=='clock' || !/^\d{1,2}[:h]\d{2}$/.test(p.label));
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Illustration" class="pictogram"><rect x="1" y="1" width="238" height="178" rx="12" fill="${cream}"/><ellipse cx="120" cy="139" rx="67" ry="8" fill="#e7ddc7"/><g transform="translate(120 ${showLabel ? 78 : 86})" stroke="${ink}" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">${drawing}</g>${showLabel ? labelSvg(p.label!) : ''}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Illustration" class="pictogram"><rect x="1" y="1" width="238" height="178" rx="12" fill="${cream}"/><ellipse cx="120" cy="139" rx="67" ry="8" fill="#bcb095"/><g transform="translate(120 ${showLabel ? 78 : 86})" stroke="${ink}" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">${drawing}</g>${showLabel ? labelSvg(p.label!) : ''}</svg>`;
 }
 
 function labelSvg(label: string): string {
@@ -288,7 +288,7 @@ function commerce(meaning: string, v: number): string {
   if(meaning==='coûter') return at(object(item),-24,-5,.7)+at(object('price',{kind:'price'}),0,0,0)+`<path d="M15 9H64V43H15L3 26Z" fill="${cream}"/><circle cx="15" cy="26" r="2"/>`+t(['2 €','6 €','12 €'][v%3],40,34,18);
   if(meaning==='cher') return at(object(['bread','cheese','bag'][v]),-35,-8,.45)+at(object(['bread','cheese','bag'][v]),34,-8,.45)+t(['1 €','5 €','10 €'][v],-35,39,16)+t(['10 €','50 €','100 €'][v],34,39,16)+`<path d="M12 46H58" stroke="${coral}" stroke-width="4"/>`;
   if(meaning==='unused') return at(object(item),-35,-8,.45)+at(object(item),34,-8,.45)+t('5 €',-35,39,16)+t('50 €',34,39,16)+`<path d="M12 46H58" stroke="${coral}" stroke-width="4"/>`;
-  if(meaning==='frais') return at(object(['fish','bread','cheese'][v%3]),0,-4,.75)+`<path d="M-57 37L-37 20L-19 40L0 24L22 43L43 22L61 39" fill="none" stroke="#8fb6c2"/><path d="M-50-38V-55M-59-47H-41M45-29V-46M36-37H54" fill="none" stroke="${teal}"/>`;
+  if(meaning==='frais') return at(object(['fish','bread','cheese'][v%3]),0,-4,.75)+`<path d="M-57 37L-37 20L-19 40L0 24L22 43L43 22L61 39" fill="none" stroke="#638797"/><path d="M-50-38V-55M-59-47H-41M45-29V-46M36-37H54" fill="none" stroke="${teal}"/>`;
   if(meaning==='bon') return human(-30,10,.85)+at(object(['bread','cheese','coffee'][v]),31,4,.5)+`<path d="M-37-15Q-30-8-23-15M27-47Q33-56 39-47Q48-56 53-47Q53-38 40-29Q27-38 27-47Z" fill="${coral}"/>`;
   if(meaning==='euro') {
     if(v===0) return `<circle r="46" fill="${ochre}"/><circle r="37" fill="none"/>${t('€',0,17,52)}`;
@@ -302,7 +302,7 @@ function sky(night: boolean, x = 43, y = -35, scale=1): string {
   return at(night?`<path d="M0-20Q-24-3-2 19Q-29 19-27-6Q-23-26 0-20Z" fill="${ochre}"/><path d="M14-10V0M9-5H19"/>`:`<circle r="16" fill="${ochre}"/><path d="M0-26V-22M0 22V26M-26 0H-22M22 0H26M-18-18L-15-15M18-18L15-15M-18 18L-15 15M18 18L15 15"/>`,x,y,scale);
 }
 function temperature(hot: boolean, strong=false): string {
-  return `<path d="M-4-39Q-4-48 5-48Q14-48 14-39V24Q25 32 20 44Q14 55 3 51Q-13 45-10 33Q-9 27-4 23Z" fill="${cream}"/><path d="M5 ${hot?(strong?-37:-14):13}V36" fill="none" stroke="${hot?coral:'#6dacc2'}" stroke-width="7"/><circle cx="5" cy="37" r="10" fill="${hot?coral:'#6dacc2'}" stroke="none"/><path d="M20-31H29M20-15H29M20 1H29M20 17H29" fill="none"/>`;
+  return `<path d="M-4-39Q-4-48 5-48Q14-48 14-39V24Q25 32 20 44Q14 55 3 51Q-13 45-10 33Q-9 27-4 23Z" fill="${cream}"/><path d="M5 ${hot?(strong?-37:-14):13}V36" fill="none" stroke="${hot?coral:'#4d7c90'}" stroke-width="7"/><circle cx="5" cy="37" r="10" fill="${hot?coral:'#4d7c90'}" stroke="none"/><path d="M20-31H29M20-15H29M20 1H29M20 17H29" fill="none"/>`;
 }
 function kinship(target: string, v:number): string {
   const isChild=['enfant','sœur','frère'].includes(target); const highlight=target==='sœur'?'Claire':target==='frère'?'Luc':'';
@@ -321,17 +321,17 @@ function concept(name: string, v: number): string {
   if(name==='œuf') {
     if(v===0)return at(object('egg'),0,0,.9)+at(object('box'),46,28,.3);
     if(v===1)return `<path d="M-39-31Q-48-11-31-4L-22-13L-10-6L-4-22Q-13-50-39-31ZM9-24L16-9L28-15L37-5Q57-20 39-37Q24-48 9-24Z" fill="${cream}"/><path d="M-43 18H43Q36 49 0 49Q-36 49-43 18Z" fill="${teal}"/><ellipse cy="17" rx="43" ry="11" fill="${cream}"/><circle cy="15" r="10" fill="${ochre}"/>`;
-    return at(object('plate'),0,13,1)+`<path d="M-31-1Q-19-24-4-13Q17-30 34-6Q45 19 19 23Q-4 40-27 21Q-42 10-31-1Z" fill="#fffef5"/><circle cy="6" r="15" fill="${ochre}"/>`+at(object('egg'),51,-34,.25);
+    return at(object('plate'),0,13,1)+`<path d="M-31-1Q-19-24-4-13Q17-30 34-6Q45 19 19 23Q-4 40-27 21Q-42 10-31-1Z" fill="#e5d8b9"/><circle cy="6" r="15" fill="${ochre}"/>`+at(object('egg'),51,-34,.25);
   }
   if(name==='lait') {
     if(v===0)return objectScene('milk','market');
-    if(v===1)return at(object('coffee'),-17,20,.75)+at(object('milk'),35,-22,.57)+`<path d="M14-9L5 9" stroke="#f8f4df" stroke-width="7"/>`;
-    return human(-38,4,.82)+at(object('glass'),-16,-3,.38)+at(object('milk'),36,18,.7)+`<path d="M-24-7H-7V7H-23Z" fill="#f7f1dd" stroke="none"/>`;
+    if(v===1)return at(object('coffee'),-17,20,.75)+at(object('milk'),35,-22,.57)+`<path d="M14-9L5 9" stroke="#e0d2b0" stroke-width="7"/>`;
+    return human(-38,4,.82)+at(object('glass'),-16,-3,.38)+at(object('milk'),36,18,.7)+`<path d="M-24-7H-7V7H-23Z" fill="#ddceb0" stroke="none"/>`;
   }
   if(name==='poisson') {
-    if(v===0)return object('fish')+`<path d="M-62-39Q-30-49 0-39Q30-29 62-39M-62 43Q-30 33 0 43Q30 53 62 43" fill="none" stroke="#82adb9"/><circle cx="-53" cy="-18" r="4" fill="none"/>`;
+    if(v===0)return object('fish')+`<path d="M-62-39Q-30-49 0-39Q30-29 62-39M-62 43Q-30 33 0 43Q30 53 62 43" fill="none" stroke="#587f8c"/><circle cx="-53" cy="-18" r="4" fill="none"/>`;
     if(v===1)return commerce('frais',0);
-    return at(object('plate'),0,15,1.1)+`<path d="M-45 10L-23-7V24Z" fill="#9cb6b5"/><path d="M34 8L55-10V26Z" fill="#9cb6b5"/><path d="M-22 8H35M-15-1L-5 8L-15 18M2-1L12 8L2 18M19-1L29 8L19 18" fill="none"/><circle cx="-33" cy="6" r="2"/>`;
+    return at(object('plate'),0,15,1.1)+`<path d="M-45 10L-23-7V24Z" fill="#6f8e8b"/><path d="M34 8L55-10V26Z" fill="#6f8e8b"/><path d="M-22 8H35M-15-1L-5 8L-15 18M2-1L12 8L2 18M19-1L29 8L19 18" fill="none"/><circle cx="-33" cy="6" r="2"/>`;
   }
   if(name==='fruit')return v===0?at(object('tree'),-17,3,.9)+at(object('apple'),-38,-22,.27)+at(object('apple'),1,-32,.27):v===1?at(object('basket',{kind:'basket',detail:'food'}),0,12,.95)+at(object('apple',{kind:'apple',color:'vert'}),3,-12,.45):objectScene('fruit','market');
   if(name==='légume')return v===0?object('vegetable')+`<path d="M-63 30Q0 20 63 30M-62 41H62" fill="none"/>`:v===1?at(object('vegetable'),-27,-8,.65)+`<path d="M-58 35H59M12-25L50 9L43 17L5-17Z" fill="${cream}"/>`:objectScene('vegetable','market');
@@ -371,7 +371,7 @@ function concept(name: string, v: number): string {
   if(name==='pour')return human(-42,13,.8)+human(44,13,.8,true,coral)+at(object(['letter','book','coffee'][v]),0,-8,.4)+arrow(-13,25,16,25);
   if(name==='serveur')return at(object('person',{kind:'person',detail:'server'}),-14,0,.9)+at(object(['coffee','soup','receipt'][v]),44,21,.35);
   if(name==='client')return human(-27,9,.9,v===1)+at(object('table'),24,31,.8)+at(object(['coffee','menu','money'][v]),30,3,.42);
-  if(name==='chaud'||name==='froid')return at(object(name==='chaud'?['coffee','soup','tea'][v]:['water','milk','tea'][v]),-29,9,.7)+at(temperature(name==='chaud'),46,-3,.7)+(name==='chaud'?`<path d="M-48-29Q-59-40-47-49M-28-29Q-39-40-27-49" fill="none"/>`:`<path d="M-39-44V-22M-50-33H-28M-47-41L-31-25M-47-25L-31-41" fill="none" stroke="#6dacc2"/>`);
+  if(name==='chaud'||name==='froid')return at(object(name==='chaud'?['coffee','soup','tea'][v]:['water','milk','tea'][v]),-29,9,.7)+at(temperature(name==='chaud'),46,-3,.7)+(name==='chaud'?`<path d="M-48-29Q-59-40-47-49M-28-29Q-39-40-27-49" fill="none"/>`:`<path d="M-39-44V-22M-50-33H-28M-47-41L-31-25M-47-25L-31-41" fill="none" stroke="#4d7c90"/>`);
   if(name==='très') {
     if(v===0)return at(temperature(true,false),-32,3,.9)+at(temperature(true,true),32,3,.9)+arrow(-8,-46,20,-46);
     if(v===1)return at(object('water'),-34,8,.65)+at(object('water'),36,8,.65)+`<rect x="-38" y="5" width="10" height="10" fill="${cream}"/>`+[0,1,2,3,4,5].map(i=>`<rect x="${23+i%2*13}" y="${-15+Math.floor(i/2)*13}" width="10" height="10" fill="${cream}"/>`).join('')+arrow(-8,-43,23,-43);
@@ -379,7 +379,7 @@ function concept(name: string, v: number): string {
   }
   if(name==='bien') {
     if(v===0)return human(-15,8,.9)+`<path d="M-57 3H59" stroke-width="4"/>`+[-33,5,40].map(x=>at(object('cup'),x,-11,.35)).join('');
-    if(v===1)return `<path d="M-58 35H58V43H-58Z" fill="${ochre}"/>`+[-43,-20,3,26].map((x,i)=>`<rect x="${x}" y="-36" width="20" height="70" fill="${[teal,coral,ochre,'#92aaa3'][i]}"/><path d="M${x+5}-27V25" stroke="${cream}"/>`).join('');
+    if(v===1)return `<path d="M-58 35H58V43H-58Z" fill="${ochre}"/>`+[-43,-20,3,26].map((x,i)=>`<rect x="${x}" y="-36" width="20" height="70" fill="${[teal,coral,ochre,'#6b8778'][i]}"/><path d="M${x+5}-27V25" stroke="${cream}"/>`).join('');
     return `<rect x="-35" y="-50" width="70" height="101" fill="${ochre}"/><rect x="-26" y="-41" width="52" height="92" fill="#a7714f"/><path d="M11-1H40V9H11Z" fill="${teal}"/><circle cx="20" cy="4" r="3" fill="${cream}"/>`;
   }
   if(name==='bonsoir')return human(-30,16,.85)+human(31,16,.85,true,coral)+sky(true,46,-40,.65)+at(object(['house','cup','door'][v]),-55,-22,.27);
@@ -393,7 +393,7 @@ function concept(name: string, v: number): string {
     const door=[object('door')+at(object('key'),-41,23,.38),action('ouvrir'),at(object('door'),-30,0,.7)+human(30,10,.78)];
     const letter=[object('box')+at(object('letter'),0,0,.4),action('lire'),action('donner')];
     const scenes=name==='maintenant'?[drink,door,letter][v]:[meal,drink,door][v];let out='';
-    for(let i=0;i<3;i++)out+=`<rect x="${-71+i*49}" y="-40" width="45" height="83" rx="4" fill="${i===phase?'#ecd192':cream}" stroke="${i===phase?coral:ink}" stroke-width="${i===phase?4:2}"/>`+at(scenes[i],-48+i*49,1,.31);
+    for(let i=0;i<3;i++)out+=`<rect x="${-71+i*49}" y="-40" width="45" height="83" rx="4" fill="${i===phase?'#c3a363':cream}" stroke="${i===phase?coral:ink}" stroke-width="${i===phase?4:2}"/>`+at(scenes[i],-48+i*49,1,.31);
     return out+arrow(-56,57,57,57);
   }
   if(name==='attendre')return human(-35,15,.9)+at(object(['train','house','coffee'][v]),39,16,.5)+at(clock(['10:00','14:00','18:00'][v]),8,-35,.35)+`<path d="M-55 56H-18" fill="none" stroke-dasharray="3 4"/>`;
@@ -406,11 +406,11 @@ function concept(name: string, v: number): string {
   if(['départ','partir','arrivée','arriver'].includes(name)){const arriving=name==='arrivée'||name==='arriver';return at(object(['train','person','bag'][v]),-30,14,.7)+at(object(['station','house','door'][v]),45,9,.55)+arrow(arriving?-10:24,-33,arriving?27:-15,-33);}
   if(name==='retard')return at(clock(['08:00','12:00','18:00'][v]),-37,0,.65)+at(clock(['08:15','12:30','18:45'][v]),38,0,.65)+arrow(-8,-43,26,-43)+`<path d="M30 45L38 33L46 45Z" fill="${coral}"/>`;
   if(name==='destination')return at(object(['house','station','cup'][v]),42,-8,.6)+`<path d="M-62 42L-36 16L-16 22L12-6L25-5" fill="none" stroke-dasharray="4 4"/>`+`<circle cx="42" cy="-8" r="42" fill="none" stroke="${coral}" stroke-width="3"/>`;
-  if(name==='nord'||name==='sud')return `<circle r="49" fill="${cream}"/><path d="M-37 0H37M0-38V38" fill="none" stroke="#c8c5b5"/><path d="M0 ${name==='nord'?-39:39}L-12 0L0 ${name==='nord'?9:-9}L12 0Z" fill="${coral}"/>`+t('N',0,-55,13)+t('S',0,66,13)+t('O',-61,5,13)+t('E',61,5,13)+at(object(['map','train','house'][v]),40,41,.22);
+  if(name==='nord'||name==='sud')return `<circle r="49" fill="${cream}"/><path d="M-37 0H37M0-38V38" fill="none" stroke="#aaa58e"/><path d="M0 ${name==='nord'?-39:39}L-12 0L0 ${name==='nord'?9:-9}L12 0Z" fill="${coral}"/>`+t('N',0,-55,13)+t('S',0,66,13)+t('O',-61,5,13)+t('E',61,5,13)+at(object(['map','train','house'][v]),40,41,.22);
   if(name==='plan')return at(object('map'),0,0,.95)+at(object(['house','station','cup'][v]),18,-10,.3);
-  if(name==='pont')return `<path d="M-68 31Q-34 20 0 31Q34 42 68 31M-68 45Q-34 34 0 45Q34 56 68 45" fill="none" stroke="#7faab7"/><path d="M-64-2H64V15H37Q0-35-37 15H-64Z" fill="${ochre}"/><path d="M-64-19V-2M-43-19V-2M-22-19V-2M0-19V-2M22-19V-2M43-19V-2M64-19V-2M-64-19H64" fill="none"/>`+at(object(['person','train','bag'][v]),0,-29,.3);
+  if(name==='pont')return `<path d="M-68 31Q-34 20 0 31Q34 42 68 31M-68 45Q-34 34 0 45Q34 56 68 45" fill="none" stroke="#5c7f8e"/><path d="M-64-2H64V15H37Q0-35-37 15H-64Z" fill="${ochre}"/><path d="M-64-19V-2M-43-19V-2M-22-19V-2M0-19V-2M22-19V-2M43-19V-2M64-19V-2M-64-19H64" fill="none"/>`+at(object(['person','train','bag'][v]),0,-29,.3);
   if(name==='rue')return at(object('house'),-45,-9,.48)+at(object('house'),47,-9,.48)+`<path d="M-18-17L-47 57M18-17L47 57M0-11V1M0 18V32M0 45V59" fill="none"/>`+at(object(['person','bag','cat'][v]),-24,34,.28);
-  if(name==='place')return at(object('house'),-46,-25,.38)+at(object('house'),43,-25,.38)+at(object('house'),0,-43,.32)+`<ellipse cy="26" rx="65" ry="32" fill="none"/><ellipse cy="27" rx="24" ry="10" fill="#aac5bb"/><path d="M0 25V-4M-16 9Q0-23 16 9" fill="none"/>`+at(object(['person','tree','flower'][v]),48,31,.28);
+  if(name==='place')return at(object('house'),-46,-25,.38)+at(object('house'),43,-25,.38)+at(object('house'),0,-43,.32)+`<ellipse cy="26" rx="65" ry="32" fill="none"/><ellipse cy="27" rx="24" ry="10" fill="#7c9b85"/><path d="M0 25V-4M-16 9Q0-23 16 9" fill="none"/>`+at(object(['person','tree','flower'][v]),48,31,.28);
   if(['famille','sœur','frère','enfant','parent'].includes(name))return kinship(name,v);
   if(name==='salon')return `<path d="M-45-9V-30Q0-47 45-30V-9M-53-8H-33V17H33V-8H53V42H-53Z" fill="${teal}"/><path d="M-42 42V49M42 42V49M0-30V16" fill="none"/>`+at(object(['book','cup','flower'][v]),0,-17,.34);
   if(name==='ami')return human(-35,13,.9)+human(35,13,.9,true,coral)+`<path d="M-14 16L-2 21L13 16M-52-34Q0-54 52-34" fill="none"/>`+at(object(item),0,-35,.28);
@@ -426,7 +426,7 @@ function concept(name: string, v: number): string {
   }
   if(name==='nouveau'||name==='vieux'){const old=name==='vieux';return at(object(['book','coat','house'][v]),0,7,.86)+(old?`<path d="M-36-13L-23-2L-32 8L-18 18M18-30L11-15L24-4L16 10M-14 34L-3 26L7 33" fill="none" stroke="#986e4b" stroke-width="4"/><path d="M-36 48H31" stroke-dasharray="3 4"/>`:`<path d="M-48-30V-48M-57-39H-39M42-28V-46M33-37H51" fill="none" stroke="${ochre}" stroke-width="4"/>`);}
   if(name==='aider')return human(-42,14,.83)+human(42,14,.83,true,coral)+at(object(['box','bag','table'][v]),0,31,.55)+arrow(-21,0,-5,-15)+arrow(21,0,5,-15);
-  if(name==='chercher')return at(object(['book','box','chair'][v]),-11,8,.75)+at(object(['key','letter','ticket'][v]),35,22,.27)+`<circle cx="-18" cy="-14" r="24" fill="#faf3df" fill-opacity=".45"/><path d="M-2 4L26 38" stroke-width="8"/>`+t('?',-18,-5,24);
+  if(name==='chercher')return at(object(['book','box','chair'][v]),-11,8,.75)+at(object(['key','letter','ticket'][v]),35,22,.27)+`<circle cx="-18" cy="-14" r="24" fill="#d6c7a8" fill-opacity=".45"/><path d="M-2 4L26 38" stroke-width="8"/>`+t('?',-18,-5,24);
   if(name==='chez')return at(object('house'),0,2,1)+human(0,24,.45,v===1,v===2?coral:teal)+at(object(item),47,44,.25);
   if(name==='toujours')return [0,1,2].map(i=>at(object(['coffee','book','flower'][v]),-45+i*45,16,.34)+at(clock(['08:00','12:00','18:00'][i]),-45+i*45,-33,.25)).join('')+arrow(-58,53,59,53);
   if(name==='déjà')return at(object(['letter','plate','box'][v]),-34,8,.65)+at(clock(['10:00','12:00','18:00'][v]),41,4,.6)+`<path d="M-53-39L-41-26L-17-52" fill="none" stroke="${teal}" stroke-width="5"/>`+arrow(-10,53,55,53);

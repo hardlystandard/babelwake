@@ -1,5 +1,4 @@
 import { expect, test } from '@playwright/test';
-import {zoneIds} from '../../src/content';
 import type { Content, Puzzle } from '../../src/content/types';
 import type { GameState } from '../../src/game/state';
 interface DebugGame { content(): Promise<Content>; encounter(id: string): void; confirm(pageId: string, assignments: Record<string, string>): void; getState(): GameState; }
@@ -28,5 +27,5 @@ test('atelier mechanism can be operated in the world and opens the market', asyn
   await page.locator('#apply-mechanism').click();
   await expect(page.locator('#next-zone')).toBeVisible();
   await page.locator('#next-zone').click();
-  if(zoneIds.length>1)await expect.poll(async () => page.evaluate(() => (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__.getState().zone)).toBe('marche');else await expect(page.locator('.ending-panel')).toBeVisible();
+  await expect.poll(async () => page.evaluate(() => (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__.getState().zone)).toBe('marche');
 });

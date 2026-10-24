@@ -46,15 +46,20 @@ try {
   tablet.on('pageerror', error => errors.push(`Tablet: ${error.message}`));
   await tablet.goto(process.env.BABELWAKE_PREVIEW ?? 'http://127.0.0.1:4173/?debug=1');
   await tablet.waitForFunction(() => Boolean(window.__BABELWAKE__));
-  await tablet.getByTestId('start').click();
-  await tablet.locator('#sound').click();
+  await tablet.getByTestId('start').tap();
+  await tablet.locator('#sound').tap();
   await tablet.locator('#toast.visible').waitFor({ state: 'visible' });
+  const tabletStart = await tablet.evaluate(() => window.__BABELWAKE__.view().player);
+  const tabletCanvas = await tablet.locator('canvas').boundingBox();
+  if (!tabletCanvas) throw new Error('Missing tablet canvas');
+  await tablet.locator('canvas').tap({ position: { x: tabletCanvas.width / 2, y: tabletCanvas.height * 2 / 3 } });
+  await tablet.waitForFunction(before => { const after = window.__BABELWAKE__.view().player; return Math.hypot(after.x - before.x, after.z - before.z) > .2; }, tabletStart, { timeout: 10000 });
   const tabletImage = await tablet.locator('canvas').screenshot({ animations: 'disabled', path: 'artifacts/tablet-world.png' });
   if (tabletImage.byteLength < 15000) throw new Error('Tablet canvas appears empty');
-  await tablet.getByTestId('journal').click();
+  await tablet.getByTestId('journal').tap();
   await tablet.locator('.journal-panel').waitFor({ state: 'visible' });
   await tablet.screenshot({ animations: 'disabled', path: 'artifacts/tablet-journal.png' });
-  await tablet.keyboard.press('Escape');
+  await tablet.locator('[data-close]').tap();
   await tablet.evaluate(async () => {
     const zone = (await window.__BABELWAKE__.content()).zones[0];
     window.__BABELWAKE__.encounter(zone.evidence[0].id);
@@ -62,5 +67,5 @@ try {
   await tablet.locator('.evidence-panel').waitFor({ state: 'visible' });
   await tabletContext.close();
   if (errors.length) throw new Error(errors.join('\n'));
-  console.log('Captured title, world, evidence, journal, station, tablet world/journal. Tablet start, journal and evidence pass. No browser page errors.');
+  console.log('Captured title, world, evidence, journal, station, tablet world/journal. Tablet touch start, tap-to-walk, journal and evidence pass. No browser page errors.');
 } finally { await browser.close(); }

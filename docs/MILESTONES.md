@@ -1,6 +1,6 @@
 # Four playable milestones
 
-These are the four source-history review units. The private Sites source remote has no GitHub pull-request interface; these descriptions are ready to reuse in a code-host review. No remote PR is claimed.
+These are the four playable source-history review units. Their descriptions are ready to reuse in a code-host review; no retrospective pull requests are claimed. Repository governance may be configured in a later commit.
 
 ## 1 — The atelier and the discovery loop
 

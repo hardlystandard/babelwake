@@ -201,6 +201,7 @@ try{state=await loadGame()??initialState();}catch{state=initialState();toast('Yo
 await hydrate();zone=loaded.get(state.zone)??await loadZone(state.zone);loaded.set(zone.id,zone);world.setZone(zone,new Set(state.encountered));world.setPaused(true);applySettings();updateHud();
 $<HTMLButtonElement>('#start').disabled=false;
 if(state.encountered.length)$<HTMLButtonElement>('#start').innerHTML='Continue your journey <span>↗</span>';
+if('serviceWorker' in navigator && import.meta.env.PROD){const register=()=>{void navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(()=>{});};if(document.readyState==='complete')register();else window.addEventListener('load',register,{once:true});}
 if(new URLSearchParams(location.search).get('debug')==='1'){
   const debug = {
     getState:()=>structuredClone(state), view:()=>world.getViewState(), content:()=>loadContent(),

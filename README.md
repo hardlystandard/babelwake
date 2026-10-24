@@ -1,12 +1,12 @@
 # Babelwake
 
-A cozy top-down village exploration and French decipherment game built with strict TypeScript, Vite, Three.js, and DOM/SVG interfaces. This playable milestone confirms 217 distinct canonical targets on 66 pages through 627 illustrated scenes. Explore 6 available places, infer French from illustrated encounters, write guesses in any language, confirm whole journal pages, then use French to continue the story.
+A cozy top-down village exploration and French decipherment game built with strict TypeScript, Vite, Three.js, and DOM/SVG interfaces. Confirm 217 distinct canonical French targets on 66 required pages, supported by 627 illustrated encounter scenes. Explore six places, infer French from illustrated encounters, write guesses in any language, confirm whole journal pages, then use French to continue the story.
 
 No translations or automatic note suggestions are provided. English is restricted to menus, settings, and the player's own notes. All game content lives in typed data modules.
 
 ## Run
 
-Requires Node.js 22 or newer and npm.
+Requires Node.js 22.12 or newer and npm.
 
 ```sh
 npm ci
@@ -51,3 +51,5 @@ Golden paths demonstrate that authored pages and puzzles can be completed throug
 The repository was created in an empty workspace. No earlier prototype or engine assets were available to preserve. The delivery is organized around four playable milestones: atelier/core loop; market/café; station/house/finale; production polish. PR descriptions must list actual checks and unresolved review flags, and should not claim a remote PR exists unless one has been created.
 
 Release evidence and remaining manual checks are recorded in `docs/VERIFICATION.md`. Four playable source milestones and review descriptions are in `docs/MILESTONES.md`.
+
+The intended publication policy makes `@hardlystandard` the sole code owner and repository administrator, with contributions proposed through pull requests. GitHub setup is pending; see [CONTRIBUTING.md](CONTRIBUTING.md) for the approval policy.

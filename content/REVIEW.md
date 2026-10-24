@@ -2,7 +2,7 @@
 
 > Generated with `npm run content:review`. This is a review inventory, not a claim of native-speaker approval. All visible French, including puzzle alternatives and labels, is listed below. World content remains untranslated.
 
-6 zones; 261 lexicon entries; 217 distinct canonical lemmas tested across 66 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
+Six zones; 261 lexicon entries; 217 distinct canonical lemmas tested across 66 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
 
 ## Phrases à revoir
 

@@ -18,7 +18,8 @@ test('top-down avatar supports keyboard, mouse and gamepad; station scenes revea
   await page.waitForFunction(() => Boolean((window as unknown as TestWindow).__BABELWAKE__));
   await page.getByTestId('start').click();
   await page.locator('#sound').click();
-  await page.locator('#toast.visible').waitFor({ state: 'visible' });
+  await expect(page.locator('#sound')).toHaveClass(/muted/);
+  await expect(page.locator('.world-labels')).toHaveCSS('visibility', 'visible');
   await expect(page.locator('canvas')).toHaveAttribute('data-view', 'top-down');
   await expect(page.locator('canvas')).toHaveAttribute('data-camera', 'orthographic');
   expect(await page.evaluate(() => (window as unknown as TestWindow).__BABELWAKE__.view().mode)).toBe('top-down');

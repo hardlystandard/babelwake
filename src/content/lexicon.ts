@@ -50,8 +50,8 @@ export const lexicon:Lexeme[] = [
     "id": "bleu",
     "lemma": "bleu",
     "forms": [
-      "bleu",
       "bleue",
+      "bleu",
       "bleus",
       "bleues"
     ],
@@ -70,8 +70,8 @@ export const lexicon:Lexeme[] = [
     "id": "vert",
     "lemma": "vert",
     "forms": [
-      "vert",
       "verte",
+      "vert",
       "verts",
       "vertes"
     ],
@@ -1529,7 +1529,7 @@ export const lexicon:Lexeme[] = [
     "forms": [
       "sur"
     ],
-    "zone": "gare"
+    "zone": "atelier"
   },
   {
     "id": "sous",
@@ -1537,7 +1537,7 @@ export const lexicon:Lexeme[] = [
     "forms": [
       "sous"
     ],
-    "zone": "gare"
+    "zone": "atelier"
   },
   {
     "id": "dans",
@@ -1545,7 +1545,7 @@ export const lexicon:Lexeme[] = [
     "forms": [
       "dans"
     ],
-    "zone": "gare"
+    "zone": "atelier"
   },
   {
     "id": "devant",
@@ -1903,7 +1903,7 @@ export const lexicon:Lexeme[] = [
       "grande",
       "grandes"
     ],
-    "zone": "maison"
+    "zone": "atelier"
   },
   {
     "id": "petite",

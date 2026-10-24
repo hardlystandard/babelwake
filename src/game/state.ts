@@ -34,7 +34,7 @@ export function encounteredWords(state: GameState, zones: Zone[]): Set<string> {
 }
 export function pageAvailable(state: GameState, page: JournalPage, zone: Zone): boolean {
   const ids = new Set(state.encountered);
-  return [...page.words,...(page.distractors ?? [])].every(word => zone.evidence.filter(e => ids.has(e.id) && e.words.includes(word) && (!lexicon.find(w=>w.id===word)||representativeFormOccurs(lexicon.find(w=>w.id===word)!,e.title+' '+e.text))).length >= 3);
+  return (page.requiresEvidence??[]).every(id=>ids.has(id)) && [...page.words,...(page.distractors ?? [])].every(word => zone.evidence.filter(e => ids.has(e.id) && e.words.includes(word) && (!lexicon.find(w=>w.id===word)||representativeFormOccurs(lexicon.find(w=>w.id===word)!,zone.design==='situated'?e.text:e.title+' '+e.text))).length >= 3);
 }
 export function annotate(state: GameState, lemmaId: string, guess: string): GameState {
   if (!lemmaId || ['__proto__', 'constructor', 'prototype'].includes(lemmaId)) return state;
@@ -48,11 +48,16 @@ export function confirmPage(state: GameState, page: JournalPage, assignments: Re
 }
 export function solvePuzzle(state: GameState, puzzle: Puzzle, answers: string[]): { state: GameState; solved: boolean } {
   if (state.solved.includes(puzzle.id)) return { state, solved: true };
+  if (puzzle.world) return { state, solved: false };
   const correct = puzzle.requiredPages.every(id => state.confirmed.includes(id)) && answers.length === puzzle.steps.length && puzzle.steps.length > 0 && puzzle.steps.every((step, i) => answers[i] === step.answer);
   if (!correct) return { state, solved: false };
   return { state: { ...state, solved: [...state.solved, puzzle.id] }, solved: true };
 }
 export function nextZone(zone: ZoneId): ZoneId | undefined { return zoneOrder[zoneOrder.indexOf(zone) + 1]; }
+/** Prior chapter completion preserves travel; it never confirms revised content. */
+export function puzzleCompletedForTravel(state:GameState,puzzle:Puzzle):boolean {
+  return [puzzle.id,...(puzzle.legacyIds??[])].some(id=>state.solved.includes(id));
+}
 const normalizeForm = (form: string): string => form.toLocaleLowerCase('fr-FR').trim().replace(/[’‘]/g, "'").replace(/^[.,!?;:«»“”()\s]+|[.,!?;:«»“”()\s]+$/g, '');
 /** Accents are significant; elision and typographic apostrophes are normalized. */
 export function linkForm(form: string, lexicon: Lexeme[]): Lexeme | undefined {

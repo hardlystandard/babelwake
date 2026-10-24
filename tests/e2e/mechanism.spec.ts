@@ -1,31 +1,46 @@
 import { expect, test } from '@playwright/test';
-import type { Content, Puzzle } from '../../src/content/types';
+import type { Content, WorldAction } from '../../src/content/types';
 import type { GameState } from '../../src/game/state';
-interface DebugGame { content(): Promise<Content>; encounter(id: string): void; confirm(pageId: string, assignments: Record<string, string>): void; getState(): GameState; }
-test('atelier mechanism can be operated in the world and opens the market', async ({ page }) => {
+import { inferAtelierActions } from './atelier-path';
+import {tokenOverlap} from '../../src/game/interactions';
+interface DebugGame { content():Promise<Content>;encounter(id:string):void;confirm(pageId:string,assignments:Record<string,string>):void;getState():GameState;interact(id:string):void;interactions():{held:string|null;history:WorldAction[]};commit():boolean; }
+
+test('atelier physical objects can be used, placed and delivered without a quiz panel',async({page})=>{
   await page.goto('/?debug=1');
-  await page.waitForFunction(() => Boolean((window as unknown as { __BABELWAKE__?: unknown }).__BABELWAKE__));
   await page.getByTestId('start').click();
-  const puzzle: Puzzle = await page.evaluate(async () => {
-    const game = (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__;
-    const zone = (await game.content()).zones[0];
-    for (const evidence of zone.evidence) game.encounter(evidence.id);
-    for (const journalPage of zone.pages) game.confirm(journalPage.id, Object.fromEntries(journalPage.slots.map(slot => [slot.id, slot.answer])));
-    return zone.puzzle;
+  await expect(page.locator('.world-labels')).toHaveCSS('visibility','visible');
+  const zone=await page.evaluate(async()=>{
+    const game=(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__;
+    const zone=(await game.content()).zones[0];
+    for(const id of zone.encounterOrder??[])game.encounter(id);
+    for(const p of zone.pages)game.confirm(p.id,Object.fromEntries(p.slots.map(s=>[s.id,s.answer])));
+    return zone;
   });
-  await page.keyboard.press('Escape');
-  await page.locator('#puzzle').click();
-  await page.locator('#begin-mechanism').click();
-  await expect(page.locator('#apply-mechanism')).toBeDisabled();
-  for (const [stepIndex, step] of puzzle.steps.entries()) {
-    await expect(page.locator('#mechanism .eyebrow')).toContainText(`${stepIndex + 1} / ${puzzle.steps.length}`);
-    const choiceIndex = step.choices.indexOf(step.answer);
-    await page.locator(`[data-evidence="__action:${choiceIndex}"] [data-inspect]`).click();
+  const actions=inferAtelierActions(zone);
+  await expect(page.locator('.evidence-panel,#mechanism,.puzzle-panel')).toHaveCount(0);
+  for(const [index,action]of actions.entries()){
+    const entity='target'in action?action.target:action.object;
+    if(index===actions.length-1){
+      await page.locator('[data-talk="paul"]').click();
+      const clue=zone.evidence.find(e=>e.id===zone.puzzle.world!.clues[index])!;
+      await expect(page.locator(`.situated-speech[data-evidence="${clue.id}"]`)).toBeVisible();
+      expect(await page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interactions().held)).toBe(action.object);
+      const scores=[];
+      for(const actor of zone.scene!.filter(o=>o.recipient)){
+        const visible=(await page.locator(`.situated-text[data-anchor="${actor.id}"]:visible .situated-words`).allTextContents()).join(' ');
+        scores.push({id:actor.id,score:tokenOverlap(clue.text,visible)});
+      }
+      const best=Math.max(...scores.map(s=>s.score));
+      expect(scores.filter(s=>s.score===best).map(s=>s.id)).not.toContain(entity);
+    }
+    // The same entity callback used by mouse, keyboard and gamepad input.
+    await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),entity);
+    if(index!==actions.length-1)await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),entity);
+    await expect.poll(()=>page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interactions().history.length)).toBe(index+1);
+    if(index<actions.length-1)expect(await page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().solved)).toEqual([]);
   }
-  await expect(page.locator('#apply-mechanism')).toBeEnabled();
-  expect(await page.evaluate(() => (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__.getState().solved)).toEqual([]);
-  await page.locator('#apply-mechanism').click();
-  await expect(page.locator('#next-zone')).toBeVisible();
-  await page.locator('#next-zone').click();
-  await expect.poll(async () => page.evaluate(() => (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__.getState().zone)).toBe('marche');
+  await expect.poll(()=>page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().solved)).toContain(zone.puzzle.id);
+  await expect(page.locator('.evidence-panel,#mechanism,.puzzle-panel')).toHaveCount(0);
+  await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),zone.puzzle.world!.exit!);
+  await expect.poll(()=>page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().zone)).toBe('marche');
 });

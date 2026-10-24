@@ -15,12 +15,20 @@ For every word tested by a journal page, make one row in the session notes:
 
 A word fails if its three contexts repeat the same clue, if an illustration needs its French caption to be understood, or if the player arrives at the answer only by eliminating other slots. Never count guessing the page arrangement as learning the word. After a confirmation, observe whether the participant can apply the word in a later place without reopening its original encounter.
 
-## Scene displays
+## Corrected atelier world
 
-- [ ] The participant notices that a book or conversation may have several scenes and uses its arrows without facilitator help.
-- [ ] Opening one scene counts only that scene; unseen siblings remain unseen.
-- [ ] Each of the three scenes disambiguates the meaning through a different situation, even when presented in the same physical artifact.
-- [ ] The scene counter on the world label makes an unread scene discoverable without revealing any word meaning.
+- [ ] French is readable on the actual prop, sign or notice at default zoom. The player can read their own subscripts comfortably without inspecting or enlarging the scene.
+- [ ] Inspecting pans toward the object and keeps the avatar in place. No title/paragraph caption or illustrated evidence card appears.
+- [ ] Each person speaks one short in-world line at a time. The … control lets the player speak while carrying an object.
+- [ ] Possession shows an already-held object; taking visibly moves an object into a hand. A participant does not infer that these verbs mean the same thing.
+- [ ] Introducing one object and referring to that same object form a visible exchange. Pointing direction alone does not distinguish the articles.
+- [ ] Three situations establish each tested form before its journal page opens. Different SVG metadata alone does not count as a new world situation.
+- [ ] The player understands which actions the workorders request, including taking, placing and delivering. Correct choices require color, size, spatial relation or referent comprehension.
+- [ ] The last request identifies a recipient through language and their held object; a finger or success highlight does not point out the answer.
+- [ ] Legal wrong actions remain possible, and no individual correctness feedback appears. The player can correct placements or retrieve a mistaken delivery; all final conditions are checked together.
+- [ ] Matching-page titles, headings, navigation and pictures contain none of the slot answers. Journal confirmation still checks the whole page at once.
+
+The five following zones retain their earlier content until PR B. Their checklists are acceptance work to perform after that correction, not evidence of current situated-design compliance.
 
 ## Zone checklist
 

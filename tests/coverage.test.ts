@@ -2,6 +2,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { canonicalLexemeId, loadContent } from '../src/content';
 import type { Content } from '../src/content/types';
 import { validateContent } from '../src/content/validator';
+import {naiveActionAudit} from '../src/game/interactions';
 
 /** Counts canonical learning targets, not inflections, repeated pages, or words
  * merely mentioned in the inventory. Human inference remains a playtest task. */
@@ -11,6 +12,18 @@ describe('authored complete-game coverage', () => {
 
   it('contains all six authored places in progression order', () => {
     expect(content.zones.map(zone => zone.id)).toEqual(['atelier', 'marche', 'cafe', 'gare', 'maison', 'lettres']);
+  });
+
+  it('enforces the situated contract on the corrected atelier and defers the other five to PR B',()=>{
+    expect(content.zones.filter(zone=>zone.design==='situated').map(zone=>zone.id)).toEqual(['atelier']);
+    expect(content.zones[0].evidence.every(e=>e.id.startsWith('atelier-v2-'))).toBe(true);
+    expect(content.zones[0].pages.every(p=>p.id.startsWith('atelier-v2-'))).toBe(true);
+  });
+
+  it('rejects every highest-overlap candidate at all six physical puzzle decisions',()=>{
+    const audit=naiveActionAudit(content.zones[0]);
+    expect(audit.passes).toBe(true);expect(audit.steps).toHaveLength(6);
+    for(const step of audit.steps){expect(step.applicable).toBe(true);expect(step.fails).toBe(true);expect(step.expectedScore).toBeLessThan(step.maxScore);}
   });
 
   it('keeps the canonical lexicon within the 200–300 learning target', () => {

@@ -8,6 +8,7 @@ test('journal supports personal guesses, drag and click matching, and settings',
   await page.goto('/?debug=1');
   await page.waitForFunction(() => Boolean((window as unknown as { __BABELWAKE__?: unknown }).__BABELWAKE__));
   await page.getByTestId('start').click();
+  await expect(page.locator('.world-labels')).toHaveCSS('visibility','visible');
   const journalPage: JournalPage = await page.evaluate(async () => {
     const game = (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__;
     const zone = (await game.content()).zones[0];
@@ -17,7 +18,7 @@ test('journal supports personal guesses, drag and click matching, and settings',
   await page.keyboard.press('Escape');
   await page.getByTestId('journal').click();
   await page.locator('[data-tab="words"]').click();
-  await page.locator(`[data-word="${journalPage.words[0]}"]`).click();
+  await page.locator(`.vocabulary-row[data-word="${journalPage.words[0]}"]`).click();
   const expectedForm = await page.evaluate(async wordId => (await (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__.content()).lexicon.find(word => word.id === wordId)?.forms[0] ?? wordId, journalPage.words[0]);
   await expect(page.locator('label[for="guess"]')).toHaveText(expectedForm);
   await page.getByTestId('guess-input').fill('my own hypothesis');

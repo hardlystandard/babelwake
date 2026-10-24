@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { JournalPage, Lexeme, Zone } from '../src/content/types';
-import { annotate, confirmPage, encounter, encounteredWords, initialState, linkForm, pageAvailable, solvePuzzle } from '../src/game/state';
+import { annotate, confirmPage, encounter, encounteredWords, initialState, linkForm, pageAvailable, puzzleCompletedForTravel, solvePuzzle } from '../src/game/state';
 const page: JournalPage = { id: 'objects', title: 'Objets', zone: 'atelier', kind: 'vocabulary', words: ['cle', 'livre', 'boite'], slots: ['cle', 'livre', 'boite'].map(answer => ({ id: `slot-${answer}`, answer, picture: { kind: answer } })) };
 const zone: Zone = { id: 'atelier', title: 'L’atelier', subtitle: '', color: '', accent: '', intro: '', evidence: [0, 1, 2].map(i => ({ id: `context-${i}`, title: '', text: 'Une clé, un livre et une boîte.', words: page.words, picture: { kind: 'shelf' }, position: [i, i], kind: 'object' })), pages: [page], puzzle: { id: 'door', title: '', instruction: '', success: '', requiredPages: [page.id], steps: [{ id: 'step1', prompt: '', choices: ['Ouvrez', 'Fermez'], answer: 'Ouvrez', picture: { kind: 'door' } }, { id: 'step2', prompt: '', choices: ['Entrez', 'Sortez'], answer: 'Entrez', picture: { kind: 'door' } }] } };
 const seenState = () => zone.evidence.reduce((state, e) => encounter(state, e.id), initialState());
@@ -26,6 +26,13 @@ describe('encounters and journal', () => {
   it('collects only actually seen word evidence', () => {
     expect([...encounteredWords(initialState(), [zone])]).toEqual([]);
     expect(encounteredWords(encounter(initialState(), 'context-0'), [zone])).toEqual(new Set(page.words));
+  });
+  it('keeps grammar locked until its designated environmental contrast is observed',()=>{
+    const contrast={...zone.evidence[0],id:'live-contrast'};
+    const linked={...page,requiresEvidence:[contrast.id]};
+    const environment={...zone,evidence:[...zone.evidence,contrast]};
+    expect(pageAvailable(seenState(),linked,environment)).toBe(false);
+    expect(pageAvailable(encounter(seenState(),contrast.id),linked,environment)).toBe(true);
   });
   it('annotates without translating or mutating prior state', () => {
     const state = initialState();
@@ -63,6 +70,19 @@ describe('encounters and journal', () => {
     const result = solvePuzzle(confirmed, zone.puzzle, ['Ouvrez', 'Entrez']);
     expect(result.solved).toBe(true);
     expect(result.state.solved).toEqual(['door']);
+  });
+  it('preserves old travel completion without confirming a revised chapter',()=>{
+    const old={...initialState(),solved:['old-door'],confirmed:['old-page'],guesses:{cle:'my note'}};
+    const revised={...zone.puzzle,id:'revised-door',legacyIds:['old-door']};
+    expect(puzzleCompletedForTravel(old,revised)).toBe(true);
+    expect(old.solved).not.toContain(revised.id);
+    expect(old.confirmed).not.toContain(page.id);
+    expect(old.guesses.cle).toBe('my note');
+  });
+  it('does not accept legacy answer strings in place of physical actions',()=>{
+    const seen=confirmPage(seenState(),page,correct,zone).state;
+    const physical={...zone.puzzle,world:{sequence:[{kind:'take' as const,object:'key'}],clues:['instruction']}};
+    expect(solvePuzzle(seen,physical,['Ouvrez','Entrez'])).toEqual({state:seen,solved:false});
   });
 });
 describe('lemma linking', () => {

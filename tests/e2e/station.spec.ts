@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 import type { Content } from '../../src/content/types';
 import type { GameState } from '../../src/game/state';
-interface ViewState { mode: 'top-down'; player: { x: number; z: number }; }
-interface DebugGame { content(): Promise<Content>; encounter(id: string): void; getState(): GameState; view(): ViewState; }
+interface ViewState { mode: 'top-down'; zoom:number;focused:boolean;player: { x: number; z: number }; }
+interface DebugGame { content(): Promise<Content>; encounter(id: string): void; getState(): GameState; view(): ViewState;interact(id:string):void; }
 interface TestWindow { __BABELWAKE__: DebugGame; __TEST_PAD_AXES__: number[]; __RESTORE_GAMEPADS__: () => void; }
-test('top-down avatar supports keyboard, mouse and gamepad; station scenes reveal individually', async ({ page }) => {
+test('top-down avatar supports keyboard, mouse and gamepad; NPC conversations reveal one in-world line at a time', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.addInitScript(() => {
@@ -42,27 +42,28 @@ test('top-down avatar supports keyboard, mouse and gamepad; station scenes revea
   if (!canvas) throw new Error('Missing game canvas');
   await page.locator('canvas').click({ position: { x: canvas.width / 2, y: canvas.height * 2 / 3 } });
   await expectMovement(mouseStart);
-  const ids = await page.evaluate(async () => {
-    const game = (window as unknown as TestWindow).__BABELWAKE__;
-    const zone = (await game.content()).zones[0];
-    const station = zone.evidence.find(evidence => evidence.station && zone.evidence.filter(other => other.station === evidence.station).length === 3)?.station;
-    if (!station) throw new Error('No three-scene physical station');
-    const ids = zone.evidence.filter(evidence => evidence.station === station).map(evidence => evidence.id);
-    game.encounter(ids[0]);
-    return ids;
+  const conversation=await page.evaluate(async()=>{
+    const game=(window as unknown as TestWindow).__BABELWAKE__;
+    const zone=(await game.content()).zones[0];
+    const first=zone.evidence.find(e=>e.surface==='speech'&&zone.evidence.filter(other=>other.anchor===e.anchor&&other.surface==='speech').length>=3)!;
+    const ids=zone.evidence.filter(e=>e.anchor===first.anchor&&e.surface==='speech').map(e=>e.id);
+    const before=game.view().player;game.encounter(ids[0]);return{actor:first.anchor!,ids,before};
   });
-  const seenCount = () => page.evaluate(siblings => (window as unknown as TestWindow).__BABELWAKE__.getState().encountered.filter(id => siblings.includes(id)).length, ids);
-  await expect(page.locator('.context-tabs [data-context]')).toHaveCount(3);
+  const ids=conversation.ids;
+  const seenCount=()=>page.evaluate(siblings=>(window as unknown as TestWindow).__BABELWAKE__.getState().encountered.filter(id=>siblings.includes(id)).length,ids);
   expect(await seenCount()).toBe(1);
-  await expect(page.locator('.context-tabs .current')).toHaveAttribute('data-context', ids[0]);
-  await page.locator('#next-context').click();
-  expect(await seenCount()).toBe(2);
-  await expect(page.locator('.context-tabs .current')).toHaveAttribute('data-context', ids[1]);
-  await page.locator('#next-context').click();
+  await expect(page.locator(`.situated-speech[data-evidence="${ids[0]}"]`)).toBeVisible();
+  await expect(page.locator(`.situated-speech[data-anchor="${conversation.actor}"]:visible`)).toHaveCount(1);
+  await expect(page.locator('.evidence-panel,.context-tabs')).toHaveCount(0);
+  expect(await position()).toEqual(conversation.before);
+  expect(await page.evaluate(()=>(window as unknown as TestWindow).__BABELWAKE__.view().zoom)).toBeCloseTo(1,2);
+  for(const index of [1,2]){
+    await page.evaluate(actor=>(window as unknown as TestWindow).__BABELWAKE__.interact(actor),conversation.actor);
+    expect(await seenCount()).toBe(index+1);
+    await expect(page.locator(`.situated-speech[data-evidence="${ids[index]}"]`)).toBeVisible();
+    await expect(page.locator(`.situated-speech[data-anchor="${conversation.actor}"]:visible`)).toHaveCount(1);
+  }
+  await page.evaluate(id=>(window as unknown as TestWindow).__BABELWAKE__.encounter(id),ids[0]);
   expect(await seenCount()).toBe(3);
-  await expect(page.locator('.context-tabs .current')).toHaveAttribute('data-context', ids[2]);
-  await page.locator('#previous-context').click();
-  expect(await seenCount()).toBe(3);
-  await expect(page.locator('.context-tabs .current')).toHaveAttribute('data-context', ids[1]);
   expect(errors).toEqual([]);
 });

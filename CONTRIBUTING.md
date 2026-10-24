@@ -1,12 +1,12 @@
 # Changes to Babelwake
 
-The source is public at https://github.com/hardlystandard/babelwake. Branch protection and repository-wide Actions permission settings remain pending: the connected GitHub app receives HTTP 403 when administering them. CODEOWNERS is committed, but enforced code-owner approval is not active yet.
+The source is public at https://github.com/hardlystandard/babelwake. GitHub confirms that `main` is protected and pull requests require review. CODEOWNERS names only `@hardlystandard`. The connected GitHub app cannot read detailed protection or repository-wide Actions permission settings; verify the complete policy below in GitHub's settings.
 
 Contributions can be proposed through a fork and a pull request against `main`.
 
 `@hardlystandard` owns every path, including the ownership file and CI configuration. The intended protection requires a pull request, their code-owner approval, resolved review conversations, and a passing `game` check for changes to `main`. New commits must dismiss an earlier approval. Other reviewers' approvals must not satisfy the code-owner requirement.
 
-The repository owner is the only listed collaborator and administrator. The intended protection blocks force pushes and branch deletion on `main`. As the sole administrator, the owner retains GitHub's override authority, including merging their own pull requests, which GitHub does not let them approve. No additional collaborator or automation is to be granted this authority. The committed CI workflow requests read-only repository access; the repository-wide setting to disable Actions approving pull requests still needs to be applied.
+The repository owner is the only listed collaborator and administrator. The intended protection blocks force pushes and branch deletion on `main`. As the sole administrator, the owner retains GitHub's override authority, including merging their own pull requests, which GitHub does not let them approve. No additional collaborator is to be granted this authority. The committed CI workflow requests read-only repository access; verify that the repository-wide setting also disables Actions approving pull requests. Ubicloud's installed app manages runners using its separate provider permissions and is not a code owner.
 
 Before proposing a change, run `npm run check` and the relevant Playwright tests described in README.md. Native French review and beginner playtest limits remain documented in `content/REVIEW.md` and `docs/PLAYTEST.md`.
 

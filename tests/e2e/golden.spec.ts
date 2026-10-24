@@ -10,7 +10,7 @@ interface DebugGame {
   solve(answers: string[]): Promise<void>;
   content(): Promise<Content>;
 }
-const order: ZoneId[] = ["atelier", "marche", "cafe"];
+const order: ZoneId[] = ["atelier", "marche", "cafe", "gare", "maison", "lettres"];
 async function start(page: Page) {
   await page.goto('/?debug=1');
   await page.waitForFunction(() => Boolean((window as unknown as { __BABELWAKE__?: unknown }).__BABELWAKE__));

@@ -2,7 +2,7 @@
 
 > Generated with `npm run content:review`. This is a review inventory, not a claim of native-speaker approval. All visible French, including puzzle alternatives and labels, is listed below. World content remains untranslated.
 
-3 zones; 149 lexicon entries; 128 distinct canonical lemmas tested across 37 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
+6 zones; 261 lexicon entries; 217 distinct canonical lemmas tested across 66 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
 
 ## Phrases à revoir
 
@@ -626,6 +626,608 @@ Lis le message de Claire. Réponds au serveur et transmets la lettre.
 
 Le serveur sourit. Le frère de Claire attend à la gare.
 
+## La gare
+
+**Le chemin de la lettre**
+
+La lettre porte un nom : Claire. Le train traverse la rivière. Les mots indiquent le chemin.
+
+### Rencontres
+
+| ID | Texte français |
+| --- | --- |
+| gare-gare-0 | **Le quai** — La gare est ici. Le train arrive à la gare. |
+| gare-gare-1 | **Le voyageur** — Je vais à la gare. Voici mon billet. |
+| gare-gare-2 | **Le plan** — La gare : un train, deux quais, une horloge. |
+| gare-train-0 | **Le quai** — Le train arrive. Les voyageurs montent dans le train. |
+| gare-train-1 | **Le voyageur** — Je prends le train, pas le bus. |
+| gare-train-2 | **Le plan** — Le train va de la gare à la maison de Claire. ⚑ |
+| gare-billet-0 | **Le quai** — Un billet pour le train. Le billet coûte dix euros. |
+| gare-billet-1 | **Le voyageur** — Voici mon billet. Je peux prendre le train. |
+| gare-billet-2 | **Le plan** — Gardez votre billet. Le contrôleur regarde le billet. |
+| gare-quai-0 | **Le quai** — Le train est devant le quai trois. |
+| gare-quai-1 | **Le voyageur** — Mon train part du quai trois. Je reste sur le quai. |
+| gare-quai-2 | **Le plan** — Le quai est à côté du train. |
+| gare-sur-0 | **Le quai** — Le billet est sur la boîte. |
+| gare-sur-1 | **Le voyageur** — Le sac est sur la table. |
+| gare-sur-2 | **Le plan** — Le livre est sur le banc. |
+| gare-sous-0 | **Le quai** — La clé est sous la boîte. |
+| gare-sous-1 | **Le voyageur** — Le sac est sous la table. |
+| gare-sous-2 | **Le plan** — Le livre est sous le banc. |
+| gare-dans-0 | **Le quai** — Le billet est dans la boîte. |
+| gare-dans-1 | **Le voyageur** — Le sac est dans le train. |
+| gare-dans-2 | **Le plan** — La lettre est dans le livre. |
+| gare-devant-0 | **Le quai** — La clé est devant la boîte. |
+| gare-devant-1 | **Le voyageur** — Je suis devant le train. Je vois sa porte. |
+| gare-devant-2 | **Le plan** — Le vélo est devant la maison. |
+| gare-derriere-0 | **Le quai** — La clé est derrière la boîte. |
+| gare-derriere-1 | **Le voyageur** — Le jardin est derrière la maison. |
+| gare-derriere-2 | **Le plan** — Le chat est derrière la porte. |
+| gare-cote-0 | **Le quai** — La clé est à côté de la boîte. |
+| gare-cote-1 | **Le voyageur** — Le café est à côté de la gare. |
+| gare-cote-2 | **Le plan** — Le sac est à côté de la chaise. |
+| gare-gauche-0 | **Le quai** — La flèche va à gauche. |
+| gare-gauche-1 | **Le voyageur** — À gauche, le quai trois ; à droite, la sortie. |
+| gare-gauche-2 | **Le plan** — Pour aller chez Claire : à gauche, puis tout droit. |
+| gare-droite-0 | **Le quai** — La flèche va à droite. |
+| gare-droite-1 | **Le voyageur** — À droite, la sortie ; à gauche, le quai trois. |
+| gare-droite-2 | **Le plan** — Pour aller au café : à droite, puis tout droit. |
+| gare-droit-0 | **Le quai** — Allez tout droit. La flèche continue devant vous. |
+| gare-droit-1 | **Le voyageur** — Pour la maison : tout droit, puis à gauche. |
+| gare-droit-2 | **Le plan** — Le train continue tout droit sur la voie. |
+| gare-midi-0 | **Le quai** — Il est midi. Le soleil est haut. L’horloge indique douze heures. · « 12:00 » |
+| gare-midi-1 | **Le voyageur** — Le train de midi part à douze heures. · « 12:00 » |
+| gare-midi-2 | **Le plan** — À midi, nous mangeons. À minuit, nous dormons. |
+| gare-heure-0 | **Le quai** — Une heure : soixante minutes. Deux heures : cent vingt minutes. · « 60 min » |
+| gare-heure-1 | **Le voyageur** — Le train part à huit heures. Le trajet dure une heure. · « 08:00 → 09:00 » |
+| gare-heure-2 | **Le plan** — Quelle heure est-il ? Il est huit heures. · « 08:00 » |
+| gare-minute-0 | **Le quai** — Une minute : soixante secondes. · « 60 s » |
+| gare-minute-1 | **Le voyageur** — Le train part à huit heures cinq. Il reste cinq minutes. · « 08:05 » |
+| gare-minute-2 | **Le plan** — Il est huit heures quatre. Encore une minute, puis le train part. · « 08:04 → 08:05 » |
+| gare-vais-0 | **Le quai** — Je vais à la gare. Tu restes ici. |
+| gare-vais-1 | **Le voyageur** — Je vais au café avec mon billet. |
+| gare-vais-2 | **Le plan** — Je vais chez Claire. Voici mon chemin. |
+| gare-vas-0 | **Le quai** — Tu vas à la gare. Moi, je reste ici. |
+| gare-vas-1 | **Le voyageur** — Tu vas au café avec ton billet. |
+| gare-vas-2 | **Le plan** — Tu vas chez Claire. Voici ton chemin. |
+| gare-allons-0 | **Le quai** — Nous allons à la gare ensemble. |
+| gare-allons-1 | **Le voyageur** — Nous allons au café, toi et moi. |
+| gare-allons-2 | **Le plan** — Nous allons chez Claire avec la lettre. |
+| gare-allez-0 | **Le quai** — Vous allez à la gare, madame. |
+| gare-allez-1 | **Le voyageur** — Vous allez au café, monsieur. |
+| gare-allez-2 | **Le plan** — Vous allez chez Claire. Voici votre chemin. |
+| gare-consigne | **Le billet de Claire** — Le train pour la maison de Claire part à midi, du quai trois. Prenez le billet dans la boîte. Mettez le sac sous le banc. Allez à gauche, puis tout droit. Attendez devant le train. ⚑ · « 12:00 · 3 » |
+| gare-familles | **Les voyageurs** — Il va à la gare. Elle va à la gare aussi. Ils vont ensemble à la gare. Nous allons avec eux. |
+| gare-horaire | **Départs** — 08:05 : le café. 12:00 : la maison de Claire. 18:30 : le marché. Le train pour la maison part à midi. · « 12:00 » |
+| gare-plan-ville | **Le plan de la ville** — Le plan montre le nord en haut et le sud en bas. La rue de la gare passe sur le pont. La place est là, devant la mairie. Pour aller chez Claire, il faut partir d’ici, puis arriver à la maison. · « N ↑ · S ↓ » |
+| gare-horaires-details | **Le panneau des horaires** — Départ le matin à huit heures cinq ; arrivée à neuf heures. Départ le soir à six heures et demie. Ce train a dix minutes de retard. Sa destination est la maison de Claire. Il faut attendre sur le quai. · « 18:30 » |
+| gare-destination-claire | **Le voyage de Claire** — Claire va à la maison. Elle va chez elle. Deux voyageurs vont au café. Ils veulent aller au café. |
+| gare-train-famille | **Le départ en famille** — Il va à la gare avec son fils. Ils vont prendre le train. Il faut aller sur le quai. |
+| supplement-gare-matin-0 | **Le voyage** — Le matin, le soleil se lève. Je mange du pain avant de prendre le train. |
+| supplement-gare-matin-1 | **Le voyageur** — Il est huit heures du matin. Les voyageurs prennent leur premier café. |
+| supplement-gare-matin-2 | **La ville** — Le matin commence après la nuit. Les fenêtres s’éclairent et le marché ouvre. |
+| supplement-gare-soir-0 | **Le voyage** — Le soir, le soleil se couche. Je rentre à la maison après le travail. |
+| supplement-gare-soir-1 | **Le voyageur** — Il est huit heures du soir. Nous mangeons, puis les enfants vont au lit. |
+| supplement-gare-soir-2 | **La ville** — Le soir vient avant la nuit. Les lumières du café sont allumées. |
+| supplement-gare-demi-0 | **Le voyage** — Un pain entier, deux personnes : chacun prend un demi-pain. |
+| supplement-gare-demi-1 | **Le voyageur** — Une pomme entière, deux personnes : chacune prend une demi-pomme, la moitié de la pomme. |
+| supplement-gare-demi-2 | **La ville** — Le marchand coupe le fromage en deux parts égales. Un demi-fromage est la moitié du fromage entier. |
+| supplement-gare-départ-0 | **Le voyage** — Le départ du train est à huit heures. Le train quitte la gare. |
+| supplement-gare-départ-1 | **Le voyageur** — Voici le départ du voyageur : il ferme sa porte et s’éloigne de sa maison. |
+| supplement-gare-départ-2 | **La ville** — Voici le départ de Luc. Il prend son sac, sort par la porte et commence son voyage. |
+| supplement-gare-arrivée-0 | **Le voyage** — L’arrivée du train est à neuf heures. Les voyageurs sont à destination. |
+| supplement-gare-arrivée-1 | **Le voyageur** — Voici l’arrivée du voyageur : son voyage est fini, il ouvre la porte de la maison. |
+| supplement-gare-arrivée-2 | **La ville** — Voici l’arrivée de Luc. Il pose son sac près de la porte : son voyage est fini. |
+| supplement-gare-retard-0 | **Le voyage** — Le train devait partir à huit heures. Il part à huit heures quinze : quinze minutes de retard. |
+| supplement-gare-retard-1 | **Le voyageur** — Le voyageur devait venir à midi. Il vient à midi trente : il a trente minutes de retard. |
+| supplement-gare-retard-2 | **La ville** — Le voyageur devait arriver à six heures. Il arrive à six heures quarante-cinq : quarante-cinq minutes de retard. |
+| supplement-gare-destination-0 | **Le voyage** — La destination du voyage est la maison de Claire. Le chemin finit devant sa porte. |
+| supplement-gare-destination-1 | **Le voyageur** — Ce train a pour destination la gare du Nord. Il finit son voyage là-bas. |
+| supplement-gare-destination-2 | **La ville** — Notre destination est le café. Nous suivons le chemin jusqu’au café. |
+| supplement-gare-nord-0 | **Le voyage** — Sur le plan, le nord est en haut. La flèche N montre le nord. |
+| supplement-gare-nord-1 | **Le voyageur** — La boussole montre le nord. Le voyageur marche dans cette direction. |
+| supplement-gare-nord-2 | **La ville** — La gare est au nord de la maison : au-dessus de la maison sur le plan. |
+| supplement-gare-sud-0 | **Le voyage** — Sur le plan, le sud est en bas. La flèche S montre le sud. |
+| supplement-gare-sud-1 | **Le voyageur** — La boussole montre le nord ; le sud est dans la direction opposée. |
+| supplement-gare-sud-2 | **La ville** — Le jardin est au sud de la maison : au-dessous de la maison sur le plan. |
+| supplement-gare-plan-0 | **Le voyage** — Ce plan montre les rues, le pont et la place. Le point rouge indique la maison. |
+| supplement-gare-plan-1 | **Le voyageur** — Le voyageur ouvre son plan. Il cherche le chemin de la gare sur le dessin. |
+| supplement-gare-plan-2 | **La ville** — Le plan est affiché à la gare. Les chemins du dessin relient les mêmes lieux que les rues. |
+| supplement-gare-pont-0 | **Le voyage** — Le pont passe au-dessus de la rivière. Les voyageurs traversent l’eau sans se mouiller. |
+| supplement-gare-pont-1 | **Le voyageur** — Le train passe sur le pont. La rivière coule sous ses roues. |
+| supplement-gare-pont-2 | **La ville** — Pour rejoindre la maison sur l’autre rive, prenez le pont. Il relie les deux côtés de la rivière. |
+| supplement-gare-rue-0 | **Le voyage** — La rue passe entre les maisons. Les voitures roulent et les voyageurs marchent sur les côtés. |
+| supplement-gare-rue-1 | **Le voyageur** — Voici la rue de la Gare. Des portes et des fenêtres se trouvent des deux côtés de la rue. |
+| supplement-gare-rue-2 | **La ville** — Le café est dans cette rue. Suivez le chemin entre les maisons jusqu’à sa porte. |
+| supplement-gare-place-0 | **Le voyage** — La place est un grand espace ouvert entre les maisons. Les rues arrivent sur la place. |
+| supplement-gare-place-1 | **Le voyageur** — Au milieu de la place, il y a une fontaine. Les voyageurs se rencontrent autour de la fontaine. |
+| supplement-gare-place-2 | **La ville** — Le marché remplit la place. Ses tables sont dans le grand espace, pas dans une rue étroite. |
+| supplement-gare-partir-0 | **Le voyage** — Le train va partir. Il quitte la gare et commence son voyage. |
+| supplement-gare-partir-1 | **Le voyageur** — Je veux partir de la maison. Je prends mon sac et je m’éloigne de la porte. |
+| supplement-gare-partir-2 | **La ville** — Luc peut partir. Il prend son sac et s’éloigne de la porte. |
+| supplement-gare-arriver-0 | **Le voyage** — Le train va arriver. Il finit son voyage et entre dans la gare. |
+| supplement-gare-arriver-1 | **Le voyageur** — Je veux arriver chez Claire avant midi. Au bout du chemin, j’ouvre sa porte. |
+| supplement-gare-arriver-2 | **La ville** — Luc peut arriver chez Claire. Il pose son sac devant la porte et son voyage est fini. |
+| supplement-gare-là-0 | **Le voyage** — La maison est là, loin de moi. Je montre sa porte du doigt. Je suis ici, devant le plan. |
+| supplement-gare-là-1 | **Le voyageur** — Le billet est là, à côté du voyageur. Il n’est pas ici, dans ma main. |
+| supplement-gare-là-2 | **La ville** — Le café est là, de l’autre côté de la rue. Je le montre ; mes pieds sont encore ici. |
+| supplement-gare-minute | **Une minute avant le départ** — Il est onze heures cinquante-neuf. Dans une minute, il sera midi et le train partira. · « 11:59 » |
+
+### Carnet
+
+- **gare-voyage — Le voyage** : gare · train · billet · quai
+- **gare-place — Les objets et la boîte** : sur · sous · dans
+- **gare-autour — Autour de la maison** : devant · derrière · à côté de
+- **gare-chemin — Le chemin** : gauche · droite · tout_droit
+- **gare-aller — Qui va où ?** : vais · vas · allons · allez
+  - gare-aller-0 : « Je ___ à la gare. »
+  - gare-aller-1 : « Tu ___ à la gare. »
+  - gare-aller-2 : « Nous ___ à la gare. »
+  - gare-aller-3 : « Vous ___ à la gare. »
+- **gare-destinations — Les autres voyageurs** : va · vont · aller
+  - gare-destinations-0 : « Il ___ à la gare. »
+  - gare-destinations-1 : « Ils ___ à la gare. »
+  - gare-destinations-2 : « Il veut ___ à la gare. »
+- **gare-temps — Le temps du voyage** : midi · heure · minute
+  - gare-temps-0 : « 12:00 »
+  - gare-temps-1 : « 60 min »
+  - gare-temps-2 : « 60 s »
+- **supplement-gare-moments — La journée et le voyage** : matin · soir · demi · retard
+  - supplement-gare-moments-0 : « Huit heures du ___. »
+  - supplement-gare-moments-1 : « Huit heures du ___. »
+  - supplement-gare-moments-2 : « Un ___-pain. »
+  - supplement-gare-moments-3 : « Quinze minutes de ___. »
+- **supplement-gare-trajets — Le début et la fin** : départ · arrivée · destination · plan
+  - supplement-gare-trajets-0 : « Le ___ du train. »
+  - supplement-gare-trajets-1 : « L’___ du train. »
+  - supplement-gare-trajets-2 : « La ___ du voyage. »
+  - supplement-gare-trajets-3 : « Le ___ de la ville. »
+- **supplement-gare-ville — Les chemins de la ville** : nord · sud · pont · rue
+  - supplement-gare-ville-0 : « Vers le ___. »
+  - supplement-gare-ville-1 : « Vers le ___. »
+  - supplement-gare-ville-2 : « Le ___ sur la rivière. »
+  - supplement-gare-ville-3 : « La ___ entre les maisons. »
+- **supplement-gare-mouvements — Le voyageur en chemin** : place · partir · arriver · là
+  - supplement-gare-mouvements-0 : « La ___ au milieu des maisons. »
+  - supplement-gare-mouvements-1 : « Il veut ___. »
+  - supplement-gare-mouvements-2 : « Il veut ___. »
+  - supplement-gare-mouvements-3 : « La maison est ___. »
+
+### Mécanisme
+
+**Le train de Claire**
+
+Préparez le voyage. Le billet de Claire indique le chemin. Choisissez tout, puis ouvrez la porte.
+
+- **gare-destination** : Où allez-vous ?
+  - « À la maison de Claire. »
+  - « Au marché. »
+  - « À l’atelier. »
+  - « Au café. »
+- **gare-heure** : À quelle heure part le train ?
+  - « À huit heures cinq. »
+  - « À midi. »
+  - « À six heures et demie. »
+  - « À une heure. »
+- **gare-quai** : Quel quai ?
+  - « Le quai un. »
+  - « Le quai deux. »
+  - « Le quai trois. »
+  - « Le quai quatre. »
+- **gare-billet** : Où est le billet ?
+  - « Sur la boîte. »
+  - « Sous la boîte. »
+  - « Dans la boîte. »
+  - « Derrière la boîte. »
+- **gare-sac** : Où mettez-vous le sac ?
+  - « Sur le banc. »
+  - « Sous le banc. »
+  - « Devant la gare. »
+  - « Dans le café. »
+- **gare-direction** : Quel chemin prenez-vous ?
+  - « À droite, puis à gauche. »
+  - « Tout droit, puis à droite. »
+  - « À gauche, puis tout droit. »
+  - « À droite, puis tout droit. »
+- **gare-attendre** : Où attendez-vous ?
+  - « Derrière le train. »
+  - « Devant le train. »
+  - « Dans le café. »
+  - « Sous le banc. »
+
+Le train part. De l’autre côté de la rivière, une maison vous attend.
+
+## Chez Claire
+
+**Les mots qui rapprochent**
+
+Claire ouvre sa porte. Sur le mur, une famille en quatre visages. Une place reste vide à la table.
+
+### Rencontres
+
+| ID | Texte français |
+| --- | --- |
+| maison-mere-0 | **La maison** — Voici ma mère. Je suis sa fille. |
+| maison-mere-1 | **Les souvenirs** — Sur la photographie, la mère tient son bébé. |
+| maison-mere-2 | **Claire** — Ma mère est ici. Son fils est à côté d’elle. |
+| maison-pere-0 | **La maison** — Voici mon père. Je suis sa fille. |
+| maison-pere-1 | **Les souvenirs** — Sur la photographie, le père tient son bébé. |
+| maison-pere-2 | **Claire** — Mon père est ici. Sa fille est à côté de lui. |
+| maison-fille-0 | **La maison** — Voici ma fille. Je suis sa mère. |
+| maison-fille-1 | **Les souvenirs** — La fille tient la main de son père. |
+| maison-fille-2 | **Claire** — Ma fille est la sœur de mon fils. |
+| maison-fils-0 | **La maison** — Voici mon fils. Je suis sa mère. |
+| maison-fils-1 | **Les souvenirs** — Le fils tient la main de sa mère. |
+| maison-fils-2 | **Claire** — Mon fils est le frère de ma fille. |
+| maison-mon-0 | **La maison** — Je tiens mon livre. Ce livre est à moi. |
+| maison-mon-1 | **Les souvenirs** — Mon père est sur cette photographie. Je suis son enfant. |
+| maison-mon-2 | **Claire** — Mon jardin est derrière ma maison. J’habite ici. |
+| maison-ma-0 | **La maison** — Je tiens ma clé. Cette clé est à moi. |
+| maison-ma-1 | **Les souvenirs** — Ma mère est sur cette photographie. Je suis son enfant. |
+| maison-ma-2 | **Claire** — Ma maison est à côté du jardin. J’habite ici. |
+| maison-mes-0 | **La maison** — Je tiens mes livres. Ces livres sont à moi. |
+| maison-mes-1 | **Les souvenirs** — Mes parents sont sur cette photographie : ma mère et mon père. |
+| maison-mes-2 | **Claire** — Mes clés sont dans ma poche. Ces deux clés sont à moi. |
+| maison-grand-0 | **La maison** — Le père est grand. Le fils est petit. |
+| maison-grand-1 | **Les souvenirs** — Ce grand arbre est plus haut que la maison. |
+| maison-grand-2 | **Claire** — Un grand homme passe sous la porte. Il baisse la tête. |
+| maison-grande-0 | **La maison** — La mère est grande. La fille est petite. |
+| maison-grande-1 | **Les souvenirs** — Cette grande maison a trois étages. |
+| maison-grande-2 | **Claire** — Une grande femme passe sous la porte. Elle baisse la tête. |
+| maison-petit-0 | **La maison** — Le fils est petit. Le père est grand. |
+| maison-petit-1 | **Les souvenirs** — Ce petit arbre est moins haut que la chaise. |
+| maison-petit-2 | **Claire** — Un petit garçon passe sous la table. |
+| maison-petite-0 | **La maison** — La fille est petite. La mère est grande. |
+| maison-petite-1 | **Les souvenirs** — Cette petite maison a une seule chambre. |
+| maison-petite-2 | **Claire** — Une petite fille passe sous la table. |
+| maison-peux-0 | **La maison** — Je peux ouvrir la porte : j’ai la clé. Tu peux entrer : tu as aussi une clé. · « Je ___ ouvrir. » |
+| maison-peux-1 | **Les souvenirs** — Je peux porter cette petite boîte. Elle est légère. |
+| maison-peux-2 | **Claire** — Je peux lire la lettre : les mots sont clairs. Tu peux la lire aussi. |
+| maison-peut-0 | **La maison** — Elle peut ouvrir la porte : elle a la clé. Il peut entrer. · « Elle ___ ouvrir. » |
+| maison-peut-1 | **Les souvenirs** — Il peut porter cette petite boîte. Elle est légère. |
+| maison-peut-2 | **Claire** — Elle peut lire la lettre : les mots sont clairs. |
+| maison-pouvons-0 | **La maison** — Nous pouvons ouvrir la porte : nous avons la clé. · « Nous ___ ouvrir. » |
+| maison-pouvons-1 | **Les souvenirs** — Nous pouvons porter la grande boîte ensemble. |
+| maison-pouvons-2 | **Claire** — Nous pouvons lire la lettre : nous connaissons les mots. |
+| maison-pouvez-0 | **La maison** — Vous pouvez ouvrir la porte, madame : vous avez la clé. · « Vous ___ ouvrir. » |
+| maison-pouvez-1 | **Les souvenirs** — Vous pouvez porter cette petite boîte, monsieur. |
+| maison-pouvez-2 | **Claire** — Vous pouvez lire la lettre, madame : les mots sont clairs. |
+| maison-cuisine-0 | **La maison** — Dans la cuisine, je prépare la soupe. |
+| maison-cuisine-1 | **Les souvenirs** — La cuisine a une table, une casserole et du pain. |
+| maison-cuisine-2 | **Claire** — Je mets les pommes dans la cuisine, près du four. |
+| maison-chambre-0 | **La maison** — Dans la chambre, je dors dans mon lit. |
+| maison-chambre-1 | **Les souvenirs** — La chambre a un lit et une petite lampe. |
+| maison-chambre-2 | **Claire** — Je vais dans ma chambre. Il est tard, je veux dormir. |
+| maison-jardin-0 | **La maison** — Le jardin est derrière la maison. Les fleurs poussent ici. |
+| maison-jardin-1 | **Les souvenirs** — Je mets de l’eau sur les fleurs du jardin. |
+| maison-jardin-2 | **Claire** — Le chat est dans le jardin, sous le grand arbre. |
+| maison-portrait | **La famille de Claire** — Voici ma famille. Mes parents sont Anne et Paul. Ma mère s’appelle Anne. Mon père s’appelle Paul. Mon frère Luc habite près de la gare. Je m’appelle Claire. Luc est mon frère, je suis sa sœur. · « Anne · Paul · Luc · Claire » |
+| maison-reunion | **La table pour deux** — Luc vient ce soir. Mettez la lettre dans le petit livre rouge, sur la table de la cuisine. Prenez deux tasses. Ouvrez la porte du jardin. Attendez avec Claire dans le jardin, sous le grand arbre. |
+| maison-voisine | **Claire** — Je suis votre voisine. Vous êtes chez moi. Vous pouvez entrer. Je ne peux pas partir : je cherche la lettre de mon frère. Pouvez-vous m’aider ? Mon frère et moi, nous pouvons enfin nous retrouver. Ils peuvent venir aussi. |
+| maison-nos-amis | **Une maison accueillante** — Notre maison est aussi votre maison. Le salon est au rez-de-chaussée. Les enfants viennent sans leurs parents. Nos amis viennent avec leurs enfants. Voici ton manteau ; voici son sac. Le vieux fauteuil est près de la nouvelle table. Le beau jardin a de belles fleurs. Un bon repas nous attend. Il est bon de pouvoir parler ensemble. |
+| maison-livres-etagere | **L’étagère** — Un livre est ouvert ; les deux autres livres sont rangés. Un livre, deux livres : la même histoire, plusieurs lecteurs. · « un livre → deux livres » |
+| maison-livres-sac | **Le sac de Luc** — Luc apporte trois livres dans son sac. Son livre rouge est pour Claire ; les autres livres sont pour ses parents. · « trois livres » |
+| maison-livres-famille | **Un livre pour chacun** — Quatre personnes lisent quatre livres. Un livre pour la mère, un livre pour le père, un livre pour la fille et un livre pour le fils. · « quatre livres » |
+| maison-boites-rangement | **Les boîtes de Claire** — Une boîte garde les lettres. Une autre boîte garde les photos. Deux boîtes, deux souvenirs. · « une boîte → deux boîtes » |
+| maison-boites-livraison | **La livraison** — Le facteur apporte trois boîtes. Claire ouvre une boîte, puis range les deux autres boîtes. · « trois boîtes » |
+| maison-boites-cuisine | **Dans le placard** — Dans la cuisine, quatre boîtes gardent le thé, le café, le sucre et le sel. Les boîtes sont sur l’étagère. · « quatre boîtes » |
+| maison-manteaux-porte | **À la porte** — Claire porte un manteau. Luc porte un manteau. Deux personnes, deux manteaux. Ils enlèvent leurs manteaux en entrant. · « un manteau → deux manteaux » |
+| maison-manteaux-famille | **La promenade** — Il fait froid. Le père, la mère et la fille prennent leurs trois manteaux. Un manteau pour chacun. · « trois manteaux » |
+| maison-manteaux-armoire | **L’armoire** — Quatre manteaux sont dans l’armoire. Le petit manteau rouge est à Claire ; les grands manteaux bleus sont à ses parents. Le quatrième manteau est à Luc. · « quatre manteaux » |
+| maison-accord-objets | **Les objets de la famille** — Un petit manteau rouge pour la fille ; une petite boîte rouge pour ses lettres. De petits manteaux rouges et de petites boîtes rouges sont rangés à côté des grands manteaux bleus. · « petits manteaux rouges » |
+| supplement-maison-maison-0 | **Chez Claire** — La maison de Claire a un toit, des fenêtres et une porte. Claire habite dans cette maison. |
+| supplement-maison-maison-1 | **Les souvenirs** — Nous rentrons à la maison. Notre lit, notre cuisine et nos souvenirs sont à l’intérieur. |
+| supplement-maison-maison-2 | **La conversation** — Cette maison se trouve derrière le jardin. Une famille vit sous son toit. |
+| supplement-maison-salon-0 | **Chez Claire** — Dans le salon, nous sommes assis dans les fauteuils. Nous parlons autour de la petite table. |
+| supplement-maison-salon-1 | **Les souvenirs** — Le salon a un canapé et deux fauteuils. Il n’a ni lit ni four : nous recevons nos amis ici. |
+| supplement-maison-salon-2 | **La conversation** — Claire entre dans le salon. Sa famille regarde un livre ensemble sur le canapé. |
+| supplement-maison-famille-0 | **Chez Claire** — Voici la famille de Claire : sa mère Anne, son père Paul et son frère Luc. |
+| supplement-maison-famille-1 | **Les souvenirs** — Cette photo montre toute la famille : les parents et leurs enfants. |
+| supplement-maison-famille-2 | **La conversation** — Toute la famille se retrouve autour de la table. Les parents parlent avec leurs enfants. |
+| supplement-maison-sœur-0 | **Chez Claire** — Claire est la sœur de Luc. Ils ont la même mère et le même père. |
+| supplement-maison-sœur-1 | **Les souvenirs** — Sur cet arbre de famille, Claire est la sœur de Luc. Leurs noms sont sous les mêmes parents. |
+| supplement-maison-sœur-2 | **La conversation** — Luc montre sa sœur Claire sur la photo. Ils sont les deux enfants d’Anne et de Paul. |
+| supplement-maison-frère-0 | **Chez Claire** — Luc est le frère de Claire. Ils ont la même mère et le même père. |
+| supplement-maison-frère-1 | **Les souvenirs** — Sur cet arbre de famille, Luc est le frère de Claire. Leurs noms sont sous les mêmes parents. |
+| supplement-maison-frère-2 | **La conversation** — Claire montre son frère Luc sur la photo. Ils sont les deux enfants d’Anne et de Paul. |
+| supplement-maison-enfant-0 | **Chez Claire** — Claire est une enfant sur cette photo. Son père et sa mère la tiennent par la main. |
+| supplement-maison-enfant-1 | **Les souvenirs** — Cet enfant est le fils d’Anne et de Paul. Il est petit et ses parents sont grands. |
+| supplement-maison-enfant-2 | **La conversation** — Voici un enfant avec ses deux parents. L’enfant est le plus jeune des trois. |
+| supplement-maison-parent-0 | **Chez Claire** — Anne est un parent de Claire : elle est sa mère. Paul est son autre parent : il est son père. |
+| supplement-maison-parent-1 | **Les souvenirs** — Cet enfant marche avec un parent. L’adulte tient la main de son fils. |
+| supplement-maison-parent-2 | **La conversation** — Sur cet arbre de famille, chaque parent est au-dessus de son enfant. La mère et le père sont les deux parents. |
+| supplement-maison-ami-0 | **Chez Claire** — Luc rencontre son ami. Ils aiment passer du temps ensemble ; ils ne sont pas de la même famille. |
+| supplement-maison-ami-1 | **Les souvenirs** — Voici un ami de Claire. Ils se retrouvent au café pour parler et rire ensemble. |
+| supplement-maison-ami-2 | **La conversation** — Son ami vient l’aider à porter une boîte. Ils sont heureux de se revoir. |
+| supplement-maison-voisin-0 | **Chez Claire** — Le voisin de Claire habite dans la maison juste à côté de la sienne. Leurs jardins se touchent. |
+| supplement-maison-voisin-1 | **Les souvenirs** — Le voisin ouvre sa fenêtre. Claire lui parle depuis la fenêtre de la maison d’à côté. |
+| supplement-maison-voisin-2 | **La conversation** — Ce voisin habite à la porte juste à côté de Claire. Ils se saluent chaque matin devant leurs deux maisons. |
+| supplement-maison-ton-0 | **Chez Claire** — Tu tiens ton livre. Le livre est à toi, pas à moi. |
+| supplement-maison-ton-1 | **Les souvenirs** — Ton manteau est sur ta chaise. Tu prends le manteau qui est à toi. |
+| supplement-maison-ton-2 | **La conversation** — Ton sac est à côté de toi. Tu montres le sac qui t’appartient. |
+| supplement-maison-son-0 | **Chez Claire** — Il tient son livre. Ce livre est à lui, pas à moi. |
+| supplement-maison-son-1 | **Les souvenirs** — Elle prend son manteau. Ce manteau est à elle, pas à toi. |
+| supplement-maison-son-2 | **La conversation** — Claire montre le sac de Luc. Voici son sac : le sac est à Luc, pas à Claire. |
+| supplement-maison-notre-0 | **Chez Claire** — Nous tenons notre livre, toi et moi. Le livre est à nous deux. |
+| supplement-maison-notre-1 | **Les souvenirs** — Nous ouvrons notre maison. Toi et moi, nous habitons ici ensemble. |
+| supplement-maison-notre-2 | **La conversation** — Notre jardin est derrière notre maison. Nous le cultivons tous les deux. |
+| supplement-maison-votre-0 | **Chez Claire** — Vous tenez votre livre, madame. Ce livre est à vous, pas à moi. |
+| supplement-maison-votre-1 | **Les souvenirs** — Vous prenez votre manteau, monsieur. Ce manteau est à vous. |
+| supplement-maison-votre-2 | **La conversation** — Voici votre sac. Vous montrez le sac qui vous appartient. |
+| supplement-maison-leur-0 | **Chez Claire** — Ils tiennent leur livre. Ce livre est à eux deux, pas à nous. |
+| supplement-maison-leur-1 | **Les souvenirs** — Elles ouvrent leur maison. Elles habitent toutes les deux dans cette maison. |
+| supplement-maison-leur-2 | **La conversation** — Luc montre le jardin de ses parents. Voici leur jardin : le jardin est à eux, pas à Luc. |
+| supplement-maison-nouveau-0 | **Chez Claire** — Claire ouvre un nouveau livre. Les pages sont propres et personne ne l’a encore lu. |
+| supplement-maison-nouveau-1 | **Les souvenirs** — Luc reçoit un nouveau manteau. Il porte encore son étiquette et n’a jamais été porté. |
+| supplement-maison-nouveau-2 | **La conversation** — Le voisin entre dans son nouveau logement. La peinture vient de sécher et les meubles arrivent aujourd’hui. |
+| supplement-maison-vieux-0 | **Chez Claire** — Ce vieux livre a des pages jaunies et déchirées. Claire le lit depuis de nombreuses années. |
+| supplement-maison-vieux-1 | **Les souvenirs** — Le vieux manteau de Luc a des trous et des boutons manquants. Il l’a porté pendant des années. |
+| supplement-maison-vieux-2 | **La conversation** — Cette photo montre le vieux logement de Claire. Le toit et les murs sont usés par les années. |
+| supplement-maison-aider-0 | **Chez Claire** — La boîte est trop lourde pour Claire seule. Luc vient aider Claire : ils la portent à deux. |
+| supplement-maison-aider-1 | **Les souvenirs** — Le père veut aider son enfant à marcher. Il lui tient la main pour qu’il ne tombe pas. |
+| supplement-maison-aider-2 | **La conversation** — Je peux aider mon ami à trouver sa clé. Nous cherchons ensemble au lieu de le laisser chercher seul. |
+| supplement-maison-chercher-0 | **Chez Claire** — Je veux chercher ma clé. Je regarde sous la table, dans la boîte et derrière la porte. Je ne l’ai pas encore trouvée. |
+| supplement-maison-chercher-1 | **Les souvenirs** — Claire doit chercher la lettre. Elle ouvre chaque boîte et regarde ce qu’il y a dedans. |
+| supplement-maison-chercher-2 | **La conversation** — Luc va chercher la maison sur le plan. Il regarde les rues une par une et se demande où elle est. |
+| supplement-maison-chez-0 | **Chez Claire** — Luc est chez Claire. Il est dans la maison où Claire habite. |
+| supplement-maison-chez-1 | **Les souvenirs** — Nous allons chez Claire. Notre chemin finit devant sa maison. |
+| supplement-maison-chez-2 | **La conversation** — Claire est chez elle. Elle habite ici et ferme sa propre porte. |
+
+### Carnet
+
+- **maison-famille — La famille** : mère · père · fille · fils
+- **maison-possession — À moi** : mon · ma · mes
+  - maison-possession-0 : « ___ livre »
+  - maison-possession-1 : « ___ clé »
+  - maison-possession-2 : « ___ livres »
+- **maison-accord — L’accord et la place** : grand · grande · petit · petite
+  - maison-accord-0 : « Un ___ garçon. »
+  - maison-accord-1 : « Une ___ fille. »
+  - maison-accord-2 : « Un ___ garçon. »
+  - maison-accord-3 : « Une ___ fille. »
+- **maison-pluriels — Un et plusieurs** : livres · boîtes · manteaux
+  - maison-pluriels-0 : « Un livre → des ___. »
+  - maison-pluriels-1 : « Une boîte → des ___. »
+  - maison-pluriels-2 : « Un manteau → des ___. »
+- **maison-pouvoir — La porte et la clé** : peux · peut · pouvons · pouvez
+  - maison-pouvoir-0 : « Je ___ ouvrir. »
+  - maison-pouvoir-1 : « Elle ___ ouvrir. »
+  - maison-pouvoir-2 : « Nous ___ ouvrir. »
+  - maison-pouvoir-3 : « Vous ___ ouvrir. »
+- **maison-pieces — Chez Claire** : cuisine · chambre · jardin
+- **supplement-maison-foyer — La maison et ceux qui y vivent** : maison · salon · famille · chez
+  - supplement-maison-foyer-0 : « Une ___. »
+  - supplement-maison-foyer-1 : « Le ___ avec le canapé. »
+  - supplement-maison-foyer-2 : « Toute la ___. »
+  - supplement-maison-foyer-3 : « Luc est ___ Claire. »
+- **supplement-maison-liens — Les liens de famille** : sœur · frère · enfant · parent
+  - supplement-maison-liens-0 : « Claire est la ___ de Luc. »
+  - supplement-maison-liens-1 : « Luc est le ___ de Claire. »
+  - supplement-maison-liens-2 : « Claire est une ___. »
+  - supplement-maison-liens-3 : « Anne est un ___ de Claire. »
+- **supplement-maison-ensemble — Les gens autour de nous** : ami · voisin · aider · chercher
+  - supplement-maison-ensemble-0 : « Un ___ au café. »
+  - supplement-maison-ensemble-1 : « Le ___ habite à côté. »
+  - supplement-maison-ensemble-2 : « Je peux ___ Claire. »
+  - supplement-maison-ensemble-3 : « Je veux ___ la clé. »
+- **supplement-maison-possessions — À toi et à nous** : ton · son · notre · votre
+  - supplement-maison-possessions-0 : « Tu as ___ livre. »
+  - supplement-maison-possessions-1 : « Il a ___ livre. »
+  - supplement-maison-possessions-2 : « Nous avons ___ livre. »
+  - supplement-maison-possessions-3 : « Vous avez ___ livre. »
+- **supplement-maison-avant-apres — Les objets et leurs propriétaires** : leur · nouveau · vieux
+  - supplement-maison-avant-apres-0 : « Ils ont ___ livre. »
+  - supplement-maison-avant-apres-1 : « Un ___ livre. »
+  - supplement-maison-avant-apres-2 : « Un ___ livre. »
+
+### Mécanisme
+
+**Une place pour Luc**
+
+Lisez la note près de la table. Préparez la maison pour Luc et Claire.
+
+- **maison-nom** : Qui attend Claire ?
+  - « Sa mère Anne. »
+  - « Son père Paul. »
+  - « Son frère Luc. »
+  - « Sa fille. »
+- **maison-livre** : Où mettez-vous la lettre ?
+  - « Dans le grand livre bleu. »
+  - « Dans le petit livre rouge. »
+  - « Dans la petite boîte jaune. »
+  - « Sous le grand livre rouge. »
+- **maison-piece** : Où mettez-vous le livre ?
+  - « Sur la table de la cuisine. »
+  - « Sous le lit de la chambre. »
+  - « Dans le jardin. »
+  - « Devant la gare. »
+- **maison-tasses** : Combien de tasses prenez-vous ?
+  - « Une tasse. »
+  - « Deux tasses. »
+  - « Trois tasses. »
+  - « Quatre tasses. »
+- **maison-porte** : Quelle porte ouvrez-vous ?
+  - « La porte de la chambre. »
+  - « La porte de la gare. »
+  - « La porte du jardin. »
+  - « La porte du café. »
+- **maison-attendre** : Où attendez-vous Luc ?
+  - « Dans la chambre. »
+  - « Sous le grand arbre du jardin. »
+  - « Devant la gare. »
+  - « À côté du café. »
+
+Claire regarde la lettre. « C’est l’écriture de Luc. Vous pouvez la lire avec moi ? »
+
+## Les lettres
+
+**Ce que les mots gardent**
+
+Deux lettres, deux voix, une même histoire. Ce qui semblait perdu était simplement en chemin.
+
+### Rencontres
+
+| ID | Texte français |
+| --- | --- |
+| lettres-lu-0 | **Le souvenir** — Hier, j’ai lu ta lettre. Le livre est ouvert devant moi. |
+| lettres-lu-1 | **La lettre** — J’ai lu les mots sur le billet, puis j’ai pris le train. |
+| lettres-lu-2 | **Le récit** — J’ai lu ton adresse sur l’enveloppe. Maintenant je sais où tu habites. |
+| lettres-ecrit-0 | **Le souvenir** — Hier, j’ai écrit une lettre. Voici mon crayon et la page. |
+| lettres-ecrit-1 | **La lettre** — J’ai écrit ton adresse sur l’enveloppe. Les mots sont encore sur le papier. |
+| lettres-ecrit-2 | **Le récit** — J’ai écrit : « Je viens demain. » Maintenant, tu peux lire ma promesse. |
+| lettres-pris-0 | **Le souvenir** — J’ai pris la clé sur la table. Maintenant, j’ai la clé. |
+| lettres-pris-1 | **La lettre** — J’ai pris le train à midi. Le billet est dans ma poche. |
+| lettres-pris-2 | **Le récit** — J’ai pris le petit livre rouge. La table est vide maintenant. |
+| lettres-donne-0 | **Le souvenir** — J’ai donné la clé à Claire. Maintenant, Claire a la clé. |
+| lettres-donne-1 | **La lettre** — J’ai donné deux euros au marchand. Il a l’argent. |
+| lettres-donne-2 | **Le récit** — J’ai donné la lettre à mon père. Il tient la lettre. |
+| lettres-vu-0 | **Le souvenir** — J’ai vu Claire dans le jardin. Elle était sous le grand arbre. |
+| lettres-vu-1 | **La lettre** — J’ai vu le train partir. Je l’ai regardé depuis le quai. |
+| lettres-vu-2 | **Le récit** — J’ai vu ta photo sur le mur. Je sais maintenant qui tu es. |
+| lettres-trouve-0 | **Le souvenir** — J’ai trouvé la clé sous le livre. Je la cherchais ; maintenant, je l’ai. |
+| lettres-trouve-1 | **La lettre** — J’ai trouvé ta lettre dans la boîte. Je peux enfin la lire. |
+| lettres-trouve-2 | **Le récit** — J’ai trouvé la maison de Claire. Je ne cherche plus son adresse. |
+| lettres-perdu-0 | **Le souvenir** — J’ai perdu ma clé. Ma poche est vide, je ne peux pas ouvrir. |
+| lettres-perdu-1 | **La lettre** — J’ai perdu ma lettre dans le train. Je la cherche partout. |
+| lettres-perdu-2 | **Le récit** — J’ai perdu mon billet. Le train part sans moi. |
+| lettres-photo-0 | **Le souvenir** — Sur la photo, Claire et Luc sont enfants. |
+| lettres-photo-1 | **La lettre** — Je regarde la photo de ma famille. Elle garde nos visages. |
+| lettres-photo-2 | **Le récit** — Cette photo montre le jardin avant la grande pluie. |
+| lettres-enveloppe-0 | **Le souvenir** — La lettre est dans l’enveloppe. Le timbre est sur l’enveloppe. |
+| lettres-enveloppe-1 | **La lettre** — J’ouvre l’enveloppe pour lire la lettre. |
+| lettres-enveloppe-2 | **Le récit** — Je ferme l’enveloppe. La lettre est prête à partir. |
+| lettres-adresse-0 | **Le souvenir** — L’adresse est écrite au milieu de l’enveloppe : « Claire, 3, rue de la Gare ». |
+| lettres-adresse-1 | **La lettre** — Voici mon adresse. Avec ces mots et ce numéro, vous pouvez trouver ma maison. |
+| lettres-adresse-2 | **Le récit** — Le facteur lit l’adresse. Il apporte la lettre à la bonne maison. |
+| lettres-timbre-0 | **Le souvenir** — Le timbre est le petit carré en haut de l’enveloppe. |
+| lettres-timbre-1 | **La lettre** — J’achète un timbre à la poste et je le colle sur l’enveloppe. |
+| lettres-timbre-2 | **Le récit** — Cette enveloppe ne peut pas partir : elle n’a pas de timbre. |
+| lettres-hier-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Hier, c’était le quatorze. · « 14 · 15 · 16 » |
+| lettres-hier-1 | **La lettre** — Hier, j’ai écrit la lettre. Aujourd’hui, tu la lis. · « Hier » |
+| lettres-hier-2 | **Le récit** — Hier est avant aujourd’hui. La journée d’hier est finie. |
+| lettres-aujourdhui-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Le quinze est entouré. · « 14 · 15 · 16 » |
+| lettres-aujourdhui-1 | **La lettre** — Hier, j’ai écrit. Aujourd’hui, je suis ici et je parle avec toi. |
+| lettres-aujourdhui-2 | **Le récit** — Aujourd’hui est entre hier et demain. C’est notre journée. |
+| lettres-demain-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Demain, nous serons le seize. · « 14 · 15 · 16 » |
+| lettres-demain-1 | **La lettre** — Aujourd’hui, je prépare la table. Demain, Luc vient. |
+| lettres-demain-2 | **Le récit** — Demain est après aujourd’hui. Cette journée n’a pas encore commencé. |
+| lettres-lettre-luc | **La lettre de Luc** — Claire, hier, j’ai pris le train à midi. Dans le train, j’ai écrit ton adresse sur une enveloppe. Puis j’ai perdu la lettre près de l’atelier. Aujourd’hui, j’ai retrouvé ton adresse dans mon livre. Demain, je viens chez toi à six heures. Je t’attends dans le jardin, sous le grand arbre. Ton frère, Luc. · « Luc → Claire » |
+| lettres-lettre-claire | **La réponse de Claire** — Luc, j’ai trouvé ta photo dans ma boîte. J’ai donné ta première lettre à notre père. Je n’ai pas oublié notre promesse. Je peux enfin comprendre ton histoire. Je sais que tu reviens. Je ne veux pas oublier notre promesse. À demain, dans le jardin ! Ta sœur, Claire. · « Claire → Luc » |
+| lettres-journal-claire | **Le carnet de Claire** — Avant de partir, Luc a promis de revenir. Après son départ, j’ai gardé ses lettres. Je regarde toujours notre photo. Je cherche encore sa première lettre. J’ai déjà préparé deux tasses. Bientôt, nous serons ensemble. Ce souvenir est notre histoire ; notre rendez-vous est demain. Je ne veux plus perdre tes lettres. · « Claire » |
+| supplement-lettres-toujours-0 | **La mémoire de Claire** — Le matin, à midi et le soir, Claire boit du café. Elle boit toujours du café : jamais du thé. |
+| supplement-lettres-toujours-1 | **Les mots de Luc** — Le livre est ouvert le matin, à midi et le soir. Il est toujours ouvert, à toute heure. |
+| supplement-lettres-toujours-2 | **Les jours ensemble** — La fleur reste dans le jardin le matin, à midi et le soir. Elle est toujours au même endroit. |
+| supplement-lettres-déjà-0 | **La mémoire de Claire** — La poste ouvre à midi. À dix heures, Luc a déjà écrit la lettre : il a fini avant l’ouverture. |
+| supplement-lettres-déjà-1 | **Les mots de Luc** — Les amis arrivent à une heure. À midi, la table est déjà prête : Claire a fini de la préparer. |
+| supplement-lettres-déjà-2 | **Les jours ensemble** — Luc part à sept heures. À six heures, sa boîte est déjà prête : il l’a fermée avant de partir. |
+| supplement-lettres-enfin-0 | **La mémoire de Claire** — Claire cherche sa clé sous le lit, dans la boîte, derrière la porte. Elle trouve enfin la clé : la longue recherche est terminée. |
+| supplement-lettres-enfin-1 | **Les mots de Luc** — Luc a ouvert cinq boîtes sans trouver la lettre. Il ouvre la sixième : il trouve enfin la lettre. La recherche est terminée. |
+| supplement-lettres-enfin-2 | **Les jours ensemble** — Les voyageurs marchent longtemps sur le chemin. Ils arrivent enfin à la maison : le long voyage est terminé. |
+| supplement-lettres-bientôt-0 | **La mémoire de Claire** — Il est onze heures cinquante-cinq. Le train part à midi. Le train va bientôt partir : dans cinq minutes. |
+| supplement-lettres-bientôt-1 | **Les mots de Luc** — Il est cinq heures cinquante-cinq. Luc arrive à six heures. Il arrive bientôt : dans cinq minutes. |
+| supplement-lettres-bientôt-2 | **Les jours ensemble** — Il est sept heures cinquante-cinq. Le pain sera prêt à huit heures. Bientôt, nous pourrons le manger : dans cinq minutes. |
+| supplement-lettres-histoire-0 | **La mémoire de Claire** — Luc raconte cette histoire : il a pris le train, perdu une lettre, puis retrouvé sa sœur. Chaque image raconte un moment de cette histoire. |
+| supplement-lettres-histoire-1 | **Les mots de Luc** — Dans ce livre, l’histoire commence avec une lettre et finit par des retrouvailles. Les pages racontent les événements dans l’ordre. |
+| supplement-lettres-histoire-2 | **Les jours ensemble** — Claire raconte la même histoire à sa famille. D’abord le départ, puis le voyage, enfin le retour de Luc. |
+| supplement-lettres-souvenir-0 | **La mémoire de Claire** — Cette photo est un souvenir de leur enfance. En la regardant, Claire revoit le jardin où elle jouait avec Luc. |
+| supplement-lettres-souvenir-1 | **Les mots de Luc** — Ce portrait est un souvenir de son père. En le regardant, Claire repense aux histoires qu’il lui racontait autrefois. |
+| supplement-lettres-souvenir-2 | **Les jours ensemble** — Le souvenir du jardin revient à Claire. Elle revoit en pensée les fleurs du jardin où elle jouait avec Luc. |
+| supplement-lettres-promesse-0 | **La mémoire de Claire** — Luc dit : « Demain, je viens. Tu peux compter sur moi. » Claire garde cette promesse. Le lendemain, Luc vient comme il l’a promis. |
+| supplement-lettres-promesse-1 | **Les mots de Luc** — Le père fait une promesse : « Je vais réparer ta chaise. » Puis il tient sa promesse et la chaise est réparée. |
+| supplement-lettres-promesse-2 | **Les jours ensemble** — Claire dit : « Je garderai ta lettre, toujours. » Cette promesse dure : des années plus tard, la lettre est encore dans sa boîte. |
+| supplement-lettres-rendez_vous-0 | **La mémoire de Claire** — Deux amis ont rendez-vous demain à midi dans le jardin. Ils ont choisi ensemble le même lieu et la même heure. |
+| supplement-lettres-rendez_vous-1 | **Les mots de Luc** — Les deux amis ont rendez-vous au café à six heures. Leurs deux calendriers indiquent le café et six heures. |
+| supplement-lettres-rendez_vous-2 | **Les jours ensemble** — Le père a rendez-vous à la gare à huit heures. L’autre voyageur l’attend au lieu et à l’heure convenus. |
+| supplement-lettres-retrouver-0 | **La mémoire de Claire** — Claire veut retrouver sa lettre perdue. Luc lui rapporte la même lettre : elle l’a de nouveau. |
+| supplement-lettres-retrouver-1 | **Les mots de Luc** — Claire peut retrouver la photo de son enfance. Luc lui rapporte la photo : elle la reconnaît, c’est celle qu’elle cherchait. |
+| supplement-lettres-retrouver-2 | **Les jours ensemble** — Luc peut retrouver sa clé perdue. Claire lui rapporte la clé : il la reconnaît, c’est celle qu’il cherchait. |
+| supplement-lettres-revenir-0 | **La mémoire de Claire** — Luc quitte la maison, puis fait le chemin dans l’autre sens. Il veut revenir à la maison d’où il est parti. |
+| supplement-lettres-revenir-1 | **Les mots de Luc** — Le train quitte la gare, fait son voyage et peut revenir à la même gare. Le voyage forme une boucle. |
+| supplement-lettres-revenir-2 | **Les jours ensemble** — Claire va au café. Puis elle doit revenir chez elle : elle refait le chemin vers sa propre maison. |
+| supplement-lettres-oublier-0 | **La mémoire de Claire** — Luc sort sans prendre son livre. Il ne voulait pas oublier son livre, mais il n’y a pas pensé. Dans la rue, il se rappelle le livre resté sur la table. |
+| supplement-lettres-oublier-1 | **Les mots de Luc** — Claire regarde la table et voit la clé de Luc. Il vient de partir sans sa clé : il a dû oublier de la prendre. |
+| supplement-lettres-oublier-2 | **Les jours ensemble** — Luc voulait offrir une fleur à Claire, mais il est parti sans prendre la fleur. Il ne voulait pas oublier son cadeau ; il n’y a plus pensé au moment de partir. |
+
+### Carnet
+
+- **lettres-actions — Ce qui a eu lieu** : lu · écrit · pris · donné
+  - lettres-actions-0 : « Hier, j’ai ___.  »
+  - lettres-actions-1 : « Hier, j’ai ___.  »
+  - lettres-actions-2 : « Hier, j’ai ___.  »
+  - lettres-actions-3 : « Hier, j’ai ___.  »
+- **lettres-chercher — Avant et après** : vu · trouvé · perdu
+  - lettres-chercher-0 : « Hier, j’ai ___.  »
+  - lettres-chercher-1 : « Hier, j’ai ___.  »
+  - lettres-chercher-2 : « Hier, j’ai ___.  »
+- **lettres-courrier — Le courrier** : photo · enveloppe · adresse · timbre
+- **lettres-jours — Les trois jours** : hier · aujourd_hui · demain
+  - lettres-jours-0 : « 14 · 15 · 16 »
+  - lettres-jours-1 : « 14 · 15 · 16 »
+  - lettres-jours-2 : « 14 · 15 · 16 »
+- **supplement-lettres-temps — L’attente et les jours** : toujours · déjà · enfin · bientôt
+  - supplement-lettres-temps-0 : « Chaque jour, sans exception : ___. »
+  - supplement-lettres-temps-1 : « Avant l’heure, c’est ___ fait. »
+  - supplement-lettres-temps-2 : « Après une longue attente : ___ ! »
+  - supplement-lettres-temps-3 : « Dans cinq minutes : ___. »
+- **supplement-lettres-traces — Ce que les lettres gardent** : histoire · souvenir · promesse
+  - supplement-lettres-traces-0 : « Il raconte une ___. »
+  - supplement-lettres-traces-1 : « Une photo du passé, un ___. »
+  - supplement-lettres-traces-2 : « « Tu peux compter sur moi » : une ___. »
+- **supplement-lettres-retours — Les chemins qui se rejoignent** : rendez_vous · retrouver · revenir · oublier
+  - supplement-lettres-retours-0 : « Même lieu, même heure : un ___. »
+  - supplement-lettres-retours-1 : « Il veut ___ sa clé perdue. »
+  - supplement-lettres-retours-2 : « Il veut ___ chez lui. »
+  - supplement-lettres-retours-3 : « Il ne veut pas ___ sa clé. »
+
+### Mécanisme
+
+**Une histoire à retrouver**
+
+Lisez les lettres de Luc et de Claire. Remettez les événements dans l’ordre, puis répondez à Luc.
+
+- **lettres-premier** : Hier, d’abord, qu’a fait Luc ?
+  - « Il a pris le train à midi. »
+  - « Il a donné la lettre à Claire. »
+  - « Il a trouvé une photo. »
+  - « Il a ouvert le jardin. »
+- **lettres-deuxieme** : Dans le train, qu’a-t-il écrit ?
+  - « Le prix du billet. »
+  - « L’adresse de Claire. »
+  - « Le nom du café. »
+  - « L’heure du dîner. »
+- **lettres-troisieme** : Puis, qu’a-t-il perdu ?
+  - « Sa clé près du jardin. »
+  - « Sa photo dans la maison. »
+  - « La lettre près de l’atelier. »
+  - « Son billet au café. »
+- **lettres-quatrieme** : Aujourd’hui, où a-t-il retrouvé l’adresse ?
+  - « Dans sa poche. »
+  - « Dans son livre. »
+  - « Sous le banc. »
+  - « Sur le quai. »
+- **lettres-claire** : Qu’a fait Claire avec la première lettre ?
+  - « Elle l’a donnée à son père. »
+  - « Elle l’a perdue dans le train. »
+  - « Elle l’a mise au café. »
+  - « Elle l’a donnée au marchand. »
+- **lettres-jour** : Quand Luc vient-il ?
+  - « Hier à midi. »
+  - « Aujourd’hui à huit heures. »
+  - « Demain à six heures. »
+  - « Demain à midi. »
+- **lettres-lieu** : Où est le rendez-vous ?
+  - « À la gare, devant le train. »
+  - « Au café, près de la fenêtre. »
+  - « Dans le jardin, sous le grand arbre. »
+  - « Au marché, à côté du pain. »
+- **lettres-reponse** : Luc : « Tu as trouvé ma lettre ? »
+  - « Oui. Claire a lu ta lettre. Elle t’attend dans le jardin. »
+  - « Non. Claire ne peut pas lire. »
+  - « Oui. Claire est à la gare et part ce soir. »
+  - « Non. Ta lettre est dans le train. »
+
+Luc ouvre la porte du jardin. Claire se lève. « Tu es là. » « Je suis là. » La lettre a trouvé sa maison. Et vous avez trouvé les mots.
+
 ## Formes liées aux lemmes
 
 | Entrée | Lemme | Formes |
@@ -779,3 +1381,115 @@ Le serveur sourit. Le frère de Claire attend à la gare.
 | voulez-vous | vouloir | voulez-vous |
 | avez-vous | avoir | avez-vous |
 | êtes-vous | être | êtes-vous |
+| gare | gare | gare |
+| train | train | train · trains |
+| billet | billet | billet · billets |
+| quai | quai | quai · quais |
+| minute | minute | minute · minutes |
+| matin | matin | matin |
+| soir | soir | soir |
+| midi | midi | midi |
+| demi | demi | demi · demie |
+| départ | départ | départ · départs |
+| arrivée | arrivée | arrivée · arrivées |
+| retard | retard | retard |
+| destination | destination | destination |
+| aller | aller | aller |
+| vais | aller | vais |
+| vas | aller | vas |
+| va | aller | va |
+| allons | aller | allons |
+| allez | aller | allez |
+| vont | aller | vont |
+| sur | sur | sur |
+| sous | sous | sous |
+| dans | dans | dans |
+| devant | devant | devant |
+| derrière | derrière | derrière |
+| à côté de | à côté de | à côté de |
+| gauche | gauche | gauche |
+| droite | droite | droite |
+| tout_droit | tout droit | tout droit |
+| nord | nord | nord |
+| sud | sud | sud |
+| plan | plan | plan |
+| pont | pont | pont |
+| rue | rue | rue · rues |
+| place | place | place |
+| partir | partir | partir · pars · part · partons · partez · partent |
+| arriver | arriver | arriver · arrive · arrives · arrivons · arrivez · arrivent |
+| là | là | là |
+| maison | maison | maison · maisons |
+| jardin | jardin | jardin · jardins |
+| chambre | chambre | chambre · chambres |
+| cuisine | cuisine | cuisine · cuisines |
+| salon | salon | salon · salons |
+| famille | famille | famille · familles |
+| mère | mère | mère · mères |
+| père | père | père · pères |
+| fille | fille | fille · filles |
+| fils | fils | fils |
+| sœur | sœur | sœur · sœurs |
+| frère | frère | frère · frères |
+| enfant | enfant | enfant · enfants |
+| parent | parent | parent · parents |
+| ami | ami | ami · amie · amis · amies |
+| voisin | voisin | voisin · voisine · voisins · voisines |
+| mon | mon | mon |
+| ma | ma | ma |
+| mes | mes | mes |
+| ton | ton | ton · ta · tes |
+| son | son | son · sa · ses |
+| notre | notre | notre · nos |
+| votre | votre | votre · vos |
+| leur | leur | leur · leurs |
+| grande | grand | grande · grandes |
+| petite | petit | petite · petites |
+| nouveau | nouveau | nouveau · nouvelle · nouveaux · nouvelles |
+| vieux | vieux | vieux · vieille · vieilles |
+| beau | beau | beau · belle · beaux · belles |
+| pouvoir | pouvoir | pouvoir |
+| peux | pouvoir | peux |
+| peut | pouvoir | peut |
+| pouvons | pouvoir | pouvons |
+| pouvez | pouvoir | pouvez |
+| peuvent | pouvoir | peuvent |
+| aider | aider | aider · aide · aides · aidons · aidez · aident |
+| chercher | chercher | chercher · cherche · cherches · cherchons · cherchez · cherchent |
+| chez | chez | chez |
+| livres | livre | livres |
+| boîtes | boîte | boîtes |
+| manteau | manteau | manteau · manteaux |
+| manteaux | manteau | manteaux |
+| lire | lire | lire · lis · lit · lisons · lisez · lisent |
+| écrire | écrire | écrire · écris · écrit · écrivons · écrivez · écrivent |
+| voir | voir | voir · vois · voit · voyons · voyez · voient |
+| trouver | trouver | trouver · trouve · trouves · trouvons · trouvez · trouvent |
+| perdre | perdre | perdre · perds · perd · perdons · perdez · perdent |
+| lu | lire | lu · lue · lus · lues |
+| écrit | écrire | écrit · écrite · écrits · écrites |
+| pris | prendre | pris · prise · prises |
+| donné | donner | donné · donnée · donnés · données |
+| vu | voir | vu · vue · vus · vues |
+| trouvé | trouver | trouvé · trouvée · trouvés · trouvées |
+| perdu | perdre | perdu · perdue · perdus · perdues |
+| photo | photo | photo · photos · photographie · photographies |
+| enveloppe | enveloppe | enveloppe · enveloppes |
+| adresse | adresse | adresse · adresses |
+| timbre | timbre | timbre · timbres |
+| hier | hier | hier |
+| aujourd_hui | aujourd’hui | aujourd’hui |
+| demain | demain | demain |
+| toujours | toujours | toujours |
+| déjà | déjà | déjà |
+| enfin | enfin | enfin |
+| bientôt | bientôt | bientôt |
+| histoire | histoire | histoire · histoires |
+| souvenir | souvenir | souvenir · souvenirs |
+| promesse | promesse | promesse · promesses |
+| rendez_vous | rendez-vous | rendez-vous |
+| retrouver | retrouver | retrouver · retrouve · retrouves · retrouvons · retrouvez · retrouvent |
+| revenir | revenir | revenir · reviens · revient · revenons · revenez · reviennent |
+| oublier | oublier | oublier · oublie · oublies · oublions · oubliez · oublient |
+| savoir | savoir | savoir · sais · sait · savons · savez · savent |
+| comprendre | comprendre | comprendre · comprends · comprend · comprenons · comprenez · comprennent |

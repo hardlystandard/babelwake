@@ -1,5 +1,5 @@
-import type {Lexeme} from './types';
-export const lexicon:Lexeme[]=[
+import type { Lexeme } from './types';
+export const lexicon:Lexeme[] = [
   {
     "id": "clé",
     "lemma": "clé",
@@ -1354,5 +1354,1045 @@ export const lexicon:Lexeme[]=[
       "êtes-vous"
     ],
     "zone": "cafe"
+  },
+  {
+    "id": "gare",
+    "lemma": "gare",
+    "forms": [
+      "gare"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "train",
+    "lemma": "train",
+    "forms": [
+      "train",
+      "trains"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "billet",
+    "lemma": "billet",
+    "forms": [
+      "billet",
+      "billets"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "quai",
+    "lemma": "quai",
+    "forms": [
+      "quai",
+      "quais"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "minute",
+    "lemma": "minute",
+    "forms": [
+      "minute",
+      "minutes"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "matin",
+    "lemma": "matin",
+    "forms": [
+      "matin"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "soir",
+    "lemma": "soir",
+    "forms": [
+      "soir"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "midi",
+    "lemma": "midi",
+    "forms": [
+      "midi"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "demi",
+    "lemma": "demi",
+    "forms": [
+      "demi",
+      "demie"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "départ",
+    "lemma": "départ",
+    "forms": [
+      "départ",
+      "départs"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "arrivée",
+    "lemma": "arrivée",
+    "forms": [
+      "arrivée",
+      "arrivées"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "retard",
+    "lemma": "retard",
+    "forms": [
+      "retard"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "destination",
+    "lemma": "destination",
+    "forms": [
+      "destination"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "aller",
+    "lemma": "aller",
+    "forms": [
+      "aller"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "vais",
+    "lemma": "aller",
+    "forms": [
+      "vais"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "vas",
+    "lemma": "aller",
+    "forms": [
+      "vas"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "va",
+    "lemma": "aller",
+    "forms": [
+      "va"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "allons",
+    "lemma": "aller",
+    "forms": [
+      "allons"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "allez",
+    "lemma": "aller",
+    "forms": [
+      "allez"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "vont",
+    "lemma": "aller",
+    "forms": [
+      "vont"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "sur",
+    "lemma": "sur",
+    "forms": [
+      "sur"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "sous",
+    "lemma": "sous",
+    "forms": [
+      "sous"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "dans",
+    "lemma": "dans",
+    "forms": [
+      "dans"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "devant",
+    "lemma": "devant",
+    "forms": [
+      "devant"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "derrière",
+    "lemma": "derrière",
+    "forms": [
+      "derrière"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "à côté de",
+    "lemma": "à côté de",
+    "forms": [
+      "à côté de"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "gauche",
+    "lemma": "gauche",
+    "forms": [
+      "gauche"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "droite",
+    "lemma": "droite",
+    "forms": [
+      "droite"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "tout_droit",
+    "lemma": "tout droit",
+    "forms": [
+      "tout droit"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "nord",
+    "lemma": "nord",
+    "forms": [
+      "nord"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "sud",
+    "lemma": "sud",
+    "forms": [
+      "sud"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "plan",
+    "lemma": "plan",
+    "forms": [
+      "plan"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "pont",
+    "lemma": "pont",
+    "forms": [
+      "pont"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "rue",
+    "lemma": "rue",
+    "forms": [
+      "rue",
+      "rues"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "place",
+    "lemma": "place",
+    "forms": [
+      "place"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "partir",
+    "lemma": "partir",
+    "forms": [
+      "partir",
+      "pars",
+      "part",
+      "partons",
+      "partez",
+      "partent"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "arriver",
+    "lemma": "arriver",
+    "forms": [
+      "arriver",
+      "arrive",
+      "arrives",
+      "arrivons",
+      "arrivez",
+      "arrivent"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "là",
+    "lemma": "là",
+    "forms": [
+      "là"
+    ],
+    "zone": "gare"
+  },
+  {
+    "id": "maison",
+    "lemma": "maison",
+    "forms": [
+      "maison",
+      "maisons"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "jardin",
+    "lemma": "jardin",
+    "forms": [
+      "jardin",
+      "jardins"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "chambre",
+    "lemma": "chambre",
+    "forms": [
+      "chambre",
+      "chambres"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "cuisine",
+    "lemma": "cuisine",
+    "forms": [
+      "cuisine",
+      "cuisines"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "salon",
+    "lemma": "salon",
+    "forms": [
+      "salon",
+      "salons"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "famille",
+    "lemma": "famille",
+    "forms": [
+      "famille",
+      "familles"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "mère",
+    "lemma": "mère",
+    "forms": [
+      "mère",
+      "mères"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "père",
+    "lemma": "père",
+    "forms": [
+      "père",
+      "pères"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "fille",
+    "lemma": "fille",
+    "forms": [
+      "fille",
+      "filles"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "fils",
+    "lemma": "fils",
+    "forms": [
+      "fils"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "sœur",
+    "lemma": "sœur",
+    "forms": [
+      "sœur",
+      "sœurs"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "frère",
+    "lemma": "frère",
+    "forms": [
+      "frère",
+      "frères"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "enfant",
+    "lemma": "enfant",
+    "forms": [
+      "enfant",
+      "enfants"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "parent",
+    "lemma": "parent",
+    "forms": [
+      "parent",
+      "parents"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "ami",
+    "lemma": "ami",
+    "forms": [
+      "ami",
+      "amie",
+      "amis",
+      "amies"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "voisin",
+    "lemma": "voisin",
+    "forms": [
+      "voisin",
+      "voisine",
+      "voisins",
+      "voisines"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "mon",
+    "lemma": "mon",
+    "forms": [
+      "mon"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "ma",
+    "lemma": "ma",
+    "forms": [
+      "ma"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "mes",
+    "lemma": "mes",
+    "forms": [
+      "mes"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "ton",
+    "lemma": "ton",
+    "forms": [
+      "ton",
+      "ta",
+      "tes"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "son",
+    "lemma": "son",
+    "forms": [
+      "son",
+      "sa",
+      "ses"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "notre",
+    "lemma": "notre",
+    "forms": [
+      "notre",
+      "nos"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "votre",
+    "lemma": "votre",
+    "forms": [
+      "votre",
+      "vos"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "leur",
+    "lemma": "leur",
+    "forms": [
+      "leur",
+      "leurs"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "grande",
+    "lemma": "grand",
+    "forms": [
+      "grande",
+      "grandes"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "petite",
+    "lemma": "petit",
+    "forms": [
+      "petite",
+      "petites"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "nouveau",
+    "lemma": "nouveau",
+    "forms": [
+      "nouveau",
+      "nouvelle",
+      "nouveaux",
+      "nouvelles"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "vieux",
+    "lemma": "vieux",
+    "forms": [
+      "vieux",
+      "vieille",
+      "vieilles"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "beau",
+    "lemma": "beau",
+    "forms": [
+      "beau",
+      "belle",
+      "beaux",
+      "belles"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "pouvoir",
+    "lemma": "pouvoir",
+    "forms": [
+      "pouvoir"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "peux",
+    "lemma": "pouvoir",
+    "forms": [
+      "peux"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "peut",
+    "lemma": "pouvoir",
+    "forms": [
+      "peut"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "pouvons",
+    "lemma": "pouvoir",
+    "forms": [
+      "pouvons"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "pouvez",
+    "lemma": "pouvoir",
+    "forms": [
+      "pouvez"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "peuvent",
+    "lemma": "pouvoir",
+    "forms": [
+      "peuvent"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "aider",
+    "lemma": "aider",
+    "forms": [
+      "aider",
+      "aide",
+      "aides",
+      "aidons",
+      "aidez",
+      "aident"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "chercher",
+    "lemma": "chercher",
+    "forms": [
+      "chercher",
+      "cherche",
+      "cherches",
+      "cherchons",
+      "cherchez",
+      "cherchent"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "chez",
+    "lemma": "chez",
+    "forms": [
+      "chez"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "livres",
+    "lemma": "livre",
+    "forms": [
+      "livres"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "boîtes",
+    "lemma": "boîte",
+    "forms": [
+      "boîtes"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "manteau",
+    "lemma": "manteau",
+    "forms": [
+      "manteau",
+      "manteaux"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "manteaux",
+    "lemma": "manteau",
+    "forms": [
+      "manteaux"
+    ],
+    "zone": "maison"
+  },
+  {
+    "id": "lire",
+    "lemma": "lire",
+    "forms": [
+      "lire",
+      "lis",
+      "lit",
+      "lisons",
+      "lisez",
+      "lisent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "écrire",
+    "lemma": "écrire",
+    "forms": [
+      "écrire",
+      "écris",
+      "écrit",
+      "écrivons",
+      "écrivez",
+      "écrivent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "voir",
+    "lemma": "voir",
+    "forms": [
+      "voir",
+      "vois",
+      "voit",
+      "voyons",
+      "voyez",
+      "voient"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "trouver",
+    "lemma": "trouver",
+    "forms": [
+      "trouver",
+      "trouve",
+      "trouves",
+      "trouvons",
+      "trouvez",
+      "trouvent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "perdre",
+    "lemma": "perdre",
+    "forms": [
+      "perdre",
+      "perds",
+      "perd",
+      "perdons",
+      "perdez",
+      "perdent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "lu",
+    "lemma": "lire",
+    "forms": [
+      "lu",
+      "lue",
+      "lus",
+      "lues"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "écrit",
+    "lemma": "écrire",
+    "forms": [
+      "écrit",
+      "écrite",
+      "écrits",
+      "écrites"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "pris",
+    "lemma": "prendre",
+    "forms": [
+      "pris",
+      "prise",
+      "prises"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "donné",
+    "lemma": "donner",
+    "forms": [
+      "donné",
+      "donnée",
+      "donnés",
+      "données"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "vu",
+    "lemma": "voir",
+    "forms": [
+      "vu",
+      "vue",
+      "vus",
+      "vues"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "trouvé",
+    "lemma": "trouver",
+    "forms": [
+      "trouvé",
+      "trouvée",
+      "trouvés",
+      "trouvées"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "perdu",
+    "lemma": "perdre",
+    "forms": [
+      "perdu",
+      "perdue",
+      "perdus",
+      "perdues"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "photo",
+    "lemma": "photo",
+    "forms": [
+      "photo",
+      "photos",
+      "photographie",
+      "photographies"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "enveloppe",
+    "lemma": "enveloppe",
+    "forms": [
+      "enveloppe",
+      "enveloppes"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "adresse",
+    "lemma": "adresse",
+    "forms": [
+      "adresse",
+      "adresses"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "timbre",
+    "lemma": "timbre",
+    "forms": [
+      "timbre",
+      "timbres"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "hier",
+    "lemma": "hier",
+    "forms": [
+      "hier"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "aujourd_hui",
+    "lemma": "aujourd’hui",
+    "forms": [
+      "aujourd’hui"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "demain",
+    "lemma": "demain",
+    "forms": [
+      "demain"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "toujours",
+    "lemma": "toujours",
+    "forms": [
+      "toujours"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "déjà",
+    "lemma": "déjà",
+    "forms": [
+      "déjà"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "enfin",
+    "lemma": "enfin",
+    "forms": [
+      "enfin"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "bientôt",
+    "lemma": "bientôt",
+    "forms": [
+      "bientôt"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "histoire",
+    "lemma": "histoire",
+    "forms": [
+      "histoire",
+      "histoires"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "souvenir",
+    "lemma": "souvenir",
+    "forms": [
+      "souvenir",
+      "souvenirs"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "promesse",
+    "lemma": "promesse",
+    "forms": [
+      "promesse",
+      "promesses"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "rendez_vous",
+    "lemma": "rendez-vous",
+    "forms": [
+      "rendez-vous"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "retrouver",
+    "lemma": "retrouver",
+    "forms": [
+      "retrouver",
+      "retrouve",
+      "retrouves",
+      "retrouvons",
+      "retrouvez",
+      "retrouvent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "revenir",
+    "lemma": "revenir",
+    "forms": [
+      "revenir",
+      "reviens",
+      "revient",
+      "revenons",
+      "revenez",
+      "reviennent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "oublier",
+    "lemma": "oublier",
+    "forms": [
+      "oublier",
+      "oublie",
+      "oublies",
+      "oublions",
+      "oubliez",
+      "oublient"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "savoir",
+    "lemma": "savoir",
+    "forms": [
+      "savoir",
+      "sais",
+      "sait",
+      "savons",
+      "savez",
+      "savent"
+    ],
+    "zone": "lettres"
+  },
+  {
+    "id": "comprendre",
+    "lemma": "comprendre",
+    "forms": [
+      "comprendre",
+      "comprends",
+      "comprend",
+      "comprenons",
+      "comprenez",
+      "comprennent"
+    ],
+    "zone": "lettres"
   }
 ];

@@ -1,6 +1,6 @@
 # Babelwake
 
-A cozy top-down village exploration and French decipherment game built with strict TypeScript, Vite, Three.js, and DOM/SVG interfaces. This playable milestone confirms 128 distinct canonical targets on 37 pages through 308 illustrated scenes. Explore 3 available places, infer French from illustrated encounters, write guesses in any language, confirm whole journal pages, then use French to continue the story.
+A cozy top-down village exploration and French decipherment game built with strict TypeScript, Vite, Three.js, and DOM/SVG interfaces. This playable milestone confirms 217 distinct canonical targets on 66 pages through 627 illustrated scenes. Explore 6 available places, infer French from illustrated encounters, write guesses in any language, confirm whole journal pages, then use French to continue the story.
 
 No translations or automatic note suggestions are provided. English is restricted to menus, settings, and the player's own notes. All game content lives in typed data modules.
 

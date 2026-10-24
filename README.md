@@ -52,4 +52,4 @@ The repository was created in an empty workspace. No earlier prototype or engine
 
 Release evidence and remaining manual checks are recorded in `docs/VERIFICATION.md`. Four playable source milestones and review descriptions are in `docs/MILESTONES.md`.
 
-The intended publication policy makes `@hardlystandard` the sole code owner and repository administrator, with contributions proposed through pull requests. GitHub setup is pending; see [CONTRIBUTING.md](CONTRIBUTING.md) for the approval policy.
+The source is public at [hardlystandard/babelwake](https://github.com/hardlystandard/babelwake). `@hardlystandard` is the sole code owner and listed collaborator. Enforced branch-review protection remains pending because the GitHub connection cannot administer repository settings; see [CONTRIBUTING.md](CONTRIBUTING.md) for the approval policy and setup steps.

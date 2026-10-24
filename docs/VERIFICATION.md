@@ -20,6 +20,8 @@ Runtime: Node.js 24.19.0, strict TypeScript, Vite production build.
 - Install/offline behavior checks use the real generated service worker and real IndexedDB. The service worker precaches all lazy chapter chunks, local fonts, and icons. The cache lookup handles static `Vary: Origin` responses.
 - Screenshots in `artifacts/` show the title, exploration, evidence, and journal. Browser captures check uncaught page errors.
 
+The public repository's [CI run 40110048891](https://github.com/hardlystandard/babelwake/actions/runs/40110048891), for commit `5f74d27`, subsequently passed all **38 Vitest tests** and **12 production browser tests** (5.2 minutes for the browser suite) on a GitHub-hosted Linux runner. This full run includes the earthy palette. It precedes the Ubicloud runner migration and does not establish execution on Ubicloud.
+
 ## Final top-down verification
 
 The production browser checks assert orthographic/top-down metadata and a nonempty WebGL canvas. They exercise actual WASD movement, click-to-walk and synthetic Gamepad API movement through normal input, reading only the exposed player position to verify movement. Station arrows reveal scenes one at a time and never auto-encounter siblings. The final title, world, evidence, journal, station and touch-tablet captures contain no uncaught page errors. The complete static output remains below 1 MiB uncompressed; the main JavaScript chunk is about 182 kB gzip. No frame-rate or loading-time benchmark is claimed.

@@ -21,4 +21,6 @@ CODEOWNERS alone does not enforce review. The repository policy above becomes ef
 
 These settings require repository administration access, which is separate from permission to upload source files.
 
+The `game` job runs on Ubicloud infrastructure using its GitHub Actions integration. Its check is still reported by the GitHub Actions app; require that check when configuring protection. Runner setup is documented in [docs/CI.md](docs/CI.md).
+
 The owner can add a classic protection rule for `main` at https://github.com/hardlystandard/babelwake/settings/branches. Keep approval of the most recent reviewable push disabled: with only one eligible reviewer, enabling it can prevent the owner from approving a contribution they helped edit. Leave the administrator override available because GitHub prevents authors approving their own pull requests. Workflow defaults are at https://github.com/hardlystandard/babelwake/settings/actions; select read-only permissions and disable approving pull requests.

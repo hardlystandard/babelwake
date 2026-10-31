@@ -49,6 +49,15 @@ describe('authored complete-game coverage', () => {
       for (const page of zone.pages) expect(zone.puzzle.requiredPages, `${zone.id}/${page.id}`).toContain(page.id);
     }
   });
+  it('keeps the two dated letters and the promised reunion on the same day',()=>{
+    const letters=content.zones.find(zone=>zone.id==='lettres')!;
+    const first=letters.evidence.find(e=>e.id==='lettres-v2-e-luc-letter')!.text;
+    const reply=letters.evidence.find(e=>e.id==='lettres-v2-e-claire-letter')!.text;
+    const firstDay=Number(/^\d+/u.exec(first)![0]),replyDay=Number(/^\d+/u.exec(reply)![0]);
+    expect(replyDay).toBe(firstDay+1);
+    expect(first).toContain('Je reviens demain à six heures.');
+    expect(reply).toContain('Aujourd’hui, notre rendez-vous est à six heures.');
+  });
 
   it('passes every structural and encounter-content invariant', () => {
     expect(validateContent(content)).toEqual([]);

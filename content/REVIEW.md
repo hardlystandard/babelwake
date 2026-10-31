@@ -8,8 +8,6 @@ Six zones; 270 lexicon entries; 211 distinct canonical lemmas tested across 68 c
 
 Situated validation applies to: L’atelier, Le marché, Le café, La gare, Chez Claire, Les lettres. Remaining legacy zones: 0. The same physical evidence, text budgets, tracked forms and action rules apply throughout the journey.
 
-| Zone deferred to PR B | New-rule violations | Untracked-text records | Encounter-order cap |
-| --- | --- | --- | --- |
 
 
 ## Phrases à revoir
@@ -1951,6 +1949,7 @@ Expected physical sequence (internal data for review, never a player translation
 | lettres-v2-e-hier-2 | Hier, le quatorze. · « 14 · 15 · 16 » |
 | lettres-v2-e-aujourd_hui-2 | Aujourd’hui, le quinze. · « 14 · 15 · 16 » |
 | lettres-v2-e-demain-2 | Demain, le seize. · « 14 · 15 · 16 » |
+| lettres-v2-e-five-minutes | 5 min · « 00:00 → 00:05 » |
 | lettres-v2-e-toujours-0 | Matin, midi, soir : toujours ma photo. |
 | lettres-v2-e-déjà-0 | Avant midi, j’ai déjà écrit. |
 | lettres-v2-e-enfin-0 | Je cherche. Enfin, je trouve la clé. |
@@ -1997,7 +1996,7 @@ Expected physical sequence (internal data for review, never a player translation
 | lettres-v2-e-read-result | Je sais. Je comprends. |
 | lettres-v2-e-today | Aujourd’hui, le quinze. · « 15 » |
 | lettres-v2-e-luc-letter | 14 · Claire, j’ai pris le train à midi. J’ai écrit ton adresse sur l’enveloppe. Puis j’ai perdu ma lettre. Je reviens demain à six heures. Dans le jardin. Luc. |
-| lettres-v2-e-claire-letter | 15 · Luc, hier tu as perdu la lettre. J’ai trouvé ta photo dans ma boîte. J’ai donné ta lettre à notre père. Aujourd’hui, la lettre est dans le jardin. Demain, notre rendez-vous est à six heures. Je veux comprendre ton histoire. Claire. |
+| lettres-v2-e-claire-letter | 15 · Luc, hier tu as perdu la lettre. J’ai trouvé ta photo dans ma boîte. J’ai donné ta lettre à notre père. Aujourd’hui, la lettre est dans le jardin. Aujourd’hui, notre rendez-vous est à six heures. Je veux comprendre ton histoire. Claire. |
 | lettres-v2-e-found-address | L’adresse de Claire. |
 | lettres-v2-e-claire-reply | J’ai une photo. |
 | lettres-v2-e-task-key | Prends la clé sous le livre rouge. |
@@ -2042,6 +2041,7 @@ Expected physical sequence (internal data for review, never a player translation
 - pencil-0 : « crayon »
 - pencil-1 : « crayon »
 - pencil-2 : « crayon »
+- five-minutes : « 5 min »
 
 ### Texte dans les illustrations
 

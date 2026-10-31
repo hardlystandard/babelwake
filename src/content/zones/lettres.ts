@@ -119,7 +119,7 @@ line('return-word','luc','Je reviens.',pic('revenir'),'speech');
 line('read-result','claire','Je sais. Je comprends.',pic('comprendre'),'speech');
 line('today','today','Aujourd’hui, le quinze.',{kind:'calendar',label:'15'});
 line('luc-letter','letter-14','14 · Claire, j’ai pris le train à midi. J’ai écrit ton adresse sur l’enveloppe. Puis j’ai perdu ma lettre. Je reviens demain à six heures. Dans le jardin. Luc.',{kind:'letter'});
-line('claire-letter','letter-15','15 · Luc, hier tu as perdu la lettre. J’ai trouvé ta photo dans ma boîte. J’ai donné ta lettre à notre père. Aujourd’hui, la lettre est dans le jardin. Demain, notre rendez-vous est à six heures. Je veux comprendre ton histoire. Claire.',{kind:'letter'});
+line('claire-letter','letter-15','15 · Luc, hier tu as perdu la lettre. J’ai trouvé ta photo dans ma boîte. J’ai donné ta lettre à notre père. Aujourd’hui, la lettre est dans le jardin. Aujourd’hui, notre rendez-vous est à six heures. Je veux comprendre ton histoire. Claire.',{kind:'letter'});
 line('found-address','address-0','L’adresse de Claire.',{kind:'envelope',detail:'adresse'},'top');
 line('claire-reply','claire','J’ai une photo.',{kind:'portrait'},'speech');
 const clues=[

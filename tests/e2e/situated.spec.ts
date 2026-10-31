@@ -9,7 +9,7 @@ test('physical French and personal subscripts remain readable at default zoom',a
   await page.goto('/?debug=1');await page.getByTestId('start').click();
   await expect(page.locator('.world-labels')).toHaveCSS('visibility','visible');
   const before=await page.evaluate(()=>{const game=(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__;return{physical:game.interactions(),player:game.view().player};});
-  const word=page.locator('.situated-text [data-word="clé"]:visible').first();
+  const word=page.locator('.situated-text[data-evidence="atelier-v2-e-label-key-b"] [data-word="clé"]');
   await expect(word).toBeVisible();await word.click();
   await page.getByTestId('guess-input').fill('key?');await page.getByTestId('guess-input').press('Enter');
   await page.locator('#leave-focus').click();
@@ -52,10 +52,10 @@ test('an old save keeps notes and onward travel without confirming the revised a
   await page.locator('#menu').click();
   await page.locator('#import').setInputFiles({name:'old-babelwake.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(old))});
   await expect(page.locator('#overlay')).toBeHidden();
-  await expect(page.locator('#page-count')).toHaveText('0/8');
+  await expect(page.locator('#page-count')).toHaveText('0/10');
   expect(await page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().guesses['clé'])).toBe('old personal note');
   await page.getByTestId('journal').click();
-  await expect(page.locator('.journal-intro>span')).toHaveText('0 / 8');
+  await expect(page.locator('.journal-intro>span')).toHaveText('0 / 10');
   await page.keyboard.press('Escape');await page.locator('#route').click();
   await expect(page.locator('[data-route="marche"]')).toBeEnabled();
   await page.locator('[data-route="marche"]').click();

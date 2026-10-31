@@ -304,6 +304,17 @@ export class SituatedLayer {
       for(const z of[-.65,.65]){this.box(root,[7.3,.08,.1],[0,.035,z],'#6e7269');for(const x of[-3,-2,-1,0,1,2,3])this.box(root,[.12,.055,1.75],[x,.03,0],palette.dark);}
       return 2.1;
     }
+    if(/^house(-|$)/.test(kind)){
+      this.box(root,[3,2,2.2],[0,1,0],'#c0af89');
+      for(const side of[-1,1]){
+        const roof=this.box(root,[1.95,.16,2.65],[side*.78,2.45,0],'#8c5e46');roof.rotation.z=-side*.55;
+        this.box(root,[.7,.8,.08],[side*.88,1.2,1.12],'#83a4a4');
+        this.box(root,[.78,.08,.12],[side*.88,.8,1.16],palette.wood);
+        this.box(root,[.06,.85,.12],[side*.88,1.2,1.16],palette.paper);
+      }
+      this.box(root,[.72,1.45,.1],[0,.73,1.14],palette.wood);this.ball(root,.055,[.23,.78,1.22],palette.brass);
+      this.box(root,[.36,.8,.38],[-.8,2.7,-.45],palette.wood);return 3.1;
+    }
     if(/^(station)(-|$)/.test(kind)){
       this.box(root,[3,1.9,2],[0,.95,0],'#c0af89');this.box(root,[3.6,.2,2.6],[0,2.06,0],'#8c5e46');
       this.box(root,[.75,1.4,.08],[0,.7,1.03],palette.dark);for(const x of[-1,1])this.box(root,[.6,.7,.1],[x,1.07,1.04],'#83a4a4');
@@ -771,10 +782,19 @@ export class SituatedLayer {
     const occupied:{left:number;top:number;right:number;bottom:number}[]=[];
     for(const {surface,world,screen,distance}of candidates){const element=surface.element;element.style.display='none';if(this.paused||surface.evidence?.actorPoses&&surface.id!==this.focused||surface.surface==='speech'&&surface.evidence?.anchor&&this.activeSpeech.get(surface.evidence.anchor)!==surface.id||surface.entity&&!surface.entity.root.visible||Math.abs(screen.x)>.95||Math.abs(screen.y)>.87||screen.z>1||distance>14&&surface.id!==this.focused)continue;
       const talkSurface=!!element.dataset.talkActor;
-      const x=(screen.x*.5+.5)*width,y=(-screen.y*.5+.5)*height+(talkSurface?34:0);
-      if(!talkSurface&&['top','floor','mat','note'].includes(surface.surface)&&!(surface.surface==='note'&&surface.entity&&/notice|sign/.test(surface.entity.data.kind))){const axis=world.clone().add(new THREE.Vector3(1,0,0)).project(camera);const angle=Math.atan2(-(axis.y-screen.y)*height,(axis.x-screen.x)*width)*180/Math.PI;element.style.transform=`translate(-50%, -50%) rotate(${angle}deg)`;}else element.style.transform='translate(-50%, -50%)';
-      const ew=surface.width||Math.min(300,(element.textContent?.length||1)*10+20),eh=surface.measuredHeight||38;const bounds={left:x-ew/2-4,top:y-eh/2-4,right:x+ew/2+4,bottom:y+eh/2+4};
-      if(!talkSurface&&surface.id!==this.focused&&occupied.some(other=>bounds.left<other.right&&bounds.right>other.left&&bounds.top<other.bottom&&bounds.bottom>other.top))continue;
+      const x=(screen.x*.5+.5)*width;let y=(-screen.y*.5+.5)*height+(talkSurface?34:0),angle=0;
+      if(!talkSurface&&['top','floor','mat','note'].includes(surface.surface)&&!(surface.surface==='note'&&surface.entity&&/notice|sign/.test(surface.entity.data.kind))){const axis=world.clone().add(new THREE.Vector3(1,0,0)).project(camera);angle=Math.atan2(-(axis.y-screen.y)*height,(axis.x-screen.x)*width);element.style.transform=`translate(-50%, -50%) rotate(${angle*180/Math.PI}deg)`;}else element.style.transform='translate(-50%, -50%)';
+      const ew=surface.width||Math.min(300,(element.textContent?.length||1)*10+20),eh=surface.measuredHeight||38;
+      const rw=Math.abs(Math.cos(angle))*ew+Math.abs(Math.sin(angle))*eh,rh=Math.abs(Math.sin(angle))*ew+Math.abs(Math.cos(angle))*eh;
+      const at=(cy:number)=>({left:x-rw/2-4,top:cy-rh/2-4,right:x+rw/2+4,bottom:cy+rh/2+4});
+      const overlaps=(bounds:ReturnType<typeof at>)=>occupied.some(other=>bounds.left<other.right&&bounds.right>other.left&&bounds.top<other.bottom&&bounds.bottom>other.top);
+      let bounds=at(y);
+      if(talkSurface&&overlaps(bounds)){
+        const nearby=[eh+10,-eh-10,2*(eh+10),-2*(eh+10)].map(offset=>y+offset).find(cy=>cy>rh/2+10&&cy<height-rh/2-10&&!overlaps(at(cy)));
+        if(nearby===undefined)continue;y=nearby;bounds=at(y);
+      }
+      if(surface.id!==this.focused&&overlaps(bounds))continue;
+      element.style.zIndex=surface.id===this.focused?'1000':talkSurface?'20':'1';
       element.style.display='block';element.style.left=`${x}px`;element.style.top=`${y}px`;occupied.push(bounds);
     }
   }

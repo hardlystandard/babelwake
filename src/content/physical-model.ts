@@ -42,7 +42,7 @@ export function physicalModel(object:SceneObject):{family:string;height:number;f
     return family(name,heights[name],features);
   }
   if(/^(photo|picture-frame|frame)(-|$)/.test(kind)&&object.picture)return family('photo',.15);
-  if(kind==='house')return family('house',2.5);
+  if(kind==='house')return family('house',3.1);
   if(kind==='room')return family('room',.09,[['cuisine','chambre','salon'].includes(detail)?detail:null]);
   if(kind==='stove'||kind==='sofa')return family(kind,kind==='stove'?1.3:1.4);
   if(kind==='pencil'||kind==='crayon')return family('pencil',.16);

@@ -1,0 +1,486 @@
+{
+  "complete": true,
+  "capturedAt": "2026-10-31T02:06:31.433Z",
+  "browser": "156.0.8078.4",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "preview": "http://127.0.0.1:4184/",
+  "serviceWorkers": "blocked only for visual capture; offline verification is a separate production test",
+  "fixture": "Normal save import with legacy travel completion only; no new confirmations or translations. Notes typed through annotation UI.",
+  "source": {
+    "head": "17b8729719cadb08051f284a5821730aa535eb65",
+    "dirty": true,
+    "sha256": {
+      "src/content/lexicon.ts": "c0ac12c0c8e1ab3f7512e3745ad9baed5427cdccdac6a677fb7dc4102aac6970",
+      "src/main.ts": "91e964beba95144ac2e1533bcb1f637ecbad45b9e66db18627d1b1e9d5a58298",
+      "src/game/situated.ts": "9d9ec497de73e0d8bfea960ba6c61a889fd7784f27c00db15480ebcfa49e30d5",
+      "src/game/scenery.ts": "1382a5683f7fa33b87e02b014a6f9885ffff944e6bcba7f9173ba9624a16cde5",
+      "src/ui/pictures.ts": "9782a166fead4ab5944096f350cbe61a8ca6e450aaa56492ede8eb43e3117dc1",
+      "src/content/zones/atelier.ts": "77ff67386469fcde96244a63efb9768be8bf62aa5bf3a8427b82e57b93564358",
+      "src/content/zones/marche.ts": "dfd95b8b858ea3c8fd358d59db69d6014c99ff070bae799da5cb0727feb33dc5",
+      "src/content/zones/cafe.ts": "b3ef935617f6abeb05a4fad4bcdb6dbd22450cee05b8766982f776b6d6fc2207",
+      "src/content/zones/gare.ts": "4e4d933fe12846dce4b0b2317d167bb178dcb2e55ad45da82b58d606a422f793",
+      "src/content/zones/maison.ts": "c038e407189458d2ed0ed9f53d2cf04530db3af00de4c2e8d0e2107fc040b39a",
+      "src/content/zones/lettres.ts": "8f367e6b12c56cd9690fb40bbe1bef809a563d5051f72ed74e03ca42d9e69678"
+    }
+  },
+  "loadedBuild": {
+    "entrypoint": "/assets/index-I8ATFAKH.js",
+    "sha256": "189761773e3bf4e124e49826cf61ad3ed6d4421a52f9b70670517659871b4342"
+  },
+  "inventory": [
+    {
+      "id": "atelier",
+      "design": "situated",
+      "evidence": 114,
+      "objects": 37,
+      "pages": 10,
+      "actions": 6
+    },
+    {
+      "id": "marche",
+      "design": "situated",
+      "evidence": 205,
+      "objects": 148,
+      "pages": 13,
+      "actions": 12
+    },
+    {
+      "id": "cafe",
+      "design": "situated",
+      "evidence": 211,
+      "objects": 88,
+      "pages": 14,
+      "actions": 12
+    },
+    {
+      "id": "gare",
+      "design": "situated",
+      "evidence": 185,
+      "objects": 106,
+      "pages": 13,
+      "actions": 6
+    },
+    {
+      "id": "maison",
+      "design": "situated",
+      "evidence": 180,
+      "objects": 67,
+      "pages": 10,
+      "actions": 10
+    },
+    {
+      "id": "lettres",
+      "design": "situated",
+      "evidence": 126,
+      "objects": 114,
+      "pages": 8,
+      "actions": 7
+    }
+  ],
+  "errors": [],
+  "records": [
+    {
+      "name": "atelier-world",
+      "file": "docs/pr-b/atelier-world.png",
+      "evidence": "atelier-v2-e-label-key-y",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "atelier",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "key?",
+          "size": 12
+        },
+        {
+          "text": "key?",
+          "size": 12
+        },
+        {
+          "text": "key?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 37
+    },
+    {
+      "name": "atelier-workorder",
+      "file": "docs/pr-b/atelier-workorder.png",
+      "evidence": "atelier-v2-e-task-a",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "atelier",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "key?",
+          "size": 12
+        },
+        {
+          "text": "take?",
+          "size": 12
+        },
+        {
+          "text": "key?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 37
+    },
+    {
+      "name": "marche-world",
+      "file": "docs/pr-b/marche-world.png",
+      "evidence": "marche-v2-e-number-deux-0",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "marche",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "apple?",
+          "size": 12
+        },
+        {
+          "text": "apple?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 148
+    },
+    {
+      "name": "marche-workorder",
+      "file": "docs/pr-b/marche-workorder.png",
+      "evidence": "marche-v2-e-task-bread",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "marche",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "take?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 148
+    },
+    {
+      "name": "cafe-world",
+      "file": "docs/pr-b/cafe-world.png",
+      "evidence": "cafe-v2-e-label-coffee-0",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "cafe",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "coffee?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 88
+    },
+    {
+      "name": "cafe-workorder",
+      "file": "docs/pr-b/cafe-workorder.png",
+      "evidence": "cafe-v2-e-task-tea",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "cafe",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "take?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 88
+    },
+    {
+      "name": "gare-world",
+      "file": "docs/pr-b/gare-world.png",
+      "evidence": "gare-v2-e-label-ticket-r",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "gare",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "ticket?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 106
+    },
+    {
+      "name": "gare-workorder",
+      "file": "docs/pr-b/gare-workorder.png",
+      "evidence": "gare-v2-e-task-ticket",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "gare",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "take?",
+          "size": 12
+        },
+        {
+          "text": "ticket?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 106
+    },
+    {
+      "name": "maison-world",
+      "file": "docs/pr-b/maison-world.png",
+      "evidence": "maison-v2-e-label-letter-a",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "maison",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "letter?",
+          "size": 12
+        },
+        {
+          "text": "key?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 67
+    },
+    {
+      "name": "maison-workorder",
+      "file": "docs/pr-b/maison-workorder.png",
+      "evidence": "maison-v2-e-task-letter",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "maison",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "key?",
+          "size": 12
+        },
+        {
+          "text": "take?",
+          "size": 12
+        },
+        {
+          "text": "letter?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 67
+    },
+    {
+      "name": "lettres-world",
+      "file": "docs/pr-b/lettres-world.png",
+      "evidence": "lettres-v2-e-envelope-0",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "lettres",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "envelope?",
+          "size": 12
+        },
+        {
+          "text": "ticket?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 114
+    },
+    {
+      "name": "lettres-workorder",
+      "file": "docs/pr-b/lettres-workorder.png",
+      "evidence": "lettres-v2-e-task-key",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "lettres",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "letter?",
+          "size": 12
+        },
+        {
+          "text": "ticket?",
+          "size": 12
+        },
+        {
+          "text": "take?",
+          "size": 12
+        },
+        {
+          "text": "key?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 114
+    },
+    {
+      "name": "lettres-memory",
+      "file": "docs/pr-b/lettres-memory.png",
+      "evidence": "lettres-v2-e-souvenir-1",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "lettres",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "memory?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 114
+    },
+    {
+      "name": "lettres-correspondence",
+      "file": "docs/pr-b/lettres-correspondence.png",
+      "evidence": "lettres-v2-e-luc-letter",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "zone": "lettres",
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "notes": [
+        {
+          "text": "letter?",
+          "size": 12
+        },
+        {
+          "text": "take?",
+          "size": 12
+        },
+        {
+          "text": "envelope?",
+          "size": 12
+        },
+        {
+          "text": "letter?",
+          "size": 12
+        }
+      ],
+      "physicalObjects": 114
+    }
+  ]
+}

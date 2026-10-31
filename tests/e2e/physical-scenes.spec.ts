@@ -82,6 +82,22 @@ test('market quantities generate complete food groups and physical money denomin
   expect(errors).toEqual([]);
 });
 
+test('a focused household word stays clickable beside nearby conversation controls',async({page})=>{
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  await importZone(page,'maison');
+  await page.evaluate(()=>(window as unknown as RenderWindow).__BABELWAKE__.encounter('maison-v2-e-label-letter-a'));
+  const word=page.locator('[data-evidence="maison-v2-e-label-letter-a"] [data-word="lettre"]');
+  await expect(word).toBeVisible();
+  await expect.poll(()=>word.evaluate(element=>{
+    const rect=element.getBoundingClientRect();
+    const hit=document.elementFromPoint(rect.x+rect.width/2,rect.y+rect.height/2);
+    return !!hit&&element.contains(hit);
+  })).toBe(true);
+  await word.click();await page.getByTestId('guess-input').fill('letter?');await page.getByTestId('guess-input').press('Enter');
+  await expect(word.locator('small')).toHaveText('letter?');
+  expect(errors).toEqual([]);
+});
+
 test('a physically spaced café order follows its tray while carried and delivered',async({page})=>{
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   const zone=await importZone(page,'cafe'),actions=inferCafeActions(zone);

@@ -34,7 +34,7 @@ Visual review caught and repaired placeholder house geometry, black SVG photo te
 
 Native-speaker review and zero-French participant testing have not occurred. The five prior idiom/setting flags were rewritten; current uncertainties are explicitly listed in `content/REVIEW.md`. The dense memory archive, abstract vocabulary, pronoun/possession contrasts and pictogram interpretation particularly need beginner observation. No measured 2–3-hour duration, retention, CEFR attainment or Chants of Sennaar parity is claimed. Synthetic gamepad input and a tablet viewport pass; physical controller ergonomics remain unverified.
 
-The static production output is ready in `dist/`. The repository has no public game deployment workflow or configured homepage; GitHub reports `has_pages: false`, and the Pages endpoint returns 404. No new hosting service or network configuration was created. A public hosted game therefore remains separate from the completed source/PR delivery.
+The game is now publicly hosted at [babelwake.jappleton.com](https://babelwake.jappleton.com/) using Cloudflare Static Assets. The source commit, deployed version, build hashes and release procedure are recorded in [DEPLOYMENT.md](DEPLOYMENT.md). The historical notes below describe earlier delivery boundaries.
 
 ---
 

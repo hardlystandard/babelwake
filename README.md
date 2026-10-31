@@ -4,6 +4,8 @@ A top-down French decipherment game built with strict TypeScript, Vite, Three.js
 
 All six places use physical encounters and world actions: the workshop, market, café, railway station, Claire’s home, and the letters/reunion. The authored journey tests more than 200 canonical French learning targets. Native-speaker and beginner playtest acceptance remains unverified.
 
+Play at [babelwake.jappleton.com](https://babelwake.jappleton.com/). Deployment details and the released source version are recorded in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
 ## Run
 
 Requires Node.js 22.12 or newer and npm.

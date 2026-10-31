@@ -2,7 +2,7 @@
 
 > Generated with `npm run content:review`. This is a review inventory, not a claim of native-speaker approval. All visible French, including puzzle alternatives and labels, is listed below. World content remains untranslated.
 
-Six zones; 270 lexicon entries; 211 distinct canonical lemmas tested across 68 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
+Six zones; 274 lexicon entries; 211 distinct canonical lemmas tested across 68 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
 
 ## Portée de la migration située
 
@@ -2397,3 +2397,7 @@ Expected physical sequence (internal data for review, never a player translation
 | plateau | plateau | plateau · plateaux |
 | bouteille | bouteille | bouteille · bouteilles |
 | lui | lui | lui |
+| moi | moi | moi |
+| plein | plein | plein · pleine · pleins · pleines |
+| vide | vide | vide · vides |
+| même | même | même · mêmes |

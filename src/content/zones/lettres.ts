@@ -144,7 +144,7 @@ const pages:JournalPage[]=[
  page('07','vocabulary',['histoire','souvenir','promesse','rendez_vous','mais'],['histoire','souvenir','promesse','rendez_vous','mais'].map(word=>pic(word))),
  page('08','grammar',['retrouver','revenir','oublier','savoir','comprendre'],['retrouver','revenir','oublier','savoir','comprendre'].map(word=>pic(word))),
 ];
-const zone:Zone={id:'lettres',design:'situated',title:'Les lettres',subtitle:'',intro:'',color:'#5e7460',accent:'#a58d64',scenery:['Luc','Claire','Anne','Paul','même'],scene,evidence,pages,encounterOrder:evidence.map(entry=>entry.id),puzzle:{id:'lettres-v2-reunion',legacyIds:['lettres-histoire'],title:'✦',instruction:'',success:'✧',requiredPages:pages.map(entry=>entry.id),steps:[],world:{exit:'garden-gate',clues,sequence:[
+const zone:Zone={id:'lettres',design:'situated',title:'Les lettres',subtitle:'',intro:'',color:'#5e7460',accent:'#a58d64',scenery:['Luc','Claire','Anne','Paul'],scene,evidence,pages,encounterOrder:evidence.map(entry=>entry.id),puzzle:{id:'lettres-v2-reunion',legacyIds:['lettres-histoire'],title:'✦',instruction:'',success:'✧',requiredPages:pages.map(entry=>entry.id),steps:[],world:{exit:'garden-gate',clues,sequence:[
  {kind:'take',object:'key-yellow'},
  {kind:'operate',object:'garden-gate',operation:'open',tool:'key-yellow'},
  {kind:'take',object:'letter-14'},

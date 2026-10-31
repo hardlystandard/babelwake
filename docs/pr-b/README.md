@@ -7,6 +7,8 @@ hashes, observed font sizes, player positions and page-error results are recorde
 in [default-view-metrics.json](default-view-metrics.json). `complete: true` means
 the entire capture script finished; it is not a learning-outcome certification.
 
+These captures are pinned to the source snapshot in commit `13654ee`. A later compatibility patch changes the legacy exit guard and tracks four existing function/state words; it does not change the pictured scenes. The metrics intentionally retain the hashes of the build actually captured.
+
 Reproduce after building and starting a production preview:
 
 ```sh

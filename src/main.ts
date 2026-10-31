@@ -180,7 +180,7 @@ function interactEntity(id:string):void {
   if(zone.design!=='situated'||!interactions)return;
   const physical=interactions;
   const object=zone.scene?.find(item=>item.id===id);if(!object)return;
-  if(state.solved.includes(zone.puzzle.id)&&zone.puzzle.world?.exit===id){const next=zoneIds[zoneIds.indexOf(zone.id)+1];if(next)void changeZone(next);else openEnding();return;}
+  if(puzzleCompletedForTravel(state,zone.puzzle)&&zone.puzzle.world?.exit===id){const next=zoneIds[zoneIds.indexOf(zone.id)+1];if(next)void changeZone(next);else openEnding();return;}
   const lines=zone.evidence.filter(e=>e.anchor===id);
   if(lines.length&&!object.recipient&&(!world.getViewState().focused||focusedEntity!==id)){
     focusedEntity=id;inspect((lines.find(e=>!state.encountered.includes(e.id))??lines[0]).id);return;

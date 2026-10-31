@@ -246,7 +246,7 @@ for(const [question,reply]of [['where','answer-where'],['how-much','answer-price
  const answer=`cafe-v2-e-${reply}-${i}`; encounterOrder.splice(encounterOrder.indexOf(answer),1);
  encounterOrder.splice(encounterOrder.indexOf(`cafe-v2-e-${question}-${i}`)+1,0,answer);
 }
-const zone:Zone={id:'cafe',design:'situated',title:'Le café',subtitle:'',intro:'',color:'#c0ad91',accent:'#446d61',scenery:['Paul','Claire','Anne','Luc','Jeanne','Hugo','Iris','Marie','Émile','Léa','moi','pleine','vide'],scene,evidence,pages,encounterOrder,puzzle:{id:'cafe-v2-service',legacyIds:['cafe-message'],title:'✦',instruction:'',success:'✧',steps:[],requiredPages:pages.map(p=>p.id),world:{exit:'door',clues,sequence:[
+const zone:Zone={id:'cafe',design:'situated',title:'Le café',subtitle:'',intro:'',color:'#c0ad91',accent:'#446d61',scenery:['Paul','Claire','Anne','Luc','Jeanne','Hugo','Iris','Marie','Émile','Léa'],scene,evidence,pages,encounterOrder,puzzle:{id:'cafe-v2-service',legacyIds:['cafe-message'],title:'✦',instruction:'',success:'✧',steps:[],requiredPages:pages.map(p=>p.id),world:{exit:'door',clues,sequence:[
  {kind:'take',object:'tea-plain'},{kind:'place',object:'tea-plain',target:'tray-window',relation:'on'},
  {kind:'take',object:'bread-plain'},{kind:'place',object:'bread-plain',target:'tray-window',relation:'on'},
  {kind:'take',object:'spoon-service'},{kind:'place',object:'spoon-service',target:'tray-window',relation:'on'},

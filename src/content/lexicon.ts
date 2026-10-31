@@ -2408,4 +2408,8 @@ export const lexicon:Lexeme[] = [
   {id:'plateau',lemma:'plateau',forms:['plateau','plateaux'],zone:'cafe'},
   {id:'bouteille',lemma:'bouteille',forms:['bouteille','bouteilles'],zone:'marche'},
   {id:'lui',lemma:'lui',forms:['lui'],zone:'marche'},
+  {id:'moi',lemma:'moi',forms:['moi'],zone:'cafe'},
+  {id:'plein',lemma:'plein',forms:['plein','pleine','pleins','pleines'],zone:'cafe'},
+  {id:'vide',lemma:'vide',forms:['vide','vides'],zone:'cafe'},
+  {id:'même',lemma:'même',forms:['même','mêmes'],zone:'lettres'},
 ];

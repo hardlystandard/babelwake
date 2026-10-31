@@ -33,21 +33,29 @@ async function choose(page:Page,action:WorldAction,input:'mouse'|'keyboard'|'gam
   if(await options.count()){
     await expect(options).toHaveCount(candidates.length);
     const button=page.locator(`[data-physical-action="${index}"]`);
+    // The panel sets initial focus on the next animation frame. Let that finish
+    // before keyboard/gamepad input chooses a different control.
+    if(input!=='mouse')await expect(page.locator('.physical-action-panel .close')).toBeFocused();
     if(input==='keyboard'){await button.focus();await page.keyboard.press('Enter');}
     else if(input==='gamepad'){
-      await expect(page.locator('.physical-action-panel .close')).toBeFocused();
       await page.evaluate(()=>{
         const pad={axes:[0,0],buttons:Array.from({length:17},()=>({pressed:false}))};
         Object.assign(window,{__ACTION_PAD__:pad});
         Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[pad]});
       });
       for(let n=0;n<=index;n++){
-        await page.evaluate(()=>{(window as unknown as {__ACTION_PAD__:{buttons:{pressed:boolean}[]}}).__ACTION_PAD__.buttons[13].pressed=true;});
+        // Release in the browser's focus event. Holding DOWN while Playwright
+        // polls across process boundaries can repeat past an observed option.
+        await options.nth(n).evaluate(element=>new Promise<void>((resolve,reject)=>{
+          const pad=(window as unknown as {__ACTION_PAD__:{buttons:{pressed:boolean}[]}}).__ACTION_PAD__;
+          const finish=()=>{pad.buttons[13].pressed=false;clearTimeout(timeout);resolve();};
+          const timeout=setTimeout(()=>{pad.buttons[13].pressed=false;element.removeEventListener('focus',finish);reject(new Error('Gamepad did not focus the next action'));},10_000);
+          element.addEventListener('focus',finish,{once:true});
+          pad.buttons[13].pressed=true;
+        }));
+        // Assert only after the synthetic input is neutral, so this stays true
+        // even if the driver takes longer than the menu's held-repeat interval.
         await expect(options.nth(n)).toBeFocused();
-        await page.evaluate(async()=>{
-          (window as unknown as {__ACTION_PAD__:{buttons:{pressed:boolean}[]}}).__ACTION_PAD__.buttons[13].pressed=false;
-          await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));
-        });
       }
       await page.evaluate(()=>{(window as unknown as {__ACTION_PAD__:{buttons:{pressed:boolean}[]}}).__ACTION_PAD__.buttons[0].pressed=true;});
       await expect(page.locator('.physical-action-panel')).toHaveCount(0);

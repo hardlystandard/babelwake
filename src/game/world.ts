@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type { Evidence, Picture, Puzzle, Zone } from '../content/types';
-import { createScenery } from './scenery';
+import { createScenery, createWorkshopScenery } from './scenery';
+import { SituatedLayer, type SituatedInteractionState } from './situated';
 
 type Anchor = { evidence: Evidence; root: THREE.Group; label: HTMLButtonElement; height: number };
 const colors = { cream: '#d8c7a4', wood: '#806044', brown: '#5a4434', leaf: '#59744b', coral: '#a96950', sage: '#59765d', ink: '#334e43', gold: '#b28e46' };
@@ -46,6 +47,9 @@ export class World {
   private walkPhase = 0;
   private destroyed = false;
   private readonly resizeObserver: ResizeObserver;
+  private situated?: SituatedLayer;
+  private focusTarget?: THREE.Vector3;
+  private targetZoom = 1;
 
   constructor(private readonly host: HTMLElement, private readonly onInteract: (id: string) => void) {
     host.style.position = 'relative';
@@ -94,7 +98,7 @@ export class World {
       if (this.pointerDown && Math.hypot(event.clientX - this.pointerDown.x, event.clientY - this.pointerDown.y) < 8) {
         this.updatePointer(event);
         this.raycaster.setFromCamera(this.pointer, this.camera);
-        const targets: THREE.Object3D[] = this.anchors.map(anchor => anchor.root);
+        const targets: THREE.Object3D[] = this.situated ? this.situated.targets : this.anchors.map(anchor => anchor.root);
         if (this.door && !this.mechanism) targets.push(this.door);
         const hit = this.raycaster.intersectObjects(targets, true)[0];
         if (hit) {
@@ -140,8 +144,9 @@ export class World {
     Object.assign(sun.shadow.camera, { left:-29, right:29, top:29, bottom:-29, far:90 });
     sun.shadow.normalBias = .05; sun.shadow.bias = -.0002;
     this.scene.add(sun);
-    this.scene.add(createScenery(zone));
-    this.buildGate();
+    this.scene.add(zone.design==='situated'?createWorkshopScenery():createScenery(zone));
+    if(zone.design!=='situated')this.buildGate();
+    this.focusTarget=undefined;this.targetZoom=1;this.camera.zoom=1;
     this.player = new THREE.Group(); this.playerBody = new THREE.Group();
     this.player.add(this.playerBody); this.legs = []; this.arms = [];
     this.buildPerson(this.playerBody, '#a56647', true);
@@ -152,10 +157,16 @@ export class World {
       const station=evidence.station||evidence.id;
       this.stationScenes.set(station,[...(this.stationScenes.get(station)||[]),evidence.id]);
     }
-    const stations = new Set<string>();
-    for (const [index, evidence] of zone.evidence.entries()) {
-      const station = evidence.station || evidence.id;
-      if (!stations.has(station)) { stations.add(station); this.addEvidence(evidence, index); }
+    if(zone.design==='situated'){
+      this.situated=new SituatedLayer(this.scene,this.labels,zone,this.onInteract);
+      if(this.wordRenderer)this.situated.setWordRenderer(this.wordRenderer,this.wordRevision);
+      this.situated.setPaused(this.paused);
+    }else{
+      const stations = new Set<string>();
+      for (const [index, evidence] of zone.evidence.entries()) {
+        const station = evidence.station || evidence.id;
+        if (!stations.has(station)) { stations.add(station); this.addEvidence(evidence, index); }
+      }
     }
     this.updateSeen(seen); this.resize();
   }
@@ -429,19 +440,23 @@ export class World {
       anchor.label.dataset.complete=String(completed);
     }
   }
-  setWordRenderer(renderer:(text:string)=>string):void{this.wordRenderer=renderer;this.wordRevision++;this.updateSeen(this.seen);}
+  setWordRenderer(renderer:(text:string)=>string):void{this.wordRenderer=renderer;this.wordRevision++;this.situated?.setWordRenderer(renderer,this.wordRevision);this.updateSeen(this.seen);}
   setAnnotations(_annotations:Record<string,string>):void{this.updateSeen(this.seen);}
-  setControls(controls:Record<string,string>):void{this.controls=controls;}
+  setControls(controls:Record<string,string>):void{this.controls=controls;this.situated?.invalidateTextMetrics();}
   setContrast(enabled:boolean):void{this.host.classList.toggle('world-high-contrast',enabled);if(this.renderer)this.renderer.toneMappingExposure=enabled?1.05:.95;}
-  setPaused(paused:boolean):void{this.paused=paused;this.keys.clear();this.destination=undefined;this.walking=false;this.labels.style.visibility=paused?'hidden':'visible';if(document.pointerLockElement)document.exitPointerLock();}
+  setPaused(paused:boolean):void{this.paused=paused;this.keys.clear();this.destination=undefined;this.walking=false;this.labels.style.visibility=paused?'hidden':'visible';this.situated?.setPaused(paused);if(document.pointerLockElement)document.exitPointerLock();}
   /** Kept for saved settings compatibility; this view never captures the pointer. */
   requestPointerLock():void{if(document.pointerLockElement)document.exitPointerLock();}
   focusEvidence(id:string):void{
+    if(this.situated){const target=this.situated.focusEvidence(id);if(target){this.focusTarget=target;this.targetZoom=1;this.destination=undefined;}return;}
     const evidence=this.zone?.evidence.find(e=>e.id===id);const anchor=this.anchors.find(a=>a.evidence.id===id||a.evidence.station===evidence?.station);
     if(!anchor)return;this.player.position.set(anchor.root.position.x,0,anchor.root.position.z+2);this.destination=undefined;this.cameraTarget.copy(this.player.position);this.placeCamera();
   }
+  clearFocus():void{this.focusTarget=undefined;this.targetZoom=1;this.situated?.clearFocus();}
+  focusEntity(id:string):void{const target=this.situated?.focusEntity(id);if(target){this.focusTarget=target;this.targetZoom=1;this.destination=undefined;}}
+  setInteractionState(state:SituatedInteractionState):void{this.situated?.setInteractionState(state);}
   getPlayerPosition():{x:number;z:number}{return{x:this.player.position.x,z:this.player.position.z};}
-  getViewState():{mode:'top-down';player:{x:number;z:number}}{return{mode:'top-down',player:this.getPlayerPosition()};}
+  getViewState():{mode:'top-down';player:{x:number;z:number};zoom:number;focused:boolean}{return{mode:'top-down',player:this.getPlayerPosition(),zoom:this.camera.zoom,focused:!!this.focusTarget};}
   resize():void{
     const width=Math.max(1,this.host.clientWidth),height=Math.max(1,this.host.clientHeight),aspect=width/height;
     const extent=aspect<1.15?14:12.5;
@@ -449,31 +464,33 @@ export class World {
   }
   private placeCamera():void{this.camera.position.copy(this.cameraTarget).add(this.cameraOffset);this.camera.lookAt(this.cameraTarget);this.camera.updateMatrixWorld();}
   private interactNearest():void{
+    if(this.situated){const id=this.situated.nearest(this.player.position);if(id)this.onInteract(`__entity:${id}`);return;}
     if(this.door&&!this.mechanism&&this.player.position.distanceTo(this.door.position)<3){this.onInteract('__door');return;}
     const nearest=[...this.anchors].sort((a,b)=>a.root.position.distanceToSquared(this.player.position)-b.root.position.distanceToSquared(this.player.position))[0];
     if(nearest&&nearest.root.position.distanceTo(this.player.position)<3.5)this.onInteract(nearest.evidence.id);
   }
   private updateHover():void{
     this.raycaster.setFromCamera(this.pointer,this.camera);
-    const hits=this.raycaster.intersectObjects(this.anchors.map(a=>a.root),true);
+    const hits=this.raycaster.intersectObjects(this.situated?this.situated.targets:this.anchors.map(a=>a.root),true);
+    if(this.situated){this.host.style.cursor=hits.length?'pointer':'default';return;}
     this.hovered=hits.length?this.anchors.find(a=>{let node:THREE.Object3D|null=hits[0].object;while(node){if(node===a.root)return true;node=node.parent;}return false;}):undefined;
     this.host.style.cursor=this.hovered?'pointer':'default';
   }
   private move(dt:number):void{
     let x=0,z=0;
     if(this.keys.has(this.controls.forward||'KeyW')||this.keys.has('ArrowUp'))z-=1;
-    if(this.keys.has(this.controls.backward||'KeyS')||this.keys.has('ArrowDown'))z+=1;
+    if(this.keys.has(this.controls.backward||this.controls.back||'KeyS')||this.keys.has('ArrowDown'))z+=1;
     if(this.keys.has(this.controls.left||'KeyA')||this.keys.has('ArrowLeft'))x-=1;
     if(this.keys.has(this.controls.right||'KeyD')||this.keys.has('ArrowRight'))x+=1;
     const pad=navigator.getGamepads?.().find(candidate=>candidate?.connected);
     if(pad){const dead=(value:number)=>Math.abs(value)>.17?value:0;x+=dead(pad.axes[0]||0);z+=dead(pad.axes[1]||0);const pressed=pad.buttons[0]?.pressed||false;if(pressed&&!this.gamepadPressed)this.interactNearest();this.gamepadPressed=pressed;}
     let direction=new THREE.Vector3();
     if(Math.abs(x)+Math.abs(z)>.01){
-      this.destination=undefined;
+      this.clearFocus();this.destination=undefined;
       const right=new THREE.Vector3(this.cameraOffset.z,0,-this.cameraOffset.x).normalize();
       const down=new THREE.Vector3(this.cameraOffset.x,0,this.cameraOffset.z).normalize();
       direction.copy(right).multiplyScalar(x).addScaledVector(down,z);
-    }else if(this.destination){direction.copy(this.destination).sub(this.player.position);direction.y=0;if(direction.length()<.14){this.destination=undefined;direction.set(0,0,0);}}
+    }else if(this.destination){this.clearFocus();direction.copy(this.destination).sub(this.player.position);direction.y=0;if(direction.length()<.14){this.destination=undefined;direction.set(0,0,0);}}
     this.walking=direction.lengthSq()>.001;
     if(!this.walking)return;
     direction.normalize();
@@ -482,14 +499,16 @@ export class World {
     this.player.position.x=THREE.MathUtils.clamp(this.player.position.x,-20,20);this.player.position.z=THREE.MathUtils.clamp(this.player.position.z,-20,20);
     const turn=Math.atan2(direction.x,direction.z)-this.playerBody.rotation.y;
     this.playerBody.rotation.y+=Math.atan2(Math.sin(turn),Math.cos(turn))*Math.min(1,dt*14);
-    for(const anchor of this.anchors){
-      const delta=this.player.position.clone().sub(anchor.root.position);delta.y=0;const length=delta.length();
-      if(length<.62&&length>.001){this.player.position.copy(anchor.root.position).add(delta.multiplyScalar(.62/length));this.player.position.y=0;}
+    const obstaclePositions=this.situated?this.situated.entityPositions():this.anchors.map(anchor=>anchor.root.position);
+    for(const position of obstaclePositions){
+      const delta=this.player.position.clone().sub(position);delta.y=0;const length=delta.length();
+      if(length<.62&&length>.001){this.player.position.copy(position).add(delta.multiplyScalar(.62/length));this.player.position.y=0;}
     }
   }
   private positionLabels():void{
     if(this.paused||!this.zone)return;
     const width=this.host.clientWidth,height=this.host.clientHeight;
+    if(this.situated){this.situated.positionText(this.camera,width,height,this.player.position);return;}
     if(!this.renderer){this.anchors.forEach((anchor,index)=>{anchor.label.style.display=index<16?'block':'none';anchor.label.style.left=`${14+index%4*24}%`;anchor.label.style.top=`${28+Math.floor(index/4)*17}%`;});return;}
     const visible=this.anchors.map(anchor=>{const screen=new THREE.Vector3(anchor.root.position.x,anchor.height,anchor.root.position.z).project(this.camera);return{anchor,screen,distance:anchor.root.position.distanceTo(this.player.position)};}).filter(item=>Math.abs(item.screen.x)<.94&&Math.abs(item.screen.y)<.85).sort((a,b)=>a.distance-b.distance);
     this.anchors.forEach(anchor=>{anchor.label.style.display='none';});
@@ -506,16 +525,20 @@ export class World {
   }
   private tick=(time:number):void=>{
     if(this.destroyed)return;
-    const dt=Math.min((time-this.last)/1000,.05);this.last=time;
+    const elapsed=Math.min((time-this.last)/1000,.4);const dt=Math.min(elapsed,.05);this.last=time;
     if(!this.paused&&!this.isTyping())this.move(dt);else this.walking=false;
     if(this.walking)this.walkPhase+=dt*10;
     const swing=this.walking?Math.sin(this.walkPhase)*.5:0;
     this.legs.forEach((leg,index)=>{leg.rotation.x=swing*(index?1:-1);});this.arms.forEach((arm,index)=>{arm.rotation.x=swing*(index?-1:1);});
     this.playerBody.position.y=this.walking?Math.abs(Math.sin(this.walkPhase))*.045:Math.sin(time*.0015)*.015;
-    if(!this.mechanism)this.cameraTarget.lerp(this.player.position,1-Math.exp(-dt*4));
+    this.situated?.update(this.player.position);
+    if(!this.mechanism)this.cameraTarget.lerp(this.focusTarget||this.player.position,1-Math.exp(-elapsed*4));
+    const zoom=THREE.MathUtils.lerp(this.camera.zoom,this.targetZoom,1-Math.exp(-elapsed*5));
+    if(Math.abs(zoom-this.camera.zoom)>.0001){this.camera.zoom=zoom;this.camera.updateProjectionMatrix();}
     this.placeCamera();this.positionLabels();this.renderer?.render(this.scene,this.camera);this.frame=requestAnimationFrame(this.tick);
   };
   private clearScene():void{
+    this.situated?.dispose();this.situated=undefined;
     this.scene.traverse(node=>{if(node instanceof THREE.Mesh){if(![...this.geometries.values()].includes(node.geometry))node.geometry.dispose();const materials=Array.isArray(node.material)?node.material:[node.material];for(const material of materials)if(![...this.materials.values()].includes(material as THREE.MeshStandardMaterial))material.dispose();}});
     this.scene.clear();this.anchors.length=0;this.labels.replaceChildren();this.door=undefined;
   }

@@ -1,4 +1,6 @@
-# Release verification — 24 October 2026
+# Previous build verification — 24 October 2026
+
+These results describe the build before the situated atelier correction. They do not verify the redesigned content or interactions; those results are recorded in the correction PR and its CI checks.
 
 The final art direction follows the user’s request: a cozy top-down life-sim style with an orthographic camera, visible traveler, earthy, shaded village, and keyboard/gamepad/click-to-walk movement.
 
@@ -46,6 +48,6 @@ No native-speaker sign-off or zero-French participant playtest has taken place. 
 
 ## Source delivery and publication
 
-The workspace began empty. The source history has four playable review milestones; each of the first three snapshot variants ran content validation, logic tests, strict TypeScript and a production build. The final milestone adds the offline lifecycle and release verification. MILESTONES.md contains review descriptions, design calls, limitations, and French-review flags.
+The workspace began empty. The source history retains the earlier playable builds and their verification. Design corrections are reviewed through real pull requests against `main`.
 
 No retrospective GitHub pull requests or public game deployment are claimed. The tested static build is independently deployable. Publishing the source repository and publishing a playable website are separate operations.

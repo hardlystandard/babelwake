@@ -297,3 +297,47 @@ export function createScenery(zone: Zone): THREE.Group {
   baked.userData.backgroundOnly=true;
   return baked;
 }
+
+/** The authored atelier is a cutaway room, so relationships remain visible from above. */
+export function createWorkshopScenery(): THREE.Group {
+  const group = new THREE.Group(); group.name='situated-atelier-room';
+  const materials = new Map<string, THREE.MeshStandardMaterial>();
+  const mat = (color:string) => { let value=materials.get(color);if(!value){value=new THREE.MeshStandardMaterial({color,roughness:1});materials.set(color,value);}return value; };
+  const box = (size:[number,number,number],position:[number,number,number],color:string):THREE.Mesh => {
+    const mesh=new THREE.Mesh(new THREE.BoxGeometry(...size),mat(color));mesh.position.set(...position);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;
+  };
+  const ball = (radius:number,position:[number,number,number],color:string,scale:[number,number,number]=[1,1,1]):THREE.Mesh => {
+    const mesh=new THREE.Mesh(new THREE.SphereGeometry(radius,12,8),mat(color));mesh.position.set(...position);mesh.scale.set(...scale);mesh.castShadow=true;group.add(mesh);return mesh;
+  };
+  box([54,.3,54],[0,-.4,0],'#4c6849');
+  box([27,.35,24],[0,-.18,1],'#5a4434');
+  // Matte boards and broad, clear aisles make small keys and spatial demonstrations readable.
+  for(let row=0;row<24;row++)for(let column=0;column<9;column++){
+    box([2.94,.06,.97],[-12+column*3,.025,-10.5+row],(row+column)%3===0?'#8a6c4b':'#806044');
+  }
+  box([27,4,.35],[0,2,-11],'#b7a184');
+  box([.35,4,24],[-13.5,2,.8],'#a58e71');
+  for(const x of [-13,0,13])box([.22,4.2,.48],[x,2.1,-10.8],'#5a4434');
+  box([27.5,.3,.7],[0,4.1,-11],'#5a4434');
+  box([.7,.3,24],[-13.5,4.1,1],'#5a4434');
+  for(const x of [-8,7]) {
+    box([3.1,2.1,.18],[x,2.6,-10.77],'#5a4434');
+    box([2.75,1.8,.2],[x,2.6,-10.65],'#5b7c80');
+    box([.1,1.85,.12],[x,2.6,-10.48],'#d8c7a4');
+    box([2.8,.1,.12],[x,2.6,-10.48],'#d8c7a4');
+    box([3.4,.17,.65],[x,1.5,-10.5],'#806044');
+  }
+  box([9,.07,2.1],[0,.09,12.7],'#a79573');
+  box([9,.2,.7],[0,-.04,13.5],'#806147');
+  // Unlabelled set dressing stays at the margins, away from the evidence displays.
+  for(const [x,z] of [[-12,-9],[12,-9],[-12,10],[12,10]]){
+    box([.7,.65,.7],[x,.36,z],'#874e3b');
+    ball(.5,[x,1.1,z],'#597b4e',[.9,1.2,.9]);
+    ball(.38,[x-.25,1.25,z+.1],'#476c43');
+  }
+  const batches=new Map<THREE.Material,THREE.BufferGeometry[]>();group.updateMatrixWorld(true);
+  group.traverse(child=>{if(!(child instanceof THREE.Mesh))return;const geometry=child.geometry.index?child.geometry.toNonIndexed():child.geometry.clone();geometry.applyMatrix4(child.matrixWorld);geometry.deleteAttribute('uv');const material=child.material as THREE.Material;const parts=batches.get(material)||[];parts.push(geometry);batches.set(material,parts);});
+  const baked=new THREE.Group();baked.name=group.name;
+  for(const [material,parts]of batches){const geometry=mergeGeometries(parts,false);if(geometry){const mesh=new THREE.Mesh(geometry,material);mesh.castShadow=true;mesh.receiveShadow=true;baked.add(mesh);}parts.forEach(part=>part.dispose());}
+  group.traverse(child=>{if(child instanceof THREE.Mesh)child.geometry.dispose();});return baked;
+}

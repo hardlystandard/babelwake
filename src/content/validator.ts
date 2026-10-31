@@ -2,6 +2,8 @@ import type { Content, Picture, Zone } from './types';
 import { referenceForms } from './reference';
 import { pictureSvg } from '../ui/pictures';
 import { representativeFormOccurs } from './forms';
+import { situatedVisibleText, validateSituatedZone } from './situated-validator';
+export { renderedPictureText, situatedMigrationDebt, situatedVisibleText, validateSituatedZone } from './situated-validator';
 
 /** A deliberately conservative spelling reference: unaccented homographs such as
  * a/à, ou/où, sur/sûr and trouve/trouvé are excluded because context needs a human reviewer. */
@@ -27,6 +29,7 @@ const acceptedUnaccentedForms = new Set(['a', 'ou', 'sur', 'trouve', 'trouves', 
 const spellingReference = [...new Set([...accentReference, ...referenceForms])].filter(correct => !acceptedUnaccentedForms.has(normalize(fold(correct))));
 
 export function visibleZoneStrings(zone: Zone): string[] {
+  if (zone.design === 'situated') return situatedVisibleText(zone).map(line => line.text);
   return [zone.title, zone.subtitle, zone.intro,
     ...zone.evidence.flatMap(e => [e.title, e.text, e.picture.label ?? '']),
     ...zone.pages.flatMap(p => [p.title, ...p.slots.map(s => s.picture.label ?? '')]),
@@ -77,6 +80,7 @@ export function validateContent(content: Content): string[] {
     if (seenZoneIds.has(zone.id)) errors.push(`zone: duplicate ID ${zone.id}`);
     seenZoneIds.add(zone.id);
     visibleZoneStrings(zone).forEach(line => checkSpelling(line, zone.id));
+    if (zone.design === 'situated') errors.push(...validateSituatedZone(zone, content.lexicon, { testedWordIds: content.zones.flatMap(place => place.pages.flatMap(page => [...page.words, ...(page.distractors ?? [])])) }));
     if (!zone.evidence.length) errors.push(`${zone.id}: no encounters`);
     for (const evidence of zone.evidence) {
       checkId(evidence.id, zone.id);
@@ -85,7 +89,7 @@ export function validateContent(content: Content): string[] {
       for (const id of evidence.words) {
         wordRef(id, evidence.id);
         const word = lexicon.get(id);
-        if (word && !word.forms.some(f => new RegExp(boundary(normalize(f)), 'iu').test(normalize(evidence.text + ' ' + evidence.title)))) {
+        if (word && !word.forms.some(f => new RegExp(boundary(normalize(f)), 'iu').test(normalize(evidence.text + (zone.design === 'situated' ? '' : ' ' + evidence.title))))) {
           errors.push(`${evidence.id}: encountered lemma ${id} has no visible French form`);
         }
       }
@@ -96,6 +100,10 @@ export function validateContent(content: Content): string[] {
       if (page.zone !== zone.id) errors.push(`${page.id}: page belongs to another zone`);
       if (page.slots.length < 3 || page.slots.length > 5) errors.push(`${page.id}: a page needs 3–5 vignettes`);
       if (new Set(page.words).size !== page.words.length) errors.push(`${page.id}: duplicate tested words`);
+      const visibleTiles = [...page.words, ...(page.distractors ?? [])].map(id => lexicon.get(id)?.forms[0]).filter((form): form is string => !!form).map(normalize);
+      const repeatedTiles = [...new Set(visibleTiles.filter((form, index) => visibleTiles.indexOf(form) !== index))];
+      if (repeatedTiles.length) errors.push(`${page.id}: duplicate visible matching tiles: ${repeatedTiles.join(', ')}`);
+
       if (new Set(page.slots.map(s => s.id)).size !== page.slots.length) errors.push(`${page.id}: duplicate slot IDs`);
       if (new Set(page.slots.map(s => s.answer)).size !== page.slots.length) errors.push(`${page.id}: ambiguous or repeated answers`);
       if (new Set(page.slots.map(s => pictureSignature(s.picture))).size !== page.slots.length) errors.push(`${page.id}: ambiguous duplicate vignettes`);
@@ -106,13 +114,13 @@ export function validateContent(content: Content): string[] {
         const encounters = zone.evidence.filter(e => e.words.includes(id));
         const texts = new Set(encounters.map(e => normalize(e.text)));
         const pictures = new Set(encounters.map(e => pictureSignature(e.picture)));
-        if (encounters.length < 3 || texts.size < 3 || pictures.size < 3) errors.push(`${page.id}: ${id} needs 3 distinct encounter contexts before testing`);
+        if (encounters.length < 3 || zone.design !== 'situated' && (texts.size < 3 || pictures.size < 3)) errors.push(`${page.id}: ${id} needs 3 distinct encounter contexts before testing`);
         const word = lexicon.get(id);
         if (word?.forms[0]) {
           // The matching interface displays forms[0]. Learning an inflected form
           // alone must not silently introduce an unseen infinitive on the page.
-          const visible = encounters.filter(e => representativeFormOccurs(word, e.title + ' ' + e.text));
-          if (visible.length < 3 || new Set(visible.map(e => normalize(e.text))).size < 3 || new Set(visible.map(e => pictureSignature(e.picture))).size < 3) {
+          const visible = encounters.filter(e => representativeFormOccurs(word, (zone.design === 'situated' ? '' : e.title + ' ') + e.text));
+          if (visible.length < 3 || zone.design !== 'situated' && (new Set(visible.map(e => normalize(e.text))).size < 3 || new Set(visible.map(e => pictureSignature(e.picture))).size < 3)) {
             errors.push(`${page.id}: displayed form ${id === 'ne…pas' ? 'ne…pas' : word.forms[0]} needs 3 distinct visible contexts`);
           }
         }
@@ -124,7 +132,7 @@ export function validateContent(content: Content): string[] {
     }
     const puzzle = zone.puzzle;
     checkId(puzzle.id, zone.id);
-    if (!puzzle.steps.length) errors.push(`${puzzle.id}: no solution`);
+    if (!puzzle.steps.length && !puzzle.world?.sequence.length) errors.push(`${puzzle.id}: no solution`);
     for (const page of zone.pages) {
       if (!puzzle.requiredPages.includes(page.id)) errors.push(`${puzzle.id}: local page ${page.id} is not required for progression`);
     }

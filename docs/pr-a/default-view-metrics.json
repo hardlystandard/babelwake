@@ -1,0 +1,73 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "errors": [],
+  "records": [
+    {
+      "name": "atelier-world",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": false,
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "playerNotes": [
+        "box?",
+        "key?"
+      ],
+      "noteFontSizes": [
+        12
+      ]
+    },
+    {
+      "name": "atelier-workorder",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "playerNotes": [
+        "box?",
+        "key?"
+      ],
+      "noteFontSizes": [
+        12
+      ]
+    },
+    {
+      "name": "atelier-conversation",
+      "mode": "top-down",
+      "player": {
+        "x": 0,
+        "z": 4
+      },
+      "zoom": 1,
+      "focused": true,
+      "captions": 0,
+      "frenchFontSizes": [
+        18
+      ],
+      "playerNotes": [
+        "box?",
+        "key?",
+        "she?"
+      ],
+      "noteFontSizes": [
+        12
+      ]
+    }
+  ]
+}

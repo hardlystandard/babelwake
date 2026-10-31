@@ -1,3 +1,4 @@
+import { atelierPictureSvg } from './atelier-pictures';
 import type { Picture } from '../content/types';
 
 const ink = '#263b30';
@@ -217,6 +218,7 @@ function grammar(detail: string): string {
 
 /** Crisp, self-contained SVG art: no remote assets, fonts, scripts, or raster text. */
 export function pictureSvg(p: Picture): string {
+  if(p.kind==='atelier-vignette')return atelierPictureSvg(p);
   let drawing: string;
   switch(p.kind) {
     case 'color': if(p.detail==='palette') {drawing=['rouge','bleu','jaune','vert'].map((c,i)=>`<path d="M${-61+i*32}-17h27v42h-27Z" fill="${colorValue(c)}"/><ellipse cx="${-47.5+i*32}" cy="-17" rx="13.5" ry="4" fill="${colorValue(c)}"/>`).join('');break;} if(p.detail==='bunting') {drawing='<path d="M-70-30Q0-10 70-30" fill="none"/>'+['rouge','bleu','jaune','vert'].map((c,i)=>`<path d="M${-64+i*34}-28L${-38+i*34}-24L${-55+i*34}14Z" fill="${colorValue(c)}"/>`).join('');break;} drawing = `<path d="M-43-18Q-54-48-22-40Q-2-63 14-40Q49-49 39-15Q64 8 40 24Q43 55 11 39Q-15 62-29 37Q-64 42-43 14Q-61-3-43-18Z" fill="${colorValue(p.color)}"/><path d="M-22-23Q-30-11-24-1" fill="none" stroke="${cream}" stroke-width="7"/>`; break;

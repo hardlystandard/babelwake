@@ -1,71 +1,62 @@
-import { chromium } from '@playwright/test';
-import { mkdir } from 'node:fs/promises';
-await mkdir('artifacts', { recursive: true });
-const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+import { chromium, expect } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+
+const folder='artifacts/pr-a';
+await mkdir(folder,{recursive:true});
+const browser=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 try {
-  const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
-  const errors = [];
-  page.on('pageerror', error => errors.push(error.message));
-  await page.goto(process.env.BABELWAKE_PREVIEW ?? 'http://127.0.0.1:4173/?debug=1');
-  await page.waitForFunction(() => Boolean(window.__BABELWAKE__));
-  await page.screenshot({ animations: 'disabled', path: 'artifacts/title.png' });
-  await page.getByTestId('start').click();
-  await page.locator('#toast.visible').waitFor({ state: 'visible', timeout: 20000 });
-  await page.screenshot({ animations: 'disabled', path: 'artifacts/world.png' });
-  await page.evaluate(async () => {
-    const zone = (await window.__BABELWAKE__.content()).zones[0];
-    window.__BABELWAKE__.encounter(zone.evidence[0].id);
-  });
-  await page.locator('.evidence-panel').waitFor({ state: 'visible' });
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  await page.screenshot({ animations: 'disabled', path: 'artifacts/evidence.png' });
-  const pageId = await page.evaluate(async () => {
-    const zone = (await window.__BABELWAKE__.content()).zones[0];
-    for (const evidence of zone.evidence) window.__BABELWAKE__.encounter(evidence.id);
-    return zone.pages[0].id;
-  });
-  await page.keyboard.press('Escape');
-  await page.getByTestId('journal').click();
-  await page.getByTestId(`journal-page-${pageId}`).click();
-  await page.locator('.matching-slots').waitFor({ state: 'visible' });
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  await page.screenshot({ animations: 'disabled', path: 'artifacts/journal.png' });
-  await page.evaluate(async () => {
-    const zone = (await window.__BABELWAKE__.content()).zones[0];
-    const first = zone.evidence.find(e => e.station && zone.evidence.filter(other => other.station === e.station).length === 3);
-    if (!first) throw new Error('No three-scene station');
-    window.__BABELWAKE__.encounter(first.id);
-  });
-  await page.locator('.context-tabs [data-context]').first().waitFor({ state: 'visible' });
-  await page.locator('#next-context').click();
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  await page.screenshot({ animations: 'disabled', path: 'artifacts/station.png' });
-  await page.close();
-  const tabletContext = await browser.newContext({ viewport: { width: 1024, height: 768 }, hasTouch: true, deviceScaleFactor: 1 });
-  const tablet = await tabletContext.newPage();
-  tablet.on('pageerror', error => errors.push(`Tablet: ${error.message}`));
-  await tablet.goto(process.env.BABELWAKE_PREVIEW ?? 'http://127.0.0.1:4173/?debug=1');
-  await tablet.waitForFunction(() => Boolean(window.__BABELWAKE__));
-  await tablet.getByTestId('start').tap();
-  await tablet.locator('#sound').tap();
-  await tablet.locator('#toast.visible').waitFor({ state: 'visible' });
-  const tabletStart = await tablet.evaluate(() => window.__BABELWAKE__.view().player);
-  const tabletCanvas = await tablet.locator('canvas').boundingBox();
-  if (!tabletCanvas) throw new Error('Missing tablet canvas');
-  await tablet.locator('canvas').tap({ position: { x: tabletCanvas.width / 2, y: tabletCanvas.height * 2 / 3 } });
-  await tablet.waitForFunction(before => { const after = window.__BABELWAKE__.view().player; return Math.hypot(after.x - before.x, after.z - before.z) > .2; }, tabletStart, { timeout: 10000 });
-  const tabletImage = await tablet.locator('canvas').screenshot({ animations: 'disabled', path: 'artifacts/tablet-world.png' });
-  if (tabletImage.byteLength < 15000) throw new Error('Tablet canvas appears empty');
-  await tablet.getByTestId('journal').tap();
-  await tablet.locator('.journal-panel').waitFor({ state: 'visible' });
-  await tablet.screenshot({ animations: 'disabled', path: 'artifacts/tablet-journal.png' });
-  await tablet.locator('[data-close]').tap();
-  await tablet.evaluate(async () => {
-    const zone = (await window.__BABELWAKE__.content()).zones[0];
-    window.__BABELWAKE__.encounter(zone.evidence[0].id);
-  });
-  await tablet.locator('.evidence-panel').waitFor({ state: 'visible' });
-  await tabletContext.close();
-  if (errors.length) throw new Error(errors.join('\n'));
-  console.log('Captured title, world, evidence, journal, station, tablet world/journal. Tablet touch start, tap-to-walk, journal and evidence pass. No browser page errors.');
-} finally { await browser.close(); }
+  const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+  const errors=[];page.on('pageerror',error=>errors.push(error.message));
+  const url=new URL(process.env.BABELWAKE_PREVIEW??'http://127.0.0.1:4173/');url.searchParams.set('debug','1');
+  await page.goto(url.href);await page.getByTestId('start').click();
+  await expect(page.locator('.world-labels')).toHaveCSS('visibility','visible');
+  await page.locator('#sound').click();
+  const zone=await page.evaluate(async()=>(await window.__BABELWAKE__.content()).zones[0]);
+  const settle=()=>page.evaluate(()=>new Promise(resolve=>{let frames=12;const next=()=>--frames?requestAnimationFrame(next):resolve();requestAnimationFrame(next);}));
+  async function annotate(id,guess){
+    await settle();
+    let word=page.locator(`.situated-text [data-word="${id}"]:visible`).first();
+    if(!await word.count()){
+      const context=zone.evidence.find(e=>e.surface==='top'&&e.words.includes(id));assert(context,`No physical context for ${id}`);
+      await page.evaluate(id=>window.__BABELWAKE__.encounter(id),context.id);
+    }
+    await word.click();await page.getByTestId('guess-input').fill(guess);await page.getByTestId('guess-input').press('Enter');
+  }
+  const records=[];
+  async function capture(name){
+    await settle();
+    const metrics=await page.evaluate(()=>{
+      const visible=element=>getComputedStyle(element).display!=='none'&&element.getClientRects().length>0;
+      return{...window.__BABELWAKE__.view(),words:[...document.querySelectorAll('.situated-text .word')].filter(visible).map(e=>parseFloat(getComputedStyle(e).fontSize)),notes:[...document.querySelectorAll('.situated-text .word small')].filter(visible).map(e=>({text:e.textContent,size:parseFloat(getComputedStyle(e).fontSize)})),captions:document.querySelectorAll('.evidence-panel,.world-label').length};
+    });
+    assert(Math.abs(metrics.zoom-1)<.01,'Screenshot must use default zoom');assert.equal(metrics.captions,0);assert(metrics.words.length>0);assert(metrics.words.every(size=>size>=18));assert(metrics.notes.length>0);assert(metrics.notes.every(note=>note.size>=12));
+    try {await page.screenshot({path:`${folder}/${name}.png`,animations:'disabled',timeout:30000});}
+    catch(error){
+      if(error.name!=='TimeoutError')throw error;
+      // Freeze the already-rendered frame only for a still capture on software GL.
+      // Queue callbacks and resume both normal animation loops immediately afterward.
+      await page.evaluate(()=>{window.__BABELWAKE_CAPTURE_RAF__=window.requestAnimationFrame;window.__BABELWAKE_CAPTURE_QUEUE__=[];window.requestAnimationFrame=callback=>{window.__BABELWAKE_CAPTURE_QUEUE__.push(callback);return 0;};});
+      try{await page.screenshot({path:`${folder}/${name}.png`,animations:'disabled',timeout:30000});}
+      finally{await page.evaluate(()=>{const original=window.__BABELWAKE_CAPTURE_RAF__;window.requestAnimationFrame=original;for(const callback of window.__BABELWAKE_CAPTURE_QUEUE__)original(callback);delete window.__BABELWAKE_CAPTURE_RAF__;delete window.__BABELWAKE_CAPTURE_QUEUE__;});}
+    }
+    records.push({name,...metrics});
+  }
+  await annotate('clé','key?');await page.locator('#leave-focus').click();await settle();
+  await annotate('boîte','box?');await page.locator('#leave-focus').click();
+  assert.equal(await page.evaluate(()=>window.__BABELWAKE__.interactions().history.length),0,'Annotating must not pick up objects');
+  await capture('atelier-world');
+  // Select the same authored observations available through normal scene interactions.
+  // The hook cannot change a save or supply guesses, confirmations or translations.
+  await page.evaluate(ids=>{for(const id of ids)window.__BABELWAKE__.encounter(id);},zone.encounterOrder);
+  const workOrder=zone.evidence.find(e=>e.id===zone.puzzle.world.clues[3]);
+  await page.evaluate(id=>window.__BABELWAKE__.encounter(id),workOrder.id);
+  await capture('atelier-workorder');
+  const recipient=zone.evidence.find(e=>e.id===zone.puzzle.world.clues[5]);
+  await page.evaluate(id=>window.__BABELWAKE__.encounter(id),recipient.id);
+  await annotate('elle','she?');
+  await capture('atelier-conversation');
+  assert.deepEqual(errors,[]);
+  await writeFile(`${folder}/metrics.json`,JSON.stringify({viewport:{width:1440,height:900},errors,records},null,2));
+  console.log('Captured three actual atelier views at zoom 1: 18px French, 12px player-typed notes, no caption cards or page errors.');
+}finally{await browser.close();}

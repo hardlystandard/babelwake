@@ -54,6 +54,12 @@ describe('content validator', () => {
     const c=fixture(); c.zones[0].pages[0].words.push('inconnu');
     expect(validateContent(c).join('\n')).toContain('orphan lemma reference');
   });
+  it('rejects distinct lexical IDs that produce identical visible matching tiles, including distractors', () => {
+    const c=fixture(); c.lexicon.push({id:'pain-alias',lemma:'pain',forms:['pain'],zone:'atelier'});
+    c.zones[0].pages[0].distractors=['pain-alias'];
+    c.zones[0].evidence.filter(e=>e.words.includes('pain')).forEach(e=>e.words.push('pain-alias'));
+    expect(validateContent(c).join('\n')).toContain('duplicate visible matching tiles: pain');
+  });
   it('rejects identical rendered drawings despite distinct metadata', () => {
     const c=fixture(); c.zones[0].pages[0].slots[1].picture={kind:'bread',detail:'unused-detail'};
     expect(validateContent(c).join('\n')).toContain('ambiguous duplicate vignettes');

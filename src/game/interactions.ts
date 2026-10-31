@@ -208,7 +208,8 @@ export interface NaiveActionStep {
 }
 export interface NaiveActionAudit { passes: boolean; steps: NaiveActionStep[]; }
 
-/** Audit the authored golden encounters and physical states; every maximum must be wrong. */
+/** Even a solver that already knows the action verb must fail to identify the
+ * target by literal overlap. Every maximum within that action kind is wrong. */
 export function naiveActionAudit(zone: Zone, options: { speech?: CurrentSpeech } = {}): NaiveActionAudit {
   const world = zone.puzzle.world;
   if (!world?.sequence.length) return { passes: false, steps: [] };
@@ -223,7 +224,7 @@ export function naiveActionAudit(zone: Zone, options: { speech?: CurrentSpeech }
   const steps = world.sequence.map((expected, index): NaiveActionStep => {
     const clue = zone.evidence.find(evidence => evidence.id === world.clues[index]);
     if (clue?.surface === 'speech' && clue.anchor) speech[clue.anchor] = clue.text;
-    const actions = availableActions(zone, state);
+    const actions = availableActions(zone, state).filter(action=>action.kind===expected.kind);
     const applicable = actions.some(action => actionKey(action) === actionKey(expected));
     const scores = actions.map(action => ({ action, score: tokenOverlap(clue?.text ?? '', visibleActionLabel(zone, action, speech)) }));
     const maxScore = scores.length ? Math.max(...scores.map(item => item.score)) : -1;

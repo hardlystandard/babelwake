@@ -1,5 +1,6 @@
 import type { Content, Lexeme, Zone, ZoneId } from './types';
 import { lexicon } from './lexicon';
+import { visibleLexemeIds } from './forms';
 import {stationPosition} from './layout';
 export { lexicon };
 export const zoneIds: ZoneId[]=['atelier','marche','cafe','gare','maison','lettres'];
@@ -12,7 +13,7 @@ function occurs(text:string,form:string):boolean {
 export function prepareZone(zone:Zone):Zone {
  const stationFor=(id:string)=>id.replace(/-[012]$/,'');
  const stations=[...new Set(zone.evidence.map(e=>e.station??stationFor(e.id)))];
- return {...zone,evidence:zone.evidence.map(e=>{const station=e.station??(zone.design==='situated'?e.anchor??e.id:stationFor(e.id)),i=stations.indexOf(station);return {...e,station,position:zone.design==='situated'?e.position:stationPosition(i,stations.length,zone.id),words:lexicon.filter(w=>w.forms.some(f=>occurs(zone.design==='situated'?e.text:e.title+' '+e.text,f))).map(w=>w.id)};}),puzzle:{...zone.puzzle,steps:zone.puzzle.steps.map(s=>({...s,id:`${zone.id}-${s.id}`}))}};
+ return {...zone,evidence:zone.evidence.map(e=>{const station=e.station??(zone.design==='situated'?e.anchor??e.id:stationFor(e.id)),i=stations.indexOf(station);return {...e,station,position:zone.design==='situated'?e.position:stationPosition(i,stations.length,zone.id),words:visibleLexemeIds(zone.design==='situated'?e.text:e.title+' '+e.text,lexicon,e.senses)};}),puzzle:{...zone.puzzle,steps:zone.puzzle.steps.map(s=>({...s,id:`${zone.id}-${s.id}`}))}};
 }
 const loaders:Record<ZoneId,()=>Promise<{default:Zone}>>={
  atelier:()=>import('./zones/atelier'),marche:()=>import('./zones/marche'),cafe:()=>import('./zones/cafe'),gare:()=>import('./zones/gare'),maison:()=>import('./zones/maison'),lettres:()=>import('./zones/lettres')

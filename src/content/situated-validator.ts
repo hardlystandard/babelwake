@@ -4,6 +4,7 @@ import { frenchFormOccurs, frenchSentences, frenchWordCount, mapFrenchText, norm
 import { pictureSvg } from '../ui/pictures';
 import { journalFrame } from '../ui/journal-frame';
 import { actionKey, applyWorldAction, availableActions, initialInteractions, naiveActionAudit } from '../game/interactions';
+import { physicalModel, printedPropText } from './physical-model';
 
 export interface VisibleFrench { id: string; text: string; }
 export interface SituatedValidationOptions {
@@ -14,7 +15,7 @@ export interface SituatedValidationOptions {
 }
 const normalize = (text: string): string => normalizeFrench(text).replace(/\s+/g, ' ').trim();
 export const renderedPictureText = (picture: Picture): string[] => [...pictureSvg(picture).matchAll(/<text\b[^>]*>([\s\S]*?)<\/text>/gu)].map(match => match[1].replace(/<[^>]*>/gu, '').replace(/&#39;|&apos;/gu, "'").replace(/&quot;/gu, '"').replace(/&lt;/gu, '<').replace(/&gt;/gu, '>').replace(/&amp;/gu, '&'));
-const sceneText = (object: SceneObject): string[] => [object.label, ...(object.labels ?? []).map(label => label.text)].filter((text): text is string => !!text);
+const sceneText = (object: SceneObject): string[] => [object.label, ...(object.labels ?? []).map(label => label.text), ...printedPropText(object), ...(physicalModel(object).family==='photo'&&object.picture?renderedPictureText(object.picture):[])].filter((text): text is string => !!text);
 const actionReferences = (action: WorldAction): string[] => [action.object, ...('target' in action ? [action.target] : []), ...(action.kind === 'operate' && action.tool ? [action.tool] : [])];
 const isActor = (object: SceneObject | undefined): boolean => !!object && /person|npc|guardian|neighbor/.test(object.kind);
 
@@ -22,13 +23,8 @@ const isActor = (object: SceneObject | undefined): boolean => !!object && /perso
 export function physicalSituationSignature(zone: Zone, evidence: Evidence): string {
   const objects = new Map((zone.scene ?? []).map(object => [object.id, object]));
   // These model families/heights and world-space placement offsets mirror SituatedLayer.
-  const model = (object: SceneObject): string => {
-    const kind = object.kind;
-    for (const [pattern, family] of [[/key/, 'key'], [/box|crate|chest/, 'box'], [/door|gate/, 'door'], [/table|bench|counter|shelf/, /shelf/.test(kind) ? 'shelf' : 'table'], [/book/, 'book'], [/person|npc|guardian|neighbor/, /female|woman/.test(kind) ? 'npc-female' : 'npc-male'], [/letter|note|paper/, 'letter'], [/bottle|pot|paint/, 'bottle'], [/chair/, 'chair'], [/window/, 'window'], [/mat|floor/, 'mat'], [/notice/, 'notice']] as [RegExp, string][]) if (pattern.test(kind)) return family;
-    return 'sign';
-  };
+  const model = (object: SceneObject): string => physicalModel(object).family;
   const scale = (object: SceneObject): [number, number, number] => typeof object.size === 'number' ? [object.size, object.size, object.size] : object.size ?? [1, 1, 1];
-  const heights: Record<string, number> = { key: .25, box: 1.55, door: 3.6, table: 1.3, shelf: 1.3, book: .35, 'npc-female': 2.3, 'npc-male': 2.3, letter: .15, bottle: 1.1, chair: 1.7, window: 2.4, mat: .07, notice: 3.6, sign: 2.1 };
   const colors: Record<string, string> = { rouge: '#ad5540', bleu: '#52748c', bleue: '#52748c', jaune: '#c5a04d', vert: '#54754b', verte: '#54754b', blanc: '#e5ddc7', blanche: '#e5ddc7', noir: '#273a34', noire: '#273a34' };
   const poses = new Map<string, ScenePose>();
   for (const object of objects.values()) if (isActor(object)) poses.set(object.id, object.pose ?? {});
@@ -57,7 +53,7 @@ export function physicalSituationSignature(zone: Zone, evidence: Evidence): stri
         if (!parent || !location) return null;
         const parentScale = scale(parent)[1];
         const y = placement.relation === 'under' ? .1 : placement.relation === 'on'
-          ? model(parent) === 'chair' ? .73 * parentScale + .03 : heights[model(parent)] * parentScale + .12
+          ? model(parent) === 'chair' ? .73 * parentScale + .03 : physicalModel(parent).height * parentScale + .12
           : model(parent) === 'box' ? .8 * parentScale : .27;
         const z = placement.relation === 'under' ? model(parent) === 'chair' ? .07 : .28 : 0;
         const authored = object.placement;
@@ -77,12 +73,13 @@ export function physicalSituationSignature(zone: Zone, evidence: Evidence): stri
     const color = family === 'window' ? '#5b7c80' : family === 'notice' || family === 'sign' ? '#d8c7a4' : colors[object.color ?? ''] ?? object.color ?? defaultColor;
     const turn = Math.PI * 2, rawRotation = object.rotation ?? (family === 'notice' ? Math.atan2(18, 22) : 0);
     const rotation = precise((rawRotation % turn + turn) % turn);
-    return [family, location?.position.map(precise) ?? null, Math.abs(rotation - turn) < 1e-9 ? 0 : rotation, new Color(color).getHexString(), scale(object).map(precise), object.open ?? false, location?.visible ?? false];
+    return [family, location?.position.map(precise) ?? null, Math.abs(rotation - turn) < 1e-9 ? 0 : rotation, new Color(color).getHexString(), scale(object).map(precise), object.open ?? false, location?.visible ?? false, physicalModel(object).features, family==='photo'&&object.picture?pictureSvg(object.picture):null];
   };
   const actorPoses = [...new Set([...poses].filter(([, pose]) => pose.holds || pose.pointsTo).map(([id, pose]) => JSON.stringify([describe(id), describe(pose.holds), describe(pose.pointsTo)])))].sort();
   const demo = evidence.demonstration;
   const animation = demo ? [describe(demo.actor), demo.action.kind, demo.action.kind === 'operate' ? demo.action.operation : null, demo.action.kind === 'place' ? demo.action.relation : null, actionReferences(demo.action).map(describe)] : null;
-  return JSON.stringify({ anchor: describe(evidence.anchor), actorPoses, demonstration: animation });
+  const travel=evidence.travel?[describe(evidence.travel.actor),describe(evidence.travel.target),(evidence.travel.companions??[]).map(describe)]:null;
+  return JSON.stringify({ anchor: describe(evidence.anchor), actorPoses, demonstration: animation, travel });
 }
 
 
@@ -113,7 +110,9 @@ export function validateSituatedZone(zone: Zone, lexicon: Lexeme[], options: Sit
   const testedLemmas = new Set(tested.map(word => word.lemma));
   const answerForms = lexicon.filter(word => testedIds.has(word.id) || testedLemmas.has(word.lemma)).flatMap(word => word.forms);
   for (const form of scenery) {
-    if (answerForms.some(answer => frenchFormOccurs(form, answer) || frenchFormOccurs(answer, form))) report(zone.id, `scenery form « ${form} » is tested; scenery may never exempt learning targets`);
+    // Matching uses longest exact forms first. A compass abbreviation N is not
+    // the elision n’, and cannot exempt it from tracking or from encounter caps.
+    if (answerForms.some(answer => normalize(answer)===normalize(form))) report(zone.id, `scenery form « ${form} » is tested; scenery may never exempt learning targets`);
   }
   for (const line of situatedVisibleText(zone)) {
     const untracked = [...new Set(mapFrenchText(line.text, lexicon, scenery).unmapped.map(token => token.form))];
@@ -126,6 +125,9 @@ export function validateSituatedZone(zone: Zone, lexicon: Lexeme[], options: Sit
   if (byObject.size !== objects.length) report(zone.id, 'duplicate scene object IDs');
   for (const object of objects) {
     if (!object.id || !object.position.every(Number.isFinite)) report(object.id || zone.id, 'invalid physical object ID or position');
+    const quantityLimit=/^(bread|apple|pear|fruit|cheese|egg|fish|carrot|vegetable|money|coin|flower)(-|$)/.test(object.kind)?100:20;
+    if(object.quantity!==undefined&&(!Number.isInteger(object.quantity)||object.quantity<1||object.quantity>quantityLimit))report(object.id,'quantity exceeds the actual rendered count limit');
+    if(object.value!==undefined&&!Number.isFinite(object.value))report(object.id,'physical value must be finite');
     for (const parent of [object.containedBy, object.placement?.target].filter((id): id is string => !!id)) if (!byObject.has(parent) || parent === object.id) report(object.id, 'invalid initial placement/container reference');
     if (object.pose) { if (!isActor(object)) report(object.id, 'physical poses require an NPC actor'); checkPose(object.pose, object.id, object.id); }
     const visited = new Set<string>([object.id]);
@@ -146,8 +148,12 @@ export function validateSituatedZone(zone: Zone, lexicon: Lexeme[], options: Sit
     }
   }
   const byEvidence = new Map(zone.evidence.map(evidence => [evidence.id, evidence]));
-  const paradigm = /(?<!\p{L})(je|tu|il|elle|nous|vous|ils|elles)\s+(?:suis|es|est|sommes|êtes|sont|ai|as|a|avons|avez|ont|vais|vas|va|allons|allez|vont|veux|veut|voulons|voulez|veulent|peux|peut|pouvons|pouvez|peuvent)(?!\p{L})/giu;
+  const paradigm = /(?<![\p{L}’'-])(je|tu|il|elle|nous|vous|ils|elles)\s+(?:suis|es|est|sommes|êtes|sont|ai|as|a|avons|avez|ont|vais|vas|va|allons|allez|vont|veux|veut|voulons|voulez|veulent|peux|peut|pouvons|pouvez|peuvent)(?!\p{L})/giu;
   for (const evidence of zone.evidence) {
+    for(const [surface,id]of Object.entries(evidence.senses??{})){
+      const word=lexicon.find(entry=>entry.id===id);
+      if(!word||!word.forms.some(form=>normalize(form)===normalize(surface))||!frenchFormOccurs(evidence.text,surface))report(evidence.id,'word sense must pin an actual visible tracked form');
+    }
     if (!evidence.anchor || !byObject.has(evidence.anchor)) report(evidence.id, 'situated evidence needs an existing physical anchor');
     if (!evidence.surface) report(evidence.id, 'situated evidence needs an explicit text surface');
     if (evidence.kind === 'person' && evidence.surface !== 'speech') report(evidence.id, 'NPC dialogue must use an anchored speech surface');
@@ -161,6 +167,10 @@ export function validateSituatedZone(zone: Zone, lexicon: Lexeme[], options: Sit
     if (evidence.demonstration) {
       if (!isActor(byObject.get(evidence.demonstration.actor))) report(evidence.id, 'demonstration actor must reference a physical NPC');
       if (actionReferences(evidence.demonstration.action).some(id => !byObject.has(id))) report(evidence.id, 'demonstration action references unknown scene objects');
+    }
+    if(evidence.travel){
+      if(!isActor(byObject.get(evidence.travel.actor))||evidence.travel.companions?.some(id=>!isActor(byObject.get(id))))report(evidence.id,'travel needs physical NPC actors');
+      if(!byObject.has(evidence.travel.target))report(evidence.id,'travel references an unknown destination');
     }
     const isFinaleLetter = zone.id === 'lettres' && evidence.kind === 'note' && /letter/.test(byObject.get(evidence.anchor ?? '')?.kind ?? '');
     if (!isFinaleLetter) checkBudget(evidence.text, evidence.surface ?? (evidence.kind === 'person' ? 'speech' : evidence.kind === 'note' ? 'note' : 'sign'), evidence.id);

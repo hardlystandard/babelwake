@@ -23,6 +23,12 @@ describe('encounters and journal', () => {
     expect(pageAvailable(state, withDistractor, extended)).toBe(false);
     expect(pageAvailable(encounter(state,'other-2'), withDistractor, extended)).toBe(true);
   });
+  it('keeps a situated page locked after three texts on one prop',()=>{
+    const same:Zone={...zone,design:'situated',scene:[{id:'one',kind:'key',position:[0,0]}],evidence:zone.evidence.map(e=>({...e,anchor:'one',surface:'top'}))};
+    expect(pageAvailable(seenState(),page,same)).toBe(false);
+    const distinct:Zone={...same,scene:[0,1,2].map(i=>({id:`prop-${i}`,kind:'key',position:[i*3,0]})),evidence:same.evidence.map((e,i)=>({...e,anchor:`prop-${i}`}))};
+    expect(pageAvailable(seenState(),page,distinct)).toBe(true);
+  });
   it('collects only actually seen word evidence', () => {
     expect([...encounteredWords(initialState(), [zone])]).toEqual([]);
     expect(encounteredWords(encounter(initialState(), 'context-0'), [zone])).toEqual(new Set(page.words));

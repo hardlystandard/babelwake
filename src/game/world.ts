@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import type { Evidence, Picture, Puzzle, Zone } from '../content/types';
-import { createScenery, createWorkshopScenery } from './scenery';
+import { createScenery, createSituatedScenery } from './scenery';
 import { SituatedLayer, type SituatedInteractionState } from './situated';
 
 type Anchor = { evidence: Evidence; root: THREE.Group; label: HTMLButtonElement; height: number };
@@ -31,7 +31,7 @@ export class World {
   private zone?: Zone;
   private seen = new Set<string>();
   private controls: Record<string, string> = {};
-  private wordRenderer?: (text: string) => string;
+  private wordRenderer?: (text: string, evidence?:Evidence) => string;
   private wordRevision = 0;
   private readonly stationScenes = new Map<string, string[]>();
   private destination?: THREE.Vector3;
@@ -144,7 +144,7 @@ export class World {
     Object.assign(sun.shadow.camera, { left:-29, right:29, top:29, bottom:-29, far:90 });
     sun.shadow.normalBias = .05; sun.shadow.bias = -.0002;
     this.scene.add(sun);
-    this.scene.add(zone.design==='situated'?createWorkshopScenery():createScenery(zone));
+    this.scene.add(zone.design==='situated'?createSituatedScenery(zone):createScenery(zone));
     if(zone.design!=='situated')this.buildGate();
     this.focusTarget=undefined;this.targetZoom=1;this.camera.zoom=1;
     this.player = new THREE.Group(); this.playerBody = new THREE.Group();
@@ -440,7 +440,7 @@ export class World {
       anchor.label.dataset.complete=String(completed);
     }
   }
-  setWordRenderer(renderer:(text:string)=>string):void{this.wordRenderer=renderer;this.wordRevision++;this.situated?.setWordRenderer(renderer,this.wordRevision);this.updateSeen(this.seen);}
+  setWordRenderer(renderer:(text:string,evidence?:Evidence)=>string):void{this.wordRenderer=renderer;this.wordRevision++;this.situated?.setWordRenderer(renderer,this.wordRevision);this.updateSeen(this.seen);}
   setAnnotations(_annotations:Record<string,string>):void{this.updateSeen(this.seen);}
   setControls(controls:Record<string,string>):void{this.controls=controls;this.situated?.invalidateTextMetrics();}
   setContrast(enabled:boolean):void{this.host.classList.toggle('world-high-contrast',enabled);if(this.renderer)this.renderer.toneMappingExposure=enabled?1.05:.95;}
@@ -455,6 +455,7 @@ export class World {
   clearFocus():void{this.focusTarget=undefined;this.targetZoom=1;this.situated?.clearFocus();}
   focusEntity(id:string):void{const target=this.situated?.focusEntity(id);if(target){this.focusTarget=target;this.targetZoom=1;this.destination=undefined;}}
   setInteractionState(state:SituatedInteractionState):void{this.situated?.setInteractionState(state);}
+  physicalState(){return this.situated?.physicalState()??[];}
   getPlayerPosition():{x:number;z:number}{return{x:this.player.position.x,z:this.player.position.z};}
   getViewState():{mode:'top-down';player:{x:number;z:number};zoom:number;focused:boolean}{return{mode:'top-down',player:this.getPlayerPosition(),zoom:this.camera.zoom,focused:!!this.focusTarget};}
   resize():void{

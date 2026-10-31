@@ -8,6 +8,18 @@ export function frenchFormOccurs(text: string, form: string): boolean {
   return new RegExp(`(?<![\\p{L}\\p{N}])${escaped}${normalized.endsWith("'") ? '' : '(?![\\p{L}\\p{N}])'}`, 'iu').test(normalizeFrench(text));
 }
 
+/** Homographs in an authored line can name different lemmas (la porte / elle
+ * porte). Prefer the dictionary's first sense unless the author pins a sense;
+ * all aliases within that chosen lemma still share their encounter evidence. */
+export function visibleLexemeIds(text:string,lexicon:Lexeme[],senses:Record<string,string>={}):string[] {
+ return lexicon.filter(word=>word.forms.some(form=>{
+  if(!frenchFormOccurs(text,form))return false;
+  const normalized=normalizeFrench(form);
+  const chosen=senses[normalized]?lexicon.find(entry=>entry.id===senses[normalized]):lexicon.find(entry=>entry.forms.some(candidate=>normalizeFrench(candidate)===normalized));
+  return chosen?.lemma===word.lemma;
+ })).map(word=>word.id);
+}
+
 /** Matching tiles display forms[0], except the two-part negation construction.
  * Use the same predicate when checking data and counting inspected encounters. */
 export function representativeFormOccurs(word: Pick<Lexeme, 'id' | 'forms'>, text: string): boolean {

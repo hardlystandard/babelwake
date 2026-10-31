@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { JournalPage, Lexeme, Zone } from '../src/content/types';
-import { frenchWordCount, mapFrenchText } from '../src/content/forms';
+import { frenchWordCount, mapFrenchText, visibleLexemeIds } from '../src/content/forms';
 import * as frame from '../src/ui/journal-frame';
 import { physicalSituationSignature } from '../src/content/situated-validator';
 import { situatedMigrationDebt, validateContent, validateSituatedZone } from '../src/content/validator';
@@ -18,7 +18,7 @@ function fixture(): Zone {
     // The strict helper does not require the production migration flag.
     scene: [
       { id: 'key', kind: 'key', position: [0, 0], portable: true, label: 'clé' },
-      { id: 'door', kind: 'door', position: [3, 0], operations: ['open'], label: 'porte' },
+      { id: 'door', kind: 'door', position: [3, 0], portable:true, operations: ['open'], label: 'porte' },
     ],
     evidence: [
       { id: 'e-key', title: 'internal key identifier', text: 'Clé', words: ['clé'], picture: { kind: 'key' }, position: [0, 0], kind: 'object', anchor: 'key', surface: 'top' },
@@ -147,7 +147,7 @@ describe('strict situated validator', () => {
     const nouns=[{id:'clé',kind:'key'},{id:'porte',kind:'door'},{id:'livre',kind:'book'}];
     for(const [row,noun] of nouns.entries()) for(let n=0;n<3;n++) {
       const id=`${noun.kind}-${n}`;
-      zone.scene.push({id,kind:noun.kind,position:[n*3,row*3],label:noun.id,...(row===0&&n===0?{portable:true}:{}),...(row===1&&n===0?{operations:['open' as const]}:{})});
+      zone.scene.push({id,kind:noun.kind,position:[n*3,row*3],label:noun.id,...((row===0||row===1)&&n===0?{portable:true}:{}),...(row===1&&n===0?{operations:['open' as const]}:{})});
       zone.evidence.push({id:`e-${id}`,title:`internal-${id}`,text:noun.id,words:[noun.id],anchor:id,surface:'top',kind:'object',picture:{kind:noun.kind},position:[n*3,row*3]});
     }
     zone.scene.push({id:'salutation',kind:'note',position:[9,0],label:'Chère Claire'});
@@ -233,7 +233,7 @@ describe('strict situated validator', () => {
     const nouns=[{id:'clé',kind:'key'},{id:'porte',kind:'door'},{id:'livre',kind:'book'}];
     for(const [row,noun] of nouns.entries()) for(let n=0;n<3;n++) {
       const id=`${noun.kind}-${n}`;
-      zone.scene.push({id,kind:noun.kind,position:[n*3,row*3],label:noun.id,...(row===0&&n===0?{portable:true}:{}),...(row===1&&n===0?{operations:['open' as const]}:{})});
+      zone.scene.push({id,kind:noun.kind,position:[n*3,row*3],label:noun.id,...((row===0||row===1)&&n===0?{portable:true}:{}),...(row===1&&n===0?{operations:['open' as const]}:{})});
       zone.evidence.push({id:`e-${id}`,title:`internal-${id}`,text:noun.id,words:[noun.id],anchor:id,surface:'top',kind:'object',picture:{kind:noun.kind},position:[n*3,row*3]});
     }
     zone.encounterOrder=zone.evidence.map(e=>e.id); zone.pages=[page()]; zone.puzzle.requiredPages=['page'];
@@ -293,5 +293,42 @@ describe('strict situated validator', () => {
     expect(situatedMigrationDebt(content)[0].violations.some(error => error.includes('untracked French tokens: prends'))).toBe(true);
     zone.design = 'situated';
     expect(validateContent(content).some(error => error.includes('untracked French tokens: prends'))).toBe(true);
+  });
+  it('does not mistake a carrying homograph for a door or merge their notes',()=>{
+    const words:Lexeme[]=[{id:'porte',lemma:'porte',forms:['porte','portes'],zone:'atelier'},{id:'porter',lemma:'porter',forms:['porte','portes','portez'],zone:'cafe'}];
+    expect(visibleLexemeIds('La porte.',words)).toEqual(['porte']);
+    expect(visibleLexemeIds('Elle porte.',words,{porte:'porter'})).toEqual(['porter']);
+    const zone=fixture();zone.evidence[0].senses={clé:'missing'};
+    expect(errors(zone)).toContain('word sense must pin an actual visible tracked form');
+  });
+  it('tracks French printed on a physical ticket or photograph as well as DOM labels',()=>{
+    const zone=fixture();zone.scene!.push({id:'receipt',kind:'receipt',position:[6,0],detail:'mot inconnu'});
+    expect(errors(zone)).toContain('untracked French tokens: mot, inconnu');
+    zone.scene!.at(-1)!.kind='photo';zone.scene!.at(-1)!.picture={kind:'note',label:'inconnu'};
+    expect(errors(zone)).toContain('untracked French tokens: inconnu');
+  });
+  it('only counts differences that the new prop models actually render',()=>{
+    const zone=fixture();zone.scene![0].kind='cup-coffee';zone.scene![0].detail='hot';
+    const hot=physicalSituationSignature(zone,zone.evidence[0]);
+    zone.scene![0].detail='cold';
+    expect(physicalSituationSignature(zone,zone.evidence[0])).not.toBe(hot);
+    zone.scene![0].kind='key';zone.scene![0].detail='unused-a';
+    const ordinary=physicalSituationSignature(zone,zone.evidence[0]);
+    zone.scene![0].detail='unused-b';
+    expect(physicalSituationSignature(zone,zone.evidence[0])).toBe(ordinary);
+    zone.scene![0].quantity=3;
+    expect(physicalSituationSignature(zone,zone.evidence[0])).not.toBe(ordinary);
+  });
+  it('rejects invisible excess quantities and nonexistent travel demonstrations',()=>{
+    const zone=fixture();zone.scene![0].quantity=21;
+    zone.evidence[0].travel={actor:'missing',target:'missing'};
+    expect(errors(zone)).toContain('quantity exceeds the actual rendered count limit');
+    expect(errors(zone)).toContain('travel needs physical NPC actors');
+    expect(errors(zone)).toContain('travel references an unknown destination');
+  });
+  it('does not confuse a compass abbreviation with a negation elision',()=>{
+    const zone=fixture();zone.scenery=['N'];zone.pages=[{...page(),words:['ne…pas'],slots:[{id:'x',answer:'ne…pas',picture:{kind:'key'}}]}];
+    const words=[...lexicon,{id:'ne…pas',lemma:'ne…pas',forms:['ne','n’','pas'],zone:'atelier' as const}];
+    expect(validateSituatedZone(zone,words).some(error=>error.includes('scenery form'))).toBe(false);
   });
 });

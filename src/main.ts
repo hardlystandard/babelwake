@@ -66,7 +66,7 @@ function updateHud(): void {
   $('#page-count').textContent = `${zone.pages.filter(p => state.confirmed.includes(p.id)).length}/${zone.pages.length}`;
   $('#controls-hint').innerHTML = `<kbd>${esc(state.settings.controls.forward.replace('Key',''))}</kbd><kbd>${esc(state.settings.controls.left.replace('Key',''))}</kbd><kbd>${esc(state.settings.controls.back.replace('Key',''))}</kbd><kbd>${esc(state.settings.controls.right.replace('Key',''))}</kbd><span>↔</span><span>◉</span><span>·</span><kbd>${esc(state.settings.controls.journal.replace('Key',''))}</kbd> ▤`;
   world.updateSeen(new Set(state.encountered));
-  const wordsKey=JSON.stringify([state.guesses,state.confirmed]);if(wordsKey!==renderedWordsKey){renderedWordsKey=wordsKey;world.setWordRenderer(text=>french(text).replace(/<button /g,'<span ').replace(/<\/button>/g,'</span>'));}
+  const wordsKey=JSON.stringify([state.guesses,state.confirmed]);if(wordsKey!==renderedWordsKey){renderedWordsKey=wordsKey;world.setWordRenderer((text,evidence)=>french(text,evidence?.senses).replace(/<button /g,'<span ').replace(/<\/button>/g,'</span>'));}
   $('#puzzle').hidden=zone.design==='situated';
   renderPhysicalControls();
 }
@@ -83,12 +83,12 @@ function shell(title: string, body: string, overline = '', cls = ''): string {
 const canonicalIds=new Map(lexicon.map(w=>[w.id,lexicon.find(l=>l.id===w.lemma)?.id??lexicon.find(l=>l.lemma===w.lemma)?.id??w.id]));
 const canonicalId=(id:string):string=>canonicalIds.get(id)??id;
 const guessFor = (id:string):string => state.guesses[canonicalId(id)] ?? '';
-world.setWordRenderer(text=>french(text).replace(/<button /g,'<span ').replace(/<\/button>/g,'</span>'));
+world.setWordRenderer((text,evidence)=>french(text,evidence?.senses).replace(/<button /g,'<span ').replace(/<\/button>/g,'</span>'));
 const allForms = lexicon.flatMap(word => [...new Set([word.lemma, ...word.forms])].map(form => ({ form, lower:form.toLocaleLowerCase('fr'), id: word.id }))).sort((a,b) => b.form.length-a.form.length);
-function french(text: string): string {
+function french(text: string, senses:Record<string,string>={}): string {
   let output = ''; let at = 0;const lowerText=text.toLocaleLowerCase('fr');
   while (at < text.length) {
-    const found = allForms.find(({form,lower}) => lowerText.startsWith(lower,at) && (at === 0 || !/[\p{L}]/u.test(text[at-1])) && (/['’]$/.test(form)||!/[\p{L}]/u.test(text[at+form.length] ?? '')));
+    const found = allForms.find(({form,lower,id}) => (!senses[lower]||senses[lower]===id) && lowerText.startsWith(lower,at) && (at === 0 || !/[\p{L}]/u.test(text[at-1])) && (/['’]$/.test(form)||!/[\p{L}]/u.test(text[at+form.length] ?? '')));
     if (found) { const confirmed = [...loaded.values()].some(z=>z.pages.some(p=>state.confirmed.includes(p.id)&&p.words.some(id=>canonicalId(id)===canonicalId(found.id))));
       output += `<button class="word ${confirmed ? 'confirmed' : ''}" data-word="${found.id}"><span>${esc(text.slice(at, at+found.form.length))}</span>${guessFor(found.id) ? `<small>${esc(guessFor(found.id))}</small>` : ''}</button>`; at += found.form.length;
     } else { const surface=/^[\p{L}]+(?:[’'-][\p{L}]+)*/u.exec(text.slice(at))?.[0];if(surface){const id='@'+surface.toLocaleLowerCase('fr');surfaceWords.set(id,{id,lemma:surface,forms:[surface],zone:zone?.id??'atelier'});output+=`<button class="word" data-word="${esc(id)}"><span>${esc(surface)}</span>${guessFor(id)?`<small>${esc(guessFor(id))}</small>`:''}</button>`;at+=surface.length;}else{output+=esc(text[at]);at++;} }
@@ -142,28 +142,53 @@ function performWorldAction(action:WorldAction):boolean {
   if(next===interactions)return false;
   interactions=next;world.setInteractionState(interactions);audio.cue('step');renderPhysicalControls();commitWorldPuzzle();return true;
 }
+/** Physical diagrams describe an affordance, without supplying French labels. */
+function physicalActionDiagram(action:WorldAction):{drawing:string;description:string} {
+  const dot=(x:number,y:number)=>`<circle cx="${x}" cy="${y}" r="9" fill="currentColor" stroke="none"/>`;
+  const arrow=(path:string)=>`<path d="${path}" fill="none" marker-end="url(#action-arrow)"/>`;
+  const frame='<path d="M39 37H95V83H39Z" fill="none"/>';
+  let drawing='',description='';
+  switch(action.kind){
+    case 'place':
+      drawing=frame+dot(67,action.relation==='on'?25:action.relation==='under'?104:60)+arrow(action.relation==='on'?'M12 24H47':action.relation==='under'?'M12 104H47':'M10 60H47');
+      description=action.relation==='on'?'Circle resting at the upper edge of a rectangle':action.relation==='under'?'Circle beneath the lower edge of a rectangle':'Circle enclosed by a rectangle';break;
+    case 'combine': drawing=dot(50,64)+'<circle cx="72" cy="64" r="13" fill="none"/>'+arrow('M17 64H34');description='Two objects joined together';break;
+    case 'deliver': drawing='<circle cx="86" cy="29" r="10" fill="none"/><path d="M72 90V51Q86 38 100 51V90M73 55L58 66" fill="none"/>'+dot(45,66)+arrow('M10 66H29');description='An object moving into a person’s hand';break;
+    case 'take': drawing='<path d="M77 82V54Q77 45 83 45Q89 45 89 54V65L96 58Q104 57 102 66L95 89H76L67 77Q65 70 72 72Z" fill="none"/>'+dot(29,64)+arrow('M43 64H65');description='A hand lifting an object';break;
+    case 'operate':
+      if(action.operation==='open'||action.operation==='close'){
+        drawing='<path d="M34 93V23H92V93" fill="none"/><path d="M39 28L74 41V94L39 88Z" fill="none"/>'+arrow(action.operation==='open'?'M102 57Q116 82 87 96':'M105 93Q119 62 97 50');
+        description=action.operation==='open'?'A hinged panel swinging away from its frame':'A hinged panel returning to its frame';
+      }else if(action.operation==='turn'){
+        drawing='<circle cx="65" cy="65" r="20" fill="none"/>'+arrow('M35 41A38 38 0 1 1 30 82');description='A circular handle rotating';
+      }else{drawing='<path d="M35 85H98V97H35Z" fill="none"/><path d="M45 83V69H88V83" fill="none"/>'+arrow('M67 21V53');description='A button moving downward';}
+      break;
+  }
+  return {drawing:`<svg viewBox="0 0 130 125" aria-hidden="true"><defs><marker id="action-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0 0L5 2.5L0 5Z" fill="currentColor" stroke="none"/></marker></defs><g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">${drawing}</g></svg>`,description};
+}
+function chooseWorldAction(id:string,actions:WorldAction[]):void {
+  if(actions.length===1){world.focusEntity(id);performWorldAction(actions[0]);return;}
+  world.focusEntity(id);
+  const diagrams=actions.map(physicalActionDiagram);
+  openOverlay(shell('◉ → ◇',`<div class="physical-action-options">${diagrams.map((diagram,index)=>`<button class="physical-action-option" data-physical-action="${index}" aria-label="${esc(diagram.description)}">${diagram.drawing}</button>`).join('')}</div>`,'','physical-action-panel'),'physical-action-overlay');
+  document.querySelectorAll<HTMLButtonElement>('[data-physical-action]').forEach(button=>button.onclick=()=>{
+    const action=actions[Number(button.dataset.physicalAction)];
+    closeOverlay();world.focusEntity(id);performWorldAction(action);
+  });
+}
 function interactEntity(id:string):void {
   if(zone.design!=='situated'||!interactions)return;
   const physical=interactions;
   const object=zone.scene?.find(item=>item.id===id);if(!object)return;
-  if(state.solved.includes(zone.puzzle.id)&&zone.puzzle.world?.exit===id){const next=zoneIds[zoneIds.indexOf(zone.id)+1];if(next)void changeZone(next);return;}
+  if(state.solved.includes(zone.puzzle.id)&&zone.puzzle.world?.exit===id){const next=zoneIds[zoneIds.indexOf(zone.id)+1];if(next)void changeZone(next);else openEnding();return;}
   const lines=zone.evidence.filter(e=>e.anchor===id);
   if(lines.length&&!object.recipient&&(!world.getViewState().focused||focusedEntity!==id)){
     focusedEntity=id;inspect((lines.find(e=>!state.encountered.includes(e.id))??lines[0]).id);return;
   }
-  const actions=availableActions(zone,physical);
-  const held=physical.held;
-  const action=held
-    ? actions.find(a=>a.kind==='operate'&&a.object===id&&a.tool===held&&a.operation==='open')
-      ??actions.find(a=>a.kind==='deliver'&&a.target===id)
-      ??actions.find(a=>a.kind==='place'&&a.target===id&&a.relation==='in')
-      ??actions.find(a=>a.kind==='place'&&a.target===id)
-      ??actions.find(a=>a.kind==='combine'&&a.target===id)
-    : actions.find(a=>a.kind==='take'&&a.object===id);
-  if(action){world.focusEntity(id);performWorldAction(action);return;}
+  const actions=availableActions(zone,physical).filter(action=>'target'in action?action.target===id:action.object===id);
+  if(actions.length){chooseWorldAction(id,actions);return;}
   if(lines.length){const next=lines.find(e=>!state.encountered.includes(e.id))??lines[(lines.findIndex(e=>e.id===lastSpeech.get(id))+1)%lines.length];lastSpeech.set(id,next.id);inspect(next.id);return;}
-  const operation=actions.find(a=>a.kind==='operate'&&a.object===id&&a.operation===(physical.opened.includes(id)?'close':'open'));
-  if(operation){world.focusEntity(id);performWorldAction(operation);}else world.focusEntity(id);
+  world.focusEntity(id);
 }
 const lastSpeech=new Map<string,string>();
 function talkEntity(id:string):void {
@@ -247,14 +272,14 @@ function openRoute(): void {
   document.querySelectorAll<HTMLElement>('[data-route]').forEach(b=>b.onclick=()=>void changeZone(b.dataset.route as ZoneId));
 }
 function openMenu(): void {
-  openOverlay(shell('A moment of quiet',`<div class="menu-list"><button id="resume">${playing?'Resume journey':'Back'} <span>↗</span></button>${zone.design==='situated'?'<button id="reset-attempt">Reset workshop <span>↺</span></button>':''}<button id="settings" data-testid="settings-toggle">Settings <span>↗</span></button><button id="export">Export save <span>↓</span></button><label class="import-button">Import save <span>↑</span><input id="import" type="file" accept="application/json,.json" hidden></label><button id="help-menu">How to play <span>↗</span></button><button id="credits-menu">Credits <span>↗</span></button></div><p class="menu-foot">Your journey is saved on this device.</p>`,'BABELWAKE','menu-panel'),'menu-overlay');
+  openOverlay(shell('A moment of quiet',`<div class="menu-list"><button id="resume">${playing?'Resume journey':'Back'} <span>↗</span></button>${zone.design==='situated'?'<button id="reset-attempt">Reset objects <span>↺</span></button>':''}<button id="settings" data-testid="settings-toggle">Settings <span>↗</span></button><button id="export">Export save <span>↓</span></button><label class="import-button">Import save <span>↑</span><input id="import" type="file" accept="application/json,.json" hidden></label><button id="help-menu">How to play <span>↗</span></button><button id="credits-menu">Credits <span>↗</span></button></div><p class="menu-foot">Your journey is saved on this device.</p>`,'BABELWAKE','menu-panel'),'menu-overlay');
   const reset=$('#reset-attempt');if(reset)reset.onclick=()=>{interactions=initialInteractions(zone);world.setInteractionState(interactions);world.clearFocus();closeOverlay();renderPhysicalControls();};
   $('#resume').onclick=closeOverlay;$('#settings').onclick=openSettings;$('#help-menu').onclick=openHelp;$('#credits-menu').onclick=openCredits;
   $('#export').onclick=()=>{const url=URL.createObjectURL(new Blob([exportSave(state)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='babelwake.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   $('#import').onchange=async()=>{const file=$<HTMLInputElement>('#import').files?.[0];if(!file)return;try{state=importSave(await file.text());await hydrate();applySettings();playing=true;$('#title-screen').hidden=true;$('#hud').hidden=false;await changeZone(state.zone);toast('✓');}catch{toast('This file is not a valid Babelwake save.');}};
 }
 function openHelp(): void {
-  openOverlay(shell('Find your own words',`<div class="help-list"><div><span>01</span><p>Stroll with WASD, the arrow keys, or select a path to walk there. Select an object, a person, or a sign to look closely. Inspecting brings the camera closer. People speak above their heads; select their … button to continue the conversation, including while holding something. E interacts with the closest object; Shift+E talks to a nearby person.</p></div><div><span>02</span><p>Look at the pictures and what is happening. Select a French word and write your own guess, in any language. Your notes follow the word.</p></div><div><span>03</span><p>Open your journal with J. A page becomes available after you have seen each word in three distinct scenes. Drag the words onto the pictures, or select a word and then a picture. A whole correct page seals itself.</p></div><div><span>04</span><p>Use what you understand to open the way onward. Look closely at a portable object, then select it again to hold it. Select a container, mechanism, or person to place, use, or deliver it. The whole arrangement is checked together; you can move things again or reset the workbench with ↺. There is no clock and no penalty.</p></div></div><button id="help-close" class="primary">Ready to explore <span>↗</span></button>`,'HOW TO PLAY','help-panel'),'menu-overlay');$('#help-close').onclick=closeOverlay;
+  openOverlay(shell('Find your own words',`<div class="help-list"><div><span>01</span><p>Stroll with WASD, the arrow keys, or select a path to walk there. Select an object, a person, or a sign to look closely. Inspecting brings the camera closer. People speak above their heads; select their … button to continue the conversation, including while holding something. E interacts with the closest object; Shift+E talks to a nearby person.</p></div><div><span>02</span><p>Look at the pictures and what is happening. Select a French word and write your own guess, in any language. Your notes follow the word.</p></div><div><span>03</span><p>Open your journal with J. A page becomes available after you have seen each word in three distinct scenes. Drag the words onto the pictures, or select a word and then a picture. A whole correct page seals itself.</p></div><div><span>04</span><p>Use what you understand to open the way onward. Look closely at a portable object, then select it again to hold it. Select a container, mechanism, or person to place, use, or deliver it. The whole arrangement is checked together; you can move things again or reset the objects in this place with ↺. There is no clock and no penalty.</p></div></div><button id="help-close" class="primary">Ready to explore <span>↗</span></button>`,'HOW TO PLAY','help-panel'),'menu-overlay');$('#help-close').onclick=closeOverlay;
 }
 function openCredits(): void {openOverlay(shell('Made of small discoveries',`<div class="credits-copy"><p><strong>BABELWAKE</strong><br>Le fil des mots</p><p>A browser game about observation, language, and the connections we make.</p><p>Built with TypeScript, Three.js & Web Audio.<br>Original procedural scenery and SVG illustrations.<br>Inspired by the discovery-led language play of Chants of Sennaar.</p><p>French text awaits independent native-speaker review. See content/REVIEW.md in the source.</p><p>No accounts. No analytics. Your notes stay on your device.</p></div>`,'CREDITS','menu-panel'),'menu-overlay');}
 function openSettings(): void {
@@ -303,6 +328,7 @@ if(new URLSearchParams(location.search).get('debug')==='1'){
     confirm:(id:string,a:Record<string,string>)=>{const page=zone.pages.find(p=>p.id===id);if(!page)throw Error('Unknown page');const result=confirmPage(state,page,a,zone);state=result.state;if(result.confirmed){persist();updateHud();commitWorldPuzzle();}return result.confirmed;},
     solve:(answers:string[])=>{const result=solvePuzzle(state,zone.puzzle,answers);state=result.state;if(result.solved)persist();return result.solved;},
     interactions:()=>interactions?structuredClone(interactions):undefined,
+    physicalState:()=>world.physicalState(),
     actions:()=>interactions?availableActions(zone,interactions):[],
     act:(action:WorldAction)=>performWorldAction(action),
     commit:()=>commitWorldPuzzle(),

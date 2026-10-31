@@ -15,7 +15,7 @@ For every word tested by a journal page, make one row in the session notes:
 
 A word fails if its three contexts repeat the same clue, if an illustration needs its French caption to be understood, or if the player arrives at the answer only by eliminating other slots. Never count guessing the page arrangement as learning the word. After a confirmation, observe whether the participant can apply the word in a later place without reopening its original encounter.
 
-## Corrected atelier world
+## Physical world — all six places
 
 - [ ] French is readable on the actual prop, sign or notice at default zoom. The player can read their own subscripts comfortably without inspecting or enlarging the scene.
 - [ ] Inspecting pans toward the object and keeps the avatar in place. No title/paragraph caption or illustrated evidence card appears.
@@ -28,7 +28,7 @@ A word fails if its three contexts repeat the same clue, if an illustration need
 - [ ] Legal wrong actions remain possible, and no individual correctness feedback appears. The player can correct placements or retrieve a mistaken delivery; all final conditions are checked together.
 - [ ] Matching-page titles, headings, navigation and pictures contain none of the slot answers. Journal confirmation still checks the whole page at once.
 
-The five following zones retain their earlier content until PR B. Their checklists are acceptance work to perform after that correction, not evidence of current situated-design compliance.
+The following checks apply to the current authored six-zone journey. They remain participant acceptance work, not claims established by automated reachability.
 
 ## Zone checklist
 

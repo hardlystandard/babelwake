@@ -1,5 +1,6 @@
 import {lexicon} from '../content/lexicon';
 import {representativeFormOccurs} from '../content/forms';
+import {physicalSituationSignature} from '../content/situated-validator';
 import type { JournalPage, Lexeme, Puzzle, Zone, ZoneId } from '../content/types';
 
 export interface Settings {
@@ -34,8 +35,16 @@ export function encounteredWords(state: GameState, zones: Zone[]): Set<string> {
 }
 export function pageAvailable(state: GameState, page: JournalPage, zone: Zone): boolean {
   const ids = new Set(state.encountered);
-  return (page.requiresEvidence??[]).every(id=>ids.has(id)) && [...page.words,...(page.distractors ?? [])].every(word => zone.evidence.filter(e => ids.has(e.id) && e.words.includes(word) && (!lexicon.find(w=>w.id===word)||representativeFormOccurs(lexicon.find(w=>w.id===word)!,zone.design==='situated'?e.text:e.title+' '+e.text))).length >= 3);
+  return (page.requiresEvidence??[]).every(id=>ids.has(id)) && [...page.words,...(page.distractors ?? [])].every(word => {
+    const form=lexicon.find(w=>w.id===word);
+    const witnessed=zone.evidence.filter(e => ids.has(e.id) && e.words.includes(word) && (!form||representativeFormOccurs(form,zone.design==='situated'?e.text:e.title+' '+e.text)));
+    if(zone.design!=='situated')return witnessed.length>=3;
+    let contexts=physicalContexts.get(zone);if(!contexts){contexts=new Map();physicalContexts.set(zone,contexts);}
+    return new Set(witnessed.map(e=>{let signature=contexts!.get(e.id);if(!signature){signature=physicalSituationSignature(zone,e);contexts!.set(e.id,signature);}return signature;})).size>=3;
+  });
 }
+/** Authored zones are immutable after load; cache their geometric witnesses. */
+const physicalContexts=new WeakMap<Zone,Map<string,string>>();
 export function annotate(state: GameState, lemmaId: string, guess: string): GameState {
   if (!lemmaId || ['__proto__', 'constructor', 'prototype'].includes(lemmaId)) return state;
   return { ...state, guesses: { ...state.guesses, [lemmaId]: guess.slice(0, 200) } };

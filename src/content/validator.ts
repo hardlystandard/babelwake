@@ -1,7 +1,7 @@
 import type { Content, Picture, Zone } from './types';
 import { referenceForms } from './reference';
 import { pictureSvg } from '../ui/pictures';
-import { representativeFormOccurs } from './forms';
+import { mapFrenchText, representativeFormOccurs } from './forms';
 import { situatedVisibleText, validateSituatedZone } from './situated-validator';
 export { renderedPictureText, situatedMigrationDebt, situatedVisibleText, validateSituatedZone } from './situated-validator';
 
@@ -45,6 +45,7 @@ export function validateContent(content: Content): string[] {
   const lemmaIds = new Set<string>();
   const seenZoneIds = new Set<string>();
   const used = new Set<string>();
+  const encounteredForms = new Set<string>();
   const lexicon = new Map(content.lexicon.map(word => [word.id, word]));
   const zoneIds = new Set(content.zones.map(z => z.id));
   const checkId = (id: string, path: string) => {
@@ -80,7 +81,16 @@ export function validateContent(content: Content): string[] {
     if (seenZoneIds.has(zone.id)) errors.push(`zone: duplicate ID ${zone.id}`);
     seenZoneIds.add(zone.id);
     visibleZoneStrings(zone).forEach(line => checkSpelling(line, zone.id));
-    if (zone.design === 'situated') errors.push(...validateSituatedZone(zone, content.lexicon, { testedWordIds: content.zones.flatMap(place => place.pages.flatMap(page => [...page.words, ...(page.distractors ?? [])])) }));
+    if (zone.design === 'situated') {
+      errors.push(...validateSituatedZone(zone, content.lexicon, { initialKnownForms: [...encounteredForms], testedWordIds: content.zones.flatMap(place => place.pages.flatMap(page => [...page.words, ...(page.distractors ?? [])])) }));
+      // Progression requires every local page. Later chapters reuse the actual
+      // surface forms witnessed here, never an unseen inflection of a lemma.
+      const exposed = zone.evidence.flatMap(evidence => {
+        const anchor = zone.scene?.find(object => object.id === evidence.anchor);
+        return [evidence.text, anchor?.label ?? '', ...(anchor?.labels ?? []).map(label => label.text)];
+      });
+      for (const text of exposed) for (const form of mapFrenchText(text, content.lexicon, zone.scenery).forms) if (!form.scenery) encounteredForms.add(form.form);
+    }
     if (!zone.evidence.length) errors.push(`${zone.id}: no encounters`);
     for (const evidence of zone.evidence) {
       checkId(evidence.id, zone.id);

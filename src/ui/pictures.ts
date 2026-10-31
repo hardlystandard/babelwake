@@ -1,4 +1,5 @@
 import { atelierPictureSvg } from './atelier-pictures';
+import { garePictureSvg } from './gare-pictures';
 import type { Picture } from '../content/types';
 
 const ink = '#263b30';
@@ -30,7 +31,7 @@ function object(kind: string, p: Picture = {kind}): string {
       if(p.detail==='droite') return `<path d="M-50-16H7V-40L55 0L7 40V16H-50Z" fill="${teal}"/>`;
       return `<path d="M-16 49V-7H-40L0-55L40-7H16V49Z" fill="${teal}"/>`;
     }
-    case 'room': return p.detail==='cuisine' ? `<path d="M-56-38H55V45H-56Z" fill="${cream}"/><path d="M-56-3H55M4-3V45M-56 12H4M-12 3H-4M11 7V17" fill="none"/><ellipse cx="-27" cy="-12" rx="17" ry="6" fill="${ink}"/><path d="M20-32V-9H47V-32ZM28-32V-39Q38-48 42-37" fill="${teal}"/>` : `<path d="M-58 40V-25H-47V2H50V40M-48 4V-18H-18V4Z" fill="${cream}"/><path d="M-47 5H50V29H-47Z" fill="${teal}"/><path d="M-49 40V49M43 40V49M-58-31V-42"/><path d="M-68-42H-48L-52-57H-64Z" fill="${ochre}"/>`;
+    case 'room': return p.detail==='salon'?`<path d="M-56-8H-38V15H38V-8H56V43H-56Z" fill="${teal}"/><path d="M-40-8V-28Q0-42 40-28V15M0-31V14M-45 43V51M45 43V51" fill="none"/>`+at(object('book'),0,9,.4):p.detail==='cuisine' ? `<path d="M-56-38H55V45H-56Z" fill="${cream}"/><path d="M-56-3H55M4-3V45M-56 12H4M-12 3H-4M11 7V17" fill="none"/><ellipse cx="-27" cy="-12" rx="17" ry="6" fill="${ink}"/><path d="M20-32V-9H47V-32ZM28-32V-39Q38-48 42-37" fill="${teal}"/>` : `<path d="M-58 40V-25H-47V2H50V40M-48 4V-18H-18V4Z" fill="${cream}"/><path d="M-47 5H50V29H-47Z" fill="${teal}"/><path d="M-49 40V49M43 40V49M-58-31V-42"/><path d="M-68-42H-48L-52-57H-64Z" fill="${ochre}"/>`;
     case 'bottle': if(p.detail==='full-empty') {
       const clearBottle=(outline:string,full:boolean):string=>`<path d="M-10-48H10V-32L22-15V42Q0 51-22 42V-15L-10-32Z" fill="${cream}" stroke="${outline}" stroke-width="4"/>${full?'<path d="M-18-4Q-7-10 1-4Q10 2 18-4V39Q0 46-18 39Z" fill="#7fb6c7" stroke="none"/>':''}<path d="M-11-48H11V-40H-11Z" fill="${outline}" stroke="${outline}"/><path d="M-14-14V-4" fill="none" stroke="#8faa98"/>`;
       return at(clearBottle(colorValue('bleu'),true),-43,1,.72)+at(clearBottle(colorValue('rouge'),false),4,1,.72)+at(object('basket',{kind:'basket',detail:'empty'}),48,27,.37)+at(clearBottle(colorValue('vert'),true),48,-10,.48);
@@ -96,6 +97,7 @@ function object(kind: string, p: Picture = {kind}): string {
       return (p.detail==='food'?at(object('bread'),-19,-13,.43)+at(object('cheese'),20,-6,.38):at(object('apple'),-18,-15,.42)+at(object('apple'),13,-19,.42)+at(object('apple'),29,-6,.35))+shell;
     }
     case 'bag': return `<path d="M-38-16H38L43 44H-43Z" fill="${ochre}"/><path d="M-20-15V-30Q0-56 20-30V-15" fill="none"/><path d="M-30 7H30V34H-30Z" fill="${cream}"/>`;
+    case 'tray': return `<path d="M-58-28H58L70 18L53 35H-53L-70 18Z" fill="${ochre}"/><path d="M-49-18H49L57 15H-57ZM-70 18H70M-62-1H-51M51-1H62" fill="none"/>`;
     case 'shirt': return `<path d="M-19-39L-49-20L-35 2L-22-7V44H22V-7L35 2L49-20L19-39Q0-24-19-39Z" fill="${color}"/>`;
     case 'coat': return `<path d="M-16-45L-42-26L-52 18L-34 24L-25-5L-29 46H29L25-5L34 24L52 18L42-26L16-45L0-24Z" fill="${color}"/><path d="M-16-45L0-24L-12-10L-23-35M16-45L0-24L12-10L23-35M0-23V45" fill="none"/><circle cx="8" cy="7" r="2"/><circle cx="8" cy="23" r="2"/>`;
     case 'cat': return `<path d="M-25-16L-30-45L-8-31Q5-36 17-28L33-44L31-12Q45 9 27 28Q9 40-16 27Q-37 7-25-16Z" fill="${ochre}"/><path d="M-15 28Q-35 54-49 37Q-61 22-46 14" fill="none"/><path d="M-19-1H-15M13-1H17M-2 8L2 8L0 11Z"/><path d="M-13 11L-36 6M-13 16L-36 19M12 11L36 6M12 16L36 19" fill="none"/>`;
@@ -161,8 +163,8 @@ function action(detail: string): string {
   if(detail.startsWith('fermer:')) return at(object(detail.split(':')[1]),21,5,.87)+arrow(-58,-37,-17,-9);
   if(detail.startsWith('donner:')) return human(-43,10,.8)+human(43,10,.8,true,coral)+at(object(detail.split(':')[1]),0,-3,.38)+arrow(-14,29,15,29);
   if(detail.startsWith('pouvoir:')) {
-    const pronoun=detail.split(':')[1]; const people=pronoun==='nous'?human(-50,15,.57)+human(-24,15,.57,true,coral):human(-35,9,.83,pronoun==='elle'||pronoun==='vous',pronoun==='vous'?ochre:teal);
-    return people+at(object('key'),1,-16,.33)+at(object('door'),47,12,.6)+arrow(0,29,25,29);
+    const pronoun=detail.split(':')[1];
+    return at(grammar(pronoun),-35,3,.58)+at(object('key'),8,-18,.28)+at(object('door'),49,12,.57)+arrow(2,31,28,31);
   }
   switch(detail){
     case 'être': return human(-15,8,.9)+at(object('house'),52,11,.45)+`<path d="M-48 51H72" stroke-dasharray="4 4"/>`;
@@ -183,6 +185,7 @@ function action(detail: string): string {
     case 'prendre': return human(32,10,.8)+at(object('key'),-31,13,.6)+arrow(-4,-6,19,-6);
     case 'manger': return human(0,4,.95)+at(object('bread'),25,-7,.45);
     case 'boire': return human(0,4,.95)+at(object('cup'),24,-11,.47);
+    case 'parler': return human(-40,13,.86)+human(40,13,.86,true,coral)+`<path d="M-55-52H-8V-25H-27L-38-15V-25H-55ZM9-34H56V-7H37L26 3V-7H9Z" fill="${cream}"/>`+[-41,-31,-21].map(x=>`<circle cx="${x}" cy="-37" r="2.5" fill="${ink}"/>`).join('')+[23,33,43].map(x=>`<circle cx="${x}" cy="-19" r="2.5" fill="${ink}"/>`).join('');
     default: return human(-25,10,.9)+at(object(detail),35,15,.6);
   }
 }
@@ -197,6 +200,8 @@ function grammar(detail: string): string {
     case 'tu': return human(-44,9,.87)+human(44,9,.87,true,coral)+arrow(-17,-31,23,-25);
     case 'il': return human(0,9,1)+arrow(55,-35,16,-21);
     case 'elle': return human(0,9,1,true,coral)+arrow(55,-35,16,-21);
+    case 'ils': return human(-25,9,.8)+human(25,9,.8)+arrow(59,-37,33,-24);
+    case 'elles': return human(-25,9,.8,true,coral)+human(25,9,.8,true,coral)+arrow(59,-37,33,-24);
     case 'nous': return human(-23,9,.87)+human(24,9,.87,true,coral)+`<path d="M-52 49Q0 62 52 49" fill="none"/>`+arrow(-58,-40,-27,-24);
     case 'vous': return human(-40,9,.76)+human(5,9,.76,true,coral)+human(45,9,.76,false,ochre)+arrow(-60,-47,20,-35);
     case 'tu-polite': return human(-29,11,.95)+human(30,11,.95,true,coral)+`<path d="M-8-22Q0-37 8-22" fill="none"/>`;
@@ -219,6 +224,7 @@ function grammar(detail: string): string {
 /** Crisp, self-contained SVG art: no remote assets, fonts, scripts, or raster text. */
 export function pictureSvg(p: Picture): string {
   if(p.kind==='atelier-vignette')return atelierPictureSvg(p);
+  if(p.kind==='gare-vignette')return garePictureSvg(p);
   let drawing: string;
   switch(p.kind) {
     case 'color': if(p.detail==='palette') {drawing=['rouge','bleu','jaune','vert'].map((c,i)=>`<path d="M${-61+i*32}-17h27v42h-27Z" fill="${colorValue(c)}"/><ellipse cx="${-47.5+i*32}" cy="-17" rx="13.5" ry="4" fill="${colorValue(c)}"/>`).join('');break;} if(p.detail==='bunting') {drawing='<path d="M-70-30Q0-10 70-30" fill="none"/>'+['rouge','bleu','jaune','vert'].map((c,i)=>`<path d="M${-64+i*34}-28L${-38+i*34}-24L${-55+i*34}14Z" fill="${colorValue(c)}"/>`).join('');break;} drawing = `<path d="M-43-18Q-54-48-22-40Q-2-63 14-40Q49-49 39-15Q64 8 40 24Q43 55 11 39Q-15 62-29 37Q-64 42-43 14Q-61-3-43-18Z" fill="${colorValue(p.color)}"/><path d="M-22-23Q-30-11-24-1" fill="none" stroke="${cream}" stroke-width="7"/>`; break;
@@ -257,10 +263,67 @@ export function pictureSvg(p: Picture): string {
     case 'price': drawing=at(object(p.detail ?? 'bread'),-15,-16,.75)+`<path d="M-2 26H58V57H-2L-13 41Z" fill="${cream}"/><circle cx="-3" cy="41" r="2"/>`+t(p.label ?? '3 €',28,48,18); break;
     case 'action': drawing=action(p.detail ?? 'avoir'); break;
     case 'grammar': drawing=grammar(p.detail ?? 'je'); break;
+    case 'home-vignette': drawing=homeVignette(p.detail ?? 'possessive-mon'); break;
+    case 'cafe-vignette': drawing=cafeVignette(p.detail ?? 'talk'); break;
+    case 'market-vignette': drawing=p.detail==='currency'?`<circle cx="-33" cy="18" r="25" fill="${ochre}"/><circle cx="-33" cy="18" r="19" fill="none"/><rect x="-7" y="-42" width="74" height="45" rx="4" fill="${teal}"/><circle cx="30" cy="-20" r="13" fill="${cream}"/><circle cx="28" cy="29" r="20" fill="${ochre}"/>`:object('basket'); break;
+    case 'possession-vignette': drawing=at(grammar(p.detail??'je'),-16,-4,.75)+at(object('key'),35,24,.4)+`<path d="M0 13Q20 15 34 24" fill="none" stroke="${coral}" stroke-width="4"/>`;break;
+    case 'lettres-vignette': drawing=pastVignette(p.detail??'past-read:letter');break;
     default: drawing=object(p.kind,p);
   }
   const showLabel=p.label && p.kind!=='time' && p.kind!=='price' && (p.kind!=='clock' || !/^\d{1,2}[:h]\d{2}$/.test(p.label));
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Illustration" class="pictogram"><rect x="1" y="1" width="238" height="178" rx="12" fill="${cream}"/><ellipse cx="120" cy="139" rx="67" ry="8" fill="#bcb095"/><g transform="translate(120 ${showLabel ? 78 : 86})" stroke="${ink}" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">${drawing}</g>${showLabel ? labelSvg(p.label!) : ''}</svg>`;
+}
+
+/** The speech tail fixes the speaker; an ownership line fixes the referent.
+ * These repeat the addressed conversations, without supplying pronoun labels. */
+function homeVignette(detail:string):string {
+  if(/^(grand|grande|petit|petite)-(male|female)$/.test(detail)) {
+    const [word,gender]=detail.split('-'),item=gender==='female'?'box':'book';
+    const large=word==='grand'||word==='grande';
+    return at(object(item),-43,21,.45)+at(object(item),32,5,.95)+`<ellipse cx="${large?32:-43}" cy="${large?5:21}" rx="${large?48:26}" ry="${large?49:27}" fill="none" stroke="${coral}" stroke-width="4"/>`;
+  }
+  const name=detail.replace('possessive-','');
+  const first=['mon','ma','mes','notre'].includes(name),second=['ton','votre'].includes(name);
+  const group=['notre','votre','leur'].includes(name);
+  const x=first?-45:second?25:48;
+  let out=human(-47,1,.72,false,teal)+human(23,1,.72,true,coral);
+  if(!first&&!second)out+=human(57,7,.55,false,ochre);
+  if(group)out+=human(x+21,4,.56,true,ochre);
+  out+=`<path d="M-67-64H-19V-40H-34L-44-28V-40H-67Z" fill="${cream}"/>`+[-53,-43,-33].map(x=>`<circle cx="${x}" cy="-52" r="2.5" fill="${ink}"/>`).join('');
+  const item=name==='ma'?'key':'book';
+  const many=name==='mes';
+  const objects=many?[-21,1,23].map(offset=>at(object(item),offset,50,.29)).join(''):at(object(item),0,48,.42);
+  out+=objects+`<path d="M${x} 27Q${x} 43 0 37" fill="none" stroke="${coral}" stroke-width="4"/>`;
+  if(group)out+=`<path d="M${x-15} 26Q${x+10} 40 ${x+38} 26" fill="none" stroke="${coral}" stroke-width="3"/>`;
+  return out;
+}
+function cafeVignette(detail:string):string {
+  if(detail==='talk')return action('parler');
+  if(detail==='carry')return human(0,1,1)+at(object('tray'),19,12,.72)+at(object('cup'),1,-1,.25)+at(object('cup'),34,-1,.25)+arrow(-52,61,52,61);
+  if(detail==='informal')return grammar('tu-polite');
+  if(detail==='formal')return grammar('vous-polite');
+  const people=human(-45,17,.76)+human(45,17,.76,true,coral);
+  const question=`<path d="M-64-61H-20V-32H-35L-44-22V-32H-64Z" fill="${cream}"/>${t('?',-42,-40,23)}`;
+  if(detail==='yes-no')return people+question+`<path d="M21-47L29-38L44-56M43-35L59-19M59-35L43-19" fill="none" stroke="${coral}" stroke-width="4"/>`;
+  if(detail==='question-identify')return people+question+at(object('cup'),0,36,.4)+`<path d="M18-49H63V-18H45L35-8V-18H18Z" fill="${cream}"/>`+at(object('cup'),41,-33,.23);
+  return people+question;
+}
+
+/** Consecutive dated views show the action and its completed result; possession
+ * alone is never the picture for having read, written, given or lost something. */
+function pastVignette(detail:string):string {
+ const [kind,item='letter']=detail.replace('past-','').split(':');
+ const shape=object(item==='photo'?'portrait':item);
+ const framed=(drawing:string,x:number,day:string)=>`<rect x="${x-40}" y="-58" width="80" height="118" rx="4" fill="${cream}"/>`+at(drawing,x,0,.47)+t(day,x,-43,12);
+ let before='',after='';
+ if(kind==='take'){before=human(-35,16,.85)+at(shape,41,30,.6)+at(object('table'),41,52,.7);after=human(0,13,.95)+at(shape,25,22,.46);}
+ else if(kind==='give'){before=human(-34,17,.8)+human(38,17,.8,true,coral)+at(shape,-9,23,.45);after=human(-34,17,.8)+human(38,17,.8,true,coral)+at(shape,18,23,.45);}
+ else if(kind==='lose'){before=human(0,13,.95)+at(shape,25,22,.46);after=human(-33,13,.9)+at(shape,57,49,.42)+`<ellipse cx="-8" cy="24" rx="18" ry="13" fill="none" stroke-dasharray="3 4"/>`+t('?',-28,-35,28);}
+ else if(kind==='find'){before=at(object('box'),22,28,.85)+at(shape,29,32,.33)+human(-40,9,.8)+t('?',-33,-37,28);after=human(0,13,.95)+at(shape,25,22,.46)+`<path d="M38-28V-44M29-36H47" stroke="${ochre}" stroke-width="4"/>`;}
+ else if(kind==='write'){before=human(-13,0,.9)+at(shape,18,36,.65)+at(object('pencil'),38,7,.6);after=at(shape,0,14,.9)+`<path d="M-25 4H25M-25 15H18M-25 26H25" fill="none"/>`;}
+ else if(kind==='see'){before=at(object('portrait'),27,8,.7)+human(-38,19,.8);after=action('voir')+at(object('portrait'),32,15,.42);}
+ else {before=human(-9,-2,.93)+at(object(item==='book'?'book':'letter'),14,26,.64)+`<path d="M-20-20L8 3M36-16L20 4" fill="none"/>`;after=at(object(item==='book'?'book':'letter'),0,20,.8)+human(-43,16,.75);}
+ return framed(before,-45,'14')+framed(after,45,'15')+arrow(-12,69,13,69)+`<path d="M43-29L51-20L66-38" fill="none" stroke="${teal}" stroke-width="4"/>`;
 }
 
 function labelSvg(label: string): string {
@@ -427,6 +490,7 @@ function concept(name: string, v: number): string {
     return speaker+at(others,0,-9,.88)+arrow(-20,-33,13,-44)+arrow(27,2,39,27)+owned;
   }
   if(name==='nouveau'||name==='vieux'){const old=name==='vieux';return at(object(['book','coat','house'][v]),0,7,.86)+(old?`<path d="M-36-13L-23-2L-32 8L-18 18M18-30L11-15L24-4L16 10M-14 34L-3 26L7 33" fill="none" stroke="#986e4b" stroke-width="4"/><path d="M-36 48H31" stroke-dasharray="3 4"/>`:`<path d="M-48-30V-48M-57-39H-39M42-28V-46M33-37H51" fill="none" stroke="${ochre}" stroke-width="4"/>`);}
+  if(name==='beau')return at(object(['book','coat','box'][v]),17,10,.78)+human(-51,20,.56)+`<path d="M-13-14L19-35L48-14M-7 27L19 42L44 27" fill="none" stroke="${ochre}" stroke-width="4"/><path d="M-64-32Q-57-42-50-32Q-43-42-36-32Q-36-24-50-16Q-64-24-64-32Z" fill="${coral}"/>`;
   if(name==='aider')return human(-42,14,.83)+human(42,14,.83,true,coral)+at(object(['box','bag','table'][v]),0,31,.55)+arrow(-21,0,-5,-15)+arrow(21,0,5,-15);
   if(name==='chercher')return at(object(['book','box','chair'][v]),-11,8,.75)+at(object(['key','letter','ticket'][v]),35,22,.27)+`<circle cx="-18" cy="-14" r="24" fill="#d6c7a8" fill-opacity=".45"/><path d="M-2 4L26 38" stroke-width="8"/>`+t('?',-18,-5,24);
   if(name==='chez')return at(object('house'),0,2,1)+human(0,24,.45,v===1,v===2?coral:teal)+at(object(item),47,44,.25);
@@ -436,7 +500,12 @@ function concept(name: string, v: number): string {
   if(name==='bientôt')return at(clock(['11:55','17:55','07:55'][v]),-35,3,.65)+at(clock(['12:00','18:00','08:00'][v]),38,3,.65)+arrow(-9,-44,25,-44)+t('5 min',0,57,14);
   if(name==='histoire')return at(object('book'),0,20,.9)+[0,1,2].map(i=>at(object(['train','letter','house'][(i+v)%3]),-43+i*43,-33,.29)).join('')+arrow(-52,-3,52,-3);
   if(name==='souvenir')return human(-43,19,.8)+`<path d="M-5-50H64V12H15L3 25V12H-5Z" fill="${cream}"/>`+at(object(['family','portrait','garden'][v]),29,-18,.4);
-  if(name==='promesse')return human(-40,18,.85)+human(40,18,.85,true,coral)+`<path d="M-16 18L0 23L16 18M-10-53H43V-17H15L3-5V-17H-10Z" fill="${cream}"/>`+at(object(['letter','calendar','house'][v],{kind:['letter','calendar','house'][v],detail:'demain'}),16,-34,.27);
+  if(name==='promesse'){
+    const pledged=['house','letter','key'][v];
+    const first=human(-25,27,.73)+human(30,27,.73,true,coral)+`<path d="M-9 26L2 31L13 26M-36-58H38V-10H-4L-16 3V-10H-36Z" fill="${cream}"/>`+at(object(pledged),0,-34,.31)+t('16',25,-15,11);
+    const fulfilled=v===0?at(object('house'),-27,7,.52)+human(39,22,.74)+arrow(14,31,-1,31):human(-29,21,.74)+human(31,21,.74,true,coral)+at(object(pledged),14,25,.34)+arrow(-3,43,20,43);
+    return `<rect x="-72" y="-64" width="68" height="126" rx="3" fill="${cream}"/><rect x="4" y="-64" width="68" height="126" rx="3" fill="${cream}"/>`+at(first,-38,0,.63)+at(fulfilled,38,0,.63)+t('15',-38,-49,12)+t('16',38,-49,12)+arrow(-10,72,11,72)+`<path d="M43-31L51-22L64-39" fill="none" stroke="${teal}" stroke-width="3"/>`;
+  }
   if(name==='rendez_vous'||name==='rendez-vous')return human(-48,25,.65)+human(48,25,.65,true,coral)+at(clock(['12:00','18:00','08:00'][v]),0,-24,.52)+arrow(-37,56,-4,39)+arrow(37,56,4,39)+at(object(['tree','cup','station'][v]),0,40,.32);
   if(name==='retrouver')return human(-34,14,.85)+human(35,14,.85,true,coral)+`<path d="M-17-16L0-5L17-16M-53-41Q0-64 53-41" fill="none"/>`+at(object(['letter','photo','key'][v]==='photo'?'portrait':['letter','photo','key'][v]),0,40,.3);
   if(name==='revenir')return at(object('house'),-40,5,.58)+human(41,19,.85,v===1)+`<path d="M-14-31Q36-59 58-30Q72 5 24 12" fill="none"/>`+arrow(21,13,-8,13)+at(object(item),40,40,.25);

@@ -1,3 +1,43 @@
+# Current journey verification — 31 October 2026
+
+[PR B #3](https://github.com/hardlystandard/babelwake/pull/3) applies situated decipherment to all six places. The dated history below describes earlier builds only.
+
+## Acceptance checked in this pass
+
+- All six zones use the strict situated contract; no migration exemptions remain.
+- 233 canonical inventory lemmas, 211 distinct canonical learning targets, 68 mandatory journal pages, 1,021 encounters and 53 physical puzzle decisions.
+- Tracked French on labels, printed props, photographs, speech and notes; at most two new surface forms per ordered encounter. Later zones reuse actual previously encountered forms.
+- Three distinct physical situations are required both by validation and by runtime page unlocking. Grammar pages require witnessed contrasts; matching chrome and SVGs expose no answer forms or blanks.
+- Every maximum-scoring target is wrong for all 53 decisions, even when the overlap solver already knows the action kind. Independent golden helpers infer actions from clue wording, dates, ownership and scene geometry, without reading the authored answer sequence.
+- Normal entity callbacks and action-diagram buttons reach every golden action, every zone transition and the final ending. Legal wrong actions remain possible and recoverable; validation checks the whole arrangement.
+- Notes, homograph senses, lemma linking, all-or-nothing pages, old-save travel, real IndexedDB and offline chapter assets retain regression coverage.
+
+## Executed checks
+
+`npm run check` passes content validation, **117 Vitest tests**, strict TypeScript and the production build. `npm run content:review` regenerates the current French inventory. The development-only Vitest upgrade removes the three reported dependency advisories; the locked tree reports zero advisories.
+
+Production Chromium: **24/24 browser tests passed**, including all six independently inferred golden paths, complete ending, physical model counts, loaded tray geometry and movement, visible NPC travel and train operation, real annotation hit targets, settings, saves and offline loading. The initial run exposed an unstable generic word selector and outdated eight-page save expectations; the final run passed after the selector, overlap and ten-page expectations were corrected.
+
+Firefox 157: **12/12** production golden-path, annotation, old-save and rendered control checks passed. WebKit 27.2: the same **12/12** passed. Each engine rendered a real WebGL canvas; these checks do not claim every platform or physical controller configuration has been exercised. A final one-line correction aligns Claire’s dated appointment with Luc’s promise; a dedicated content regression and the final-head CI cover that wording.
+
+A subsequent compatibility audit also found that legacy completion enabled the route menu but not the physical exit. The exit now uses the same legacy-aware predicate; the additional production regression imports the captured 632-encounter/62-page save, preserves notes/settings, and follows every world exit through the ending. Four ordinary function/state words are now tracked lexemes instead of scenery exemptions. The final CI suite contains 25 browser tests.
+
+The required `game` check on [PR #3](https://github.com/hardlystandard/babelwake/pull/3/checks) runs the fresh checkout on `ubicloud-standard-4-ubuntu-2404`, including all unit and production Chromium tests. Its result is the source of truth for the exact PR head and must pass before merging.
+
+## Visual evidence
+
+`docs/pr-b/` contains actual production-rendered views at 1440×900 and zoom 1. The capture script types personal hypotheses through the annotation interface, checks at least 18px French and 12px notes, and checks no caption panels, page errors or avatar displacement during inspection. `default-view-metrics.json` records the served entrypoint hash and source hashes. Reproduce with `PLAYWRIGHT_BROWSERS_PATH=<cache> BABELWAKE_PREVIEW=<production-preview> node scripts/capture-pr-b.mjs`.
+
+Visual review caught and repaired placeholder house geometry, black SVG photo textures, overlapping tray contents and an NPC conversation control covering a focused word. The market’s number exercise rows were replaced by stock requests, customer handoffs and actual till payments. The household garden retains outdoor ground; the station uses real platforms and a standing clock with a clear front and back.
+
+## Remaining acceptance boundaries
+
+Native-speaker review and zero-French participant testing have not occurred. The five prior idiom/setting flags were rewritten; current uncertainties are explicitly listed in `content/REVIEW.md`. The dense memory archive, abstract vocabulary, pronoun/possession contrasts and pictogram interpretation particularly need beginner observation. No measured 2–3-hour duration, retention, CEFR attainment or Chants of Sennaar parity is claimed. Synthetic gamepad input and a tablet viewport pass; physical controller ergonomics remain unverified.
+
+The static production output is ready in `dist/`. The repository has no public game deployment workflow or configured homepage; GitHub reports `has_pages: false`, and the Pages endpoint returns 404. No new hosting service or network configuration was created. A public hosted game therefore remains separate from the completed source/PR delivery.
+
+---
+
 # Previous build verification — 24 October 2026
 
 These results describe the build before the situated atelier correction. They do not verify the redesigned content or interactions; those results are recorded in the correction PR and its CI checks.

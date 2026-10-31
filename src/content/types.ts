@@ -11,6 +11,14 @@ export interface SceneObject {
   id: string;
   kind: string;
   position: [number, number];
+  /** Number of actual visible pieces. Money uses unit coins when this is set. */
+  quantity?: number;
+  /** Rendered state (for example empty, hot, worn, or a family-photo focus). */
+  detail?: string;
+  /** Money total, calendar day, or clock time in HHMM form (1830 = 18:30). */
+  value?: number;
+  /** A printed photograph/map on a physical frame, never an encounter card. */
+  picture?: Picture;
   color?: string;
   size?: number | [number, number, number];
   rotation?: number;
@@ -35,7 +43,7 @@ export type WorldAction =
   | { kind: 'deliver'; object: string; target: string };
 /** Clues are evidence IDs, parallel to the complete expected sequence. */
 export interface WorldPuzzle { sequence: WorldAction[]; clues: string[]; exit?: string; }
-export interface Evidence { id: string; station?: string; pose?: ScenePose; actorPoses?: Record<string, ScenePose>; demonstration?: { actor: string; action: WorldAction }; anchor?: string; surface?: TextSurface; offset?: [number, number, number]; title: string; text: string; words: string[]; picture: Picture; position: [number, number]; kind: 'object' | 'person' | 'note' | 'sign'; }
+export interface Evidence { senses?: Record<string,string>; travel?: { actor: string; target: string; companions?: string[] }; id: string; station?: string; pose?: ScenePose; actorPoses?: Record<string, ScenePose>; demonstration?: { actor: string; action: WorldAction }; anchor?: string; surface?: TextSurface; offset?: [number, number, number]; title: string; text: string; words: string[]; picture: Picture; position: [number, number]; kind: 'object' | 'person' | 'note' | 'sign'; }
 export interface Slot { id: string; answer: string; picture: Picture; }
 export interface JournalPage { id: string; title: string; zone: ZoneId; kind: 'vocabulary' | 'grammar'; words: string[]; distractors?: string[]; requiresEvidence?: string[]; slots: Slot[]; }
 export interface PuzzleStep { id: string; prompt: string; picture: Picture; choices: string[]; answer: string; }

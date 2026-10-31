@@ -21,4 +21,5 @@
 .carried-object{display:flex;align-items:center;gap:7px;min-width:48px;min-height:38px;font-size:16px}
 .carried-object>svg{width:56px;height:42px}.carried-object>.word{font-size:16px}.carried-object .word small{font-size:12px;color:#dbbc7a}
 .world-complete{font-size:24px;color:#d1c591;padding:0 8px}
+.physical-action-overlay{background:#15251c66!important}.physical-action-panel{max-width:560px}.physical-action-panel .panel-header h2{font:1.5rem 'DM Sans',sans-serif}.physical-action-options{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px}.physical-action-option{width:130px;min-height:125px;border:1px solid #85956d;border-radius:14px;background:#c8c5a1;color:#294333;padding:8px}.physical-action-option:hover,.physical-action-option:focus-visible{outline:3px solid #526e45;outline-offset:3px;background:#d9d2b4}.physical-action-option svg{width:100%;display:block}
 @media(max-width:700px){#physical-controls{left:auto;right:16px;transform:none;bottom:85px}.carried-object{max-width:160px}.carried-object>svg{width:40px}}

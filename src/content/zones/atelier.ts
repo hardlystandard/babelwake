@@ -147,7 +147,7 @@ const clueIds=[
  line('task-a','commission','Prends la clé sous la boîte rouge.',{kind:'position',detail:'sous:key-box'},'note'),
  line('task-b','commission','La clé jaune ouvre la grande porte.',{kind:'door',color:'vert',detail:'key'},'note'),
  line('task-c','commission','Prends le livre dans la boîte jaune.',{kind:'position',detail:'dans:book-box'},'note'),
- line('task-d','commission','Le livre. → Dans la boîte sous la table rouge.',{kind:'position',detail:'sous:box-table'},'note'),
+ line('task-d','commission','Le livre va dans la boîte. La boîte est sous la table rouge.',{kind:'position',detail:'sous:box-table'},'note'),
  line('task-e','commission','Prends la lettre sur la chaise verte.',{kind:'position',detail:'sur:letter-chair'},'note'),
  speech('task-f','paul','Pour elle. Elle a la clé verte.',{kind:'grammar',detail:'elle'}),
 ];

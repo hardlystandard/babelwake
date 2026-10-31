@@ -341,3 +341,92 @@ export function createWorkshopScenery(): THREE.Group {
   for(const [material,parts]of batches){const geometry=mergeGeometries(parts,false);if(geometry){const mesh=new THREE.Mesh(geometry,material);mesh.castShadow=true;mesh.receiveShadow=true;baked.add(mesh);}parts.forEach(part=>part.dispose());}
   group.traverse(child=>{if(child instanceof THREE.Mesh)child.geometry.dispose();});return baked;
 }
+
+/** Each authored place has its own uncluttered setting. Scenery never supplies
+ * labels, selectable evidence, or a second copy of an interactive puzzle prop. */
+export function createSituatedScenery(zone: Zone): THREE.Group {
+  if(zone.id==='atelier')return createWorkshopScenery();
+  const group=new THREE.Group();group.name=`situated-${zone.id}-setting`;
+  const materials=new Map<string,THREE.MeshStandardMaterial>();
+  const material=(color:string):THREE.MeshStandardMaterial=>{let value=materials.get(color);if(!value){value=new THREE.MeshStandardMaterial({color,roughness:1});materials.set(color,value);}return value;};
+  const box=(size:[number,number,number],position:[number,number,number],color:string):THREE.Mesh=>{
+    const mesh=new THREE.Mesh(new THREE.BoxGeometry(...size),material(color));mesh.position.set(...position);mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);return mesh;
+  };
+  const ball=(radius:number,position:[number,number,number],color:string,scale:[number,number,number]=[1,1,1]):void=>{
+    const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(radius,2),material(color));mesh.position.set(...position);mesh.scale.set(...scale);mesh.castShadow=true;group.add(mesh);
+  };
+  // Keep fixed scenery outside the authored evidence footprint and below props.
+  const positions=(zone.scene??[]).map(object=>object.position);
+  const left=Math.min(-12,...positions.map(point=>point[0]))-2;
+  const right=Math.max(12,...positions.map(point=>point[0]))+2;
+  const back=Math.min(-10,...positions.map(point=>point[1]))-2;
+  const front=Math.max(12,...positions.map(point=>point[1]))+2;
+  const width=right-left,depth=front-back,cx=(left+right)/2,cz=(back+front)/2;
+  box([width+14,.3,depth+14],[cx,-.4,cz],cozyPalette.grass);
+  const floor=zone.id==='cafe'?'#9a8870':zone.id==='gare'?'#8a8d7c':zone.id==='maison'?cozyPalette.wood:'#a79573';
+  if(zone.id==='maison'){
+    box([6-left,.25,depth],[(left+6)/2,-.15,cz],floor);
+    box([right-6,.25,-back],[(right+6)/2,-.15,back/2],floor);
+    box([right-6,.15,front],[(right+6)/2,-.18,front/2],cozyPalette.grass);
+    for(const z of[.5,1.8,3.1])box([1.1,.06,.85],[7,.01,z],'#a79573');
+  }else box([width,.25,depth],[cx,-.15,cz],floor);
+  if(zone.id==='maison') {
+    // A roofless home, open toward the camera, preserves every relationship.
+    for(let row=0;row<Math.ceil(depth);row++){
+      const z=back+.5+row,edge=z>0?6:right;
+      box([edge-left-.15,.035,.94],[(left+edge)/2,.005,z],row%3===0?'#8a6c4b':cozyPalette.wood);
+    }
+    box([width,3.8,.3],[cx,1.9,back-.2],cozyPalette.plaster);
+    box([.3,3.8,depth],[left-.2,1.9,cz],'#a58e71');
+    box([width+.4,.25,.5],[cx,3.85,back-.2],cozyPalette.darkWood);
+    for(const x of[left+4,right-4]) {
+      box([2.7,1.8,.16],[x,2.4,back+.03],cozyPalette.darkWood);
+      box([2.4,1.5,.18],[x,2.4,back+.13],cozyPalette.blue);
+      box([.1,1.55,.08],[x,2.4,back+.25],cozyPalette.cream);
+      box([2.4,.1,.08],[x,2.4,back+.25],cozyPalette.cream);
+    }
+  } else if(zone.id==='gare') {
+    // Tracks sit behind the platform; no decorative train competes with clues.
+    box([width+4,.12,3.2],[cx,-.06,back-3],'#6e7469');
+    for(let x=left-1;x<=right+1;x+=.75)box([.18,.12,2.6],[x,.02,back-3],cozyPalette.darkWood);
+    for(const z of[back-3.85,back-2.15])box([width+4,.12,.11],[cx,.12,z],'#64726c');
+    for(let x=left;x<right;x+=1.1)box([.8,.025,.2],[x,.005,back+.45],cozyPalette.cream);
+    for(const x of[left-.4,right+.4])box([.2,3.4,.2],[x,1.7,back+1],cozyPalette.darkWood);
+    box([width+1.5,.15,3],[cx,3.45,back+.1],'#66746c');
+  } else if(zone.id==='cafe') {
+    // The terrace's checker paving and shaded rear frontage identify the café.
+    for(let x=left+.5;x<right;x+=1)for(let z=back+.5;z<front;z+=1)if((Math.round(x-left)+Math.round(z-back))%2===0)box([.94,.025,.94],[x,.002,z],'#aa997e');
+    box([width,3.5,.3],[cx,1.75,back-.5],cozyPalette.plaster);
+    for(let column=0;column<Math.ceil(width/1.1);column++){
+      const color=column%2?cozyPalette.cream:'#66755d';
+      const stripe=box([1.09,.12,2.4],[left+.55+column*1.1,3.4,back+.35],color);stripe.rotation.x=.08;
+      box([1.09,.35,.1],[left+.55+column*1.1,3.15,back+1.5],color);
+    }
+  } else if(zone.id==='marche') {
+    // Awning edges frame the square; the actual stalls are authored scene props.
+    for(const x of[left-1,right+1]) {
+      for(const z of[back+2,front-2])box([.14,3,.14],[x,1.5,z],cozyPalette.darkWood);
+      for(let n=0;n<Math.ceil((depth-4)/.9);n++)box([2.4,.12,.88],[x,3,back+2.45+n*.9],n%2?cozyPalette.cream:'#95674e');
+    }
+    for(let x=left+.6;x<right;x+=1.2)box([1.1,.025,.35],[x,.005,back+.5],'#b7a184');
+  } else {
+    // The last place is an open garden courtyard, without a second letter box.
+    box([width+1,.22,.5],[cx,.02,back-.45],'#8e8165');
+    for(const x of[left-1,right+1])for(let z=back+1;z<front;z+=2.4){
+      box([1.4,.3,1.8],[x,.08,z],cozyPalette.earth);
+      ball(.65,[x,.55,z],cozyPalette.leaf,[1,.7,1.2]);
+      for(const dx of[-.3,.3])ball(.13,[x+dx,.95,z+.12],cozyPalette.pink);
+    }
+  }
+  // Small perimeter trees tie all places back into the same earthy village.
+  for(const [x,z]of[[left-4,back],[right+4,back],[left-4,front],[right+4,front]]){
+    box([.3,2.6,.3],[x,1.2,z],cozyPalette.darkWood);
+    ball(1.6,[x,3,z],cozyPalette.grassDark,[1,1.25,1]);
+    ball(1.1,[x-.7,2.7,z+.3],cozyPalette.leaf);
+  }
+  const batches=new Map<THREE.Material,THREE.BufferGeometry[]>();group.updateMatrixWorld(true);
+  group.traverse(child=>{if(!(child instanceof THREE.Mesh))return;const geometry=child.geometry.index?child.geometry.toNonIndexed():child.geometry.clone();geometry.applyMatrix4(child.matrixWorld);geometry.deleteAttribute('uv');const value=child.material as THREE.Material;const parts=batches.get(value)??[];parts.push(geometry);batches.set(value,parts);});
+  const baked=new THREE.Group();baked.name=group.name;baked.userData.backgroundOnly=true;
+  for(const [value,parts]of batches){const geometry=mergeGeometries(parts,false);if(geometry){const mesh=new THREE.Mesh(geometry,value);mesh.castShadow=true;mesh.receiveShadow=true;baked.add(mesh);}parts.forEach(part=>part.dispose());}
+  group.traverse(child=>{if(child instanceof THREE.Mesh)child.geometry.dispose();});return baked;
+}

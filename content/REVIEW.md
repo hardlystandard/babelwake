@@ -2,38 +2,31 @@
 
 > Generated with `npm run content:review`. This is a review inventory, not a claim of native-speaker approval. All visible French, including puzzle alternatives and labels, is listed below. World content remains untranslated.
 
-Six zones; 261 lexicon entries; 202 distinct canonical lemmas tested across 62 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
+Six zones; 274 lexicon entries; 211 distinct canonical lemmas tested across 68 confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.
 
 ## Portée de la migration située
 
-PR A validates the situated design only for: L’atelier. The other 5 zones retain their existing structural checks and are explicitly deferred to PR B. Their paragraph evidence, incidental vocabulary, captioned journal pages and multiple-choice mechanisms have not been declared corrected.
+Situated validation applies to: L’atelier, Le marché, Le café, La gare, Chez Claire, Les lettres. Remaining legacy zones: 0. The same physical evidence, text budgets, tracked forms and action rules apply throughout the journey.
 
-| Zone deferred to PR B | New-rule violations | Untracked-text records | Encounter-order cap |
-| --- | --- | --- | --- |
-| marche | 827 | 155 | not measurable: no situated encounter order |
-| cafe | 652 | 143 | not measurable: no situated encounter order |
-| gare | 747 | 162 | not measurable: no situated encounter order |
-| maison | 822 | 167 | not measurable: no situated encounter order |
-| lettres | 536 | 127 | not measurable: no situated encounter order |
 
-- PR B debt (marche): marche/subtitle: untracked French tokens: mots, du, poids
-- PR B debt (marche): marche/intro: untracked French tokens: toiles, du, passent, de, main, en, claire, laissé, liste, marchand
-- PR B debt (cafe): cafe/subtitle: untracked French tokens: à
-- PR B debt (cafe): cafe/intro: untracked French tokens: pose, nom, de, claire, message, à
-- PR B debt (gare): gare/subtitle: untracked French tokens: chemin, de
-- PR B debt (gare): gare/intro: untracked French tokens: nom, claire, traverse, rivière, mots, indiquent, chemin
-- PR B debt (maison): maison/title: untracked French tokens: claire
-- PR B debt (maison): maison/subtitle: untracked French tokens: mots, qui, rapprochent
-- PR B debt (lettres): lettres/subtitle: untracked French tokens: ce, que, mots, gardent
-- PR B debt (lettres): lettres/intro: untracked French tokens: voix, même, ce, qui, semblait, était, simplement, en, chemin
 
 ## Phrases à revoir
 
-- ⚑ « Le livre. → Dans la boîte sous la table rouge. » — Elliptical workshop instruction split across an object label and an arrow-led destination. Native review should check its punctuation and clarity on the physical notice board.
-- ⚑ « La bouteille verte est avec le panier. » — Grammatical but less natural than a precise spatial phrase; review whether the pictured grouping makes « avec » idiomatic.
-- ⚑ « Le train va de la gare à la maison de Claire. » — Fictional miniature railway stops beside a house; verify the destination wording reads naturally in this setting.
-- ⚑ « Attendez devant le train. » — Spatial teaching sentence: review against the platform illustration so « devant » means in front of the visible train, without implying standing on the track.
-- ⚑ « Le train pour la maison de Claire » — Fictional destination; native review should confirm that a named house works as the stop label.
+- ⚑ « Le livre va dans la boîte. La boîte est sous la table rouge. » — Replaces the old elliptical workorder with two complete short sentences. Native review of the linked spatial referent is still pending.
+- ⚑ « Pour lui. Il a la bouteille verte. » — Check the short addressed payment request against the actual bottle-holder and the deliberately plausible wrong recipient.
+- ⚑ « Tu portes bien le plateau. » — The balanced carrying scene teaches bien; check whether this is the most natural short encouragement in metropolitan French.
+- ⚑ « Anne, mon parent. » — The singular generic kinship noun needs native review; the family scene supplies the mother relationship without an English gloss.
+- ⚑ « Je veux retrouver ma lettre. La même lettre. » — Check the repetition and whether it naturally distinguishes recovering the same object from meeting a person again.
+
+## Earlier review flags replaced by authored corrections
+
+- « Le livre. → Dans la boîte sous la table rouge. » — Two complete workorder sentences now identify the object, destination and nested location.
+- « La bouteille verte est avec le panier. » — The bottle is now physically placed on a specified table; avec is taught by actual basket contents.
+- « Le train va de la gare à la maison de Claire. » — The timetable now routes to the gare du Nord or gare du Sud, with actual platforms.
+- « Attendez devant le train. » — Waiting now happens sur le quai, safely beside the train.
+- « Le train pour la maison de Claire » — The destination is now a named station service.
+
+These replacements address the design/setting concerns; they do not constitute native-speaker approval.
 
 ## Review boundaries
 
@@ -46,7 +39,7 @@ PR A validates the situated design only for: L’atelier. The other 5 zones reta
 
 ## L’atelier
 
-**PR A — situated design checks apply.**
+**Situated design checks apply.**
 
 ### Rencontres
 
@@ -131,10 +124,41 @@ PR A validates the situated design only for: L’atelier. The other 5 zones reta
 | atelier-v2-e-task-a | Prends la clé sous la boîte rouge. |
 | atelier-v2-e-task-b | La clé jaune ouvre la grande porte. |
 | atelier-v2-e-task-c | Prends le livre dans la boîte jaune. |
-| atelier-v2-e-task-d | Le livre. → Dans la boîte sous la table rouge. ⚑ |
+| atelier-v2-e-task-d | Le livre va dans la boîte. La boîte est sous la table rouge. ⚑ |
 | atelier-v2-e-task-e | Prends la lettre sur la chaise verte. |
 | atelier-v2-e-task-f | Pour elle. Elle a la clé verte. |
 | atelier-v2-e-reply | J’ai la clé. |
+| atelier-v2-e-identity-self-0 | Je suis Paul. |
+| atelier-v2-e-identity-addressed-0 | Tu es Paul. |
+| atelier-v2-e-identity-third-0 | Il est Paul. |
+| atelier-v2-e-identity-self-1 | Je suis Claire. |
+| atelier-v2-e-identity-addressed-1 | Tu es Claire. |
+| atelier-v2-e-identity-third-1 | Elle est Claire. |
+| atelier-v2-e-identity-self-2 | Je suis Anne. |
+| atelier-v2-e-identity-addressed-2 | Tu es Anne. |
+| atelier-v2-e-identity-third-2 | Elle est Anne. |
+| atelier-v2-e-names-together | Paul et Claire. |
+| atelier-v2-e-being-together-0 | Nous sommes Paul et Claire. |
+| atelier-v2-e-being-addressed-group-0 | Vous êtes Paul et Claire. |
+| atelier-v2-e-having-shared-0 | Nous avons les clés. |
+| atelier-v2-e-having-addressed-0 | Vous avez les clés. |
+| atelier-v2-e-having-you-0 | Tu as la clé. |
+| atelier-v2-e-being-together-1 | Nous sommes Claire et Anne. |
+| atelier-v2-e-being-addressed-group-1 | Vous êtes Claire et Anne. |
+| atelier-v2-e-having-shared-1 | Nous avons les livres. |
+| atelier-v2-e-having-addressed-1 | Vous avez les livres. |
+| atelier-v2-e-having-you-1 | Tu as le livre. |
+| atelier-v2-e-being-together-2 | Nous sommes Anne et Marie. |
+| atelier-v2-e-being-addressed-group-2 | Vous êtes Anne et Marie. |
+| atelier-v2-e-having-shared-2 | Nous avons les lettres. |
+| atelier-v2-e-having-addressed-2 | Vous avez les lettres. |
+| atelier-v2-e-having-you-2 | Tu as la lettre. |
+| atelier-v2-e-having-they-0 | Elles ont les clés. |
+| atelier-v2-e-having-they-1 | Elles ont les livres. |
+| atelier-v2-e-having-they-2 | Elles ont les lettres. |
+| atelier-v2-e-black-0 | clé noire |
+| atelier-v2-e-black-1 | livre noir |
+| atelier-v2-e-black-2 | boîte noire |
 
 ### Écriture sur les objets
 
@@ -183,6 +207,10 @@ PR A validates the situated design only for: L’atelier. The other 5 zones reta
   - Contrastes déjà rencontrés : atelier-v2-e-open-a · atelier-v2-e-open-b · atelier-v2-e-open-c · atelier-v2-e-close-a · atelier-v2-e-close-b · atelier-v2-e-close-c · atelier-v2-e-large-a · atelier-v2-e-large-b · atelier-v2-e-large-c
 - **atelier-v2-08 — Ⅷ** : être · avoir · prendre · donner · elle
   - Contrastes déjà rencontrés : atelier-v2-e-identity-a · atelier-v2-e-identity-b · atelier-v2-e-identity-c · atelier-v2-e-have-she-a · atelier-v2-e-have-she-b · atelier-v2-e-have-she-c · atelier-v2-e-take-a · atelier-v2-e-take-b · atelier-v2-e-take-c · atelier-v2-e-give-a · atelier-v2-e-give-b · atelier-v2-e-give-c
+- **atelier-v2-09 — Ⅸ** : suis · es · est · sommes · êtes
+  - Contrastes déjà rencontrés : atelier-v2-e-identity-self-0 · atelier-v2-e-identity-addressed-0 · atelier-v2-e-identity-third-0 · atelier-v2-e-identity-self-1 · atelier-v2-e-identity-addressed-1 · atelier-v2-e-identity-third-1 · atelier-v2-e-identity-self-2 · atelier-v2-e-identity-addressed-2 · atelier-v2-e-identity-third-2 · atelier-v2-e-being-together-0 · atelier-v2-e-being-addressed-group-0 · atelier-v2-e-being-together-1 · atelier-v2-e-being-addressed-group-1 · atelier-v2-e-being-together-2 · atelier-v2-e-being-addressed-group-2
+- **atelier-v2-10 — Ⅹ** : ai · as · a · avons · avez
+  - Contrastes déjà rencontrés : atelier-v2-e-have-i-a · atelier-v2-e-have-i-b · atelier-v2-e-have-i-c · atelier-v2-e-having-shared-0 · atelier-v2-e-having-addressed-0 · atelier-v2-e-having-you-0 · atelier-v2-e-having-shared-1 · atelier-v2-e-having-addressed-1 · atelier-v2-e-having-you-1 · atelier-v2-e-having-shared-2 · atelier-v2-e-having-addressed-2 · atelier-v2-e-having-you-2 · atelier-v2-e-having-they-0 · atelier-v2-e-having-they-1 · atelier-v2-e-having-they-2
 
 ### Mécanisme
 
@@ -204,1940 +232,1896 @@ Expected physical sequence (internal data for review, never a player translation
 
 ## Le marché
 
-**Les mots ont du poids.**
-
-Sous les toiles du marché, les paniers passent de main en main. Claire a laissé une liste chez le marchand.
-
-**PR B debt — legacy content, not yet migrated.**
+**Situated design checks apply.**
 
 ### Rencontres
 
 | ID | Texte français |
 | --- | --- |
-| marche-e-etal | **L’étal** — Le pain coûte deux euros. Les pommes coûtent cinq euros. Le fromage coûte dix euros. L’eau coûte un euro. · « 2 € · 5 € · 10 € · 1 € » |
-| marche-e-panier | **Le panier** — Du pain dans le panier, une pomme dans la main, du fromage dans le sac et de l’eau dans la bouteille. |
-| marche-e-dejeuner | **Le déjeuner** — Elle coupe le pain. Il mange la pomme. Nous partageons le fromage. Vous buvez de l’eau. |
-| marche-e-deux | **Deux mains** — Deux mains portent deux pommes. · « 2 » |
-| marche-e-cinq | **Cinq doigts** — Cinq doigts, cinq pièces : cinq euros. · « 5 € » |
-| marche-e-dix | **Les deux mains** — Dix doigts, dix pièces : dix euros. · « 10 € » |
-| marche-e-vingt | **Les pièces** — Deux groupes de dix pièces font vingt euros. · « 10 + 10 = 20 € » |
-| marche-e-commande | **La commande** — Je veux du pain. Tu veux de l’eau. Il veut une pomme. Elle veut du fromage. Nous voulons deux pains. Vous voulez cinq pommes. · « Je → pain · tu → eau » |
-| marche-e-achat | **L’achat** — J’achète cinq pommes. Tu achètes deux pains. Nous achetons du fromage. Vous achetez de l’eau. |
-| marche-e-echange | **L’échange** — Je donne dix euros. Le marchand donne le pain. Tu prends le pain. Nous prenons les pommes. |
-| marche-e-mains | **De main en main** — Tu donnes le panier. Elle prend le panier. Nous donnons les sacs. Vous prenez les sacs. |
-| marche-e-liste | **La liste de Claire** — Je veux du pain et du fromage. Je ne veux pas de pommes. Je veux de l’eau sans lait. Je veux un sac avec une lettre. · « Pour Claire » |
-| marche-e-refus | **La main levée** — Il veut une pomme. Elle ne veut pas de pomme. Un panier avec des pommes ; un panier sans pommes. · « ✓ · ✕ » |
-| marche-e-bouteilles | **Les bouteilles** — L’eau est dans la bouteille bleue. La bouteille rouge est sans eau. La bouteille verte est avec le panier. Je ne prends pas la bouteille rouge. ⚑ |
-| marche-e-client | **Le client** — J’achète du pain avec vingt euros. Je donne vingt euros. Le marchand me donne dix euros et un pain à dix euros. · « 20 € → 10 € + 10 € » |
-| marche-e-balance | **La balance** — Vingt pommes : deux groupes de dix. Je prends le grand panier. J’achète les pommes pour vingt euros. · « 20 » |
-| marche-e-nombres | **Les nombres** — 1 un · 2 deux · 3 trois · 4 quatre · 5 cinq · 6 six · 7 sept · 8 huit · 9 neuf · 10 dix · 11 onze · 12 douze · 13 treize · 14 quatorze · 15 quinze · 16 seize · 17 dix-sept · 18 dix-huit · 19 dix-neuf · 20 vingt. · « 1 → 20 » |
-| marche-e-prix | **Les prix** — 21 vingt et un · 30 trente · 40 quarante · 50 cinquante · 60 soixante · 70 soixante-dix · 71 soixante et onze · 80 quatre-vingts · 81 quatre-vingt-un · 90 quatre-vingt-dix · 100 cent. · « 20 → 100 € » |
-| marche-e-autre-etal | **L’autre étal** — Les œufs sont dans une boîte. Le poisson frais est sur la glace. Les fruits et les légumes sont dans les paniers. Ce fromage est cher : cent euros ! · « 100 € » |
-| marche-e-mission | **Pour le café** — Pour Claire : deux pains, cinq pommes, un fromage et une bouteille d’eau. Le tout coûte vingt euros. Donne la lettre au café. · « 2 · 5 · 1 · 1 → 20 € » |
-| marche-e-choix | **Les deux paniers** — Je veux un pain. Tu veux deux pommes. Il veut du fromage. Elle veut de l’eau. Nous voulons un grand panier. Vous voulez deux petits sacs. · « Je · tu · il · elle · nous · vous » |
-| marche-e-famille | **La famille au marché** — Je veux le sac rouge. Tu veux le sac bleu. Il veut le livre. Elle veut la boîte. Nous voulons les pommes. Vous voulez le pain. |
-| marche-e-commande-groupe | **La commande du groupe** — Je veux cinq pommes. Tu veux deux pains. Il veut un fromage. Elle veut une bouteille d’eau. Nous voulons payer ensemble. Vous voulez prendre les deux paniers. |
-| marche-e-prix-objet-vingt-et-un | **L’étiquette** — La grande boîte coûte vingt et un euros. · « 21 € » |
-| marche-e-prix-compte-vingt-et-un | **Le paiement** — Le client compte vingt et un euros : 20 + 1 = 21. · « 20 + 1 = 21 € » |
-| marche-e-prix-monnaie-vingt-et-un | **La monnaie** — Voici vingt et un euros. Le marchand compte la monnaie : 30 − 9 = 21. · « 30 − 9 = 21 € » |
-| marche-e-prix-objet-soixante-et-onze | **L’étiquette** — Le manteau coûte soixante et onze euros. · « 71 € » |
-| marche-e-prix-compte-soixante-et-onze | **Le paiement** — Le client compte soixante et onze euros : 50 + 20 + 1 = 71. · « 50 + 20 + 1 = 71 € » |
-| marche-e-prix-monnaie-soixante-et-onze | **La monnaie** — Voici soixante et onze euros. Le marchand compte la monnaie : 100 − 29 = 71. · « 100 − 29 = 71 € » |
-| marche-e-prix-objet-quatre-vingts | **L’étiquette** — Le grand panier coûte quatre-vingts euros. · « 80 € » |
-| marche-e-prix-compte-quatre-vingts | **Le paiement** — Le client compte quatre-vingts euros : 4 × 20 = 80. · « 4 × 20 = 80 € » |
-| marche-e-prix-monnaie-quatre-vingts | **La monnaie** — Voici quatre-vingts euros. Le marchand compte la monnaie : 100 − 20 = 80. · « 100 − 20 = 80 € » |
-| marche-e-prix-objet-quatre-vingt-dix | **L’étiquette** — La grande table coûte quatre-vingt-dix euros. · « 90 € » |
-| marche-e-prix-compte-quatre-vingt-dix | **Le paiement** — Le client compte quatre-vingt-dix euros : 80 + 10 = 90. · « 80 + 10 = 90 € » |
-| marche-e-prix-monnaie-quatre-vingt-dix | **La monnaie** — Voici quatre-vingt-dix euros. Le marchand compte la monnaie : 100 − 10 = 90. · « 100 − 10 = 90 € » |
-| marche-e-prix-objet-cent | **L’étiquette** — Le grand livre coûte cent euros. · « 100 € » |
-| marche-e-prix-compte-cent | **Le paiement** — Le client compte cent euros : 50 + 50 = 100. · « 50 + 50 = 100 € » |
-| marche-e-prix-monnaie-cent | **La monnaie** — Voici cent euros. Le marchand compte la monnaie : 120 − 20 = 100. · « 120 − 20 = 100 € » |
-| s-marche-œuf-0 | **La coquille** — Un œuf dans sa coquille. La poule a pondu cet œuf ; le marchand le pose dans la boîte. |
-| s-marche-œuf-1 | **La coquille** — Le cuisinier casse un œuf. La coquille reste dans sa main, le blanc et le jaune tombent dans le bol. |
-| s-marche-œuf-2 | **La coquille** — Un œuf cuit est dans l’assiette. La coquille est à côté de l’assiette. |
-| s-marche-lait-0 | **La bouteille blanche** — Le lait vient de la vache. Le marchand remplit une bouteille de lait blanc. |
-| s-marche-lait-1 | **La bouteille blanche** — Le cuisinier verse du lait dans la tasse de café. Le café devient clair. |
-| s-marche-lait-2 | **La bouteille blanche** — L’enfant boit un verre de lait. La bouteille blanche est sur la table. |
-| s-marche-poisson-0 | **De l’eau à l’assiette** — Un poisson nage dans l’eau. Il a une queue et des nageoires. |
-| s-marche-poisson-1 | **De l’eau à l’assiette** — Le marchand pose le poisson sur la glace. Le poisson est frais. |
-| s-marche-poisson-2 | **De l’eau à l’assiette** — Le poisson cuit est dans l’assiette. Il reste la tête, la queue et les arêtes. |
-| s-marche-fruit-0 | **Du verger au panier** — La pomme est un fruit. Ce fruit pousse sur l’arbre. |
-| s-marche-fruit-1 | **Du verger au panier** — La poire est un fruit aussi. Ce fruit est dans le panier avec les pommes. |
-| s-marche-fruit-2 | **Du verger au panier** — Une pomme, une poire, une banane : chaque fruit est sur cet étal. Le pain est sur un autre étal. |
-| s-marche-légume-0 | **Le potager** — La carotte est un légume. Ce légume pousse dans la terre. |
-| s-marche-légume-1 | **Le potager** — Le cuisinier coupe un légume : une carotte pour la soupe. |
-| s-marche-légume-2 | **Le potager** — Un légume vert et un légume orange sont dans le panier. Le marchand donne une carotte. |
-| s-marche-panier-0 | **La poignée tressée** — Le panier a une grande poignée. Les pommes sont dans le panier tressé. |
-| s-marche-panier-1 | **La poignée tressée** — Elle porte le panier par la poignée. Le panier contient du pain et du fromage. |
-| s-marche-panier-2 | **La poignée tressée** — Le panier est vide maintenant. Les achats sont sur la table, la grande poignée reste levée. |
-| s-marche-sac-0 | **À emporter** — Le sac est en tissu. Les deux petites anses sont au-dessus du sac. |
-| s-marche-sac-1 | **À emporter** — Le client porte un sac à chaque main. Le pain dépasse du sac rouge. |
-| s-marche-sac-2 | **À emporter** — Le sac est ouvert sur la table. La lettre sort du sac ; le panier est ailleurs. |
-| s-marche-marché-0 | **Les étals** — Le marché est sur la place. Un étal de fruits, un étal de légumes et un étal de poisson attendent les clients. |
-| s-marche-marché-1 | **Les étals** — Au marché, le marchand donne le panier et le client donne les euros. |
-| s-marche-marché-2 | **Les étals** — Le marché ferme. Les toiles sont repliées, les derniers paniers quittent les étals. |
-| s-marche-euro-0 | **La pièce** — Une pièce d’un euro. Le signe € est sur la pièce. Une bouteille d’eau coûte un euro. |
-| s-marche-euro-1 | **La pièce** — Le client donne un euro au marchand. Le marchand donne une pomme à un euro. |
-| s-marche-euro-2 | **La pièce** — Deux pièces de cinquante centimes font un euro : 0,50 € + 0,50 € = 1 €. |
-| s-marche-tout-0 | **Le panier complet** — Le pain, les pommes et le fromage sont prêts. Je prends tout : rien ne reste sur la table. |
-| s-marche-tout-1 | **Le panier complet** — Elle donne tout au client : le sac, la boîte et la lettre. Ses mains sont vides maintenant. |
-| s-marche-tout-2 | **Le panier complet** — Le client paie tout : le pain et l’eau. Le marchand entoure les deux lignes sur l’addition. |
-| s-marche-payer-0 | **La monnaie passe** — Je paie le pain : je donne deux euros au marchand. Le marchand me donne le pain. |
-| s-marche-payer-1 | **La monnaie passe** — Je paie le poisson : les pièces passent de ma main à la main du marchand. |
-| s-marche-payer-2 | **La monnaie passe** — Je paie le panier complet. La serveuse prend mes euros, puis me donne l’addition. |
-| s-marche-coûter-0 | **Les étiquettes** — Le pain coûte deux euros. L’étiquette porte 2 € ; je donne deux euros pour le pain. |
-| s-marche-coûter-1 | **Les étiquettes** — Le poisson coûte six euros. Son étiquette porte 6 € ; le client prépare six pièces. |
-| s-marche-coûter-2 | **Les étiquettes** — Le panier coûte douze euros. L’étiquette porte 12 € ; les pommes coûtent trois euros. |
-| s-marche-cher-0 | **Le même objet, un autre prix** — Ce pain est cher : dix euros. Le même pain, sur l’autre étal, coûte un euro. |
-| s-marche-cher-1 | **Le même objet, un autre prix** — Ce fromage est cher : cinquante euros. Le même fromage coûte cinq euros chez l’autre marchand. |
-| s-marche-cher-2 | **Le même objet, un autre prix** — Ce sac est cher : cent euros. Le même sac coûte dix euros au marché. |
-| s-marche-frais-0 | **La livraison du matin** — Le poisson est frais : le pêcheur vient de le sortir de l’eau. Il est posé sur la glace. |
-| s-marche-frais-1 | **La livraison du matin** — Le pain est frais : il sort du four. La vapeur monte encore au-dessus du pain. |
-| s-marche-frais-2 | **La livraison du matin** — Le fromage est frais : il vient d’être préparé. Il reste au froid, à côté du lait. |
-| s-marche-bon-0 | **Le plaisir de manger** — Ce pain est bon ! Le client sourit après avoir mangé un morceau de pain. |
-| s-marche-bon-1 | **Le plaisir de manger** — Ce fromage est bon ! Elle goûte le fromage, sourit et en demande encore. |
-| s-marche-bon-2 | **Le plaisir de manger** — Ce café est bon ! Le client boit, sourit et lève le pouce. |
-| s-marche-nombre-trois-0 | **Le compte du marchand** — Le marchand compte trois pommes. Le panier porte le nombre 3. · « 3 » |
-| s-marche-nombre-trois-1 | **Le compte du client** — Dans la boîte, il y a trois œufs. Les cases permettent de compter les trois œufs. · « 3 » |
-| s-marche-nombre-trois-2 | **Le paiement exact** — Je paie trois euros. L’addition indique 3 € ; je prépare exactement trois euros. · « 3 € » |
-| s-marche-nombre-quatre-0 | **Le compte du marchand** — Le marchand compte quatre pommes. Le panier porte le nombre 4. · « 4 » |
-| s-marche-nombre-quatre-1 | **Le compte du client** — Dans la boîte, il y a quatre œufs. Les cases permettent de compter les quatre œufs. · « 4 » |
-| s-marche-nombre-quatre-2 | **Le paiement exact** — Je paie quatre euros. L’addition indique 4 € ; je prépare exactement quatre euros. · « 4 € » |
-| s-marche-nombre-six-0 | **Le compte du marchand** — Le marchand compte six pommes. Le panier porte le nombre 6. · « 6 » |
-| s-marche-nombre-six-1 | **Le compte du client** — Dans la boîte, il y a six œufs. Les cases permettent de compter les six œufs. · « 6 » |
-| s-marche-nombre-six-2 | **Le paiement exact** — Je paie six euros. L’addition indique 6 € ; je prépare exactement six euros. · « 6 € » |
-| s-marche-nombre-sept-0 | **Le compte du marchand** — Le marchand compte sept pommes. Le panier porte le nombre 7. · « 7 » |
-| s-marche-nombre-sept-1 | **Le compte du client** — Dans la boîte, il y a sept œufs. Les cases permettent de compter les sept œufs. · « 7 » |
-| s-marche-nombre-sept-2 | **Le paiement exact** — Je paie sept euros. L’addition indique 7 € ; je prépare exactement sept euros. · « 7 € » |
-| s-marche-nombre-huit-0 | **Le compte du marchand** — Le marchand compte huit pommes. Le panier porte le nombre 8. · « 8 » |
-| s-marche-nombre-huit-1 | **Le compte du client** — Dans la boîte, il y a huit œufs. Les cases permettent de compter les huit œufs. · « 8 » |
-| s-marche-nombre-huit-2 | **Le paiement exact** — Je paie huit euros. L’addition indique 8 € ; je prépare exactement huit euros. · « 8 € » |
-| s-marche-nombre-neuf-0 | **Le compte du marchand** — Le marchand compte neuf pommes. Le panier porte le nombre 9. · « 9 » |
-| s-marche-nombre-neuf-1 | **Le compte du client** — Dans la boîte, il y a neuf œufs. Les cases permettent de compter les neuf œufs. · « 9 » |
-| s-marche-nombre-neuf-2 | **Le paiement exact** — Je paie neuf euros. L’addition indique 9 € ; je prépare exactement neuf euros. · « 9 € » |
-| s-marche-nombre-onze-0 | **Le compte du marchand** — Le marchand compte onze pommes. Le panier porte le nombre 11. · « 11 » |
-| s-marche-nombre-onze-1 | **Le compte du client** — Dans la boîte, il y a onze œufs. Les cases permettent de compter les onze œufs. · « 11 » |
-| s-marche-nombre-onze-2 | **Le paiement exact** — Je paie onze euros. L’addition indique 11 € ; je prépare exactement onze euros. · « 11 € » |
-| s-marche-nombre-douze-0 | **Le compte du marchand** — Le marchand compte douze pommes. Le panier porte le nombre 12. · « 12 » |
-| s-marche-nombre-douze-1 | **Le compte du client** — Dans la boîte, il y a douze œufs. Les cases permettent de compter les douze œufs. · « 12 » |
-| s-marche-nombre-douze-2 | **Le paiement exact** — Je paie douze euros. L’addition indique 12 € ; je prépare exactement douze euros. · « 12 € » |
-| s-marche-nombre-treize-0 | **Le compte du marchand** — Le marchand compte treize pommes. Le panier porte le nombre 13. · « 13 » |
-| s-marche-nombre-treize-1 | **Le compte du client** — Dans la boîte, il y a treize œufs. Les cases permettent de compter les treize œufs. · « 13 » |
-| s-marche-nombre-treize-2 | **Le paiement exact** — Je paie treize euros. L’addition indique 13 € ; je prépare exactement treize euros. · « 13 € » |
-| s-marche-nombre-quatorze-0 | **Le compte du marchand** — Le marchand compte quatorze pommes. Le panier porte le nombre 14. · « 14 » |
-| s-marche-nombre-quatorze-1 | **Le compte du client** — Dans la boîte, il y a quatorze œufs. Les cases permettent de compter les quatorze œufs. · « 14 » |
-| s-marche-nombre-quatorze-2 | **Le paiement exact** — Je paie quatorze euros. L’addition indique 14 € ; je prépare exactement quatorze euros. · « 14 € » |
-| s-marche-nombre-quinze-0 | **Le compte du marchand** — Le marchand compte quinze pommes. Le panier porte le nombre 15. · « 15 » |
-| s-marche-nombre-quinze-1 | **Le compte du client** — Dans la boîte, il y a quinze œufs. Les cases permettent de compter les quinze œufs. · « 15 » |
-| s-marche-nombre-quinze-2 | **Le paiement exact** — Je paie quinze euros. L’addition indique 15 € ; je prépare exactement quinze euros. · « 15 € » |
-| s-marche-nombre-seize-0 | **Le compte du marchand** — Le marchand compte seize pommes. Le panier porte le nombre 16. · « 16 » |
-| s-marche-nombre-seize-1 | **Le compte du client** — Dans la boîte, il y a seize œufs. Les cases permettent de compter les seize œufs. · « 16 » |
-| s-marche-nombre-seize-2 | **Le paiement exact** — Je paie seize euros. L’addition indique 16 € ; je prépare exactement seize euros. · « 16 € » |
-| s-marche-nombre-trente-0 | **Le compte du marchand** — Le marchand compte trente euros. Le panier porte le nombre 30. · « 30 » |
-| s-marche-nombre-trente-1 | **Le compte du client** — Le client compte trente euros en billets de dix euros : 3 × 10 € = 30 €. · « 30 » |
-| s-marche-nombre-trente-2 | **Le paiement exact** — Je paie trente euros. L’addition indique 30 € ; je prépare exactement trente euros. · « 30 € » |
-| s-marche-nombre-quarante-0 | **Le compte du marchand** — Le marchand compte quarante euros. Le panier porte le nombre 40. · « 40 » |
-| s-marche-nombre-quarante-1 | **Le compte du client** — Le client compte quarante euros en billets de dix euros : 4 × 10 € = 40 €. · « 40 » |
-| s-marche-nombre-quarante-2 | **Le paiement exact** — Je paie quarante euros. L’addition indique 40 € ; je prépare exactement quarante euros. · « 40 € » |
-| s-marche-nombre-cinquante-0 | **Le compte du marchand** — Le marchand compte cinquante euros. Le panier porte le nombre 50. · « 50 » |
-| s-marche-nombre-cinquante-1 | **Le compte du client** — Le client compte cinquante euros en billets de dix euros : 5 × 10 € = 50 €. · « 50 » |
-| s-marche-nombre-cinquante-2 | **Le paiement exact** — Je paie cinquante euros. L’addition indique 50 € ; je prépare exactement cinquante euros. · « 50 € » |
-| s-marche-nombre-soixante-0 | **Le compte du marchand** — Le marchand compte soixante euros. Le panier porte le nombre 60. · « 60 » |
-| s-marche-nombre-soixante-1 | **Le compte du client** — Le client compte soixante euros en billets de dix euros : 6 × 10 € = 60 €. · « 60 » |
-| s-marche-nombre-soixante-2 | **Le paiement exact** — Je paie soixante euros. L’addition indique 60 € ; je prépare exactement soixante euros. · « 60 € » |
+| marche-v2-e-number-deux-0 | deux pommes · « 2 » |
+| marche-v2-e-number-deux-1 | deux pommes ? · « 2 » |
+| marche-v2-e-number-deux-2 | deux pommes. · « 2 » |
+| marche-v2-e-number-trois-0 | trois œufs · « 3 » |
+| marche-v2-e-number-trois-1 | trois œufs ? · « 3 » |
+| marche-v2-e-number-trois-2 | trois œufs. · « 3 » |
+| marche-v2-e-number-quatre-0 | quatre pains · « 4 » |
+| marche-v2-e-number-quatre-1 | quatre pains ? · « 4 » |
+| marche-v2-e-number-quatre-2 | quatre pains. · « 4 » |
+| marche-v2-e-number-cinq-0 | cinq pommes · « 5 » |
+| marche-v2-e-number-cinq-1 | cinq pommes ? · « 5 » |
+| marche-v2-e-number-cinq-2 | cinq pommes. · « 5 » |
+| marche-v2-e-number-six-0 | six œufs · « 6 » |
+| marche-v2-e-number-six-1 | six œufs ? · « 6 » |
+| marche-v2-e-number-six-2 | six œufs. · « 6 » |
+| marche-v2-e-number-sept-0 | sept pains · « 7 » |
+| marche-v2-e-number-sept-1 | sept pains ? · « 7 » |
+| marche-v2-e-number-sept-2 | sept pains. · « 7 » |
+| marche-v2-e-number-huit-0 | huit pommes · « 8 » |
+| marche-v2-e-number-huit-1 | huit pommes ? · « 8 » |
+| marche-v2-e-number-huit-2 | huit pommes. · « 8 » |
+| marche-v2-e-number-neuf-0 | neuf œufs · « 9 » |
+| marche-v2-e-number-neuf-1 | neuf œufs ? · « 9 » |
+| marche-v2-e-number-neuf-2 | neuf œufs. · « 9 » |
+| marche-v2-e-number-dix-0 | dix pains · « 10 » |
+| marche-v2-e-number-dix-1 | dix pains ? · « 10 » |
+| marche-v2-e-number-dix-2 | dix pains. · « 10 » |
+| marche-v2-e-number-onze-0 | onze pommes · « 11 » |
+| marche-v2-e-number-onze-1 | onze pommes ? · « 11 » |
+| marche-v2-e-number-onze-2 | onze pommes. · « 11 » |
+| marche-v2-e-number-douze-0 | douze œufs · « 12 » |
+| marche-v2-e-number-douze-1 | douze œufs ? · « 12 » |
+| marche-v2-e-number-douze-2 | douze œufs. · « 12 » |
+| marche-v2-e-number-treize-0 | treize pains · « 13 » |
+| marche-v2-e-number-treize-1 | treize pains ? · « 13 » |
+| marche-v2-e-number-treize-2 | treize pains. · « 13 » |
+| marche-v2-e-number-quatorze-0 | quatorze pommes · « 14 » |
+| marche-v2-e-number-quatorze-1 | quatorze pommes ? · « 14 » |
+| marche-v2-e-number-quatorze-2 | quatorze pommes. · « 14 » |
+| marche-v2-e-number-quinze-0 | quinze œufs · « 15 » |
+| marche-v2-e-number-quinze-1 | quinze œufs ? · « 15 » |
+| marche-v2-e-number-quinze-2 | quinze œufs. · « 15 » |
+| marche-v2-e-number-seize-0 | seize pains · « 16 » |
+| marche-v2-e-number-seize-1 | seize pains ? · « 16 » |
+| marche-v2-e-number-seize-2 | seize pains. · « 16 » |
+| marche-v2-e-number-vingt-0 | vingt pommes · « 20 » |
+| marche-v2-e-number-vingt-1 | vingt pommes ? · « 20 » |
+| marche-v2-e-number-vingt-2 | vingt pommes. · « 20 » |
+| marche-v2-e-number-vingt-et-un-0 | vingt et un · 21 € · « 21 € » |
+| marche-v2-e-number-vingt-et-un-1 | vingt et un euros. · « 21 » |
+| marche-v2-e-number-vingt-et-un-2 | vingt et un euros. |
+| marche-v2-e-number-trente-0 | trente · 30 € · « 30 € » |
+| marche-v2-e-number-trente-1 | trente euros. · « 30 » |
+| marche-v2-e-number-trente-2 | trente euros. |
+| marche-v2-e-number-quarante-0 | quarante · 40 € · « 40 € » |
+| marche-v2-e-number-quarante-1 | quarante euros. · « 40 » |
+| marche-v2-e-number-quarante-2 | quarante euros. |
+| marche-v2-e-number-cinquante-0 | cinquante · 50 € · « 50 € » |
+| marche-v2-e-number-cinquante-1 | cinquante euros. · « 50 » |
+| marche-v2-e-number-cinquante-2 | cinquante euros. |
+| marche-v2-e-number-soixante-0 | soixante · 60 € · « 60 € » |
+| marche-v2-e-number-soixante-1 | soixante euros. · « 60 » |
+| marche-v2-e-number-soixante-2 | soixante euros. |
+| marche-v2-e-number-soixante-et-onze-0 | soixante et onze · 71 € · « 71 € » |
+| marche-v2-e-number-soixante-et-onze-1 | soixante et onze euros. · « 71 » |
+| marche-v2-e-number-soixante-et-onze-2 | soixante et onze euros. |
+| marche-v2-e-number-quatre-vingts-0 | quatre-vingts · 80 € · « 80 € » |
+| marche-v2-e-number-quatre-vingts-1 | quatre-vingts euros. · « 80 » |
+| marche-v2-e-number-quatre-vingts-2 | quatre-vingts euros. |
+| marche-v2-e-number-quatre-vingt-dix-0 | quatre-vingt-dix · 90 € · « 90 € » |
+| marche-v2-e-number-quatre-vingt-dix-1 | quatre-vingt-dix euros. · « 90 » |
+| marche-v2-e-number-quatre-vingt-dix-2 | quatre-vingt-dix euros. |
+| marche-v2-e-number-cent-0 | cent · 100 € · « 100 € » |
+| marche-v2-e-number-cent-1 | cent euros. · « 100 » |
+| marche-v2-e-number-cent-2 | cent euros. |
+| marche-v2-e-food-0-0 | pain |
+| marche-v2-e-food-0-1 | pain |
+| marche-v2-e-food-0-2 | pain |
+| marche-v2-e-food-1-0 | pomme |
+| marche-v2-e-food-1-1 | pomme |
+| marche-v2-e-food-1-2 | pomme |
+| marche-v2-e-food-2-0 | fromage |
+| marche-v2-e-food-2-1 | fromage |
+| marche-v2-e-food-2-2 | fromage |
+| marche-v2-e-food-3-0 | eau |
+| marche-v2-e-food-3-1 | eau |
+| marche-v2-e-food-3-2 | eau |
+| marche-v2-e-food-4-0 | œuf |
+| marche-v2-e-food-4-1 | œuf |
+| marche-v2-e-food-4-2 | œuf |
+| marche-v2-e-food-5-0 | lait |
+| marche-v2-e-food-5-1 | lait |
+| marche-v2-e-food-5-2 | lait |
+| marche-v2-e-food-6-0 | poisson |
+| marche-v2-e-food-6-1 | poisson |
+| marche-v2-e-food-6-2 | poisson |
+| marche-v2-e-food-7-0 | fruit |
+| marche-v2-e-food-7-1 | fruit |
+| marche-v2-e-food-7-2 | fruit |
+| marche-v2-e-food-8-0 | légume |
+| marche-v2-e-food-8-1 | légume |
+| marche-v2-e-food-8-2 | légume |
+| marche-v2-e-label-basket-r | panier |
+| marche-v2-e-label-basket-b | panier |
+| marche-v2-e-label-basket-y | panier |
+| marche-v2-e-label-bag-b | sac |
+| marche-v2-e-label-bag-r | sac |
+| marche-v2-e-label-bag-g | sac |
+| marche-v2-e-market-0 | marché |
+| marche-v2-e-euro-0 | euro |
+| marche-v2-e-market-1 | marché |
+| marche-v2-e-euro-1 | euro |
+| marche-v2-e-market-2 | marché |
+| marche-v2-e-euro-2 | euro |
+| marche-v2-e-prop-table-r | table rouge |
+| marche-v2-e-prop-table-g | table verte |
+| marche-v2-e-prop-table-b | table bleue |
+| marche-v2-e-prop-basket-r | panier rouge |
+| marche-v2-e-prop-basket-b | panier bleu |
+| marche-v2-e-prop-basket-y | panier jaune |
+| marche-v2-e-prop-bag-b | sac bleu |
+| marche-v2-e-prop-bag-r | sac rouge |
+| marche-v2-e-prop-bag-g | sac vert |
+| marche-v2-e-prop-order-bread | deux pains |
+| marche-v2-e-prop-order-apples | cinq pommes |
+| marche-v2-e-prop-other-bread | cinq pains |
+| marche-v2-e-prop-other-apples | deux pommes |
+| marche-v2-e-prop-letter-blue | lettre bleue |
+| marche-v2-e-prop-letter-red | lettre rouge |
+| marche-v2-e-prop-key-green | clé verte |
+| marche-v2-e-bottle-0 | bouteille |
+| marche-v2-e-bottle-1 | bouteille |
+| marche-v2-e-bottle-2 | bouteille |
+| marche-v2-e-price-order-bread | pain · 2 € · « 2 € » |
+| marche-v2-e-price-order-apples | pomme · 1 € · « 1 € » |
+| marche-v2-e-price-order-cheese | fromage · 11 € · « 11 € » |
+| marche-v2-e-water-partitive | De l’eau. |
+| marche-v2-e-want-0 | Je veux du pain. |
+| marche-v2-e-buy-0 | J’achète du pain. |
+| marche-v2-e-pay-0 | Je paie deux euros. |
+| marche-v2-e-give-0 | Je donne du pain. |
+| marche-v2-e-take-0 | Je prends le pain. |
+| marche-v2-e-cost-0 | Le pain coûte deux euros. |
+| marche-v2-e-want-1 | Je veux une pomme. |
+| marche-v2-e-buy-1 | J’achète une pomme. |
+| marche-v2-e-pay-1 | Je paie un euro. |
+| marche-v2-e-give-1 | Je donne une pomme. |
+| marche-v2-e-take-1 | Je prends la pomme. |
+| marche-v2-e-cost-1 | La pomme coûte un euro. |
+| marche-v2-e-want-2 | Je veux du fromage. |
+| marche-v2-e-buy-2 | J’achète du fromage. |
+| marche-v2-e-pay-2 | Je paie onze euros. |
+| marche-v2-e-give-2 | Je donne du fromage. |
+| marche-v2-e-take-2 | Je prends le fromage. |
+| marche-v2-e-cost-2 | Le fromage coûte onze euros. |
+| marche-v2-e-want-third-0 | Elle veut du pain. |
+| marche-v2-e-want-group-0 | Nous voulons du pain. |
+| marche-v2-e-want-address-0 | Vous voulez du pain ? |
+| marche-v2-e-want-third-1 | Elle veut une pomme. |
+| marche-v2-e-want-group-1 | Nous voulons une pomme. |
+| marche-v2-e-want-address-1 | Vous voulez une pomme ? |
+| marche-v2-e-want-third-2 | Elle veut du fromage. |
+| marche-v2-e-want-group-2 | Nous voulons du fromage. |
+| marche-v2-e-want-address-2 | Vous voulez du fromage ? |
+| marche-v2-e-negative-0 | Je ne veux pas de pomme. |
+| marche-v2-e-negative-1 | Je ne veux pas de pain. |
+| marche-v2-e-negative-2 | Je ne veux pas de fromage. |
+| marche-v2-e-male-recipient-0 | Pour lui. |
+| marche-v2-e-male-recipient-1 | Pour lui. |
+| marche-v2-e-male-recipient-2 | Pour lui. |
+| marche-v2-e-with-0 | Avec le pain. |
+| marche-v2-e-without-0 | Sans pain. |
+| marche-v2-e-with-1 | Avec les pommes. |
+| marche-v2-e-without-1 | Sans pomme. |
+| marche-v2-e-with-2 | Avec le pain. |
+| marche-v2-e-without-2 | Sans pain. |
+| marche-v2-e-fresh-0 | Pain frais. |
+| marche-v2-e-good-0 | Pain bon ! |
+| marche-v2-e-dear-0 | cher |
+| marche-v2-e-all-0 | tout |
+| marche-v2-e-fresh-1 | Fromage frais. |
+| marche-v2-e-good-1 | Fromage bon ! |
+| marche-v2-e-dear-1 | cher |
+| marche-v2-e-all-1 | tout |
+| marche-v2-e-fresh-2 | Poisson frais. |
+| marche-v2-e-good-2 | Poisson bon ! |
+| marche-v2-e-dear-2 | cher |
+| marche-v2-e-all-2 | tout |
+| marche-v2-e-water-location | Eau. |
+| marche-v2-e-bottle-location | La bouteille verte est sur la table. |
+| marche-v2-e-task-bread | Prends les pains dans le panier rouge. |
+| marche-v2-e-task-pack-bread | Dans le sac sous le panier rouge. |
+| marche-v2-e-task-apples | Prends les pommes dans le panier bleu. |
+| marche-v2-e-task-pack-apples | Dans le sac sous le panier rouge. |
+| marche-v2-e-task-cheese | Prends le fromage sous la table rouge. |
+| marche-v2-e-task-pack-cheese | Dans le sac sous le panier rouge. |
+| marche-v2-e-task-payment | Paie tout. Deux pains, cinq pommes, un fromage. |
+| marche-v2-e-task-pay-person | Pour lui. Il a la bouteille verte. ⚑ |
+| marche-v2-e-task-bag | Prends le sac sous le panier rouge. |
+| marche-v2-e-task-bag-person | Pour elle. Elle a la clé verte. |
+| marche-v2-e-task-letter | Prends la lettre sous le panier jaune. |
+| marche-v2-e-task-letter-person | Pour elle. Elle a la clé verte. |
+| marche-v2-e-reply-luc | J’ai de l’eau. |
+| marche-v2-e-reply-claire | J’ai la clé. |
+| marche-v2-e-courier-destination | Au café. |
+
+### Écriture sur les objets
+
+- vendor-0 : « Marc »
+- buyer-0 : « Léa »
+- vendor-1 : « Émile »
+- buyer-1 : « Rose »
+- vendor-2 : « Hugo »
+- buyer-2 : « Eva »
+- cash-vingt-et-un (note) : « 20 + 1 »
+- cash-trente (note) : « 20 + 10 »
+- cash-quarante (note) : « 2 × 20 »
+- cash-cinquante (note) : « 50 »
+- cash-soixante (note) : « 50 + 10 »
+- cash-soixante-et-onze (note) : « 50 + 20 + 1 »
+- cash-quatre-vingts (note) : « 4 × 20 »
+- cash-quatre-vingt-dix (note) : « 4 × 20 + 10 »
+- cash-cent (note) : « 100 »
+- basket-r : « panier rouge »
+- basket-b : « panier bleu »
+- basket-y : « panier jaune »
+- bag-b : « sac bleu »
+- bag-r : « sac rouge »
+- bag-g : « sac vert »
+- order-bread : « deux pains »
+- order-bread (top) : « 1 → 2 € »
+- order-apples : « cinq pommes »
+- order-apples (top) : « 1 → 1 € »
+- decoy-cheese : « fromage rouge »
+- order-cheese : « fromage »
+- order-cheese (top) : « 1 → 11 € »
+- other-bread : « cinq pains »
+- other-apples : « deux pommes »
+- pay-20 : « vingt euros »
+- pay-10 : « dix euros »
+- pay-5 : « cinq euros »
+- letter-blue : « lettre bleue »
+- letter-red : « lettre rouge »
+- bottle-green : « eau »
+- water-on-table : « bouteille »
+- water-in-basket : « bouteille »
+- key-green : « clé verte »
+- luc : « Luc »
+- claire : « Claire »
+- paul : « Paul »
+- anne : « Anne »
+- food-0-0 : « pain »
+- food-0-1 : « pain »
+- food-1-0 : « pomme »
+- food-1-1 : « pomme »
+- food-2-0 : « fromage »
+- food-2-1 : « fromage »
+- food-3-0 : « eau »
+- food-3-1 : « eau »
+- food-4-0 : « œuf »
+- food-4-1 : « œuf »
+- food-5-0 : « lait »
+- food-5-1 : « lait »
+- food-6-0 : « poisson »
+- food-6-1 : « poisson »
+- food-7-0 : « fruit »
+- food-7-1 : « fruit »
+- food-8-0 : « légume »
+- food-8-1 : « légume »
+- demo-pay-0 : « 2 € »
+- demo-pay-1 : « 1 € »
+- demo-pay-2 : « 11 € »
+- quality-0 : « pain »
+- quality-old-0 : « pain »
+- expensive-0 : « 10 € »
+- cheap-0 : « 1 € »
+- quality-1 : « fromage »
+- quality-old-1 : « fromage »
+- expensive-1 : « 50 € »
+- cheap-1 : « 5 € »
+- quality-2 : « poisson »
+- quality-old-2 : « poisson »
+- expensive-2 : « 100 € »
+- cheap-2 : « 10 € »
 
 ### Texte dans les illustrations
 
-- marche-nombres/nombres-0/picture/0 : « € »
-- marche-nombres/nombres-0/picture/1 : « € »
-- marche-nombres/nombres-0/picture/2 : « 2 »
-- marche-nombres/nombres-1/picture/0 : « € »
-- marche-nombres/nombres-1/picture/1 : « € »
-- marche-nombres/nombres-1/picture/2 : « € »
-- marche-nombres/nombres-1/picture/3 : « € »
-- marche-nombres/nombres-1/picture/4 : « € »
-- marche-nombres/nombres-1/picture/5 : « 5 »
-- marche-nombres/nombres-2/picture/0 : « € »
-- marche-nombres/nombres-2/picture/1 : « € »
-- marche-nombres/nombres-2/picture/2 : « € »
-- marche-nombres/nombres-2/picture/3 : « € »
-- marche-nombres/nombres-2/picture/4 : « € »
-- marche-nombres/nombres-2/picture/5 : « € »
-- marche-nombres/nombres-2/picture/6 : « € »
-- marche-nombres/nombres-2/picture/7 : « € »
-- marche-nombres/nombres-2/picture/8 : « € »
-- marche-nombres/nombres-2/picture/9 : « € »
-- marche-nombres/nombres-2/picture/10 : « 10 »
-- marche-nombres/nombres-3/picture/0 : « € »
-- marche-nombres/nombres-3/picture/1 : « € »
-- marche-nombres/nombres-3/picture/2 : « € »
-- marche-nombres/nombres-3/picture/3 : « € »
-- marche-nombres/nombres-3/picture/4 : « € »
-- marche-nombres/nombres-3/picture/5 : « € »
-- marche-nombres/nombres-3/picture/6 : « € »
-- marche-nombres/nombres-3/picture/7 : « € »
-- marche-nombres/nombres-3/picture/8 : « € »
-- marche-nombres/nombres-3/picture/9 : « € »
-- marche-nombres/nombres-3/picture/10 : « € »
-- marche-nombres/nombres-3/picture/11 : « € »
-- marche-nombres/nombres-3/picture/12 : « € »
-- marche-nombres/nombres-3/picture/13 : « € »
-- marche-nombres/nombres-3/picture/14 : « € »
-- marche-nombres/nombres-3/picture/15 : « € »
-- marche-nombres/nombres-3/picture/16 : « € »
-- marche-nombres/nombres-3/picture/17 : « € »
-- marche-nombres/nombres-3/picture/18 : « € »
-- marche-nombres/nombres-3/picture/19 : « € »
-- marche-nombres/nombres-3/picture/20 : « 20 »
-- marche-gestes/gestes-1/picture/0 : « € »
-- marche-gestes/gestes-1/picture/1 : « € »
-- marche-negation/negation-0/picture/0 : « Je ___ veux ___ de pomme. »
-- marche-negation/negation-1/picture/0 : « Un panier ___ des pommes. »
-- marche-negation/negation-2/picture/0 : « Un panier ___ pommes. »
-- marche-vouloir-personnes/vouloir-personnes-0/picture/0 : « Je ___ du pain. Tu ___ de l’eau. »
-- marche-vouloir-personnes/vouloir-personnes-1/picture/0 : « Il ___ du pain. Elle ___ de l’eau. »
-- marche-vouloir-personnes/vouloir-personnes-2/picture/0 : « Nous ___ du pain. »
-- marche-vouloir-personnes/vouloir-personnes-3/picture/0 : « Vous ___ du pain. »
-- marche-grands-nombres/grands-nombres-0/picture/0 : « 21 € »
-- marche-grands-nombres/grands-nombres-1/picture/0 : « 71 € »
-- marche-grands-nombres/grands-nombres-2/picture/0 : « 80 € »
-- marche-grands-nombres/grands-nombres-3/picture/0 : « 90 € »
-- marche-grands-nombres/grands-nombres-4/picture/0 : « 100 € »
-- s-marche-page-courses/s-marche-slot-courses-3/picture/0 : « € »
-- s-marche-page-vente/s-marche-slot-vente-0/picture/0 : « € »
-- s-marche-page-vente/s-marche-slot-vente-0/picture/1 : « € »
-- s-marche-page-vente/s-marche-slot-vente-1/picture/0 : « 2 € »
-- s-marche-page-vente/s-marche-slot-vente-2/picture/0 : « 1 € »
-- s-marche-page-vente/s-marche-slot-vente-2/picture/1 : « 10 € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-0/picture/0 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-0/picture/1 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-0/picture/2 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-0/picture/3 : « 3 »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-1/picture/0 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-1/picture/1 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-1/picture/2 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-1/picture/3 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-1/picture/4 : « 4 »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/0 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/1 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/2 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/3 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/4 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/5 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-2/picture/6 : « 6 »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/0 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/1 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/2 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/3 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/4 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/5 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/6 : « € »
-- s-marche-page-nombres-0/s-marche-slot-nombres-0-3/picture/7 : « 7 »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/0 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/1 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/2 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/3 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/4 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/5 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/6 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/7 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-0/picture/8 : « 8 »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/0 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/1 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/2 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/3 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/4 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/5 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/6 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/7 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/8 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-1/picture/9 : « 9 »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/0 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/1 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/2 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/3 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/4 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/5 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/6 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/7 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/8 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/9 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/10 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-2/picture/11 : « 11 »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/0 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/1 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/2 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/3 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/4 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/5 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/6 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/7 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/8 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/9 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/10 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/11 : « € »
-- s-marche-page-nombres-1/s-marche-slot-nombres-1-3/picture/12 : « 12 »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/0 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/1 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/2 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/3 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/4 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/5 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/6 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/7 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/8 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/9 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/10 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/11 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/12 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-0/picture/13 : « 13 »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/0 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/1 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/2 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/3 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/4 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/5 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/6 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/7 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/8 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/9 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/10 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/11 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/12 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/13 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-1/picture/14 : « 14 »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/0 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/1 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/2 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/3 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/4 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/5 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/6 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/7 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/8 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/9 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/10 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/11 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/12 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/13 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/14 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-2/picture/15 : « 15 »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/0 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/1 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/2 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/3 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/4 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/5 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/6 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/7 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/8 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/9 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/10 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/11 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/12 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/13 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/14 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/15 : « € »
-- s-marche-page-nombres-2/s-marche-slot-nombres-2-3/picture/16 : « 16 »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-0/picture/0 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-0/picture/1 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-0/picture/2 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-0/picture/3 : « 30 »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-1/picture/0 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-1/picture/1 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-1/picture/2 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-1/picture/3 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-1/picture/4 : « 40 »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/0 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/1 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/2 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/3 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/4 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-2/picture/5 : « 50 »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/0 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/1 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/2 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/3 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/4 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/5 : « 10 € »
-- s-marche-page-nombres-3/s-marche-slot-nombres-3-3/picture/6 : « 60 »
-- marche-payer/picture/0 : « € »
-- marche-payer/picture/1 : « € »
-- marche-e-etal/picture/0 : « 2 € · 5 € · 10 € · 1 € »
-- marche-e-deux/picture/0 : « 2 »
-- marche-e-cinq/picture/0 : « € »
-- marche-e-cinq/picture/1 : « € »
-- marche-e-cinq/picture/2 : « € »
-- marche-e-cinq/picture/3 : « € »
-- marche-e-cinq/picture/4 : « € »
-- marche-e-cinq/picture/5 : « 5 € »
-- marche-e-dix/picture/0 : « € »
-- marche-e-dix/picture/1 : « € »
-- marche-e-dix/picture/2 : « € »
-- marche-e-dix/picture/3 : « € »
-- marche-e-dix/picture/4 : « € »
-- marche-e-dix/picture/5 : « € »
-- marche-e-dix/picture/6 : « € »
-- marche-e-dix/picture/7 : « € »
-- marche-e-dix/picture/8 : « € »
-- marche-e-dix/picture/9 : « € »
-- marche-e-dix/picture/10 : « 10 € »
-- marche-e-vingt/picture/0 : « 10 + 10 = 20 € »
-- marche-e-commande/picture/0 : « Je → pain · tu → eau »
-- marche-e-achat/picture/0 : « € »
-- marche-e-achat/picture/1 : « € »
-- marche-e-liste/picture/0 : « Pour Claire »
-- marche-e-refus/picture/0 : « ✓ · ✕ »
-- marche-e-client/picture/0 : « 20 € → 10 € + 10 € »
-- marche-e-balance/picture/0 : « 20 »
-- marche-e-nombres/picture/0 : « € »
-- marche-e-nombres/picture/1 : « € »
-- marche-e-nombres/picture/2 : « € »
-- marche-e-nombres/picture/3 : « € »
-- marche-e-nombres/picture/4 : « € »
-- marche-e-nombres/picture/5 : « € »
-- marche-e-nombres/picture/6 : « € »
-- marche-e-nombres/picture/7 : « € »
-- marche-e-nombres/picture/8 : « € »
-- marche-e-nombres/picture/9 : « € »
-- marche-e-nombres/picture/10 : « 1 → 20 »
-- marche-e-prix/picture/0 : « 20 → 100 € »
-- marche-e-autre-etal/picture/0 : « 100 € »
-- marche-e-mission/picture/0 : « 2 · 5 · 1 · 1 → 20 € »
-- marche-e-choix/picture/0 : « Je · tu · il · elle · nous · vous »
-- marche-e-prix-objet-vingt-et-un/picture/0 : « 21 € »
-- marche-e-prix-compte-vingt-et-un/picture/0 : « 20 + 1 = 21 € »
-- marche-e-prix-monnaie-vingt-et-un/picture/0 : « € »
-- marche-e-prix-monnaie-vingt-et-un/picture/1 : « € »
-- marche-e-prix-monnaie-vingt-et-un/picture/2 : « 30 − 9 = 21 € »
-- marche-e-prix-objet-soixante-et-onze/picture/0 : « 71 € »
-- marche-e-prix-compte-soixante-et-onze/picture/0 : « 50 + 20 + 1 = 71 € »
-- marche-e-prix-monnaie-soixante-et-onze/picture/0 : « € »
-- marche-e-prix-monnaie-soixante-et-onze/picture/1 : « € »
-- marche-e-prix-monnaie-soixante-et-onze/picture/2 : « 100 − 29 = 71 € »
-- marche-e-prix-objet-quatre-vingts/picture/0 : « 80 € »
-- marche-e-prix-compte-quatre-vingts/picture/0 : « 4 × 20 = 80 € »
-- marche-e-prix-monnaie-quatre-vingts/picture/0 : « € »
-- marche-e-prix-monnaie-quatre-vingts/picture/1 : « € »
-- marche-e-prix-monnaie-quatre-vingts/picture/2 : « 100 − 20 = 80 € »
-- marche-e-prix-objet-quatre-vingt-dix/picture/0 : « 90 € »
-- marche-e-prix-compte-quatre-vingt-dix/picture/0 : « 80 + 10 = 90 € »
-- marche-e-prix-monnaie-quatre-vingt-dix/picture/0 : « € »
-- marche-e-prix-monnaie-quatre-vingt-dix/picture/1 : « € »
-- marche-e-prix-monnaie-quatre-vingt-dix/picture/2 : « 100 − 10 = 90 € »
-- marche-e-prix-objet-cent/picture/0 : « 100 € »
-- marche-e-prix-compte-cent/picture/0 : « 50 + 50 = 100 € »
-- marche-e-prix-monnaie-cent/picture/0 : « € »
-- marche-e-prix-monnaie-cent/picture/1 : « € »
-- marche-e-prix-monnaie-cent/picture/2 : « 120 − 20 = 100 € »
-- s-marche-euro-0/picture/0 : « € »
-- s-marche-euro-1/picture/0 : « 10 € »
-- s-marche-euro-2/picture/0 : « € »
-- s-marche-euro-2/picture/1 : « € »
-- s-marche-euro-2/picture/2 : « € »
-- s-marche-payer-0/picture/0 : « € »
-- s-marche-payer-0/picture/1 : « € »
-- s-marche-payer-1/picture/0 : « € »
-- s-marche-payer-1/picture/1 : « € »
-- s-marche-payer-2/picture/0 : « € »
-- s-marche-payer-2/picture/1 : « € »
-- s-marche-coûter-0/picture/0 : « 2 € »
-- s-marche-coûter-1/picture/0 : « 6 € »
-- s-marche-coûter-2/picture/0 : « 12 € »
-- s-marche-cher-0/picture/0 : « 1 € »
-- s-marche-cher-0/picture/1 : « 10 € »
-- s-marche-cher-1/picture/0 : « 5 € »
-- s-marche-cher-1/picture/1 : « 50 € »
-- s-marche-cher-2/picture/0 : « 10 € »
-- s-marche-cher-2/picture/1 : « 100 € »
-- s-marche-nombre-trois-0/picture/0 : « 3 »
-- s-marche-nombre-trois-1/picture/0 : « 3 »
-- s-marche-nombre-trois-2/picture/0 : « € »
-- s-marche-nombre-trois-2/picture/1 : « € »
-- s-marche-nombre-trois-2/picture/2 : « € »
-- s-marche-nombre-trois-2/picture/3 : « 3 € »
-- s-marche-nombre-quatre-0/picture/0 : « 4 »
-- s-marche-nombre-quatre-1/picture/0 : « 4 »
-- s-marche-nombre-quatre-2/picture/0 : « € »
-- s-marche-nombre-quatre-2/picture/1 : « € »
-- s-marche-nombre-quatre-2/picture/2 : « € »
-- s-marche-nombre-quatre-2/picture/3 : « € »
-- s-marche-nombre-quatre-2/picture/4 : « 4 € »
-- s-marche-nombre-six-0/picture/0 : « 6 »
-- s-marche-nombre-six-1/picture/0 : « 6 »
-- s-marche-nombre-six-2/picture/0 : « € »
-- s-marche-nombre-six-2/picture/1 : « € »
-- s-marche-nombre-six-2/picture/2 : « € »
-- s-marche-nombre-six-2/picture/3 : « € »
-- s-marche-nombre-six-2/picture/4 : « € »
-- s-marche-nombre-six-2/picture/5 : « € »
-- s-marche-nombre-six-2/picture/6 : « 6 € »
-- s-marche-nombre-sept-0/picture/0 : « 7 »
-- s-marche-nombre-sept-1/picture/0 : « 7 »
-- s-marche-nombre-sept-2/picture/0 : « € »
-- s-marche-nombre-sept-2/picture/1 : « € »
-- s-marche-nombre-sept-2/picture/2 : « € »
-- s-marche-nombre-sept-2/picture/3 : « € »
-- s-marche-nombre-sept-2/picture/4 : « € »
-- s-marche-nombre-sept-2/picture/5 : « € »
-- s-marche-nombre-sept-2/picture/6 : « € »
-- s-marche-nombre-sept-2/picture/7 : « 7 € »
-- s-marche-nombre-huit-0/picture/0 : « 8 »
-- s-marche-nombre-huit-1/picture/0 : « 8 »
-- s-marche-nombre-huit-2/picture/0 : « € »
-- s-marche-nombre-huit-2/picture/1 : « € »
-- s-marche-nombre-huit-2/picture/2 : « € »
-- s-marche-nombre-huit-2/picture/3 : « € »
-- s-marche-nombre-huit-2/picture/4 : « € »
-- s-marche-nombre-huit-2/picture/5 : « € »
-- s-marche-nombre-huit-2/picture/6 : « € »
-- s-marche-nombre-huit-2/picture/7 : « € »
-- s-marche-nombre-huit-2/picture/8 : « 8 € »
-- s-marche-nombre-neuf-0/picture/0 : « 9 »
-- s-marche-nombre-neuf-1/picture/0 : « 9 »
-- s-marche-nombre-neuf-2/picture/0 : « € »
-- s-marche-nombre-neuf-2/picture/1 : « € »
-- s-marche-nombre-neuf-2/picture/2 : « € »
-- s-marche-nombre-neuf-2/picture/3 : « € »
-- s-marche-nombre-neuf-2/picture/4 : « € »
-- s-marche-nombre-neuf-2/picture/5 : « € »
-- s-marche-nombre-neuf-2/picture/6 : « € »
-- s-marche-nombre-neuf-2/picture/7 : « € »
-- s-marche-nombre-neuf-2/picture/8 : « € »
-- s-marche-nombre-neuf-2/picture/9 : « 9 € »
-- s-marche-nombre-onze-0/picture/0 : « 11 »
-- s-marche-nombre-onze-1/picture/0 : « 11 »
-- s-marche-nombre-onze-2/picture/0 : « € »
-- s-marche-nombre-onze-2/picture/1 : « € »
-- s-marche-nombre-onze-2/picture/2 : « € »
-- s-marche-nombre-onze-2/picture/3 : « € »
-- s-marche-nombre-onze-2/picture/4 : « € »
-- s-marche-nombre-onze-2/picture/5 : « € »
-- s-marche-nombre-onze-2/picture/6 : « € »
-- s-marche-nombre-onze-2/picture/7 : « € »
-- s-marche-nombre-onze-2/picture/8 : « € »
-- s-marche-nombre-onze-2/picture/9 : « € »
-- s-marche-nombre-onze-2/picture/10 : « € »
-- s-marche-nombre-onze-2/picture/11 : « 11 € »
-- s-marche-nombre-douze-0/picture/0 : « 12 »
-- s-marche-nombre-douze-1/picture/0 : « 12 »
-- s-marche-nombre-douze-2/picture/0 : « € »
-- s-marche-nombre-douze-2/picture/1 : « € »
-- s-marche-nombre-douze-2/picture/2 : « € »
-- s-marche-nombre-douze-2/picture/3 : « € »
-- s-marche-nombre-douze-2/picture/4 : « € »
-- s-marche-nombre-douze-2/picture/5 : « € »
-- s-marche-nombre-douze-2/picture/6 : « € »
-- s-marche-nombre-douze-2/picture/7 : « € »
-- s-marche-nombre-douze-2/picture/8 : « € »
-- s-marche-nombre-douze-2/picture/9 : « € »
-- s-marche-nombre-douze-2/picture/10 : « € »
-- s-marche-nombre-douze-2/picture/11 : « € »
-- s-marche-nombre-douze-2/picture/12 : « 12 € »
-- s-marche-nombre-treize-0/picture/0 : « 13 »
-- s-marche-nombre-treize-1/picture/0 : « 13 »
-- s-marche-nombre-treize-2/picture/0 : « € »
-- s-marche-nombre-treize-2/picture/1 : « € »
-- s-marche-nombre-treize-2/picture/2 : « € »
-- s-marche-nombre-treize-2/picture/3 : « € »
-- s-marche-nombre-treize-2/picture/4 : « € »
-- s-marche-nombre-treize-2/picture/5 : « € »
-- s-marche-nombre-treize-2/picture/6 : « € »
-- s-marche-nombre-treize-2/picture/7 : « € »
-- s-marche-nombre-treize-2/picture/8 : « € »
-- s-marche-nombre-treize-2/picture/9 : « € »
-- s-marche-nombre-treize-2/picture/10 : « € »
-- s-marche-nombre-treize-2/picture/11 : « € »
-- s-marche-nombre-treize-2/picture/12 : « € »
-- s-marche-nombre-treize-2/picture/13 : « 13 € »
-- s-marche-nombre-quatorze-0/picture/0 : « 14 »
-- s-marche-nombre-quatorze-1/picture/0 : « 14 »
-- s-marche-nombre-quatorze-2/picture/0 : « € »
-- s-marche-nombre-quatorze-2/picture/1 : « € »
-- s-marche-nombre-quatorze-2/picture/2 : « € »
-- s-marche-nombre-quatorze-2/picture/3 : « € »
-- s-marche-nombre-quatorze-2/picture/4 : « € »
-- s-marche-nombre-quatorze-2/picture/5 : « € »
-- s-marche-nombre-quatorze-2/picture/6 : « € »
-- s-marche-nombre-quatorze-2/picture/7 : « € »
-- s-marche-nombre-quatorze-2/picture/8 : « € »
-- s-marche-nombre-quatorze-2/picture/9 : « € »
-- s-marche-nombre-quatorze-2/picture/10 : « € »
-- s-marche-nombre-quatorze-2/picture/11 : « € »
-- s-marche-nombre-quatorze-2/picture/12 : « € »
-- s-marche-nombre-quatorze-2/picture/13 : « € »
-- s-marche-nombre-quatorze-2/picture/14 : « 14 € »
-- s-marche-nombre-quinze-0/picture/0 : « 15 »
-- s-marche-nombre-quinze-1/picture/0 : « 15 »
-- s-marche-nombre-quinze-2/picture/0 : « € »
-- s-marche-nombre-quinze-2/picture/1 : « € »
-- s-marche-nombre-quinze-2/picture/2 : « € »
-- s-marche-nombre-quinze-2/picture/3 : « € »
-- s-marche-nombre-quinze-2/picture/4 : « € »
-- s-marche-nombre-quinze-2/picture/5 : « € »
-- s-marche-nombre-quinze-2/picture/6 : « € »
-- s-marche-nombre-quinze-2/picture/7 : « € »
-- s-marche-nombre-quinze-2/picture/8 : « € »
-- s-marche-nombre-quinze-2/picture/9 : « € »
-- s-marche-nombre-quinze-2/picture/10 : « € »
-- s-marche-nombre-quinze-2/picture/11 : « € »
-- s-marche-nombre-quinze-2/picture/12 : « € »
-- s-marche-nombre-quinze-2/picture/13 : « € »
-- s-marche-nombre-quinze-2/picture/14 : « € »
-- s-marche-nombre-quinze-2/picture/15 : « 15 € »
-- s-marche-nombre-seize-0/picture/0 : « 16 »
-- s-marche-nombre-seize-1/picture/0 : « 16 »
-- s-marche-nombre-seize-2/picture/0 : « € »
-- s-marche-nombre-seize-2/picture/1 : « € »
-- s-marche-nombre-seize-2/picture/2 : « € »
-- s-marche-nombre-seize-2/picture/3 : « € »
-- s-marche-nombre-seize-2/picture/4 : « € »
-- s-marche-nombre-seize-2/picture/5 : « € »
-- s-marche-nombre-seize-2/picture/6 : « € »
-- s-marche-nombre-seize-2/picture/7 : « € »
-- s-marche-nombre-seize-2/picture/8 : « € »
-- s-marche-nombre-seize-2/picture/9 : « € »
-- s-marche-nombre-seize-2/picture/10 : « € »
-- s-marche-nombre-seize-2/picture/11 : « € »
-- s-marche-nombre-seize-2/picture/12 : « € »
-- s-marche-nombre-seize-2/picture/13 : « € »
-- s-marche-nombre-seize-2/picture/14 : « € »
-- s-marche-nombre-seize-2/picture/15 : « € »
-- s-marche-nombre-seize-2/picture/16 : « 16 € »
-- s-marche-nombre-trente-0/picture/0 : « 10 € »
-- s-marche-nombre-trente-0/picture/1 : « 10 € »
-- s-marche-nombre-trente-0/picture/2 : « 10 € »
-- s-marche-nombre-trente-0/picture/3 : « 30 »
-- s-marche-nombre-trente-1/picture/0 : « 10 € »
-- s-marche-nombre-trente-1/picture/1 : « 10 € »
-- s-marche-nombre-trente-1/picture/2 : « 10 € »
-- s-marche-nombre-trente-1/picture/3 : « 30 »
-- s-marche-nombre-trente-2/picture/0 : « 5 € »
-- s-marche-nombre-trente-2/picture/1 : « 5 € »
-- s-marche-nombre-trente-2/picture/2 : « 5 € »
-- s-marche-nombre-trente-2/picture/3 : « 5 € »
-- s-marche-nombre-trente-2/picture/4 : « 5 € »
-- s-marche-nombre-trente-2/picture/5 : « 5 € »
-- s-marche-nombre-trente-2/picture/6 : « 30 € »
-- s-marche-nombre-quarante-0/picture/0 : « 10 € »
-- s-marche-nombre-quarante-0/picture/1 : « 10 € »
-- s-marche-nombre-quarante-0/picture/2 : « 10 € »
-- s-marche-nombre-quarante-0/picture/3 : « 10 € »
-- s-marche-nombre-quarante-0/picture/4 : « 40 »
-- s-marche-nombre-quarante-1/picture/0 : « 10 € »
-- s-marche-nombre-quarante-1/picture/1 : « 10 € »
-- s-marche-nombre-quarante-1/picture/2 : « 10 € »
-- s-marche-nombre-quarante-1/picture/3 : « 10 € »
-- s-marche-nombre-quarante-1/picture/4 : « 40 »
-- s-marche-nombre-quarante-2/picture/0 : « 5 € »
-- s-marche-nombre-quarante-2/picture/1 : « 5 € »
-- s-marche-nombre-quarante-2/picture/2 : « 5 € »
-- s-marche-nombre-quarante-2/picture/3 : « 5 € »
-- s-marche-nombre-quarante-2/picture/4 : « 5 € »
-- s-marche-nombre-quarante-2/picture/5 : « 5 € »
-- s-marche-nombre-quarante-2/picture/6 : « 5 € »
-- s-marche-nombre-quarante-2/picture/7 : « 5 € »
-- s-marche-nombre-quarante-2/picture/8 : « 40 € »
-- s-marche-nombre-cinquante-0/picture/0 : « 10 € »
-- s-marche-nombre-cinquante-0/picture/1 : « 10 € »
-- s-marche-nombre-cinquante-0/picture/2 : « 10 € »
-- s-marche-nombre-cinquante-0/picture/3 : « 10 € »
-- s-marche-nombre-cinquante-0/picture/4 : « 10 € »
-- s-marche-nombre-cinquante-0/picture/5 : « 50 »
-- s-marche-nombre-cinquante-1/picture/0 : « 10 € »
-- s-marche-nombre-cinquante-1/picture/1 : « 10 € »
-- s-marche-nombre-cinquante-1/picture/2 : « 10 € »
-- s-marche-nombre-cinquante-1/picture/3 : « 10 € »
-- s-marche-nombre-cinquante-1/picture/4 : « 10 € »
-- s-marche-nombre-cinquante-1/picture/5 : « 50 »
-- s-marche-nombre-cinquante-2/picture/0 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/1 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/2 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/3 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/4 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/5 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/6 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/7 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/8 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/9 : « 5 € »
-- s-marche-nombre-cinquante-2/picture/10 : « 50 € »
-- s-marche-nombre-soixante-0/picture/0 : « 10 € »
-- s-marche-nombre-soixante-0/picture/1 : « 10 € »
-- s-marche-nombre-soixante-0/picture/2 : « 10 € »
-- s-marche-nombre-soixante-0/picture/3 : « 10 € »
-- s-marche-nombre-soixante-0/picture/4 : « 10 € »
-- s-marche-nombre-soixante-0/picture/5 : « 10 € »
-- s-marche-nombre-soixante-0/picture/6 : « 60 »
-- s-marche-nombre-soixante-1/picture/0 : « 10 € »
-- s-marche-nombre-soixante-1/picture/1 : « 10 € »
-- s-marche-nombre-soixante-1/picture/2 : « 10 € »
-- s-marche-nombre-soixante-1/picture/3 : « 10 € »
-- s-marche-nombre-soixante-1/picture/4 : « 10 € »
-- s-marche-nombre-soixante-1/picture/5 : « 10 € »
-- s-marche-nombre-soixante-1/picture/6 : « 60 »
-- s-marche-nombre-soixante-2/picture/0 : « 5 € »
-- s-marche-nombre-soixante-2/picture/1 : « 5 € »
-- s-marche-nombre-soixante-2/picture/2 : « 5 € »
-- s-marche-nombre-soixante-2/picture/3 : « 5 € »
-- s-marche-nombre-soixante-2/picture/4 : « 5 € »
-- s-marche-nombre-soixante-2/picture/5 : « 5 € »
-- s-marche-nombre-soixante-2/picture/6 : « 5 € »
-- s-marche-nombre-soixante-2/picture/7 : « 5 € »
-- s-marche-nombre-soixante-2/picture/8 : « 5 € »
-- s-marche-nombre-soixante-2/picture/9 : « 5 € »
-- s-marche-nombre-soixante-2/picture/10 : « 5 € »
-- s-marche-nombre-soixante-2/picture/11 : « 5 € »
-- s-marche-nombre-soixante-2/picture/12 : « 60 € »
+- marche-v2-N1/marche-v2-N1-0/picture/0 : « € »
+- marche-v2-N1/marche-v2-N1-0/picture/1 : « € »
+- marche-v2-N1/marche-v2-N1-0/picture/2 : « 2 »
+- marche-v2-N1/marche-v2-N1-1/picture/0 : « € »
+- marche-v2-N1/marche-v2-N1-1/picture/1 : « € »
+- marche-v2-N1/marche-v2-N1-1/picture/2 : « € »
+- marche-v2-N1/marche-v2-N1-1/picture/3 : « 3 »
+- marche-v2-N1/marche-v2-N1-2/picture/0 : « € »
+- marche-v2-N1/marche-v2-N1-2/picture/1 : « € »
+- marche-v2-N1/marche-v2-N1-2/picture/2 : « € »
+- marche-v2-N1/marche-v2-N1-2/picture/3 : « € »
+- marche-v2-N1/marche-v2-N1-2/picture/4 : « 4 »
+- marche-v2-N1/marche-v2-N1-3/picture/0 : « € »
+- marche-v2-N1/marche-v2-N1-3/picture/1 : « € »
+- marche-v2-N1/marche-v2-N1-3/picture/2 : « € »
+- marche-v2-N1/marche-v2-N1-3/picture/3 : « € »
+- marche-v2-N1/marche-v2-N1-3/picture/4 : « € »
+- marche-v2-N1/marche-v2-N1-3/picture/5 : « 5 »
+- marche-v2-N1/marche-v2-N1-4/picture/0 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/1 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/2 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/3 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/4 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/5 : « € »
+- marche-v2-N1/marche-v2-N1-4/picture/6 : « 6 »
+- marche-v2-N2/marche-v2-N2-0/picture/0 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/1 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/2 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/3 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/4 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/5 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/6 : « € »
+- marche-v2-N2/marche-v2-N2-0/picture/7 : « 7 »
+- marche-v2-N2/marche-v2-N2-1/picture/0 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/1 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/2 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/3 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/4 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/5 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/6 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/7 : « € »
+- marche-v2-N2/marche-v2-N2-1/picture/8 : « 8 »
+- marche-v2-N2/marche-v2-N2-2/picture/0 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/1 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/2 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/3 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/4 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/5 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/6 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/7 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/8 : « € »
+- marche-v2-N2/marche-v2-N2-2/picture/9 : « 9 »
+- marche-v2-N2/marche-v2-N2-3/picture/0 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/1 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/2 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/3 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/4 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/5 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/6 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/7 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/8 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/9 : « € »
+- marche-v2-N2/marche-v2-N2-3/picture/10 : « 10 »
+- marche-v2-N2/marche-v2-N2-4/picture/0 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/1 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/2 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/3 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/4 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/5 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/6 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/7 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/8 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/9 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/10 : « € »
+- marche-v2-N2/marche-v2-N2-4/picture/11 : « 11 »
+- marche-v2-N3/marche-v2-N3-0/picture/0 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/1 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/2 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/3 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/4 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/5 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/6 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/7 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/8 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/9 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/10 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/11 : « € »
+- marche-v2-N3/marche-v2-N3-0/picture/12 : « 12 »
+- marche-v2-N3/marche-v2-N3-1/picture/0 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/1 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/2 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/3 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/4 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/5 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/6 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/7 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/8 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/9 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/10 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/11 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/12 : « € »
+- marche-v2-N3/marche-v2-N3-1/picture/13 : « 13 »
+- marche-v2-N3/marche-v2-N3-2/picture/0 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/1 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/2 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/3 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/4 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/5 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/6 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/7 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/8 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/9 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/10 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/11 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/12 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/13 : « € »
+- marche-v2-N3/marche-v2-N3-2/picture/14 : « 14 »
+- marche-v2-N3/marche-v2-N3-3/picture/0 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/1 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/2 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/3 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/4 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/5 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/6 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/7 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/8 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/9 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/10 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/11 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/12 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/13 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/14 : « € »
+- marche-v2-N3/marche-v2-N3-3/picture/15 : « 15 »
+- marche-v2-N3/marche-v2-N3-4/picture/0 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/1 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/2 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/3 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/4 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/5 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/6 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/7 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/8 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/9 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/10 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/11 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/12 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/13 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/14 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/15 : « € »
+- marche-v2-N3/marche-v2-N3-4/picture/16 : « 16 »
+- marche-v2-N4/marche-v2-N4-0/picture/0 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/1 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/2 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/3 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/4 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/5 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/6 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/7 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/8 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/9 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/10 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/11 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/12 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/13 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/14 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/15 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/16 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/17 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/18 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/19 : « € »
+- marche-v2-N4/marche-v2-N4-0/picture/20 : « 20 »
+- marche-v2-N4/marche-v2-N4-1/picture/0 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/1 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/2 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/3 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/4 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/5 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/6 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/7 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/8 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/9 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/10 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/11 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/12 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/13 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/14 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/15 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/16 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/17 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/18 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/19 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/20 : « € »
+- marche-v2-N4/marche-v2-N4-1/picture/21 : « 21 »
+- marche-v2-N4/marche-v2-N4-2/picture/0 : « 10 € »
+- marche-v2-N4/marche-v2-N4-2/picture/1 : « 10 € »
+- marche-v2-N4/marche-v2-N4-2/picture/2 : « 10 € »
+- marche-v2-N4/marche-v2-N4-2/picture/3 : « 30 »
+- marche-v2-N4/marche-v2-N4-3/picture/0 : « 10 € »
+- marche-v2-N4/marche-v2-N4-3/picture/1 : « 10 € »
+- marche-v2-N4/marche-v2-N4-3/picture/2 : « 10 € »
+- marche-v2-N4/marche-v2-N4-3/picture/3 : « 10 € »
+- marche-v2-N4/marche-v2-N4-3/picture/4 : « 40 »
+- marche-v2-N4/marche-v2-N4-4/picture/0 : « 10 € »
+- marche-v2-N4/marche-v2-N4-4/picture/1 : « 10 € »
+- marche-v2-N4/marche-v2-N4-4/picture/2 : « 10 € »
+- marche-v2-N4/marche-v2-N4-4/picture/3 : « 10 € »
+- marche-v2-N4/marche-v2-N4-4/picture/4 : « 10 € »
+- marche-v2-N4/marche-v2-N4-4/picture/5 : « 50 »
+- marche-v2-N5/marche-v2-N5-0/picture/0 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/1 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/2 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/3 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/4 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/5 : « 10 € »
+- marche-v2-N5/marche-v2-N5-0/picture/6 : « 60 »
+- marche-v2-N5/marche-v2-N5-1/picture/0 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/1 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/2 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/3 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/4 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/5 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/6 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/7 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/8 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/9 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/10 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/11 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/12 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/13 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/14 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/15 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/16 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/17 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/18 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/19 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/20 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/21 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/22 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/23 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/24 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/25 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/26 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/27 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/28 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/29 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/30 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/31 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/32 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/33 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/34 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/35 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/36 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/37 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/38 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/39 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/40 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/41 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/42 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/43 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/44 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/45 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/46 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/47 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/48 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/49 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/50 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/51 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/52 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/53 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/54 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/55 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/56 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/57 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/58 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/59 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/60 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/61 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/62 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/63 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/64 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/65 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/66 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/67 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/68 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/69 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/70 : « € »
+- marche-v2-N5/marche-v2-N5-1/picture/71 : « 71 »
+- marche-v2-N5/marche-v2-N5-2/picture/0 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/1 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/2 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/3 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/4 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/5 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/6 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/7 : « 10 € »
+- marche-v2-N5/marche-v2-N5-2/picture/8 : « 80 »
+- marche-v2-N5/marche-v2-N5-3/picture/0 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/1 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/2 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/3 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/4 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/5 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/6 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/7 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/8 : « 10 € »
+- marche-v2-N5/marche-v2-N5-3/picture/9 : « 90 »
+- marche-v2-N5/marche-v2-N5-4/picture/0 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/1 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/2 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/3 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/4 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/5 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/6 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/7 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/8 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/9 : « 10 € »
+- marche-v2-N5/marche-v2-N5-4/picture/10 : « 100 »
+- marche-v2-Ⅳ/marche-v2-Ⅳ-1/picture/0 : « € »
+- marche-v2-Ⅳ/marche-v2-Ⅳ-1/picture/1 : « € »
+- marche-v2-Ⅳ/marche-v2-Ⅳ-2/picture/0 : « € »
+- marche-v2-Ⅳ/marche-v2-Ⅳ-2/picture/1 : « € »
+- marche-v2-Ⅴ/marche-v2-Ⅴ-2/picture/0 : « 2 € »
+- marche-v2-Ⅶ/marche-v2-Ⅶ-1/picture/0 : « 1 € »
+- marche-v2-Ⅶ/marche-v2-Ⅶ-1/picture/1 : « 10 € »
 
 ### Carnet
 
-- **marche-aliments — Le panier** : pain · pomme · fromage · eau
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **marche-nombres — Les quantités** : deux · cinq · dix · vingt
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - nombres-0 : « 2 »
-  - nombres-1 : « 5 »
-  - nombres-2 : « 10 »
-  - nombres-3 : « 20 »
-- **marche-gestes — L’échange** : vouloir · acheter · donner · prendre
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **marche-negation — Ce qui manque** : ne…pas · avec · sans ; autres mots : et
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - negation-0 : « Je ___ veux ___ de pomme. »
-  - negation-1 : « Un panier ___ des pommes. »
-  - negation-2 : « Un panier ___ pommes. »
-- **marche-vouloir-personnes — Les personnes : vouloir** : veux · veut · voulons · voulez
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - vouloir-personnes-0 : « Je ___ du pain. Tu ___ de l’eau. »
-  - vouloir-personnes-1 : « Il ___ du pain. Elle ___ de l’eau. »
-  - vouloir-personnes-2 : « Nous ___ du pain. »
-  - vouloir-personnes-3 : « Vous ___ du pain. »
-- **marche-grands-nombres — Les grands prix** : vingt-et-un · soixante-et-onze · quatre-vingts · quatre-vingt-dix · cent
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - grands-nombres-0 : « 21 € »
-  - grands-nombres-1 : « 71 € »
-  - grands-nombres-2 : « 80 € »
-  - grands-nombres-3 : « 90 € »
-  - grands-nombres-4 : « 100 € »
-- **s-marche-page-aliments — De la ferme à la table** : œuf · lait · poisson · fruit · légume
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **s-marche-page-courses — Tout emporter** : panier · sac · marché · euro · tout
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **s-marche-page-vente — Le prix et le goût** : payer · coûter · cher · frais · bon
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **s-marche-page-nombres-0 — Les premières quantités** : trois · quatre · six · sept
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-marche-slot-nombres-0-0 : « 3 »
-  - s-marche-slot-nombres-0-1 : « 4 »
-  - s-marche-slot-nombres-0-2 : « 6 »
-  - s-marche-slot-nombres-0-3 : « 7 »
-- **s-marche-page-nombres-1 — Les quantités grandissent** : huit · neuf · onze · douze
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-marche-slot-nombres-1-0 : « 8 »
-  - s-marche-slot-nombres-1-1 : « 9 »
-  - s-marche-slot-nombres-1-2 : « 11 »
-  - s-marche-slot-nombres-1-3 : « 12 »
-- **s-marche-page-nombres-2 — Après douze** : treize · quatorze · quinze · seize
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-marche-slot-nombres-2-0 : « 13 »
-  - s-marche-slot-nombres-2-1 : « 14 »
-  - s-marche-slot-nombres-2-2 : « 15 »
-  - s-marche-slot-nombres-2-3 : « 16 »
-- **s-marche-page-nombres-3 — Les dizaines** : trente · quarante · cinquante · soixante
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-marche-slot-nombres-3-0 : « 30 »
-  - s-marche-slot-nombres-3-1 : « 40 »
-  - s-marche-slot-nombres-3-2 : « 50 »
-  - s-marche-slot-nombres-3-3 : « 60 »
+- **marche-v2-Ⅰ — Ⅰ** : pain · pomme · fromage · eau
+  - Contrastes déjà rencontrés : marche-v2-e-number-deux-0 · marche-v2-e-number-deux-1 · marche-v2-e-number-deux-2 · marche-v2-e-number-quatre-0 · marche-v2-e-number-quatre-1 · marche-v2-e-number-quatre-2 · marche-v2-e-number-cinq-0 · marche-v2-e-number-cinq-1 · marche-v2-e-number-cinq-2 · marche-v2-e-number-sept-0 · marche-v2-e-number-sept-1 · marche-v2-e-number-sept-2 · marche-v2-e-number-huit-0 · marche-v2-e-number-huit-1 · marche-v2-e-number-huit-2 · marche-v2-e-number-dix-0 · marche-v2-e-number-dix-1 · marche-v2-e-number-dix-2 · marche-v2-e-number-onze-0 · marche-v2-e-number-onze-1 · marche-v2-e-number-onze-2 · marche-v2-e-number-treize-0 · marche-v2-e-number-treize-1 · marche-v2-e-number-treize-2 · marche-v2-e-number-quatorze-0 · marche-v2-e-number-quatorze-1 · marche-v2-e-number-quatorze-2 · marche-v2-e-number-seize-0 · marche-v2-e-number-seize-1 · marche-v2-e-number-seize-2 · marche-v2-e-number-vingt-0 · marche-v2-e-number-vingt-1 · marche-v2-e-number-vingt-2 · marche-v2-e-food-0-0 · marche-v2-e-food-0-1 · marche-v2-e-food-0-2 · marche-v2-e-food-1-0 · marche-v2-e-food-1-1 · marche-v2-e-food-1-2 · marche-v2-e-food-2-0 · marche-v2-e-food-2-1 · marche-v2-e-food-2-2 · marche-v2-e-food-3-0 · marche-v2-e-food-3-1 · marche-v2-e-food-3-2 · marche-v2-e-prop-order-bread · marche-v2-e-prop-order-apples · marche-v2-e-prop-other-bread · marche-v2-e-prop-other-apples · marche-v2-e-price-order-bread · marche-v2-e-price-order-apples · marche-v2-e-price-order-cheese · marche-v2-e-water-partitive · marche-v2-e-want-0 · marche-v2-e-buy-0 · marche-v2-e-give-0 · marche-v2-e-take-0 · marche-v2-e-cost-0 · marche-v2-e-want-1 · marche-v2-e-buy-1 · marche-v2-e-give-1 · marche-v2-e-take-1 · marche-v2-e-cost-1 · marche-v2-e-want-2 · marche-v2-e-buy-2 · marche-v2-e-give-2 · marche-v2-e-take-2 · marche-v2-e-cost-2 · marche-v2-e-want-third-0 · marche-v2-e-want-group-0 · marche-v2-e-want-address-0 · marche-v2-e-want-third-1 · marche-v2-e-want-group-1 · marche-v2-e-want-address-1 · marche-v2-e-want-third-2 · marche-v2-e-want-group-2 · marche-v2-e-want-address-2 · marche-v2-e-negative-0 · marche-v2-e-negative-1 · marche-v2-e-negative-2 · marche-v2-e-with-0 · marche-v2-e-without-0 · marche-v2-e-with-1 · marche-v2-e-without-1 · marche-v2-e-with-2 · marche-v2-e-without-2 · marche-v2-e-fresh-0 · marche-v2-e-good-0 · marche-v2-e-fresh-1 · marche-v2-e-good-1 · marche-v2-e-water-location · marche-v2-e-task-bread · marche-v2-e-task-apples · marche-v2-e-task-cheese · marche-v2-e-task-payment · marche-v2-e-reply-luc
+- **marche-v2-Ⅱ — Ⅱ** : œuf · lait · poisson · fruit · légume
+  - Contrastes déjà rencontrés : marche-v2-e-number-trois-0 · marche-v2-e-number-trois-1 · marche-v2-e-number-trois-2 · marche-v2-e-number-six-0 · marche-v2-e-number-six-1 · marche-v2-e-number-six-2 · marche-v2-e-number-neuf-0 · marche-v2-e-number-neuf-1 · marche-v2-e-number-neuf-2 · marche-v2-e-number-douze-0 · marche-v2-e-number-douze-1 · marche-v2-e-number-douze-2 · marche-v2-e-number-quinze-0 · marche-v2-e-number-quinze-1 · marche-v2-e-number-quinze-2 · marche-v2-e-food-4-0 · marche-v2-e-food-4-1 · marche-v2-e-food-4-2 · marche-v2-e-food-5-0 · marche-v2-e-food-5-1 · marche-v2-e-food-5-2 · marche-v2-e-food-6-0 · marche-v2-e-food-6-1 · marche-v2-e-food-6-2 · marche-v2-e-food-7-0 · marche-v2-e-food-7-1 · marche-v2-e-food-7-2 · marche-v2-e-food-8-0 · marche-v2-e-food-8-1 · marche-v2-e-food-8-2 · marche-v2-e-fresh-2 · marche-v2-e-good-2
+- **marche-v2-Ⅲ — Ⅲ** : panier · sac · marché · euro · bouteille
+  - Contrastes déjà rencontrés : marche-v2-e-number-vingt-et-un-1 · marche-v2-e-number-vingt-et-un-2 · marche-v2-e-number-trente-1 · marche-v2-e-number-trente-2 · marche-v2-e-number-quarante-1 · marche-v2-e-number-quarante-2 · marche-v2-e-number-cinquante-1 · marche-v2-e-number-cinquante-2 · marche-v2-e-number-soixante-1 · marche-v2-e-number-soixante-2 · marche-v2-e-number-soixante-et-onze-1 · marche-v2-e-number-soixante-et-onze-2 · marche-v2-e-number-quatre-vingts-1 · marche-v2-e-number-quatre-vingts-2 · marche-v2-e-number-quatre-vingt-dix-1 · marche-v2-e-number-quatre-vingt-dix-2 · marche-v2-e-number-cent-1 · marche-v2-e-number-cent-2 · marche-v2-e-label-basket-r · marche-v2-e-label-basket-b · marche-v2-e-label-basket-y · marche-v2-e-label-bag-b · marche-v2-e-label-bag-r · marche-v2-e-label-bag-g · marche-v2-e-market-0 · marche-v2-e-euro-0 · marche-v2-e-market-1 · marche-v2-e-euro-1 · marche-v2-e-market-2 · marche-v2-e-euro-2 · marche-v2-e-prop-basket-r · marche-v2-e-prop-basket-b · marche-v2-e-prop-basket-y · marche-v2-e-prop-bag-b · marche-v2-e-prop-bag-r · marche-v2-e-prop-bag-g · marche-v2-e-bottle-0 · marche-v2-e-bottle-1 · marche-v2-e-bottle-2 · marche-v2-e-pay-0 · marche-v2-e-cost-0 · marche-v2-e-pay-1 · marche-v2-e-cost-1 · marche-v2-e-pay-2 · marche-v2-e-cost-2 · marche-v2-e-bottle-location · marche-v2-e-task-bread · marche-v2-e-task-pack-bread · marche-v2-e-task-apples · marche-v2-e-task-pack-apples · marche-v2-e-task-pack-cheese · marche-v2-e-task-pay-person · marche-v2-e-task-bag · marche-v2-e-task-letter
+- **marche-v2-N1 — Ⅷ** : deux · trois · quatre · cinq · six
+  - Contrastes déjà rencontrés : marche-v2-e-number-deux-0 · marche-v2-e-number-deux-1 · marche-v2-e-number-deux-2 · marche-v2-e-number-trois-0 · marche-v2-e-number-trois-1 · marche-v2-e-number-trois-2 · marche-v2-e-number-quatre-0 · marche-v2-e-number-quatre-1 · marche-v2-e-number-quatre-2 · marche-v2-e-number-cinq-0 · marche-v2-e-number-cinq-1 · marche-v2-e-number-cinq-2 · marche-v2-e-number-six-0 · marche-v2-e-number-six-1 · marche-v2-e-number-six-2
+  - marche-v2-N1-0 : « 2 »
+  - marche-v2-N1-1 : « 3 »
+  - marche-v2-N1-2 : « 4 »
+  - marche-v2-N1-3 : « 5 »
+  - marche-v2-N1-4 : « 6 »
+- **marche-v2-N2 — Ⅸ** : sept · huit · neuf · dix · onze
+  - Contrastes déjà rencontrés : marche-v2-e-number-sept-0 · marche-v2-e-number-sept-1 · marche-v2-e-number-sept-2 · marche-v2-e-number-huit-0 · marche-v2-e-number-huit-1 · marche-v2-e-number-huit-2 · marche-v2-e-number-neuf-0 · marche-v2-e-number-neuf-1 · marche-v2-e-number-neuf-2 · marche-v2-e-number-dix-0 · marche-v2-e-number-dix-1 · marche-v2-e-number-dix-2 · marche-v2-e-number-onze-0 · marche-v2-e-number-onze-1 · marche-v2-e-number-onze-2
+  - marche-v2-N2-0 : « 7 »
+  - marche-v2-N2-1 : « 8 »
+  - marche-v2-N2-2 : « 9 »
+  - marche-v2-N2-3 : « 10 »
+  - marche-v2-N2-4 : « 11 »
+- **marche-v2-N3 — Ⅹ** : douze · treize · quatorze · quinze · seize
+  - Contrastes déjà rencontrés : marche-v2-e-number-douze-0 · marche-v2-e-number-douze-1 · marche-v2-e-number-douze-2 · marche-v2-e-number-treize-0 · marche-v2-e-number-treize-1 · marche-v2-e-number-treize-2 · marche-v2-e-number-quatorze-0 · marche-v2-e-number-quatorze-1 · marche-v2-e-number-quatorze-2 · marche-v2-e-number-quinze-0 · marche-v2-e-number-quinze-1 · marche-v2-e-number-quinze-2 · marche-v2-e-number-seize-0 · marche-v2-e-number-seize-1 · marche-v2-e-number-seize-2
+  - marche-v2-N3-0 : « 12 »
+  - marche-v2-N3-1 : « 13 »
+  - marche-v2-N3-2 : « 14 »
+  - marche-v2-N3-3 : « 15 »
+  - marche-v2-N3-4 : « 16 »
+- **marche-v2-N4 — Ⅺ** : vingt · vingt-et-un · trente · quarante · cinquante
+  - Contrastes déjà rencontrés : marche-v2-e-number-vingt-0 · marche-v2-e-number-vingt-1 · marche-v2-e-number-vingt-2 · marche-v2-e-number-vingt-et-un-0 · marche-v2-e-number-vingt-et-un-1 · marche-v2-e-number-vingt-et-un-2 · marche-v2-e-number-trente-0 · marche-v2-e-number-trente-1 · marche-v2-e-number-trente-2 · marche-v2-e-number-quarante-0 · marche-v2-e-number-quarante-1 · marche-v2-e-number-quarante-2 · marche-v2-e-number-cinquante-0 · marche-v2-e-number-cinquante-1 · marche-v2-e-number-cinquante-2
+  - marche-v2-N4-0 : « 20 »
+  - marche-v2-N4-1 : « 21 »
+  - marche-v2-N4-2 : « 30 »
+  - marche-v2-N4-3 : « 40 »
+  - marche-v2-N4-4 : « 50 »
+- **marche-v2-N5 — Ⅻ** : soixante · soixante-et-onze · quatre-vingts · quatre-vingt-dix · cent
+  - Contrastes déjà rencontrés : marche-v2-e-number-soixante-0 · marche-v2-e-number-soixante-1 · marche-v2-e-number-soixante-2 · marche-v2-e-number-soixante-et-onze-0 · marche-v2-e-number-soixante-et-onze-1 · marche-v2-e-number-soixante-et-onze-2 · marche-v2-e-number-quatre-vingts-0 · marche-v2-e-number-quatre-vingts-1 · marche-v2-e-number-quatre-vingts-2 · marche-v2-e-number-quatre-vingt-dix-0 · marche-v2-e-number-quatre-vingt-dix-1 · marche-v2-e-number-quatre-vingt-dix-2 · marche-v2-e-number-cent-0 · marche-v2-e-number-cent-1 · marche-v2-e-number-cent-2
+  - marche-v2-N5-0 : « 60 »
+  - marche-v2-N5-1 : « 71 »
+  - marche-v2-N5-2 : « 80 »
+  - marche-v2-N5-3 : « 90 »
+  - marche-v2-N5-4 : « 100 »
+- **marche-v2-Ⅳ — Ⅳ** : vouloir · acheter · payer
+  - Contrastes déjà rencontrés : marche-v2-e-want-0 · marche-v2-e-buy-0 · marche-v2-e-pay-0 · marche-v2-e-want-1 · marche-v2-e-buy-1 · marche-v2-e-pay-1 · marche-v2-e-want-2 · marche-v2-e-buy-2 · marche-v2-e-pay-2
+- **marche-v2-ⅩⅢ — ⅩⅢ** : veux · veut · voulons · voulez
+  - Contrastes déjà rencontrés : marche-v2-e-want-0 · marche-v2-e-want-third-0 · marche-v2-e-want-group-0 · marche-v2-e-want-address-0 · marche-v2-e-want-1 · marche-v2-e-want-third-1 · marche-v2-e-want-group-1 · marche-v2-e-want-address-1 · marche-v2-e-want-2 · marche-v2-e-want-third-2 · marche-v2-e-want-group-2 · marche-v2-e-want-address-2
+- **marche-v2-Ⅴ — Ⅴ** : donner · prendre · coûter
+  - Contrastes déjà rencontrés : marche-v2-e-give-0 · marche-v2-e-take-0 · marche-v2-e-cost-0 · marche-v2-e-give-1 · marche-v2-e-take-1 · marche-v2-e-cost-1 · marche-v2-e-give-2 · marche-v2-e-take-2 · marche-v2-e-cost-2
+- **marche-v2-Ⅵ — Ⅵ** : ne…pas · avec · sans
+  - Contrastes déjà rencontrés : marche-v2-e-negative-0 · marche-v2-e-with-0 · marche-v2-e-without-0 · marche-v2-e-negative-1 · marche-v2-e-with-1 · marche-v2-e-without-1 · marche-v2-e-negative-2 · marche-v2-e-with-2 · marche-v2-e-without-2
+- **marche-v2-Ⅶ — Ⅶ** : tout · cher · frais · bon
+  - Contrastes déjà rencontrés : marche-v2-e-all-0 · marche-v2-e-dear-0 · marche-v2-e-fresh-0 · marche-v2-e-good-0 · marche-v2-e-all-1 · marche-v2-e-dear-1 · marche-v2-e-fresh-1 · marche-v2-e-good-1 · marche-v2-e-all-2 · marche-v2-e-dear-2 · marche-v2-e-fresh-2 · marche-v2-e-good-2
 
 ### Mécanisme
 
-**Le panier de Claire**
+**✦**
 
-Prépare la commande de Claire. Le marchand attend le panier et le paiement.
 
-- **marche-pain** : Pour Claire : deux pains.
-  - « Un pain »
-  - « Deux pains »
-  - « Cinq pains »
-  - « Dix pains »
-- **marche-pommes** : Pour Claire : cinq pommes.
-  - « Deux pommes »
-  - « Dix pommes »
-  - « Cinq pommes »
-  - « Vingt pommes »
-- **marche-fromage** : Pour Claire : un fromage.
-  - « Un fromage »
-  - « Deux fromages »
-  - « Cinq fromages »
-  - « Dix fromages »
-- **marche-boisson** : Je veux de l’eau sans lait.
-  - « Du lait »
-  - « De l’eau avec du lait »
-  - « De l’eau »
-  - « Du café »
-- **marche-payer** : Le tout coûte vingt euros.
-  - « Deux euros »
-  - « Cinq euros »
-  - « Dix euros »
-  - « Vingt euros »
-- **marche-destination** : Donne la lettre au café.
-  - « Au marché »
-  - « À l’atelier »
-  - « À la gare »
-  - « Au café »
 
-Le panier est prêt. Au café, quelqu’un attend la lettre.
+Expected physical sequence (internal data for review, never a player translation):
+
+- 1. {"kind":"take","object":"order-bread"} · preuve : marche-v2-e-task-bread
+- 2. {"kind":"place","object":"order-bread","target":"bag-b","relation":"in"} · preuve : marche-v2-e-task-pack-bread
+- 3. {"kind":"take","object":"order-apples"} · preuve : marche-v2-e-task-apples
+- 4. {"kind":"place","object":"order-apples","target":"bag-b","relation":"in"} · preuve : marche-v2-e-task-pack-apples
+- 5. {"kind":"take","object":"order-cheese"} · preuve : marche-v2-e-task-cheese
+- 6. {"kind":"place","object":"order-cheese","target":"bag-b","relation":"in"} · preuve : marche-v2-e-task-pack-cheese
+- 7. {"kind":"take","object":"pay-20"} · preuve : marche-v2-e-task-payment
+- 8. {"kind":"deliver","object":"pay-20","target":"luc"} · preuve : marche-v2-e-task-pay-person
+- 9. {"kind":"take","object":"bag-b"} · preuve : marche-v2-e-task-bag
+- 10. {"kind":"deliver","object":"bag-b","target":"claire"} · preuve : marche-v2-e-task-bag-person
+- 11. {"kind":"take","object":"letter-blue"} · preuve : marche-v2-e-task-letter
+- 12. {"kind":"deliver","object":"letter-blue","target":"claire"} · preuve : marche-v2-e-task-letter-person
+
+
+Au café.
 
 ## Le café
 
-**Une place à la table.**
-
-Le serveur pose une tasse. La lettre porte le nom de Claire. Son frère attend un message à la gare.
-
-**PR B debt — legacy content, not yet migrated.**
+**Situated design checks apply.**
 
 ### Rencontres
 
 | ID | Texte français |
 | --- | --- |
-| cafe-e-comptoir | **Le comptoir** — Une tasse de café, une tasse de thé, un verre d’eau et une assiette de pain. |
-| cafe-e-service | **Le service** — Le café est noir. Le thé est dans la théière. L’eau est dans le verre. La tasse est sur la table. |
-| cafe-e-pause | **La pause** — Elle boit du café dans une tasse. Il boit du thé. Nous buvons de l’eau dans un verre. |
-| cafe-e-entree | **À l’entrée** — Bonjour ! Je voudrais un café, s’il vous plaît. Le serveur donne la tasse. Merci ! |
-| cafe-e-terrasse | **À la terrasse** — Bonjour ! Je voudrais du thé, s’il vous plaît. La serveuse pose la tasse. Merci ! |
-| cafe-e-depart | **La dernière table** — Bonjour ! Je voudrais l’addition, s’il vous plaît. Le client paie. Merci ! À bientôt ! |
-| cafe-e-lieu | **Le plan** — Où est la gare ? La gare est derrière le café. Où est la table ? La table est ici. |
-| cafe-e-prix | **La carte** — Combien coûte le café ? Deux euros. Combien coûte le thé ? Trois euros. Combien coûte l’eau ? Un euro. · « ☕ 2 € · 3 € · 1 € » |
-| cafe-e-quoi | **La question** — Qu’est-ce que c’est ? C’est une tasse. Qu’est-ce que tu veux ? Je veux du thé. |
-| cafe-e-accord | **La réponse** — Est-ce que vous voulez du café ? Oui. Est-ce que vous voulez du lait ? Non, merci. |
-| cafe-e-cherche | **La table vide** — Où est Claire ? Où est sa tasse ? La tasse est à côté de la fenêtre. Claire est à la gare. |
-| cafe-e-pieces | **Les pièces** — Combien de tasses ? Deux tasses. Combien de verres ? Cinq verres. |
-| cafe-e-question-menu | **Le menu fermé** — Qu’est-ce que vous voulez ? Je voudrais du pain et un café. Qu’est-ce que vous avez ? Nous avons du fromage. |
-| cafe-e-question-main | **La main tendue** — Est-ce que tu veux du sucre ? Oui. Est-ce que vous voulez une cuillère ? Non, merci. |
-| cafe-e-carte | **La carte de Claire** — Où est mon frère ? À la gare. Combien coûte son café ? Deux euros. Qu’est-ce que je donne au serveur ? La lettre. Est-ce que vous avez la lettre ? Oui. · « Pour mon frère » |
-| cafe-e-ami | **Deux amis** — Tu veux du thé ? Tu as une tasse. Tu es mon ami. |
-| cafe-e-politesse | **Le serveur** — Vous voulez du café ? Vous avez une table. Vous êtes notre client. Voulez-vous du sucre ? |
-| cafe-e-boire | **Le verre levé** — Je bois de l’eau. Tu bois du thé. Il boit du café. Nous buvons ensemble. Vous buvez du thé. |
-| cafe-e-manger | **Le pain partagé** — Je mange du pain. Tu manges une pomme. Elle mange du fromage. Nous mangeons ensemble. Vous mangez du pain. |
-| cafe-e-conversation | **La conversation** — Je parle. Tu écoutes. Nous parlons ensemble. Vous parlez avec le serveur. |
-| cafe-e-midi | **À midi** — Il mange du pain et boit de l’eau. Elle parle avec le serveur. |
-| cafe-e-soir | **Le soir** — Elle mange du fromage. Nous mangeons ensemble. Claire parle avec le client. Vous parlez avec Claire. Le client boit du café. |
-| cafe-e-message | **La réponse de Claire** — Bonjour. Je voudrais un thé sans lait et un pain, s’il vous plaît. Voici la lettre pour mon frère. Le thé et le pain coûtent quatre euros. Mon frère est à la gare. Merci. · « Claire → son frère » |
-| cafe-e-service-notes | **Le service du soir** — Bonsoir. Pardon, excusez-moi. Le café est très chaud, l’eau est froide. Une assiette et une cuillère, du sucre et du lait : le menu est prêt. Attendez encore une heure. Répondez maintenant, puis après le repas. Tout va bien. Vous aussi, avant de partir, prenez l’addition. · « Le service » |
-| cafe-e-questions-service | **Le service commence** — Voulez-vous du café ? Avez-vous une tasse ? Êtes-vous à votre table ? Est-ce que vous voulez du café ? Oui, merci. |
-| cafe-e-questions-terrasse | **À la terrasse** — Voulez-vous du thé ? Avez-vous une cuillère ? Êtes-vous avec Claire ? Est-ce que vous voulez du thé ? Oui, s’il vous plaît. |
-| cafe-e-questions-groupe | **La grande table** — Voulez-vous du pain ? Avez-vous des assiettes ? Êtes-vous prêts ? Est-ce que vous voulez du pain ? Oui, merci. |
-| s-cafe-e-assiette-0 | **Pour le repas** — Le pain est sur l’assiette. L’assiette est ronde et plate. |
-| s-cafe-e-assiette-1 | **Pour le repas** — Le fromage est dans l’assiette. Je pose l’assiette sur la table. |
-| s-cafe-e-assiette-2 | **Pour le repas** — L’assiette est vide après le repas. Le client a mangé le pain. |
-| s-cafe-e-cuillère-0 | **Dans la tasse** — La cuillère tourne dans le thé. Elle mélange le sucre. |
-| s-cafe-e-cuillère-1 | **Dans la tasse** — Je mange la soupe avec une cuillère. Le bol est devant moi. |
-| s-cafe-e-cuillère-2 | **Dans la tasse** — La cuillère est à côté de la tasse. Son petit creux porte le sucre. |
-| s-cafe-e-sucre-0 | **Les petits morceaux blancs** — Je mets deux morceaux de sucre dans le café. Le sucre disparaît quand je mélange. |
-| s-cafe-e-sucre-1 | **Les petits morceaux blancs** — Le sucre est dans le petit pot, à côté de la tasse. |
-| s-cafe-e-sucre-2 | **Les petits morceaux blancs** — Je prends le sucre avec la cuillère. Un morceau blanc est sur la cuillère. |
-| s-cafe-e-menu-0 | **Avant de commander** — Je lis le menu. Il montre le café, le thé, le pain et leurs prix. |
-| s-cafe-e-menu-1 | **Avant de commander** — Le serveur donne le menu au client. Le client choisit le thé. |
-| s-cafe-e-menu-2 | **Avant de commander** — Le menu est ouvert sur la table. Une tasse est dessinée sur sa page. |
-| s-cafe-e-serveur-0 | **Le plateau** — Le serveur apporte le café au client. Il porte un plateau. |
-| s-cafe-e-serveur-1 | **Le plateau** — Le serveur prend la commande. Le client lui montre le menu. |
-| s-cafe-e-serveur-2 | **Le plateau** — Le serveur apporte l’addition. Le client donne l’argent au serveur. |
-| s-cafe-e-client-0 | **À la table** — Le client est assis à la table. Le serveur lui apporte son café. |
-| s-cafe-e-client-1 | **À la table** — Le client choisit sur le menu. Il commande un thé. |
-| s-cafe-e-client-2 | **À la table** — Le client paie l’addition au serveur. Puis il se lève de sa chaise. |
-| s-cafe-e-addition-0 | **Après le repas** — Le café coûte deux euros et le pain un euro. L’addition est de trois euros. |
-| s-cafe-e-addition-1 | **Après le repas** — Le serveur apporte l’addition. Le client lit les prix et le total. |
-| s-cafe-e-addition-2 | **Après le repas** — Le client pose trois euros sur l’addition. Le repas est payé. |
-| s-cafe-e-chaud-0 | **La vapeur** — Le café est chaud. De la vapeur monte de la tasse. |
-| s-cafe-e-chaud-1 | **La vapeur** — La soupe est chaude. Je souffle avant de manger. |
-| s-cafe-e-chaud-2 | **La vapeur** — Le thé est chaud. Je tiens la tasse par l’anse. |
-| s-cafe-e-froid-0 | **Les glaçons** — Le verre est froid. L’eau est froide. Des glaçons flottent dans le verre. |
-| s-cafe-e-froid-1 | **Les glaçons** — Le lait est froid. Il sort du réfrigérateur. |
-| s-cafe-e-froid-2 | **Les glaçons** — Le thé est froid maintenant. Il n’y a plus de vapeur. |
-| s-cafe-e-très-0 | **Plus fort** — Ce café est chaud. Celui-ci est très chaud : le thermomètre est tout en haut. |
-| s-cafe-e-très-1 | **Plus fort** — Ce verre est froid. Celui-ci est très froid : il contient beaucoup de glace. |
-| s-cafe-e-très-2 | **Plus fort** — Ce pain est grand. Celui-ci est très grand : il dépasse les deux assiettes. |
-| s-cafe-e-bien-0 | **Sans rien renverser** — Le serveur porte bien le plateau. Les tasses restent droites. |
-| s-cafe-e-bien-1 | **Sans rien renverser** — Tu ranges bien les livres. Ils sont tous droits sur l’étagère. |
-| s-cafe-e-bien-2 | **Sans rien renverser** — Tu as bien fermé la porte. Elle ne bouge plus. |
-| s-cafe-e-bonsoir-0 | **Quand la nuit arrive** — Le soleil est couché. Le client entre : « Bonsoir ! » |
-| s-cafe-e-bonsoir-1 | **Quand la nuit arrive** — La lune est dans le ciel. Le serveur salue Claire : « Bonsoir ! » |
-| s-cafe-e-bonsoir-2 | **Quand la nuit arrive** — Il est vingt heures. Paul entre et salue ses amis : « Bonsoir ! » |
-| s-cafe-e-pardon-0 | **La petite faute** — Je touche ton verre et l’eau tombe. Pardon ! Je prends un chiffon. |
-| s-cafe-e-pardon-1 | **La petite faute** — Je passe devant toi et je touche ton pied. Pardon ! |
-| s-cafe-e-pardon-2 | **La petite faute** — J’ouvre la porte trop vite et je te bouscule. Pardon ! Je te laisse passer. |
-| s-cafe-e-excuser-0 | **Une demande après la faute** — Excusez-moi, j’ai renversé votre thé. Je nettoie la table. |
-| s-cafe-e-excuser-1 | **Une demande après la faute** — Excusez-moi, j’ai pris votre chaise. Je vous la rends. |
-| s-cafe-e-excuser-2 | **Une demande après la faute** — Excusez-moi, j’ai touché votre tasse. Je vous apporte une autre tasse. |
-| s-cafe-e-à bientôt-0 | **Le prochain rendez-vous** — Je pars. Nous nous revoyons demain : « À bientôt ! » |
-| s-cafe-e-à bientôt-1 | **Le prochain rendez-vous** — Le client quitte le café. Il reviendra dans une heure : « À bientôt ! » |
-| s-cafe-e-à bientôt-2 | **Le prochain rendez-vous** — Claire ferme sa porte et salue Paul. Ils se revoient ce soir : « À bientôt ! » |
-| s-cafe-e-avant-0 | **Le premier moment** — Avant le repas, l’assiette est pleine. Après le repas, elle est vide. |
-| s-cafe-e-avant-1 | **Le premier moment** — Avant de boire, je remplis le verre. Le verre plein attend ma main. |
-| s-cafe-e-avant-2 | **Le premier moment** — Avant d’ouvrir la porte, je prends la clé. La porte est encore fermée. |
-| s-cafe-e-maintenant-0 | **Le moment entouré** — Avant, la tasse était pleine. Maintenant, je bois. Après, la tasse sera vide. |
-| s-cafe-e-maintenant-1 | **Le moment entouré** — Avant, la porte était fermée. Maintenant, je l’ouvre. Après, je serai dehors. |
-| s-cafe-e-maintenant-2 | **Le moment entouré** — Avant, la lettre était dans la boîte. Maintenant, je lis la lettre. Après, je la donne à Claire. |
-| s-cafe-e-après-0 | **Le dernier moment** — Après le repas, l’assiette est vide. Avant le repas, elle était pleine. |
-| s-cafe-e-après-1 | **Le dernier moment** — Après avoir bu, je pose le verre vide. Il ne reste plus d’eau. |
-| s-cafe-e-après-2 | **Le dernier moment** — Après avoir ouvert la porte, je suis dehors. La porte reste derrière moi. |
-| s-cafe-e-puis-0 | **Une chose après l’autre** — Je prends la tasse, puis je bois. La flèche relie les deux gestes. |
-| s-cafe-e-puis-1 | **Une chose après l’autre** — Je lis le menu, puis je commande. Un geste suit l’autre. |
-| s-cafe-e-puis-2 | **Une chose après l’autre** — Je paie, puis je pars. D’abord l’argent, ensuite la porte. |
-| s-cafe-e-attendre-0 | **Pas encore** — Attendez ici. Votre café n’est pas prêt. Le serveur prépare la tasse. |
-| s-cafe-e-attendre-1 | **Pas encore** — Attendez devant la porte. Elle est encore fermée. |
-| s-cafe-e-attendre-2 | **Pas encore** — Attendez à la table. Le pain est encore dans le four. |
-| s-cafe-e-répondre-0 | **La seconde bulle** — Le serveur demande : « Du thé ? » Je réponds : « Oui. » |
-| s-cafe-e-répondre-1 | **La seconde bulle** — Claire demande : « Où est Paul ? » Je réponds : « À la gare. » |
-| s-cafe-e-répondre-2 | **La seconde bulle** — Le client demande : « Combien ? » Je réponds : « Deux euros. » |
-| s-cafe-e-encore-0 | **Une deuxième fois** — La tasse est vide. Je veux encore du thé : le serveur remplit la tasse une deuxième fois. |
-| s-cafe-e-encore-1 | **Une deuxième fois** — J’ai fini le pain. Je prends encore du pain : voici un autre morceau. |
-| s-cafe-e-encore-2 | **Une deuxième fois** — Tu as lu la lettre une fois. Tu la lis encore : tu recommences au début. |
-| s-cafe-e-aussi-0 | **La même chose pour deux personnes** — Paul boit du thé. Claire boit aussi du thé : ils ont la même boisson. |
-| s-cafe-e-aussi-1 | **La même chose pour deux personnes** — Paul a un pain. Claire a aussi un pain : chacun a son pain. |
-| s-cafe-e-aussi-2 | **La même chose pour deux personnes** — Paul lit la lettre. Claire lit aussi la lettre : chacun la lit. |
-| s-cafe-e-ensemble-0 | **Au même moment, avec les autres** — Nous buvons ensemble à la même table. Les deux tasses se touchent. |
-| s-cafe-e-ensemble-1 | **Au même moment, avec les autres** — Nous portons ensemble la grande table. Chacun tient un côté. |
-| s-cafe-e-ensemble-2 | **Au même moment, avec les autres** — Nous lisons ensemble la lettre. Nos deux têtes sont au-dessus de la même page. |
+| cafe-v2-e-label-coffee-0 | café |
+| cafe-v2-e-label-tea-0 | thé |
+| cafe-v2-e-label-cup-0 | tasse |
+| cafe-v2-e-label-glass-0 | verre |
+| cafe-v2-e-label-plate-0 | assiette |
+| cafe-v2-e-label-spoon-0 | cuillère |
+| cafe-v2-e-label-sugar-0 | sucre |
+| cafe-v2-e-label-menu-0 | menu |
+| cafe-v2-e-label-receipt-0 | addition · « 2 € + 1 € = 3 € » |
+| cafe-v2-e-label-coffee-1 | café |
+| cafe-v2-e-label-tea-1 | thé |
+| cafe-v2-e-label-cup-1 | tasse |
+| cafe-v2-e-label-glass-1 | verre |
+| cafe-v2-e-label-plate-1 | assiette |
+| cafe-v2-e-label-spoon-1 | cuillère |
+| cafe-v2-e-label-sugar-1 | sucre |
+| cafe-v2-e-label-menu-1 | menu |
+| cafe-v2-e-label-receipt-1 | addition · « 3 € + 1 € = 4 € » |
+| cafe-v2-e-label-coffee-2 | café |
+| cafe-v2-e-label-tea-2 | thé |
+| cafe-v2-e-label-cup-2 | tasse |
+| cafe-v2-e-label-glass-2 | verre |
+| cafe-v2-e-label-plate-2 | assiette |
+| cafe-v2-e-label-spoon-2 | cuillère |
+| cafe-v2-e-label-sugar-2 | sucre |
+| cafe-v2-e-label-menu-2 | menu |
+| cafe-v2-e-label-receipt-2 | addition · « 4 € + 1 € = 5 € » |
+| cafe-v2-e-intense-coffee-very-hot | café |
+| cafe-v2-e-intense-tea-very-hot | thé |
+| cafe-v2-e-intense-milk-very-cold | lait |
+| cafe-v2-e-role-server-0 | serveur |
+| cafe-v2-e-role-server-1 | serveur |
+| cafe-v2-e-role-server-2 | serveur |
+| cafe-v2-e-role-client-0 | client |
+| cafe-v2-e-role-client-1 | client |
+| cafe-v2-e-role-client-2 | client |
+| cafe-v2-e-tray-introduction | plateau |
+| cafe-v2-e-table-introduction | La table. |
+| cafe-v2-e-price-introduction | deux euros · « 2 € » |
+| cafe-v2-e-drink-introduction | Je bois. |
+| cafe-v2-e-drink-together-introduction | Nous buvons. |
+| cafe-v2-e-you-want-introduction | Vous voulez ? |
+| cafe-v2-e-cup-reference-0 | La tasse est sur la table. |
+| cafe-v2-e-tea-reference-0 | Le thé est dans la tasse. |
+| cafe-v2-e-cup-reference-1 | La tasse est sur la table. |
+| cafe-v2-e-tea-reference-1 | Le thé est dans la tasse. |
+| cafe-v2-e-cup-reference-2 | La tasse est sur la table. |
+| cafe-v2-e-tea-reference-2 | Le thé est dans la tasse. |
+| cafe-v2-e-bonjour-0 | Bonjour ! |
+| cafe-v2-e-bonjour-1 | Bonjour, Anne ! |
+| cafe-v2-e-bonjour-2 | Bonjour, Claire ! |
+| cafe-v2-e-wish-0 | Je voudrais du café. |
+| cafe-v2-e-wish-1 | Je voudrais du thé. |
+| cafe-v2-e-wish-2 | Je voudrais une cuillère. |
+| cafe-v2-e-please-0 | Un café, s’il vous plaît. |
+| cafe-v2-e-please-1 | Du thé, s’il vous plaît. |
+| cafe-v2-e-please-2 | Une cuillère, s’il vous plaît. |
+| cafe-v2-e-thanks-0 | Merci pour le café. |
+| cafe-v2-e-thanks-1 | Merci pour le thé. |
+| cafe-v2-e-thanks-2 | Merci pour la cuillère. |
+| cafe-v2-e-where-0 | Où est la tasse ? |
+| cafe-v2-e-where-1 | Où est le verre ? |
+| cafe-v2-e-where-2 | Où est le menu ? |
+| cafe-v2-e-how-much-0 | Combien coûte le café ? |
+| cafe-v2-e-how-much-1 | Combien coûte le thé ? |
+| cafe-v2-e-how-much-2 | Combien coûte le pain ? |
+| cafe-v2-e-identify-0 | Qu’est-ce que c’est ? |
+| cafe-v2-e-identify-1 | Qu’est-ce que tu veux ? |
+| cafe-v2-e-identify-2 | Qu’est-ce que vous avez ? |
+| cafe-v2-e-yes-no-0 | Est-ce que tu veux du café ? |
+| cafe-v2-e-yes-no-1 | Est-ce que vous voulez du thé ? |
+| cafe-v2-e-yes-no-2 | Est-ce que vous voulez une cuillère ? |
+| cafe-v2-e-drinks-0 | Il boit du café. |
+| cafe-v2-e-drinks-1 | Elle boit du thé. |
+| cafe-v2-e-drinks-2 | Elle boit de l’eau. |
+| cafe-v2-e-eats-0 | Elle mange du pain. |
+| cafe-v2-e-eats-1 | Il mange du fromage. |
+| cafe-v2-e-eats-2 | Elle mange une pomme. |
+| cafe-v2-e-talks-0 | Il parle avec Anne. |
+| cafe-v2-e-talks-1 | Elle parle avec Paul. |
+| cafe-v2-e-talks-2 | Elle parle avec Luc. |
+| cafe-v2-e-hot-0 | Le café est chaud. |
+| cafe-v2-e-hot-1 | Le thé est chaud. |
+| cafe-v2-e-hot-2 | Le lait est chaud. |
+| cafe-v2-e-cold-0 | Le café est froid. |
+| cafe-v2-e-cold-1 | Le thé est froid. |
+| cafe-v2-e-cold-2 | Le lait est froid. |
+| cafe-v2-e-again-0 | Encore du café, s’il vous plaît. |
+| cafe-v2-e-again-1 | Encore du thé, s’il vous plaît. |
+| cafe-v2-e-again-2 | Encore du pain, s’il vous plaît. |
+| cafe-v2-e-also-0 | Paul a aussi du café. |
+| cafe-v2-e-also-1 | Anne a aussi du thé. |
+| cafe-v2-e-also-2 | Claire a aussi du pain. |
+| cafe-v2-e-well-0 | Tu portes bien le plateau. ⚑ |
+| cafe-v2-e-well-1 | Vous portez bien le plateau. |
+| cafe-v2-e-well-2 | Elle porte bien le plateau. |
+| cafe-v2-e-very-0 | Le café est très chaud. |
+| cafe-v2-e-very-1 | Le thé est très chaud. |
+| cafe-v2-e-very-2 | Le lait est très froid. |
+| cafe-v2-e-bye-0 | À bientôt, Paul ! |
+| cafe-v2-e-bye-1 | À bientôt, Anne ! |
+| cafe-v2-e-bye-2 | À bientôt, Claire ! |
+| cafe-v2-e-evening-0 | Bonsoir, Paul ! |
+| cafe-v2-e-evening-1 | Bonsoir, Anne ! |
+| cafe-v2-e-evening-2 | Bonsoir, Claire ! |
+| cafe-v2-e-sorry-0 | Pardon, Paul ! |
+| cafe-v2-e-sorry-1 | Pardon, Anne ! |
+| cafe-v2-e-sorry-2 | Pardon, Claire ! |
+| cafe-v2-e-excuse-0 | Excusez-moi pour le café. |
+| cafe-v2-e-excuse-1 | Excusez-moi pour le thé. |
+| cafe-v2-e-excuse-2 | Excusez-moi pour le verre. |
+| cafe-v2-e-wait-0 | Attendez ici, s’il vous plaît. |
+| cafe-v2-e-wait-1 | Attendez devant la porte. |
+| cafe-v2-e-wait-2 | Attendez devant la table. |
+| cafe-v2-e-reply-0 | Réponds : du café ? |
+| cafe-v2-e-reply-1 | Réponds : du thé ? |
+| cafe-v2-e-reply-2 | Réponds : une cuillère ? |
+| cafe-v2-e-hours-0 | Une heure. · « 01:00 » |
+| cafe-v2-e-hours-1 | Deux heures. Une heure après. · « 01:00 » |
+| cafe-v2-e-hours-2 | Trois heures. Une heure après. · « 01:00 » |
+| cafe-v2-e-together-0 | Nous buvons ensemble. |
+| cafe-v2-e-together-1 | Nous mangeons ensemble. |
+| cafe-v2-e-together-2 | Nous lisons ensemble. |
+| cafe-v2-e-chronology-before-0 | Avant, la tasse est pleine. |
+| cafe-v2-e-chronology-before-1 | Avant, le pain est sur l’assiette. |
+| cafe-v2-e-chronology-before-2 | Avant, la porte est fermée. |
+| cafe-v2-e-chronology-now-0 | Maintenant, il boit. |
+| cafe-v2-e-chronology-now-1 | Maintenant, il mange. |
+| cafe-v2-e-chronology-now-2 | Maintenant, il ouvre la porte. |
+| cafe-v2-e-chronology-after-0 | Après, la tasse est vide. |
+| cafe-v2-e-chronology-after-1 | Après, l’assiette est vide. |
+| cafe-v2-e-chronology-after-2 | Après, la porte est ouverte. |
+| cafe-v2-e-chronology-then-0 | Il prend la tasse, puis il boit. |
+| cafe-v2-e-chronology-then-1 | Il prend le pain, puis il mange. |
+| cafe-v2-e-chronology-then-2 | Il prend la clé, puis il ouvre. |
+| cafe-v2-e-evening-context-0 | Bonsoir, Paul ! |
+| cafe-v2-e-evening-context-1 | Bonsoir, Anne ! |
+| cafe-v2-e-evening-context-2 | Bonsoir, Claire ! |
+| cafe-v2-e-answer-where-0 | Sur la table. |
+| cafe-v2-e-answer-price-0 | Deux euros. · « 2 € » |
+| cafe-v2-e-answer-what-0 | C’est une tasse. |
+| cafe-v2-e-answer-yes-0 | Oui, merci. |
+| cafe-v2-e-answer-where-1 | Sous le menu. |
+| cafe-v2-e-answer-price-1 | Trois euros. · « 3 € » |
+| cafe-v2-e-answer-what-1 | Je veux du thé. |
+| cafe-v2-e-answer-yes-1 | Non, merci. |
+| cafe-v2-e-answer-where-2 | Dans le café. |
+| cafe-v2-e-answer-price-2 | Un euro. · « 1 € » |
+| cafe-v2-e-answer-what-2 | Nous avons du sucre. |
+| cafe-v2-e-answer-yes-2 | Oui, merci. |
+| cafe-v2-e-familiar-0 | Tu veux du café ? |
+| cafe-v2-e-formal-0 | Vous voulez du café ? |
+| cafe-v2-e-inversion-want-0 | Voulez-vous du café ? |
+| cafe-v2-e-inversion-have-0 | Avez-vous une tasse ? |
+| cafe-v2-e-inversion-are-0 | Êtes-vous avec Paul ? |
+| cafe-v2-e-familiar-1 | Tu veux du thé ? |
+| cafe-v2-e-formal-1 | Vous voulez du thé ? |
+| cafe-v2-e-inversion-want-1 | Voulez-vous du thé ? |
+| cafe-v2-e-inversion-have-1 | Avez-vous une cuillère ? |
+| cafe-v2-e-inversion-are-1 | Êtes-vous avec Anne ? |
+| cafe-v2-e-familiar-2 | Tu veux du pain ? |
+| cafe-v2-e-formal-2 | Vous voulez du pain ? |
+| cafe-v2-e-inversion-want-2 | Voulez-vous du pain ? |
+| cafe-v2-e-inversion-have-2 | Avez-vous le menu ? |
+| cafe-v2-e-inversion-are-2 | Êtes-vous avec Claire ? |
+| cafe-v2-e-tray-label-0 | plateau |
+| cafe-v2-e-carry-0 | Je porte le plateau. |
+| cafe-v2-e-tray-label-1 | plateau |
+| cafe-v2-e-carry-1 | Je porte le plateau. |
+| cafe-v2-e-tray-label-2 | plateau |
+| cafe-v2-e-carry-2 | Je porte le plateau. |
+| cafe-v2-e-fixture-terrace | table rouge |
+| cafe-v2-e-fixture-reading | table verte |
+| cafe-v2-e-fixture-window | fenêtre |
+| cafe-v2-e-fixture-door | porte |
+| cafe-v2-e-fixture-book-red | livre rouge |
+| cafe-v2-e-fixture-key-yellow | clé jaune |
+| cafe-v2-e-fixture-jeanne | Jeanne |
+| cafe-v2-e-fixture-hugo | Hugo |
+| cafe-v2-e-fixture-iris | Iris |
+| cafe-v2-e-fixture-milk-hot | lait chaud |
+| cafe-v2-e-fixture-milk-cold | lait froid |
+| cafe-v2-e-fixture-tea-plain | tasse bleue |
+| cafe-v2-e-fixture-tea-milk | tasse bleue au lait |
+| cafe-v2-e-fixture-bread-plain | pain |
+| cafe-v2-e-fixture-bread-milk | pain au lait |
+| cafe-v2-e-fixture-spoon-service | cuillère |
+| cafe-v2-e-fixture-plate-service | assiette de thé |
+| cafe-v2-e-fixture-spoon-decoy | cuillère pour thé |
+| cafe-v2-e-fixture-letter-service | lettre bleue |
+| cafe-v2-e-fixture-letter-decoy | lettre verte |
+| cafe-v2-e-fixture-receipt-green | addition verte |
+| cafe-v2-e-fixture-payment-two | 2 € |
+| cafe-v2-e-fixture-payment-four | 4 € |
+| cafe-v2-e-fixture-payment-five | 5 € |
+| cafe-v2-e-menu-price-tea | thé 3 € · « 3 € » |
+| cafe-v2-e-menu-price-bread | pain 1 € · « 1 € » |
+| cafe-v2-e-task-tea | Prends la tasse bleue sans lait. |
+| cafe-v2-e-task-place-tea | Sur le plateau sous la fenêtre. |
+| cafe-v2-e-task-bread | Prends le pain sans lait. |
+| cafe-v2-e-task-place-bread | Sur le plateau sous la fenêtre. |
+| cafe-v2-e-task-spoon | Prends la cuillère sous l’assiette de thé. |
+| cafe-v2-e-task-place-spoon | Sur le plateau sous la fenêtre. |
+| cafe-v2-e-task-tray | Prends le plateau sous la fenêtre. |
+| cafe-v2-e-task-guest | Pour elle. Elle a le livre rouge. |
+| cafe-v2-e-task-payment | Le thé coûte trois euros. Le pain coûte un euro. · « 3 € + 1 € » |
+| cafe-v2-e-task-payee | Pour le serveur avec la clé jaune. |
+| cafe-v2-e-task-letter | Prends la lettre sous l’addition verte. |
+| cafe-v2-e-task-post | Pour le serveur avec la clé jaune. |
+| cafe-v2-e-finish-claire | Merci. |
+| cafe-v2-e-finish-emile | La gare. |
+
+### Écriture sur les objets
+
+- counter : « café »
+- terrace : « table rouge »
+- reading : « table verte »
+- window : « fenêtre »
+- door : « porte »
+- paul : « Paul »
+- emile : « Émile »
+- lea : « Léa »
+- marie : « Marie »
+- claire : « Claire »
+- anne : « Anne »
+- luc : « Luc »
+- book-red : « livre rouge »
+- key-yellow : « clé jaune »
+- jeanne : « Jeanne »
+- hugo : « Hugo »
+- iris : « Iris »
+- milk-hot : « lait chaud »
+- milk-cold : « lait froid »
+- coffee-very-hot : « café »
+- tea-very-hot : « thé »
+- milk-very-cold : « lait »
+- coffee-0 : « café »
+- tea-0 : « thé »
+- cup-0 : « tasse »
+- glass-0 : « verre »
+- plate-0 : « assiette »
+- spoon-0 : « cuillère »
+- sugar-0 : « sucre »
+- menu-0 : « menu »
+- receipt-0 : « addition »
+- coffee-1 : « café »
+- tea-1 : « thé »
+- cup-1 : « tasse »
+- glass-1 : « verre »
+- plate-1 : « assiette »
+- spoon-1 : « cuillère »
+- sugar-1 : « sucre »
+- menu-1 : « menu »
+- receipt-1 : « addition »
+- coffee-2 : « café »
+- tea-2 : « thé »
+- cup-2 : « tasse »
+- glass-2 : « verre »
+- plate-2 : « assiette »
+- spoon-2 : « cuillère »
+- sugar-2 : « sucre »
+- menu-2 : « menu »
+- receipt-2 : « addition »
+- tray-held : « plateau »
+- tray-window : « ① »
+- tray-terrace : « plateau rouge »
+- tray-reading : « plateau vert »
+- tea-plain : « tasse bleue »
+- tea-milk : « tasse bleue au lait »
+- bread-plain : « pain »
+- bread-milk : « pain au lait »
+- spoon-service : « cuillère »
+- plate-service : « assiette de thé »
+- spoon-decoy : « cuillère pour thé »
+- letter-service : « lettre bleue »
+- letter-decoy : « lettre verte »
+- receipt-green : « addition verte »
+- payment-two : « 2 € »
+- payment-four : « 4 € »
+- payment-five : « 5 € »
 
 ### Texte dans les illustrations
 
-- cafe-politesse/politesse-2/picture/0 : « Un café, ___. »
-- cafe-politesse/politesse-3/picture/0 : « ___ un thé, s’il vous plaît. »
-- cafe-questions/questions-0/picture/0 : « ___ est la gare ? »
-- cafe-questions/questions-1/picture/0 : « ___ coûte le café ? »
-- cafe-questions/questions-2/picture/0 : « ___ c’est ? »
-- cafe-questions/questions-3/picture/0 : « ___ vous voulez du lait ? »
-- cafe-tu-vous/tu-vous-0/picture/0 : « ___ es mon ami. »
-- cafe-tu-vous/tu-vous-1/picture/0 : « ___ êtes notre client. »
-- cafe-tu-vous/tu-vous-2/picture/0 : « ___ un thé, s’il vous plaît. »
-- cafe-inversion/inversion-0/picture/0 : « ___ du café ? → Vous voulez du café. »
-- cafe-inversion/inversion-1/picture/0 : « ___ une tasse ? → Vous avez une »
-- cafe-inversion/inversion-1/picture/1 : « tasse. »
-- cafe-inversion/inversion-2/picture/0 : « ___ ici ? → Vous êtes ici. »
-- cafe-inversion/inversion-3/picture/0 : « ___ vous voulez du café ? »
-- s-cafe-p-roles/s-cafe-roles-0/picture/0 : « Il apporte le plateau. »
-- s-cafe-p-roles/s-cafe-roles-1/picture/0 : « Il est assis et commande. »
-- s-cafe-p-roles/s-cafe-roles-2/picture/0 : « 8 € »
-- s-cafe-p-roles/s-cafe-roles-2/picture/1 : « 2 € + 1 € = 3 € »
-- s-cafe-p-sensations/s-cafe-sensations-0/picture/0 : « De la vapeur monte. »
-- s-cafe-p-sensations/s-cafe-sensations-1/picture/0 : « Des glaçons flottent. »
-- s-cafe-p-sensations/s-cafe-sensations-2/picture/0 : « Chaud → ___ chaud. »
-- s-cafe-p-sensations/s-cafe-sensations-3/picture/0 : « Les tasses restent droites. »
-- s-cafe-p-attention/s-cafe-attention-0/picture/0 : « La nuit commence : « ___ ! » »
-- s-cafe-p-attention/s-cafe-attention-1/picture/0 : « L’eau est tombée : « ___ ! » »
-- s-cafe-p-attention/s-cafe-attention-2/picture/0 : « ___-moi, j’ai pris votre chaise. »
-- s-cafe-p-attention/s-cafe-attention-3/picture/0 : « On se revoit demain : « ___ ! » »
-- s-cafe-p-moments/s-cafe-moments-0/picture/0 : « ___ le repas : l’assiette pleine. »
-- s-cafe-p-moments/s-cafe-moments-1/picture/0 : « Je bois ___ : le moment entouré. »
-- s-cafe-p-moments/s-cafe-moments-2/picture/0 : « ___ le repas : l’assiette vide. »
-- s-cafe-p-moments/s-cafe-moments-3/picture/0 : « Je prends la tasse, ___ je bois. »
-- s-cafe-p-conversation/s-cafe-conversation-0/picture/0 : « Le café n’est pas prêt : ___ ici. »
-- s-cafe-p-conversation/s-cafe-conversation-1/picture/0 : « ? »
-- s-cafe-p-conversation/s-cafe-conversation-1/picture/1 : « « Du thé ? » Je ___ : « Oui. » »
-- s-cafe-p-conversation/s-cafe-conversation-2/picture/0 : « Une deuxième tasse : ___ du thé. »
-- s-cafe-p-conversation/s-cafe-conversation-3/picture/0 : « Paul a un pain, Claire en a ___. »
-- s-cafe-p-conversation/s-cafe-conversation-4/picture/0 : « Nous portons la table ___. »
-- cafe-montant/picture/0 : « € »
-- cafe-montant/picture/1 : « € »
-- cafe-e-depart/picture/0 : « € »
-- cafe-e-depart/picture/1 : « € »
-- cafe-e-prix/picture/0 : « ☕ 2 € · 3 € · 1 € »
-- cafe-e-carte/picture/0 : « Pour mon frère »
-- cafe-e-message/picture/0 : « Claire → son frère »
-- cafe-e-service-notes/picture/0 : « Le service »
-- s-cafe-e-serveur-2/picture/0 : « 8 € »
-- s-cafe-e-client-2/picture/0 : « € »
-- s-cafe-e-client-2/picture/1 : « € »
-- s-cafe-e-addition-0/picture/0 : « 8 € »
-- s-cafe-e-addition-1/picture/0 : « 8 € »
-- s-cafe-e-addition-2/picture/0 : « 8 € »
-- s-cafe-e-addition-2/picture/1 : « 1 € »
-- s-cafe-e-addition-2/picture/2 : « 1 € »
-- s-cafe-e-addition-2/picture/3 : « 1 € »
-- s-cafe-e-à bientôt-1/picture/0 : « 14 »
-- s-cafe-e-à bientôt-1/picture/1 : « 15 »
-- s-cafe-e-à bientôt-1/picture/2 : « 16 »
-- s-cafe-e-puis-1/picture/0 : « ? »
-- s-cafe-e-puis-2/picture/0 : « € »
-- s-cafe-e-puis-2/picture/1 : « € »
-- s-cafe-e-répondre-0/picture/0 : « ? »
-- s-cafe-e-répondre-1/picture/0 : « ? »
-- s-cafe-e-répondre-2/picture/0 : « ? »
+- cafe-v2-roles/cafe-v2-roles-2/picture/0 : « 8 € »
+- cafe-v2-questions/cafe-v2-questions-0/picture/0 : « ? »
+- cafe-v2-questions/cafe-v2-questions-1/picture/0 : « € »
+- cafe-v2-questions/cafe-v2-questions-1/picture/1 : « € »
+- cafe-v2-questions/cafe-v2-questions-1/picture/2 : « ? »
+- cafe-v2-questions/cafe-v2-questions-2/picture/0 : « ? »
+- cafe-v2-questions/cafe-v2-questions-3/picture/0 : « ? »
+- cafe-v2-requests/cafe-v2-requests-2/picture/0 : « ? »
+- cafe-v2-conversation/cafe-v2-conversation-1/picture/0 : « ? »
 
 ### Carnet
 
-- **cafe-boissons — Sur la table** : café · thé · tasse · verre
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **cafe-politesse — D’une main à l’autre** : bonjour · merci · s’il vous plaît · je voudrais
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - politesse-2 : « Un café, ___. »
-  - politesse-3 : « ___ un thé, s’il vous plaît. »
-- **cafe-questions — Les questions** : où · combien · qu’est-ce que · est-ce que ; autres mots : merci
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - questions-0 : « ___ est la gare ? »
-  - questions-1 : « ___ coûte le café ? »
-  - questions-2 : « ___ c’est ? »
-  - questions-3 : « ___ vous voulez du lait ? »
-- **cafe-ensemble — À table** : boire · manger · parler
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **cafe-tu-vous — Deux façons de parler** : tu · vous · je voudrais
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - tu-vous-0 : « ___ es mon ami. »
-  - tu-vous-1 : « ___ êtes notre client. »
-  - tu-vous-2 : « ___ un thé, s’il vous plaît. »
-- **cafe-inversion — Une autre question** : voulez-vous · avez-vous · êtes-vous · est-ce que
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - inversion-0 : « ___ du café ? → Vous voulez du café. »
-  - inversion-1 : « ___ une tasse ? → Vous avez une tasse. »
-  - inversion-2 : « ___ ici ? → Vous êtes ici. »
-  - inversion-3 : « ___ vous voulez du café ? »
-- **s-cafe-p-service — Les petites choses de la table** : assiette · cuillère · sucre · menu
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **s-cafe-p-roles — Le repas et l’échange** : serveur · client · addition
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-cafe-roles-0 : « Il apporte le plateau. »
-  - s-cafe-roles-1 : « Il est assis et commande. »
-  - s-cafe-roles-2 : « 2 € + 1 € = 3 € »
-- **s-cafe-p-sensations — Ce que l’on ressent** : chaud · froid · très · bien
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-cafe-sensations-0 : « De la vapeur monte. »
-  - s-cafe-sensations-1 : « Des glaçons flottent. »
-  - s-cafe-sensations-2 : « Chaud → ___ chaud. »
-  - s-cafe-sensations-3 : « Les tasses restent droites. »
-- **s-cafe-p-attention — D’une personne à l’autre** : bonsoir · pardon · excuser · à bientôt
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-cafe-attention-0 : « La nuit commence : « ___ ! » »
-  - s-cafe-attention-1 : « L’eau est tombée : « ___ ! » »
-  - s-cafe-attention-2 : « ___-moi, j’ai pris votre chaise. »
-  - s-cafe-attention-3 : « On se revoit demain : « ___ ! » »
-- **s-cafe-p-moments — Le fil du repas** : avant · maintenant · après · puis
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-cafe-moments-0 : « ___ le repas : l’assiette pleine. »
-  - s-cafe-moments-1 : « Je bois ___ : le moment entouré. »
-  - s-cafe-moments-2 : « ___ le repas : l’assiette vide. »
-  - s-cafe-moments-3 : « Je prends la tasse, ___ je bois. »
-- **s-cafe-p-conversation — Les liens de la conversation** : attendre · répondre · encore · aussi · ensemble
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - s-cafe-conversation-0 : « Le café n’est pas prêt : ___ ici. »
-  - s-cafe-conversation-1 : « « Du thé ? » Je ___ : « Oui. » »
-  - s-cafe-conversation-2 : « Une deuxième tasse : ___ du thé. »
-  - s-cafe-conversation-3 : « Paul a un pain, Claire en a ___. »
-  - s-cafe-conversation-4 : « Nous portons la table ___. »
+- **cafe-v2-drinks — 1** : café · thé · tasse · verre
+  - Contrastes déjà rencontrés : cafe-v2-e-label-coffee-0 · cafe-v2-e-label-coffee-1 · cafe-v2-e-label-coffee-2 · cafe-v2-e-label-tea-0 · cafe-v2-e-label-tea-1 · cafe-v2-e-label-tea-2 · cafe-v2-e-label-cup-0 · cafe-v2-e-label-cup-1 · cafe-v2-e-label-cup-2 · cafe-v2-e-label-glass-0 · cafe-v2-e-label-glass-1 · cafe-v2-e-label-glass-2
+- **cafe-v2-table — 2** : assiette · cuillère · sucre · menu
+  - Contrastes déjà rencontrés : cafe-v2-e-label-plate-0 · cafe-v2-e-label-plate-1 · cafe-v2-e-label-plate-2 · cafe-v2-e-label-spoon-0 · cafe-v2-e-label-spoon-1 · cafe-v2-e-label-spoon-2 · cafe-v2-e-label-sugar-0 · cafe-v2-e-label-sugar-1 · cafe-v2-e-label-sugar-2 · cafe-v2-e-label-menu-0 · cafe-v2-e-label-menu-1 · cafe-v2-e-label-menu-2
+- **cafe-v2-roles — 3** : serveur · client · addition
+  - Contrastes déjà rencontrés : cafe-v2-e-label-receipt-0 · cafe-v2-e-label-receipt-1 · cafe-v2-e-label-receipt-2
+- **cafe-v2-courtesy — 4** : bonjour · merci · s’il vous plaît · je voudrais
+  - Contrastes déjà rencontrés : cafe-v2-e-bonjour-0 · cafe-v2-e-bonjour-1 · cafe-v2-e-bonjour-2 · cafe-v2-e-thanks-0 · cafe-v2-e-thanks-1 · cafe-v2-e-thanks-2 · cafe-v2-e-please-0 · cafe-v2-e-please-1 · cafe-v2-e-please-2 · cafe-v2-e-wish-0 · cafe-v2-e-wish-1 · cafe-v2-e-wish-2
+- **cafe-v2-questions — 5** : où · combien · qu’est-ce que · est-ce que
+  - Contrastes déjà rencontrés : cafe-v2-e-where-0 · cafe-v2-e-where-1 · cafe-v2-e-where-2 · cafe-v2-e-how-much-0 · cafe-v2-e-how-much-1 · cafe-v2-e-how-much-2 · cafe-v2-e-identify-0 · cafe-v2-e-identify-1 · cafe-v2-e-identify-2 · cafe-v2-e-yes-no-0 · cafe-v2-e-yes-no-1 · cafe-v2-e-yes-no-2
+- **cafe-v2-actions — 6** : boire · manger · parler
+  - Contrastes déjà rencontrés : cafe-v2-e-drinks-0 · cafe-v2-e-drinks-1 · cafe-v2-e-drinks-2 · cafe-v2-e-eats-0 · cafe-v2-e-eats-1 · cafe-v2-e-eats-2 · cafe-v2-e-talks-0 · cafe-v2-e-talks-1 · cafe-v2-e-talks-2
+- **cafe-v2-sensation — 7** : chaud · froid · très · bien
+  - Contrastes déjà rencontrés : cafe-v2-e-hot-0 · cafe-v2-e-hot-1 · cafe-v2-e-hot-2 · cafe-v2-e-cold-0 · cafe-v2-e-cold-1 · cafe-v2-e-cold-2 · cafe-v2-e-very-0 · cafe-v2-e-very-1 · cafe-v2-e-very-2 · cafe-v2-e-well-0 · cafe-v2-e-well-1 · cafe-v2-e-well-2
+- **cafe-v2-attention — 8** : bonsoir · pardon · à bientôt
+  - Contrastes déjà rencontrés : cafe-v2-e-evening-0 · cafe-v2-e-evening-1 · cafe-v2-e-evening-2 · cafe-v2-e-sorry-0 · cafe-v2-e-sorry-1 · cafe-v2-e-sorry-2 · cafe-v2-e-bye-0 · cafe-v2-e-bye-1 · cafe-v2-e-bye-2
+- **cafe-v2-requests — 9** : excuser · s’il vous plaît · répondre
+  - Contrastes déjà rencontrés : cafe-v2-e-excuse-0 · cafe-v2-e-excuse-1 · cafe-v2-e-excuse-2 · cafe-v2-e-please-0 · cafe-v2-e-please-1 · cafe-v2-e-please-2 · cafe-v2-e-reply-0 · cafe-v2-e-reply-1 · cafe-v2-e-reply-2
+- **cafe-v2-conversation — 10** : attendre · répondre · encore · aussi · ensemble
+  - Contrastes déjà rencontrés : cafe-v2-e-wait-0 · cafe-v2-e-wait-1 · cafe-v2-e-wait-2 · cafe-v2-e-reply-0 · cafe-v2-e-reply-1 · cafe-v2-e-reply-2 · cafe-v2-e-again-0 · cafe-v2-e-again-1 · cafe-v2-e-again-2 · cafe-v2-e-also-0 · cafe-v2-e-also-1 · cafe-v2-e-also-2 · cafe-v2-e-together-0 · cafe-v2-e-together-1 · cafe-v2-e-together-2
+- **cafe-v2-moments — 11** : avant · maintenant · après · puis · heure
+  - Contrastes déjà rencontrés : cafe-v2-e-chronology-before-0 · cafe-v2-e-chronology-before-1 · cafe-v2-e-chronology-before-2 · cafe-v2-e-chronology-now-0 · cafe-v2-e-chronology-now-1 · cafe-v2-e-chronology-now-2 · cafe-v2-e-chronology-after-0 · cafe-v2-e-chronology-after-1 · cafe-v2-e-chronology-after-2 · cafe-v2-e-chronology-then-0 · cafe-v2-e-chronology-then-1 · cafe-v2-e-chronology-then-2 · cafe-v2-e-hours-0 · cafe-v2-e-hours-1 · cafe-v2-e-hours-2
+  - cafe-v2-moments-4 : « 01:00 »
+- **cafe-v2-carrying — 12** : plateau · porter · ensemble
+  - Contrastes déjà rencontrés : cafe-v2-e-together-0 · cafe-v2-e-together-1 · cafe-v2-e-together-2 · cafe-v2-e-well-0 · cafe-v2-e-well-1 · cafe-v2-e-well-2
+- **cafe-v2-people — 13** : tu · vous · je voudrais
+  - Contrastes déjà rencontrés : cafe-v2-e-wish-0 · cafe-v2-e-wish-1 · cafe-v2-e-wish-2 · cafe-v2-e-yes-no-0 · cafe-v2-e-yes-no-1 · cafe-v2-e-yes-no-2
+- **cafe-v2-inversions — 14** : voulez-vous · avez-vous · êtes-vous
+  - Contrastes déjà rencontrés : cafe-v2-e-yes-no-0 · cafe-v2-e-yes-no-1 · cafe-v2-e-yes-no-2 · cafe-v2-e-wish-0 · cafe-v2-e-wish-1 · cafe-v2-e-wish-2 · cafe-v2-e-identify-0 · cafe-v2-e-identify-1 · cafe-v2-e-identify-2
 
 ### Mécanisme
 
-**La commande et la lettre**
+**✦**
 
-Lis le message de Claire. Réponds au serveur et transmets la lettre.
 
-- **cafe-saluer** : Le serveur te salue.
-  - « Au revoir. »
-  - « Combien ? »
-  - « Bonjour. »
-  - « Où ? »
-- **cafe-commande** : La commande de Claire.
-  - « Je voudrais un café. »
-  - « Je voudrais un thé. »
-  - « Je voudrais du lait. »
-  - « Je voudrais de l’eau. »
-- **cafe-lait** : Claire a écrit : « Sans lait ».
-  - « Avec du lait. »
-  - « Avec de l’eau. »
-  - « Sans eau. »
-  - « Sans lait. »
-- **cafe-pain** : Et pour manger ?
-  - « Un fromage, s’il vous plaît. »
-  - « Un pain, s’il vous plaît. »
-  - « Une pomme, s’il vous plaît. »
-  - « Un café, s’il vous plaît. »
-- **cafe-montant** : Le thé et le pain coûtent quatre euros.
-  - « Deux euros. »
-  - « Trois euros. »
-  - « Quatre euros. »
-  - « Cinq euros. »
-- **cafe-lettre** : Pour mon frère.
-  - « Au marché. »
-  - « À la gare. »
-  - « Dans l’atelier. »
-  - « Dans le café. »
-- **cafe-fin** : Le serveur te donne la lettre.
-  - « Non. »
-  - « Où ? »
-  - « Je ferme la porte. »
-  - « Merci. »
 
-Le serveur sourit. Le frère de Claire attend à la gare.
+Expected physical sequence (internal data for review, never a player translation):
+
+- 1. {"kind":"take","object":"tea-plain"} · preuve : cafe-v2-e-task-tea
+- 2. {"kind":"place","object":"tea-plain","target":"tray-window","relation":"on"} · preuve : cafe-v2-e-task-place-tea
+- 3. {"kind":"take","object":"bread-plain"} · preuve : cafe-v2-e-task-bread
+- 4. {"kind":"place","object":"bread-plain","target":"tray-window","relation":"on"} · preuve : cafe-v2-e-task-place-bread
+- 5. {"kind":"take","object":"spoon-service"} · preuve : cafe-v2-e-task-spoon
+- 6. {"kind":"place","object":"spoon-service","target":"tray-window","relation":"on"} · preuve : cafe-v2-e-task-place-spoon
+- 7. {"kind":"take","object":"tray-window"} · preuve : cafe-v2-e-task-tray
+- 8. {"kind":"deliver","object":"tray-window","target":"claire"} · preuve : cafe-v2-e-task-guest
+- 9. {"kind":"take","object":"payment-four"} · preuve : cafe-v2-e-task-payment
+- 10. {"kind":"deliver","object":"payment-four","target":"emile"} · preuve : cafe-v2-e-task-payee
+- 11. {"kind":"take","object":"letter-service"} · preuve : cafe-v2-e-task-letter
+- 12. {"kind":"deliver","object":"letter-service","target":"emile"} · preuve : cafe-v2-e-task-post
+
+
+✧
 
 ## La gare
 
-**Le chemin de la lettre**
-
-La lettre porte un nom : Claire. Le train traverse la rivière. Les mots indiquent le chemin.
-
-**PR B debt — legacy content, not yet migrated.**
+**Situated design checks apply.**
 
 ### Rencontres
 
 | ID | Texte français |
 | --- | --- |
-| gare-gare-0 | **Le quai** — La gare est ici. Le train arrive à la gare. |
-| gare-gare-1 | **Le voyageur** — Je vais à la gare. Voici mon billet. |
-| gare-gare-2 | **Le plan** — La gare : un train, deux quais, une horloge. |
-| gare-train-0 | **Le quai** — Le train arrive. Les voyageurs montent dans le train. |
-| gare-train-1 | **Le voyageur** — Je prends le train, pas le bus. |
-| gare-train-2 | **Le plan** — Le train va de la gare à la maison de Claire. ⚑ |
-| gare-billet-0 | **Le quai** — Un billet pour le train. Le billet coûte dix euros. |
-| gare-billet-1 | **Le voyageur** — Voici mon billet. Je peux prendre le train. |
-| gare-billet-2 | **Le plan** — Gardez votre billet. Le contrôleur regarde le billet. |
-| gare-quai-0 | **Le quai** — Le train est devant le quai trois. |
-| gare-quai-1 | **Le voyageur** — Mon train part du quai trois. Je reste sur le quai. |
-| gare-quai-2 | **Le plan** — Le quai est à côté du train. |
-| gare-sur-0 | **Le quai** — Le billet est sur la boîte. |
-| gare-sur-1 | **Le voyageur** — Le sac est sur la table. |
-| gare-sur-2 | **Le plan** — Le livre est sur le banc. |
-| gare-sous-0 | **Le quai** — La clé est sous la boîte. |
-| gare-sous-1 | **Le voyageur** — Le sac est sous la table. |
-| gare-sous-2 | **Le plan** — Le livre est sous le banc. |
-| gare-dans-0 | **Le quai** — Le billet est dans la boîte. |
-| gare-dans-1 | **Le voyageur** — Le sac est dans le train. |
-| gare-dans-2 | **Le plan** — La lettre est dans le livre. |
-| gare-devant-0 | **Le quai** — La clé est devant la boîte. |
-| gare-devant-1 | **Le voyageur** — Je suis devant le train. Je vois sa porte. |
-| gare-devant-2 | **Le plan** — Le vélo est devant la maison. |
-| gare-derriere-0 | **Le quai** — La clé est derrière la boîte. |
-| gare-derriere-1 | **Le voyageur** — Le jardin est derrière la maison. |
-| gare-derriere-2 | **Le plan** — Le chat est derrière la porte. |
-| gare-cote-0 | **Le quai** — La clé est à côté de la boîte. |
-| gare-cote-1 | **Le voyageur** — Le café est à côté de la gare. |
-| gare-cote-2 | **Le plan** — Le sac est à côté de la chaise. |
-| gare-gauche-0 | **Le quai** — La flèche va à gauche. |
-| gare-gauche-1 | **Le voyageur** — À gauche, le quai trois ; à droite, la sortie. |
-| gare-gauche-2 | **Le plan** — Pour aller chez Claire : à gauche, puis tout droit. |
-| gare-droite-0 | **Le quai** — La flèche va à droite. |
-| gare-droite-1 | **Le voyageur** — À droite, la sortie ; à gauche, le quai trois. |
-| gare-droite-2 | **Le plan** — Pour aller au café : à droite, puis tout droit. |
-| gare-droit-0 | **Le quai** — Allez tout droit. La flèche continue devant vous. |
-| gare-droit-1 | **Le voyageur** — Pour la maison : tout droit, puis à gauche. |
-| gare-droit-2 | **Le plan** — Le train continue tout droit sur la voie. |
-| gare-midi-0 | **Le quai** — Il est midi. Le soleil est haut. L’horloge indique douze heures. · « 12:00 » |
-| gare-midi-1 | **Le voyageur** — Le train de midi part à douze heures. · « 12:00 » |
-| gare-midi-2 | **Le plan** — À midi, nous mangeons. À minuit, nous dormons. |
-| gare-heure-0 | **Le quai** — Une heure : soixante minutes. Deux heures : cent vingt minutes. · « 60 min » |
-| gare-heure-1 | **Le voyageur** — Le train part à huit heures. Le trajet dure une heure. · « 08:00 → 09:00 » |
-| gare-heure-2 | **Le plan** — Quelle heure est-il ? Il est huit heures. · « 08:00 » |
-| gare-minute-0 | **Le quai** — Une minute : soixante secondes. · « 60 s » |
-| gare-minute-1 | **Le voyageur** — Le train part à huit heures cinq. Il reste cinq minutes. · « 08:05 » |
-| gare-minute-2 | **Le plan** — Il est huit heures quatre. Encore une minute, puis le train part. · « 08:04 → 08:05 » |
-| gare-vais-0 | **Le quai** — Je vais à la gare. Tu restes ici. |
-| gare-vais-1 | **Le voyageur** — Je vais au café avec mon billet. |
-| gare-vais-2 | **Le plan** — Je vais chez Claire. Voici mon chemin. |
-| gare-vas-0 | **Le quai** — Tu vas à la gare. Moi, je reste ici. |
-| gare-vas-1 | **Le voyageur** — Tu vas au café avec ton billet. |
-| gare-vas-2 | **Le plan** — Tu vas chez Claire. Voici ton chemin. |
-| gare-allons-0 | **Le quai** — Nous allons à la gare ensemble. |
-| gare-allons-1 | **Le voyageur** — Nous allons au café, toi et moi. |
-| gare-allons-2 | **Le plan** — Nous allons chez Claire avec la lettre. |
-| gare-allez-0 | **Le quai** — Vous allez à la gare, madame. |
-| gare-allez-1 | **Le voyageur** — Vous allez au café, monsieur. |
-| gare-allez-2 | **Le plan** — Vous allez chez Claire. Voici votre chemin. |
-| gare-consigne | **Le billet de Claire** — Le train pour la maison de Claire part à midi, du quai trois. Prenez le billet dans la boîte. Mettez le sac sous le banc. Allez à gauche, puis tout droit. Attendez devant le train. ⚑ · « 12:00 · 3 » |
-| gare-familles | **Les voyageurs** — Il va à la gare. Elle va à la gare aussi. Ils vont ensemble à la gare. Nous allons avec eux. |
-| gare-horaire | **Départs** — 08:05 : le café. 12:00 : la maison de Claire. 18:30 : le marché. Le train pour la maison part à midi. · « 12:00 » |
-| gare-plan-ville | **Le plan de la ville** — Le plan montre le nord en haut et le sud en bas. La rue de la gare passe sur le pont. La place est là, devant la mairie. Pour aller chez Claire, il faut partir d’ici, puis arriver à la maison. · « N ↑ · S ↓ » |
-| gare-horaires-details | **Le panneau des horaires** — Départ le matin à huit heures cinq ; arrivée à neuf heures. Départ le soir à six heures et demie. Ce train a dix minutes de retard. Sa destination est la maison de Claire. Il faut attendre sur le quai. · « 18:30 » |
-| gare-destination-claire | **Le voyage de Claire** — Claire va à la maison. Elle va chez elle. Deux voyageurs vont au café. Ils veulent aller au café. |
-| gare-train-famille | **Le départ en famille** — Il va à la gare avec son fils. Ils vont prendre le train. Il faut aller sur le quai. |
-| supplement-gare-matin-0 | **Le voyage** — Le matin, le soleil se lève. Je mange du pain avant de prendre le train. |
-| supplement-gare-matin-1 | **Le voyageur** — Il est huit heures du matin. Les voyageurs prennent leur premier café. |
-| supplement-gare-matin-2 | **La ville** — Le matin commence après la nuit. Les fenêtres s’éclairent et le marché ouvre. |
-| supplement-gare-soir-0 | **Le voyage** — Le soir, le soleil se couche. Je rentre à la maison après le travail. |
-| supplement-gare-soir-1 | **Le voyageur** — Il est huit heures du soir. Nous mangeons, puis les enfants vont au lit. |
-| supplement-gare-soir-2 | **La ville** — Le soir vient avant la nuit. Les lumières du café sont allumées. |
-| supplement-gare-demi-0 | **Le voyage** — Un pain entier, deux personnes : chacun prend un demi-pain. |
-| supplement-gare-demi-1 | **Le voyageur** — Une pomme entière, deux personnes : chacune prend une demi-pomme, la moitié de la pomme. |
-| supplement-gare-demi-2 | **La ville** — Le marchand coupe le fromage en deux parts égales. Un demi-fromage est la moitié du fromage entier. |
-| supplement-gare-départ-0 | **Le voyage** — Le départ du train est à huit heures. Le train quitte la gare. |
-| supplement-gare-départ-1 | **Le voyageur** — Voici le départ du voyageur : il ferme sa porte et s’éloigne de sa maison. |
-| supplement-gare-départ-2 | **La ville** — Voici le départ de Luc. Il prend son sac, sort par la porte et commence son voyage. |
-| supplement-gare-arrivée-0 | **Le voyage** — L’arrivée du train est à neuf heures. Les voyageurs sont à destination. |
-| supplement-gare-arrivée-1 | **Le voyageur** — Voici l’arrivée du voyageur : son voyage est fini, il ouvre la porte de la maison. |
-| supplement-gare-arrivée-2 | **La ville** — Voici l’arrivée de Luc. Il pose son sac près de la porte : son voyage est fini. |
-| supplement-gare-retard-0 | **Le voyage** — Le train devait partir à huit heures. Il part à huit heures quinze : quinze minutes de retard. |
-| supplement-gare-retard-1 | **Le voyageur** — Le voyageur devait venir à midi. Il vient à midi trente : il a trente minutes de retard. |
-| supplement-gare-retard-2 | **La ville** — Le voyageur devait arriver à six heures. Il arrive à six heures quarante-cinq : quarante-cinq minutes de retard. |
-| supplement-gare-destination-0 | **Le voyage** — La destination du voyage est la maison de Claire. Le chemin finit devant sa porte. |
-| supplement-gare-destination-1 | **Le voyageur** — Ce train a pour destination la gare du Nord. Il finit son voyage là-bas. |
-| supplement-gare-destination-2 | **La ville** — Notre destination est le café. Nous suivons le chemin jusqu’au café. |
-| supplement-gare-nord-0 | **Le voyage** — Sur le plan, le nord est en haut. La flèche N montre le nord. |
-| supplement-gare-nord-1 | **Le voyageur** — La boussole montre le nord. Le voyageur marche dans cette direction. |
-| supplement-gare-nord-2 | **La ville** — La gare est au nord de la maison : au-dessus de la maison sur le plan. |
-| supplement-gare-sud-0 | **Le voyage** — Sur le plan, le sud est en bas. La flèche S montre le sud. |
-| supplement-gare-sud-1 | **Le voyageur** — La boussole montre le nord ; le sud est dans la direction opposée. |
-| supplement-gare-sud-2 | **La ville** — Le jardin est au sud de la maison : au-dessous de la maison sur le plan. |
-| supplement-gare-plan-0 | **Le voyage** — Ce plan montre les rues, le pont et la place. Le point rouge indique la maison. |
-| supplement-gare-plan-1 | **Le voyageur** — Le voyageur ouvre son plan. Il cherche le chemin de la gare sur le dessin. |
-| supplement-gare-plan-2 | **La ville** — Le plan est affiché à la gare. Les chemins du dessin relient les mêmes lieux que les rues. |
-| supplement-gare-pont-0 | **Le voyage** — Le pont passe au-dessus de la rivière. Les voyageurs traversent l’eau sans se mouiller. |
-| supplement-gare-pont-1 | **Le voyageur** — Le train passe sur le pont. La rivière coule sous ses roues. |
-| supplement-gare-pont-2 | **La ville** — Pour rejoindre la maison sur l’autre rive, prenez le pont. Il relie les deux côtés de la rivière. |
-| supplement-gare-rue-0 | **Le voyage** — La rue passe entre les maisons. Les voitures roulent et les voyageurs marchent sur les côtés. |
-| supplement-gare-rue-1 | **Le voyageur** — Voici la rue de la Gare. Des portes et des fenêtres se trouvent des deux côtés de la rue. |
-| supplement-gare-rue-2 | **La ville** — Le café est dans cette rue. Suivez le chemin entre les maisons jusqu’à sa porte. |
-| supplement-gare-place-0 | **Le voyage** — La place est un grand espace ouvert entre les maisons. Les rues arrivent sur la place. |
-| supplement-gare-place-1 | **Le voyageur** — Au milieu de la place, il y a une fontaine. Les voyageurs se rencontrent autour de la fontaine. |
-| supplement-gare-place-2 | **La ville** — Le marché remplit la place. Ses tables sont dans le grand espace, pas dans une rue étroite. |
-| supplement-gare-partir-0 | **Le voyage** — Le train va partir. Il quitte la gare et commence son voyage. |
-| supplement-gare-partir-1 | **Le voyageur** — Je veux partir de la maison. Je prends mon sac et je m’éloigne de la porte. |
-| supplement-gare-partir-2 | **La ville** — Luc peut partir. Il prend son sac et s’éloigne de la porte. |
-| supplement-gare-arriver-0 | **Le voyage** — Le train va arriver. Il finit son voyage et entre dans la gare. |
-| supplement-gare-arriver-1 | **Le voyageur** — Je veux arriver chez Claire avant midi. Au bout du chemin, j’ouvre sa porte. |
-| supplement-gare-arriver-2 | **La ville** — Luc peut arriver chez Claire. Il pose son sac devant la porte et son voyage est fini. |
-| supplement-gare-là-0 | **Le voyage** — La maison est là, loin de moi. Je montre sa porte du doigt. Je suis ici, devant le plan. |
-| supplement-gare-là-1 | **Le voyageur** — Le billet est là, à côté du voyageur. Il n’est pas ici, dans ma main. |
-| supplement-gare-là-2 | **La ville** — Le café est là, de l’autre côté de la rue. Je le montre ; mes pieds sont encore ici. |
-| supplement-gare-minute | **Une minute avant le départ** — Il est onze heures cinquante-neuf. Dans une minute, il sera midi et le train partira. · « 11:59 » |
+| gare-v2-e-label-station | gare |
+| gare-v2-e-label-mini-station | gare |
+| gare-v2-e-label-route-plan | plan |
+| gare-v2-e-label-mini-bridge | pont |
+| gare-v2-e-label-mini-place | place |
+| gare-v2-e-label-street | rue |
+| gare-v2-e-label-bridge | pont |
+| gare-v2-e-label-plaza | place |
+| gare-v2-e-label-platform-1 | quai un |
+| gare-v2-e-label-platform-2 | quai deux |
+| gare-v2-e-label-platform-3 | quai trois |
+| gare-v2-e-label-train-1 | train rouge |
+| gare-v2-e-label-train-2 | train verte |
+| gare-v2-e-label-train-3 | train bleue |
+| gare-v2-e-label-ticket-box | boîte bleue |
+| gare-v2-e-label-ticket-r | billet rouge |
+| gare-v2-e-label-ticket-b | billet bleu |
+| gare-v2-e-label-ticket-y | billet jaune |
+| gare-v2-e-label-bag-r | sac rouge |
+| gare-v2-e-label-bag-b | sac bleu |
+| gare-v2-e-label-bag-y | sac jaune |
+| gare-v2-e-label-bench-b | banc bleu |
+| gare-v2-e-label-bench-r | banc du quai |
+| gare-v2-e-label-bench-g | banc vert |
+| gare-v2-e-label-letter-b | lettre bleue |
+| gare-v2-e-label-letter-r | grande lettre |
+| gare-v2-e-label-letter-y | lettre jaune |
+| gare-v2-e-label-large-clock | midi |
+| gare-v2-e-label-morning-clock | matin |
+| gare-v2-e-label-evening-clock | soir |
+| gare-v2-e-label-half-bread | demi-pain |
+| gare-v2-e-label-half-apple | demi-pomme |
+| gare-v2-e-label-half-cheese | demi-fromage |
+| gare-v2-e-label-arrow-0 | gauche |
+| gare-v2-e-label-arrow-1 | droite |
+| gare-v2-e-label-arrow-2 | tout droit |
+| gare-v2-e-label-arrow-3 | nord |
+| gare-v2-e-label-arrow-4 | sud |
+| gare-v2-e-heading-departure | départ |
+| gare-v2-e-heading-arrival | arrivée |
+| gare-v2-e-heading-destination | destination |
+| gare-v2-e-minute-name | minute |
+| gare-v2-e-hour-name | heure |
+| gare-v2-e-delay-name | retard |
+| gare-v2-e-service-a | Départ 08:05. Quai un, gare du Sud. · « 08:05 » |
+| gare-v2-e-service-b | Départ 18:30. Quai deux, gare du Sud. · « 18:30 » |
+| gare-v2-e-service-c | Départ midi. Quai trois, gare du Nord. · « 12:00 » |
+| gare-v2-e-arrival-a | Arrivée 09:05. Destination gare du Sud. |
+| gare-v2-e-arrival-b | Arrivée 19:30. Destination gare du Sud. |
+| gare-v2-e-arrival-c | Arrivée 13:00. Destination gare du Nord. |
+| gare-v2-e-gare-0 | La gare. |
+| gare-v2-e-train-0 | Le train. |
+| gare-v2-e-ticket-0 | Le billet. |
+| gare-v2-e-platform-0 | Le quai un. |
+| gare-v2-e-front-0 | Devant le train. |
+| gare-v2-e-back-0 | Derrière le train. |
+| gare-v2-e-side-0 | À côté de ce train. |
+| gare-v2-e-gare-1 | La gare. |
+| gare-v2-e-train-1 | Le train. |
+| gare-v2-e-ticket-1 | Le billet. |
+| gare-v2-e-platform-1 | Le quai deux. |
+| gare-v2-e-front-1 | Devant le train. |
+| gare-v2-e-back-1 | Derrière le train. |
+| gare-v2-e-side-1 | À côté de ce train. |
+| gare-v2-e-gare-2 | La gare. |
+| gare-v2-e-train-2 | Le train. |
+| gare-v2-e-ticket-2 | Le billet. |
+| gare-v2-e-platform-2 | Le quai trois. |
+| gare-v2-e-front-2 | Devant le train. |
+| gare-v2-e-back-2 | Derrière le train. |
+| gare-v2-e-side-2 | À côté de ce train. |
+| gare-v2-e-left-0 | À gauche. |
+| gare-v2-e-right-0 | À droite. |
+| gare-v2-e-straight-0 | Tout droit. |
+| gare-v2-e-north-0 | Le nord. |
+| gare-v2-e-south-0 | Le sud. |
+| gare-v2-e-map-0 | Le plan. |
+| gare-v2-e-bridge-0 | Le pont. |
+| gare-v2-e-street-0 | La rue. |
+| gare-v2-e-plaza-0 | La place. |
+| gare-v2-e-morning-0 | Le matin. |
+| gare-v2-e-evening-0 | Le soir. |
+| gare-v2-e-noon-0 | Midi. · « 12:00 » |
+| gare-v2-e-half-0 | Un demi-pain. |
+| gare-v2-e-minute-0 | Une minute. 08:05 → 08:06. |
+| gare-v2-e-hour-0 | Une heure. 08:00 → 09:00. |
+| gare-v2-e-delay-0 | Retard. 08:00 → 08:15. |
+| gare-v2-e-departure-0 | Départ. 08:05. |
+| gare-v2-e-arrival-0 | Arrivée. 09:05. |
+| gare-v2-e-destination-0 | Destination sud. |
+| gare-v2-e-left-1 | À gauche. |
+| gare-v2-e-right-1 | À droite. |
+| gare-v2-e-straight-1 | Tout droit. |
+| gare-v2-e-north-1 | Le nord. |
+| gare-v2-e-south-1 | Le sud. |
+| gare-v2-e-map-1 | Le plan. |
+| gare-v2-e-bridge-1 | Le pont. |
+| gare-v2-e-street-1 | La rue. |
+| gare-v2-e-plaza-1 | La place. |
+| gare-v2-e-morning-1 | Le matin. |
+| gare-v2-e-evening-1 | Le soir. |
+| gare-v2-e-noon-1 | Midi. · « 12:00 » |
+| gare-v2-e-half-1 | Une demi-pomme. |
+| gare-v2-e-minute-1 | Une minute. 12:00 → 12:01. |
+| gare-v2-e-hour-1 | Une heure. 11:00 → 12:00. |
+| gare-v2-e-delay-1 | Retard. 12:00 → 12:30. |
+| gare-v2-e-departure-1 | Départ. 18:30. |
+| gare-v2-e-arrival-1 | Arrivée. 19:30. |
+| gare-v2-e-destination-1 | Destination sud. |
+| gare-v2-e-left-2 | À gauche. |
+| gare-v2-e-right-2 | À droite. |
+| gare-v2-e-straight-2 | Tout droit. |
+| gare-v2-e-north-2 | Le nord. |
+| gare-v2-e-south-2 | Le sud. |
+| gare-v2-e-map-2 | Le plan. |
+| gare-v2-e-bridge-2 | Le pont. |
+| gare-v2-e-street-2 | La rue. |
+| gare-v2-e-plaza-2 | La place. |
+| gare-v2-e-morning-2 | Le matin. |
+| gare-v2-e-evening-2 | Le soir. |
+| gare-v2-e-noon-2 | Midi. · « 12:00 » |
+| gare-v2-e-half-2 | Un demi-fromage. |
+| gare-v2-e-minute-2 | Une minute. 18:30 → 18:31. |
+| gare-v2-e-hour-2 | Une heure. 18:00 → 19:00. |
+| gare-v2-e-delay-2 | Retard. 18:00 → 18:45. |
+| gare-v2-e-departure-2 | Départ. 12:00. |
+| gare-v2-e-arrival-2 | Arrivée. 13:00. |
+| gare-v2-e-destination-2 | Destination nord. |
+| gare-v2-e-go-i-0 | Je vais à la gare. |
+| gare-v2-e-go-you-0 | Tu vas à la gare. |
+| gare-v2-e-go-we-0 | Nous allons à la gare. |
+| gare-v2-e-go-formal-0 | Vous allez à la gare. |
+| gare-v2-e-go-she-0 | Elle va à la gare. |
+| gare-v2-e-go-they-0 | Ils vont à la gare. |
+| gare-v2-e-go-inf-0 | Je veux aller à la gare. |
+| gare-v2-e-leave-0 | Je veux partir. |
+| gare-v2-e-arrive-0 | Je veux arriver. |
+| gare-v2-e-wait-0 | Attendez sur le quai. |
+| gare-v2-e-here-0 | Ici. |
+| gare-v2-e-there-0 | Là. |
+| gare-v2-e-then-0 | Le billet, puis le train. |
+| gare-v2-e-go-i-1 | Je vais à la gare. |
+| gare-v2-e-go-you-1 | Tu vas à la gare. |
+| gare-v2-e-go-we-1 | Nous allons à la gare. |
+| gare-v2-e-go-formal-1 | Vous allez à la gare. |
+| gare-v2-e-go-she-1 | Elle va à la gare. |
+| gare-v2-e-go-they-1 | Ils vont à la gare. |
+| gare-v2-e-go-inf-1 | Je veux aller à la gare. |
+| gare-v2-e-leave-1 | Je veux partir. |
+| gare-v2-e-arrive-1 | Je veux arriver. |
+| gare-v2-e-wait-1 | Attendez sur le quai. |
+| gare-v2-e-here-1 | Ici. |
+| gare-v2-e-there-1 | Là. |
+| gare-v2-e-then-1 | Le billet, puis le train. |
+| gare-v2-e-go-i-2 | Je vais à la gare. |
+| gare-v2-e-go-you-2 | Tu vas à la gare. |
+| gare-v2-e-go-we-2 | Nous allons à la gare. |
+| gare-v2-e-go-formal-2 | Vous allez à la gare. |
+| gare-v2-e-go-she-2 | Elle va à la gare. |
+| gare-v2-e-go-they-2 | Ils vont à la gare. |
+| gare-v2-e-go-inf-2 | Je veux aller à la gare. |
+| gare-v2-e-leave-2 | Je veux partir. |
+| gare-v2-e-arrive-2 | Je veux arriver. |
+| gare-v2-e-wait-2 | Attendez sur le quai. |
+| gare-v2-e-here-2 | Ici. |
+| gare-v2-e-there-2 | Là. |
+| gare-v2-e-then-2 | Le billet, puis le train. |
+| gare-v2-e-on-0 | Sur le banc. |
+| gare-v2-e-under-0 | Sous le banc. |
+| gare-v2-e-in-0 | Dans la boîte. |
+| gare-v2-e-on-1 | Sur la table. |
+| gare-v2-e-under-1 | Sous la table. |
+| gare-v2-e-in-1 | Dans la boîte. |
+| gare-v2-e-on-2 | Sur le banc. |
+| gare-v2-e-under-2 | Sous le banc. |
+| gare-v2-e-in-2 | Dans la boîte. |
+| gare-v2-e-open-rehearsal | Ouvre la porte. |
+| gare-v2-e-address-rehearsal | Pour Claire. |
+| gare-v2-e-task-ticket | Prends le billet dans la boîte bleue. |
+| gare-v2-e-task-train | Le train pour la gare du Nord. Ouvre sa porte. |
+| gare-v2-e-task-bag | Prends le sac sous le banc bleu. |
+| gare-v2-e-task-stow | Le sac. Sous le banc du quai trois. |
+| gare-v2-e-task-letter | Prends la lettre derrière la grande horloge. |
+| gare-v2-e-task-recipient | Pour elle. Elle attend sur le quai trois. |
+| gare-v2-e-reply | J’attends. |
+
+### Écriture sur les objets
+
+- station : « gare »
+- route-plan : « plan »
+- mini-station : « gare »
+- mini-bridge : « pont »
+- mini-place : « place »
+- street : « rue »
+- bridge : « pont »
+- plaza : « place »
+- large-clock : « midi »
+- morning-clock : « matin »
+- evening-clock : « soir »
+- guide : « Luc »
+- traveller-a : « Anne »
+- traveller-b : « Paul »
+- traveller-c : « Claire »
+- ticket-box : « boîte bleue »
+- ticket-r : « billet rouge »
+- ticket-b : « billet bleu »
+- ticket-y : « billet jaune »
+- bag-r : « sac rouge »
+- bag-b : « sac bleu »
+- bag-y : « sac jaune »
+- bench-b : « banc bleu »
+- bench-r : « banc du quai »
+- bench-g : « banc vert »
+- letter-b : « lettre bleue »
+- letter-r : « grande lettre »
+- letter-y : « lettre jaune »
+- half-bread : « demi-pain »
+- half-apple : « demi-pomme »
+- half-cheese : « demi-fromage »
+- platform-1 : « quai un »
+- train-1 : « train rouge »
+- platform-2 : « quai deux »
+- train-2 : « train verte »
+- platform-3 : « quai trois »
+- train-3 : « train bleue »
+- side-door : « porte du train »
+- arrow-0 : « gauche »
+- arrow-1 : « droite »
+- arrow-2 : « tout droit »
+- arrow-3 : « nord »
+- arrow-4 : « sud »
 
 ### Texte dans les illustrations
 
-- gare-voyage/gare-voyage-3/picture/0 : « 3 »
-- gare-aller/gare-aller-0/picture/0 : « Je ___ à la gare. »
-- gare-aller/gare-aller-1/picture/0 : « Tu ___ à la gare. »
-- gare-aller/gare-aller-2/picture/0 : « Nous ___ à la gare. »
-- gare-aller/gare-aller-3/picture/0 : « Vous ___ à la gare. »
-- gare-destinations/gare-destinations-0/picture/0 : « Il ___ à la gare. »
-- gare-destinations/gare-destinations-1/picture/0 : « Ils ___ à la gare. »
-- gare-destinations/gare-destinations-2/picture/0 : « Il veut ___ à la gare. »
-- gare-temps/gare-temps-1/picture/0 : « 60 min »
-- gare-temps/gare-temps-2/picture/0 : « 60 s »
-- supplement-gare-moments/supplement-gare-moments-0/picture/0 : « Huit heures du ___. »
-- supplement-gare-moments/supplement-gare-moments-1/picture/0 : « Huit heures du ___. »
-- supplement-gare-moments/supplement-gare-moments-2/picture/0 : « Un ___-pain. »
-- supplement-gare-moments/supplement-gare-moments-3/picture/0 : « Quinze minutes de ___. »
-- supplement-gare-trajets/supplement-gare-trajets-0/picture/0 : « Le ___ du train. »
-- supplement-gare-trajets/supplement-gare-trajets-1/picture/0 : « L’___ du train. »
-- supplement-gare-trajets/supplement-gare-trajets-2/picture/0 : « La ___ du voyage. »
-- supplement-gare-trajets/supplement-gare-trajets-3/picture/0 : « Le ___ de la ville. »
-- supplement-gare-ville/supplement-gare-ville-0/picture/0 : « N »
-- supplement-gare-ville/supplement-gare-ville-0/picture/1 : « S »
-- supplement-gare-ville/supplement-gare-ville-0/picture/2 : « O »
-- supplement-gare-ville/supplement-gare-ville-0/picture/3 : « E »
-- supplement-gare-ville/supplement-gare-ville-0/picture/4 : « Vers le ___. »
-- supplement-gare-ville/supplement-gare-ville-1/picture/0 : « N »
-- supplement-gare-ville/supplement-gare-ville-1/picture/1 : « S »
-- supplement-gare-ville/supplement-gare-ville-1/picture/2 : « O »
-- supplement-gare-ville/supplement-gare-ville-1/picture/3 : « E »
-- supplement-gare-ville/supplement-gare-ville-1/picture/4 : « Vers le ___. »
-- supplement-gare-ville/supplement-gare-ville-2/picture/0 : « Le ___ sur la rivière. »
-- supplement-gare-ville/supplement-gare-ville-3/picture/0 : « La ___ entre les maisons. »
-- supplement-gare-mouvements/supplement-gare-mouvements-0/picture/0 : « La ___ au milieu des maisons. »
-- supplement-gare-mouvements/supplement-gare-mouvements-1/picture/0 : « Il veut ___. »
-- supplement-gare-mouvements/supplement-gare-mouvements-2/picture/0 : « Il veut ___. »
-- supplement-gare-mouvements/supplement-gare-mouvements-3/picture/0 : « La maison est ___. »
-- gare-quai-0/picture/0 : « 3 »
-- gare-midi-1/picture/0 : « 12:00 »
-- gare-heure-0/picture/0 : « 60 min »
-- gare-heure-1/picture/0 : « 08:00 → 09:00 »
-- gare-minute-0/picture/0 : « 60 s »
-- gare-minute-1/picture/0 : « 08:05 »
-- gare-consigne/picture/0 : « 12:00 · 3 »
-- gare-plan-ville/picture/0 : « N ↑ · S ↓ »
-- supplement-gare-nord-0/picture/0 : « N »
-- supplement-gare-nord-0/picture/1 : « S »
-- supplement-gare-nord-0/picture/2 : « O »
-- supplement-gare-nord-0/picture/3 : « E »
-- supplement-gare-nord-1/picture/0 : « N »
-- supplement-gare-nord-1/picture/1 : « S »
-- supplement-gare-nord-1/picture/2 : « O »
-- supplement-gare-nord-1/picture/3 : « E »
-- supplement-gare-nord-2/picture/0 : « N »
-- supplement-gare-nord-2/picture/1 : « S »
-- supplement-gare-nord-2/picture/2 : « O »
-- supplement-gare-nord-2/picture/3 : « E »
-- supplement-gare-sud-0/picture/0 : « N »
-- supplement-gare-sud-0/picture/1 : « S »
-- supplement-gare-sud-0/picture/2 : « O »
-- supplement-gare-sud-0/picture/3 : « E »
-- supplement-gare-sud-1/picture/0 : « N »
-- supplement-gare-sud-1/picture/1 : « S »
-- supplement-gare-sud-1/picture/2 : « O »
-- supplement-gare-sud-1/picture/3 : « E »
-- supplement-gare-sud-2/picture/0 : « N »
-- supplement-gare-sud-2/picture/1 : « S »
-- supplement-gare-sud-2/picture/2 : « O »
-- supplement-gare-sud-2/picture/3 : « E »
+- gare-v2-voyage/gare-v2-voyage-3/picture/0 : « 3 »
 
 ### Carnet
 
-- **gare-voyage — Le voyage** : gare · train · billet · quai
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **gare-place — Les objets et la boîte** : sur · sous · dans
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **gare-autour — Autour de la maison** : devant · derrière · à côté de
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **gare-chemin — Le chemin** : gauche · droite · tout_droit
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **gare-aller — Qui va où ?** : vais · vas · allons · allez
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - gare-aller-0 : « Je ___ à la gare. »
-  - gare-aller-1 : « Tu ___ à la gare. »
-  - gare-aller-2 : « Nous ___ à la gare. »
-  - gare-aller-3 : « Vous ___ à la gare. »
-- **gare-destinations — Les autres voyageurs** : va · vont · aller
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - gare-destinations-0 : « Il ___ à la gare. »
-  - gare-destinations-1 : « Ils ___ à la gare. »
-  - gare-destinations-2 : « Il veut ___ à la gare. »
-- **gare-temps — Le temps du voyage** : midi · heure · minute
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - gare-temps-0 : « 12:00 »
-  - gare-temps-1 : « 60 min »
-  - gare-temps-2 : « 60 s »
-- **supplement-gare-moments — La journée et le voyage** : matin · soir · demi · retard
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-gare-moments-0 : « Huit heures du ___. »
-  - supplement-gare-moments-1 : « Huit heures du ___. »
-  - supplement-gare-moments-2 : « Un ___-pain. »
-  - supplement-gare-moments-3 : « Quinze minutes de ___. »
-- **supplement-gare-trajets — Le début et la fin** : départ · arrivée · destination · plan
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-gare-trajets-0 : « Le ___ du train. »
-  - supplement-gare-trajets-1 : « L’___ du train. »
-  - supplement-gare-trajets-2 : « La ___ du voyage. »
-  - supplement-gare-trajets-3 : « Le ___ de la ville. »
-- **supplement-gare-ville — Les chemins de la ville** : nord · sud · pont · rue
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-gare-ville-0 : « Vers le ___. »
-  - supplement-gare-ville-1 : « Vers le ___. »
-  - supplement-gare-ville-2 : « Le ___ sur la rivière. »
-  - supplement-gare-ville-3 : « La ___ entre les maisons. »
-- **supplement-gare-mouvements — Le voyageur en chemin** : place · partir · arriver · là
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-gare-mouvements-0 : « La ___ au milieu des maisons. »
-  - supplement-gare-mouvements-1 : « Il veut ___. »
-  - supplement-gare-mouvements-2 : « Il veut ___. »
-  - supplement-gare-mouvements-3 : « La maison est ___. »
+- **gare-v2-voyage — ✦** : gare · train · billet · quai
+- **gare-v2-place — ✦** : sur · sous · dans
+  - Contrastes déjà rencontrés : gare-v2-e-wait-0 · gare-v2-e-wait-1 · gare-v2-e-wait-2 · gare-v2-e-on-0 · gare-v2-e-under-0 · gare-v2-e-in-0 · gare-v2-e-on-1 · gare-v2-e-under-1 · gare-v2-e-in-1 · gare-v2-e-on-2 · gare-v2-e-under-2 · gare-v2-e-in-2 · gare-v2-e-task-recipient
+- **gare-v2-autour — ✦** : devant · derrière · à côté de
+  - Contrastes déjà rencontrés : gare-v2-e-front-0 · gare-v2-e-back-0 · gare-v2-e-side-0 · gare-v2-e-front-1 · gare-v2-e-back-1 · gare-v2-e-side-1 · gare-v2-e-front-2 · gare-v2-e-back-2 · gare-v2-e-side-2
+- **gare-v2-chemin — ✦** : gauche · droite · tout_droit
+- **gare-v2-plan — ✦** : nord · sud · plan
+- **gare-v2-ville — ✦** : pont · rue · place
+- **gare-v2-moments — ✦** : matin · soir · midi · demi
+  - gare-v2-moments-2 : « 12:00 »
+- **gare-v2-temps — ✦** : heure · minute · retard
+  - Contrastes déjà rencontrés : gare-v2-e-minute-0 · gare-v2-e-hour-0 · gare-v2-e-delay-0 · gare-v2-e-minute-1 · gare-v2-e-hour-1 · gare-v2-e-delay-1 · gare-v2-e-minute-2 · gare-v2-e-hour-2 · gare-v2-e-delay-2
+- **gare-v2-trajets — ✦** : départ · arrivée · destination
+  - Contrastes déjà rencontrés : gare-v2-e-departure-0 · gare-v2-e-arrival-0 · gare-v2-e-destination-0 · gare-v2-e-departure-1 · gare-v2-e-arrival-1 · gare-v2-e-destination-1 · gare-v2-e-departure-2 · gare-v2-e-arrival-2 · gare-v2-e-destination-2
+- **gare-v2-mouvements — ✦** : partir · arriver · attendre
+  - Contrastes déjà rencontrés : gare-v2-e-leave-0 · gare-v2-e-arrive-0 · gare-v2-e-wait-0 · gare-v2-e-leave-1 · gare-v2-e-arrive-1 · gare-v2-e-wait-1 · gare-v2-e-leave-2 · gare-v2-e-arrive-2 · gare-v2-e-wait-2
+- **gare-v2-aller — ✦** : vais · vas · allons · allez
+  - Contrastes déjà rencontrés : gare-v2-e-go-i-0 · gare-v2-e-go-you-0 · gare-v2-e-go-we-0 · gare-v2-e-go-formal-0 · gare-v2-e-go-i-1 · gare-v2-e-go-you-1 · gare-v2-e-go-we-1 · gare-v2-e-go-formal-1 · gare-v2-e-go-i-2 · gare-v2-e-go-you-2 · gare-v2-e-go-we-2 · gare-v2-e-go-formal-2
+- **gare-v2-autres-voyageurs — ✦** : va · vont · aller
+  - Contrastes déjà rencontrés : gare-v2-e-go-she-0 · gare-v2-e-go-they-0 · gare-v2-e-go-inf-0 · gare-v2-e-go-she-1 · gare-v2-e-go-they-1 · gare-v2-e-go-inf-1 · gare-v2-e-go-she-2 · gare-v2-e-go-they-2 · gare-v2-e-go-inf-2
+- **gare-v2-reperes — ✦** : ici · là · puis
+  - Contrastes déjà rencontrés : gare-v2-e-here-0 · gare-v2-e-there-0 · gare-v2-e-then-0 · gare-v2-e-here-1 · gare-v2-e-there-1 · gare-v2-e-then-1 · gare-v2-e-here-2 · gare-v2-e-there-2 · gare-v2-e-then-2
 
 ### Mécanisme
 
-**Le train de Claire**
+**✦**
 
-Préparez le voyage. Le billet de Claire indique le chemin. Choisissez tout, puis ouvrez la porte.
 
-- **gare-destination** : Où allez-vous ?
-  - « À la maison de Claire. »
-  - « Au marché. »
-  - « À l’atelier. »
-  - « Au café. »
-- **gare-heure** : À quelle heure part le train ?
-  - « À huit heures cinq. »
-  - « À midi. »
-  - « À six heures et demie. »
-  - « À une heure. »
-- **gare-quai** : Quel quai ?
-  - « Le quai un. »
-  - « Le quai deux. »
-  - « Le quai trois. »
-  - « Le quai quatre. »
-- **gare-billet** : Où est le billet ?
-  - « Sur la boîte. »
-  - « Sous la boîte. »
-  - « Dans la boîte. »
-  - « Derrière la boîte. »
-- **gare-sac** : Où mettez-vous le sac ?
-  - « Sur le banc. »
-  - « Sous le banc. »
-  - « Devant la gare. »
-  - « Dans le café. »
-- **gare-direction** : Quel chemin prenez-vous ?
-  - « À droite, puis à gauche. »
-  - « Tout droit, puis à droite. »
-  - « À gauche, puis tout droit. »
-  - « À droite, puis tout droit. »
-- **gare-attendre** : Où attendez-vous ?
-  - « Derrière le train. »
-  - « Devant le train. »
-  - « Dans le café. »
-  - « Sous le banc. »
 
-Le train part. De l’autre côté de la rivière, une maison vous attend.
+Expected physical sequence (internal data for review, never a player translation):
+
+- 1. {"kind":"take","object":"ticket-r"} · preuve : gare-v2-e-task-ticket
+- 2. {"kind":"operate","object":"train-3","operation":"open","tool":"ticket-r"} · preuve : gare-v2-e-task-train
+- 3. {"kind":"take","object":"bag-r"} · preuve : gare-v2-e-task-bag
+- 4. {"kind":"place","object":"bag-r","target":"bench-g","relation":"under"} · preuve : gare-v2-e-task-stow
+- 5. {"kind":"take","object":"letter-b"} · preuve : gare-v2-e-task-letter
+- 6. {"kind":"deliver","object":"letter-b","target":"traveller-c"} · preuve : gare-v2-e-task-recipient
+
+
+✧
 
 ## Chez Claire
 
-**Les mots qui rapprochent**
-
-Claire ouvre sa porte. Sur le mur, une famille en quatre visages. Une place reste vide à la table.
-
-**PR B debt — legacy content, not yet migrated.**
+**Situated design checks apply.**
 
 ### Rencontres
 
 | ID | Texte français |
 | --- | --- |
-| maison-mere-0 | **La maison** — Voici ma mère. Je suis sa fille. |
-| maison-mere-1 | **Les souvenirs** — Sur la photographie, la mère tient son bébé. |
-| maison-mere-2 | **Claire** — Ma mère est ici. Son fils est à côté d’elle. |
-| maison-pere-0 | **La maison** — Voici mon père. Je suis sa fille. |
-| maison-pere-1 | **Les souvenirs** — Sur la photographie, le père tient son bébé. |
-| maison-pere-2 | **Claire** — Mon père est ici. Sa fille est à côté de lui. |
-| maison-fille-0 | **La maison** — Voici ma fille. Je suis sa mère. |
-| maison-fille-1 | **Les souvenirs** — La fille tient la main de son père. |
-| maison-fille-2 | **Claire** — Ma fille est la sœur de mon fils. |
-| maison-fils-0 | **La maison** — Voici mon fils. Je suis sa mère. |
-| maison-fils-1 | **Les souvenirs** — Le fils tient la main de sa mère. |
-| maison-fils-2 | **Claire** — Mon fils est le frère de ma fille. |
-| maison-mon-0 | **La maison** — Je tiens mon livre. Ce livre est à moi. |
-| maison-mon-1 | **Les souvenirs** — Mon père est sur cette photographie. Je suis son enfant. |
-| maison-mon-2 | **Claire** — Mon jardin est derrière ma maison. J’habite ici. |
-| maison-ma-0 | **La maison** — Je tiens ma clé. Cette clé est à moi. |
-| maison-ma-1 | **Les souvenirs** — Ma mère est sur cette photographie. Je suis son enfant. |
-| maison-ma-2 | **Claire** — Ma maison est à côté du jardin. J’habite ici. |
-| maison-mes-0 | **La maison** — Je tiens mes livres. Ces livres sont à moi. |
-| maison-mes-1 | **Les souvenirs** — Mes parents sont sur cette photographie : ma mère et mon père. |
-| maison-mes-2 | **Claire** — Mes clés sont dans ma poche. Ces deux clés sont à moi. |
-| maison-grand-0 | **La maison** — Le père est grand. Le fils est petit. |
-| maison-grand-1 | **Les souvenirs** — Ce grand arbre est plus haut que la maison. |
-| maison-grand-2 | **Claire** — Un grand homme passe sous la porte. Il baisse la tête. |
-| maison-grande-0 | **La maison** — La mère est grande. La fille est petite. |
-| maison-grande-1 | **Les souvenirs** — Cette grande maison a trois étages. |
-| maison-grande-2 | **Claire** — Une grande femme passe sous la porte. Elle baisse la tête. |
-| maison-petit-0 | **La maison** — Le fils est petit. Le père est grand. |
-| maison-petit-1 | **Les souvenirs** — Ce petit arbre est moins haut que la chaise. |
-| maison-petit-2 | **Claire** — Un petit garçon passe sous la table. |
-| maison-petite-0 | **La maison** — La fille est petite. La mère est grande. |
-| maison-petite-1 | **Les souvenirs** — Cette petite maison a une seule chambre. |
-| maison-petite-2 | **Claire** — Une petite fille passe sous la table. |
-| maison-peux-0 | **La maison** — Je peux ouvrir la porte : j’ai la clé. Tu peux entrer : tu as aussi une clé. · « Je ___ ouvrir. » |
-| maison-peux-1 | **Les souvenirs** — Je peux porter cette petite boîte. Elle est légère. |
-| maison-peux-2 | **Claire** — Je peux lire la lettre : les mots sont clairs. Tu peux la lire aussi. |
-| maison-peut-0 | **La maison** — Elle peut ouvrir la porte : elle a la clé. Il peut entrer. · « Elle ___ ouvrir. » |
-| maison-peut-1 | **Les souvenirs** — Il peut porter cette petite boîte. Elle est légère. |
-| maison-peut-2 | **Claire** — Elle peut lire la lettre : les mots sont clairs. |
-| maison-pouvons-0 | **La maison** — Nous pouvons ouvrir la porte : nous avons la clé. · « Nous ___ ouvrir. » |
-| maison-pouvons-1 | **Les souvenirs** — Nous pouvons porter la grande boîte ensemble. |
-| maison-pouvons-2 | **Claire** — Nous pouvons lire la lettre : nous connaissons les mots. |
-| maison-pouvez-0 | **La maison** — Vous pouvez ouvrir la porte, madame : vous avez la clé. · « Vous ___ ouvrir. » |
-| maison-pouvez-1 | **Les souvenirs** — Vous pouvez porter cette petite boîte, monsieur. |
-| maison-pouvez-2 | **Claire** — Vous pouvez lire la lettre, madame : les mots sont clairs. |
-| maison-cuisine-0 | **La maison** — Dans la cuisine, je prépare la soupe. |
-| maison-cuisine-1 | **Les souvenirs** — La cuisine a une table, une casserole et du pain. |
-| maison-cuisine-2 | **Claire** — Je mets les pommes dans la cuisine, près du four. |
-| maison-chambre-0 | **La maison** — Dans la chambre, je dors dans mon lit. |
-| maison-chambre-1 | **Les souvenirs** — La chambre a un lit et une petite lampe. |
-| maison-chambre-2 | **Claire** — Je vais dans ma chambre. Il est tard, je veux dormir. |
-| maison-jardin-0 | **La maison** — Le jardin est derrière la maison. Les fleurs poussent ici. |
-| maison-jardin-1 | **Les souvenirs** — Je mets de l’eau sur les fleurs du jardin. |
-| maison-jardin-2 | **Claire** — Le chat est dans le jardin, sous le grand arbre. |
-| maison-portrait | **La famille de Claire** — Voici ma famille. Mes parents sont Anne et Paul. Ma mère s’appelle Anne. Mon père s’appelle Paul. Mon frère Luc habite près de la gare. Je m’appelle Claire. Luc est mon frère, je suis sa sœur. · « Anne · Paul · Luc · Claire » |
-| maison-reunion | **La table pour deux** — Luc vient ce soir. Mettez la lettre dans le petit livre rouge, sur la table de la cuisine. Prenez deux tasses. Ouvrez la porte du jardin. Attendez avec Claire dans le jardin, sous le grand arbre. |
-| maison-voisine | **Claire** — Je suis votre voisine. Vous êtes chez moi. Vous pouvez entrer. Je ne peux pas partir : je cherche la lettre de mon frère. Pouvez-vous m’aider ? Mon frère et moi, nous pouvons enfin nous retrouver. Ils peuvent venir aussi. |
-| maison-nos-amis | **Une maison accueillante** — Notre maison est aussi votre maison. Le salon est au rez-de-chaussée. Les enfants viennent sans leurs parents. Nos amis viennent avec leurs enfants. Voici ton manteau ; voici son sac. Le vieux fauteuil est près de la nouvelle table. Le beau jardin a de belles fleurs. Un bon repas nous attend. Il est bon de pouvoir parler ensemble. |
-| maison-livres-etagere | **L’étagère** — Un livre est ouvert ; les deux autres livres sont rangés. Un livre, deux livres : la même histoire, plusieurs lecteurs. · « un livre → deux livres » |
-| maison-livres-sac | **Le sac de Luc** — Luc apporte trois livres dans son sac. Son livre rouge est pour Claire ; les autres livres sont pour ses parents. · « trois livres » |
-| maison-livres-famille | **Un livre pour chacun** — Quatre personnes lisent quatre livres. Un livre pour la mère, un livre pour le père, un livre pour la fille et un livre pour le fils. · « quatre livres » |
-| maison-boites-rangement | **Les boîtes de Claire** — Une boîte garde les lettres. Une autre boîte garde les photos. Deux boîtes, deux souvenirs. · « une boîte → deux boîtes » |
-| maison-boites-livraison | **La livraison** — Le facteur apporte trois boîtes. Claire ouvre une boîte, puis range les deux autres boîtes. · « trois boîtes » |
-| maison-boites-cuisine | **Dans le placard** — Dans la cuisine, quatre boîtes gardent le thé, le café, le sucre et le sel. Les boîtes sont sur l’étagère. · « quatre boîtes » |
-| maison-manteaux-porte | **À la porte** — Claire porte un manteau. Luc porte un manteau. Deux personnes, deux manteaux. Ils enlèvent leurs manteaux en entrant. · « un manteau → deux manteaux » |
-| maison-manteaux-famille | **La promenade** — Il fait froid. Le père, la mère et la fille prennent leurs trois manteaux. Un manteau pour chacun. · « trois manteaux » |
-| maison-manteaux-armoire | **L’armoire** — Quatre manteaux sont dans l’armoire. Le petit manteau rouge est à Claire ; les grands manteaux bleus sont à ses parents. Le quatrième manteau est à Luc. · « quatre manteaux » |
-| maison-accord-objets | **Les objets de la famille** — Un petit manteau rouge pour la fille ; une petite boîte rouge pour ses lettres. De petits manteaux rouges et de petites boîtes rouges sont rangés à côté des grands manteaux bleus. · « petits manteaux rouges » |
-| supplement-maison-maison-0 | **Chez Claire** — La maison de Claire a un toit, des fenêtres et une porte. Claire habite dans cette maison. |
-| supplement-maison-maison-1 | **Les souvenirs** — Nous rentrons à la maison. Notre lit, notre cuisine et nos souvenirs sont à l’intérieur. |
-| supplement-maison-maison-2 | **La conversation** — Cette maison se trouve derrière le jardin. Une famille vit sous son toit. |
-| supplement-maison-salon-0 | **Chez Claire** — Dans le salon, nous sommes assis dans les fauteuils. Nous parlons autour de la petite table. |
-| supplement-maison-salon-1 | **Les souvenirs** — Le salon a un canapé et deux fauteuils. Il n’a ni lit ni four : nous recevons nos amis ici. |
-| supplement-maison-salon-2 | **La conversation** — Claire entre dans le salon. Sa famille regarde un livre ensemble sur le canapé. |
-| supplement-maison-famille-0 | **Chez Claire** — Voici la famille de Claire : sa mère Anne, son père Paul et son frère Luc. |
-| supplement-maison-famille-1 | **Les souvenirs** — Cette photo montre toute la famille : les parents et leurs enfants. |
-| supplement-maison-famille-2 | **La conversation** — Toute la famille se retrouve autour de la table. Les parents parlent avec leurs enfants. |
-| supplement-maison-sœur-0 | **Chez Claire** — Claire est la sœur de Luc. Ils ont la même mère et le même père. |
-| supplement-maison-sœur-1 | **Les souvenirs** — Sur cet arbre de famille, Claire est la sœur de Luc. Leurs noms sont sous les mêmes parents. |
-| supplement-maison-sœur-2 | **La conversation** — Luc montre sa sœur Claire sur la photo. Ils sont les deux enfants d’Anne et de Paul. |
-| supplement-maison-frère-0 | **Chez Claire** — Luc est le frère de Claire. Ils ont la même mère et le même père. |
-| supplement-maison-frère-1 | **Les souvenirs** — Sur cet arbre de famille, Luc est le frère de Claire. Leurs noms sont sous les mêmes parents. |
-| supplement-maison-frère-2 | **La conversation** — Claire montre son frère Luc sur la photo. Ils sont les deux enfants d’Anne et de Paul. |
-| supplement-maison-enfant-0 | **Chez Claire** — Claire est une enfant sur cette photo. Son père et sa mère la tiennent par la main. |
-| supplement-maison-enfant-1 | **Les souvenirs** — Cet enfant est le fils d’Anne et de Paul. Il est petit et ses parents sont grands. |
-| supplement-maison-enfant-2 | **La conversation** — Voici un enfant avec ses deux parents. L’enfant est le plus jeune des trois. |
-| supplement-maison-parent-0 | **Chez Claire** — Anne est un parent de Claire : elle est sa mère. Paul est son autre parent : il est son père. |
-| supplement-maison-parent-1 | **Les souvenirs** — Cet enfant marche avec un parent. L’adulte tient la main de son fils. |
-| supplement-maison-parent-2 | **La conversation** — Sur cet arbre de famille, chaque parent est au-dessus de son enfant. La mère et le père sont les deux parents. |
-| supplement-maison-ami-0 | **Chez Claire** — Luc rencontre son ami. Ils aiment passer du temps ensemble ; ils ne sont pas de la même famille. |
-| supplement-maison-ami-1 | **Les souvenirs** — Voici un ami de Claire. Ils se retrouvent au café pour parler et rire ensemble. |
-| supplement-maison-ami-2 | **La conversation** — Son ami vient l’aider à porter une boîte. Ils sont heureux de se revoir. |
-| supplement-maison-voisin-0 | **Chez Claire** — Le voisin de Claire habite dans la maison juste à côté de la sienne. Leurs jardins se touchent. |
-| supplement-maison-voisin-1 | **Les souvenirs** — Le voisin ouvre sa fenêtre. Claire lui parle depuis la fenêtre de la maison d’à côté. |
-| supplement-maison-voisin-2 | **La conversation** — Ce voisin habite à la porte juste à côté de Claire. Ils se saluent chaque matin devant leurs deux maisons. |
-| supplement-maison-ton-0 | **Chez Claire** — Tu tiens ton livre. Le livre est à toi, pas à moi. |
-| supplement-maison-ton-1 | **Les souvenirs** — Ton manteau est sur ta chaise. Tu prends le manteau qui est à toi. |
-| supplement-maison-ton-2 | **La conversation** — Ton sac est à côté de toi. Tu montres le sac qui t’appartient. |
-| supplement-maison-son-0 | **Chez Claire** — Il tient son livre. Ce livre est à lui, pas à moi. |
-| supplement-maison-son-1 | **Les souvenirs** — Elle prend son manteau. Ce manteau est à elle, pas à toi. |
-| supplement-maison-son-2 | **La conversation** — Claire montre le sac de Luc. Voici son sac : le sac est à Luc, pas à Claire. |
-| supplement-maison-notre-0 | **Chez Claire** — Nous tenons notre livre, toi et moi. Le livre est à nous deux. |
-| supplement-maison-notre-1 | **Les souvenirs** — Nous ouvrons notre maison. Toi et moi, nous habitons ici ensemble. |
-| supplement-maison-notre-2 | **La conversation** — Notre jardin est derrière notre maison. Nous le cultivons tous les deux. |
-| supplement-maison-votre-0 | **Chez Claire** — Vous tenez votre livre, madame. Ce livre est à vous, pas à moi. |
-| supplement-maison-votre-1 | **Les souvenirs** — Vous prenez votre manteau, monsieur. Ce manteau est à vous. |
-| supplement-maison-votre-2 | **La conversation** — Voici votre sac. Vous montrez le sac qui vous appartient. |
-| supplement-maison-leur-0 | **Chez Claire** — Ils tiennent leur livre. Ce livre est à eux deux, pas à nous. |
-| supplement-maison-leur-1 | **Les souvenirs** — Elles ouvrent leur maison. Elles habitent toutes les deux dans cette maison. |
-| supplement-maison-leur-2 | **La conversation** — Luc montre le jardin de ses parents. Voici leur jardin : le jardin est à eux, pas à Luc. |
-| supplement-maison-nouveau-0 | **Chez Claire** — Claire ouvre un nouveau livre. Les pages sont propres et personne ne l’a encore lu. |
-| supplement-maison-nouveau-1 | **Les souvenirs** — Luc reçoit un nouveau manteau. Il porte encore son étiquette et n’a jamais été porté. |
-| supplement-maison-nouveau-2 | **La conversation** — Le voisin entre dans son nouveau logement. La peinture vient de sécher et les meubles arrivent aujourd’hui. |
-| supplement-maison-vieux-0 | **Chez Claire** — Ce vieux livre a des pages jaunies et déchirées. Claire le lit depuis de nombreuses années. |
-| supplement-maison-vieux-1 | **Les souvenirs** — Le vieux manteau de Luc a des trous et des boutons manquants. Il l’a porté pendant des années. |
-| supplement-maison-vieux-2 | **La conversation** — Cette photo montre le vieux logement de Claire. Le toit et les murs sont usés par les années. |
-| supplement-maison-aider-0 | **Chez Claire** — La boîte est trop lourde pour Claire seule. Luc vient aider Claire : ils la portent à deux. |
-| supplement-maison-aider-1 | **Les souvenirs** — Le père veut aider son enfant à marcher. Il lui tient la main pour qu’il ne tombe pas. |
-| supplement-maison-aider-2 | **La conversation** — Je peux aider mon ami à trouver sa clé. Nous cherchons ensemble au lieu de le laisser chercher seul. |
-| supplement-maison-chercher-0 | **Chez Claire** — Je veux chercher ma clé. Je regarde sous la table, dans la boîte et derrière la porte. Je ne l’ai pas encore trouvée. |
-| supplement-maison-chercher-1 | **Les souvenirs** — Claire doit chercher la lettre. Elle ouvre chaque boîte et regarde ce qu’il y a dedans. |
-| supplement-maison-chercher-2 | **La conversation** — Luc va chercher la maison sur le plan. Il regarde les rues une par une et se demande où elle est. |
-| supplement-maison-chez-0 | **Chez Claire** — Luc est chez Claire. Il est dans la maison où Claire habite. |
-| supplement-maison-chez-1 | **Les souvenirs** — Nous allons chez Claire. Notre chemin finit devant sa maison. |
-| supplement-maison-chez-2 | **La conversation** — Claire est chez elle. Elle habite ici et ferme sa propre porte. |
+| maison-v2-e-label-home | maison |
+| maison-v2-e-label-garden | jardin |
+| maison-v2-e-label-kitchen | cuisine |
+| maison-v2-e-label-bedroom | chambre |
+| maison-v2-e-label-living | salon |
+| maison-v2-e-label-table-k | table verte |
+| maison-v2-e-label-table-s | table avec livre |
+| maison-v2-e-label-table-b | petite table |
+| maison-v2-e-label-chair-a | petite chaise |
+| maison-v2-e-label-chair-b | chaise bleue |
+| maison-v2-e-label-window | fenêtre |
+| maison-v2-e-label-gate-g | porte verte |
+| maison-v2-e-label-gate-b | porte avec clé |
+| maison-v2-e-label-box-a | boîte jaune |
+| maison-v2-e-label-box-b | boîte rouge |
+| maison-v2-e-label-book-l | livre de Luc |
+| maison-v2-e-label-book-p | grand livre rouge |
+| maison-v2-e-label-book-c | petit livre bleu |
+| maison-v2-e-label-coat-l | manteau bleu |
+| maison-v2-e-label-coat-c | manteau de Claire |
+| maison-v2-e-label-coat-p | beau manteau |
+| maison-v2-e-label-letter-a | lettre jaune |
+| maison-v2-e-label-letter-b | petite lettre bleue |
+| maison-v2-e-label-cup-a | tasse verte |
+| maison-v2-e-label-cup-b | petite tasse |
+| maison-v2-e-label-key-a | clé |
+| maison-v2-e-label-key-b | clé jaune |
+| maison-v2-e-label-new-box | nouvelle boîte |
+| maison-v2-e-label-old-box | vieille boîte |
+| maison-v2-e-label-fine-box | belle boîte |
+| maison-v2-e-label-locked-box | boîte fermée |
+| maison-v2-e-first-owned-key | Ma clé. |
+| maison-v2-e-room-maison-b | Chez Claire, la maison. |
+| maison-v2-e-room-maison-c | La maison de notre famille. |
+| maison-v2-e-room-jardin-b | Le jardin de ma sœur. |
+| maison-v2-e-room-jardin-c | Notre jardin, avec les fleurs. |
+| maison-v2-e-room-cuisine-b | La cuisine, avec le four. |
+| maison-v2-e-room-cuisine-c | Notre cuisine, avec la table. |
+| maison-v2-e-room-chambre-b | Ma chambre, avec mon lit. |
+| maison-v2-e-room-chambre-c | La chambre de mon frère. |
+| maison-v2-e-room-salon-b | Notre salon, avec les fauteuils. |
+| maison-v2-e-room-salon-c | Le salon de ma famille. |
+| maison-v2-e-kin-mère-a | Ma mère, Anne. |
+| maison-v2-e-kin-mère-b | Anne est la mère de Luc. |
+| maison-v2-e-kin-mère-c | Je suis la mère de Luc. |
+| maison-v2-e-kin-père-a | Mon père, Paul. |
+| maison-v2-e-kin-père-b | Paul est le père de Claire. |
+| maison-v2-e-kin-père-c | Je suis le père de Claire. |
+| maison-v2-e-kin-fille-a | Ma fille, Claire. |
+| maison-v2-e-kin-fille-b | Claire est la fille de Paul. |
+| maison-v2-e-kin-fille-c | Je suis la fille d’Anne. |
+| maison-v2-e-kin-fils-a | Mon fils, Luc. |
+| maison-v2-e-kin-fils-b | Luc est le fils d’Anne. |
+| maison-v2-e-kin-fils-c | Je suis le fils de Paul. |
+| maison-v2-e-kin-sœur-a | Ma sœur, Claire. |
+| maison-v2-e-kin-sœur-b | Claire est la sœur de Luc. |
+| maison-v2-e-kin-sœur-c | Luc, je suis ta sœur. |
+| maison-v2-e-kin-frère-a | Mon frère, Luc. |
+| maison-v2-e-kin-frère-b | Luc est le frère de Claire. |
+| maison-v2-e-kin-frère-c | Claire, je suis ton frère. |
+| maison-v2-e-kin-enfant-a | Mon enfant, Luc. |
+| maison-v2-e-kin-enfant-b | Claire est mon enfant. |
+| maison-v2-e-kin-enfant-c | L’enfant de Paul : Luc. |
+| maison-v2-e-kin-parent-a | Anne, mon parent. ⚑ |
+| maison-v2-e-kin-parent-b | Paul est le parent de Luc. |
+| maison-v2-e-kin-parent-c | Un parent avec son enfant. |
+| maison-v2-e-family-a | Ma famille. |
+| maison-v2-e-family-b | Notre famille. |
+| maison-v2-e-family-c | La famille de Claire. |
+| maison-v2-e-friend-a | Jules, mon ami. |
+| maison-v2-e-neighbour-a | Jules, notre voisin. |
+| maison-v2-e-friend-b | Mon ami aide ma mère. |
+| maison-v2-e-neighbour-b | Jules est notre voisin. |
+| maison-v2-e-friend-c | Mon ami cherche mon livre. |
+| maison-v2-e-neighbour-c | Jules est le voisin de Claire. |
+| maison-v2-e-owner-mon-0 | Mon livre. |
+| maison-v2-e-owner-mon-1 | Mon manteau. |
+| maison-v2-e-owner-mon-2 | Mon livre. |
+| maison-v2-e-owner-ma-0 | Ma clé. |
+| maison-v2-e-owner-ma-1 | Ma lettre. |
+| maison-v2-e-owner-ma-2 | Ma boîte. |
+| maison-v2-e-owner-mes-0 | Mes livres. |
+| maison-v2-e-owner-mes-1 | Mes manteaux. |
+| maison-v2-e-owner-mes-2 | Mes boîtes. |
+| maison-v2-e-owner-ton-0 | Luc, ton livre. |
+| maison-v2-e-owner-ton-1 | Luc, ton manteau. |
+| maison-v2-e-owner-ton-2 | Luc, ton livre. |
+| maison-v2-e-owner-son-0 | Luc a son livre. |
+| maison-v2-e-owner-son-1 | Luc a son manteau. |
+| maison-v2-e-owner-son-2 | Luc a son livre. |
+| maison-v2-e-owner-notre-0 | Paul, notre livre. |
+| maison-v2-e-owner-notre-1 | Paul, notre manteau. |
+| maison-v2-e-owner-notre-2 | Paul, notre livre. |
+| maison-v2-e-owner-votre-0 | Paul, votre livre. |
+| maison-v2-e-owner-votre-1 | Paul, votre manteau. |
+| maison-v2-e-owner-votre-2 | Paul, votre livre. |
+| maison-v2-e-owner-leur-0 | Anne et Paul, leur livre. |
+| maison-v2-e-owner-leur-1 | Anne et Paul, leur manteau. |
+| maison-v2-e-owner-leur-2 | Anne et Paul, leur livre. |
+| maison-v2-e-quality-nouveau-0 | nouveau livre |
+| maison-v2-e-quality-nouveau-1 | nouveau manteau |
+| maison-v2-e-quality-nouveau-2 | nouvelle boîte |
+| maison-v2-e-quality-nouveau-d | nouveau sac |
+| maison-v2-e-quality-vieux-0 | vieux livre |
+| maison-v2-e-quality-vieux-1 | vieux manteau |
+| maison-v2-e-quality-vieux-2 | vieille boîte |
+| maison-v2-e-quality-vieux-d | vieux sac |
+| maison-v2-e-quality-beau-0 | beau livre |
+| maison-v2-e-quality-beau-1 | beau manteau |
+| maison-v2-e-quality-beau-2 | belle boîte |
+| maison-v2-e-quality-beau-d | beau sac |
+| maison-v2-e-size-grand-0 | grand livre |
+| maison-v2-e-size-grand-1 | grand manteau |
+| maison-v2-e-size-grand-2 | grand arbre |
+| maison-v2-e-size-grande-0 | grande boîte |
+| maison-v2-e-size-grande-1 | grande maison |
+| maison-v2-e-size-grande-2 | grande porte |
+| maison-v2-e-size-petit-0 | petit livre |
+| maison-v2-e-size-petit-1 | petit manteau |
+| maison-v2-e-size-petit-2 | petit arbre |
+| maison-v2-e-size-petite-0 | petite boîte |
+| maison-v2-e-size-petite-1 | petite chaise |
+| maison-v2-e-size-petite-2 | petite porte |
+| maison-v2-e-plural-book-0 | livres |
+| maison-v2-e-plural-book-1 | livres |
+| maison-v2-e-plural-book-2 | livres |
+| maison-v2-e-plural-box-0 | boîtes |
+| maison-v2-e-plural-box-1 | boîtes |
+| maison-v2-e-plural-box-2 | boîtes |
+| maison-v2-e-plural-coat-0 | manteaux |
+| maison-v2-e-plural-coat-1 | manteaux |
+| maison-v2-e-plural-coat-2 | manteaux |
+| maison-v2-e-can-i-0 | Je peux ouvrir la porte. |
+| maison-v2-e-can-he-0 | Il peut ouvrir la porte. |
+| maison-v2-e-can-we-0 | Nous pouvons ouvrir la porte. |
+| maison-v2-e-can-you-0 | Vous pouvez ouvrir la porte, Paul. |
+| maison-v2-e-can-they-0 | Ils peuvent ouvrir la porte. |
+| maison-v2-e-cannot-0 | Je ne peux pas ouvrir la porte. |
+| maison-v2-e-power-0 | Je veux pouvoir ouvrir la porte. |
+| maison-v2-e-help-0 | Je peux aider Claire. |
+| maison-v2-e-seek-0 | Je veux chercher ma clé. |
+| maison-v2-e-chez-0 | Je suis chez Claire. |
+| maison-v2-e-can-i-1 | Je peux ouvrir la porte. |
+| maison-v2-e-can-he-1 | Il peut ouvrir la porte. |
+| maison-v2-e-can-we-1 | Nous pouvons ouvrir la porte. |
+| maison-v2-e-can-you-1 | Vous pouvez ouvrir la porte, Paul. |
+| maison-v2-e-can-they-1 | Ils peuvent ouvrir la porte. |
+| maison-v2-e-cannot-1 | Je ne peux pas ouvrir la porte. |
+| maison-v2-e-power-1 | Je veux pouvoir ouvrir la porte. |
+| maison-v2-e-help-1 | Je peux aider Claire. |
+| maison-v2-e-seek-1 | Je veux chercher ma lettre. |
+| maison-v2-e-chez-1 | Je suis chez Claire. |
+| maison-v2-e-can-i-2 | Je peux ouvrir la boîte. |
+| maison-v2-e-can-he-2 | Il peut ouvrir la boîte. |
+| maison-v2-e-can-we-2 | Nous pouvons ouvrir la boîte. |
+| maison-v2-e-can-you-2 | Vous pouvez ouvrir la boîte, Paul. |
+| maison-v2-e-can-they-2 | Ils peuvent ouvrir la boîte. |
+| maison-v2-e-cannot-2 | Je ne peux pas ouvrir la boîte. |
+| maison-v2-e-power-2 | Je veux pouvoir ouvrir la boîte. |
+| maison-v2-e-help-2 | Je peux aider Claire. |
+| maison-v2-e-seek-2 | Je veux chercher mon livre. |
+| maison-v2-e-chez-2 | Je suis chez Claire. |
+| maison-v2-e-flower-window | fleur jaune |
+| maison-v2-e-flower-bed | fleur blanche |
+| maison-v2-e-flower-garden | fleur rouge |
+| maison-v2-e-tree-garden | Notre arbre. |
+| maison-v2-e-tree-sapling | Le petit arbre. |
+| maison-v2-e-tree-pot | Mon arbre. |
+| maison-v2-e-task-letter | Prends la lettre sous le manteau bleu. |
+| maison-v2-e-task-envelope | La lettre : dans le petit livre rouge. |
+| maison-v2-e-task-book | Prends le petit livre rouge. |
+| maison-v2-e-task-table | Le livre : sur la table de la cuisine. |
+| maison-v2-e-task-cup | Prends la tasse sur la petite chaise. |
+| maison-v2-e-task-cup-place | La tasse : sur la table avec le livre. |
+| maison-v2-e-task-key | Prends la clé jaune sous les fleurs. |
+| maison-v2-e-task-door | Ouvre la grande porte avec la clé. |
+| maison-v2-e-task-coat | Prends le manteau de mon frère. |
+| maison-v2-e-task-give | Donne le manteau à mon frère. |
+| maison-v2-e-luc-coat | Mon manteau bleu. |
+| maison-v2-e-claire-brother-final | Luc est mon frère. |
+
+### Écriture sur les objets
+
+- home : « maison »
+- garden : « jardin »
+- kitchen : « cuisine »
+- bedroom : « chambre »
+- living : « salon »
+- table-k : « table verte »
+- table-s : « table avec livre »
+- table-b : « petite table »
+- chair-a : « petite chaise »
+- chair-b : « chaise bleue »
+- window : « fenêtre »
+- gate-g : « porte verte »
+- gate-b : « porte avec clé »
+- box-a : « boîte jaune »
+- box-b : « boîte rouge »
+- book-l : « livre de Luc »
+- book-p : « grand livre rouge »
+- book-c : « petit livre bleu »
+- coat-l : « manteau bleu »
+- coat-c : « manteau de Claire »
+- coat-p : « beau manteau »
+- letter-a : « lettre jaune »
+- letter-b : « petite lettre bleue »
+- cup-a : « tasse verte »
+- cup-b : « petite tasse »
+- key-a : « clé »
+- key-b : « clé jaune »
+- anne : « Anne »
+- paul : « Paul »
+- claire : « Claire »
+- luc : « Luc »
+- jules : « Jules »
+- family-wall (top) : « Paul · Anne »
+- family-wall (top) : « Luc · Claire »
+- family-table (top) : « Paul · Anne »
+- family-table (top) : « Luc · Claire »
+- family-garden (top) : « Paul · Anne »
+- family-garden (top) : « Luc · Claire »
+- new-box : « nouvelle boîte »
+- old-box : « vieille boîte »
+- fine-box : « belle boîte »
+- locked-box : « boîte fermée »
+- small-home : « chez Jules »
+- stock-book-0 : « livres »
+- stock-book-1 : « livres »
+- stock-book-2 : « livres »
+- stock-box-0 : « boîtes »
+- stock-box-1 : « boîtes »
+- stock-box-2 : « boîtes »
+- stock-coat-0 : « manteaux »
+- stock-coat-1 : « manteaux »
+- stock-coat-2 : « manteaux »
+- flower-window : « fleur jaune »
+- flower-bed : « fleur blanche »
+- flower-garden : « fleur rouge »
 
 ### Texte dans les illustrations
 
-- maison-possession/maison-possession-0/picture/0 : « ___ livre »
-- maison-possession/maison-possession-1/picture/0 : « ___ clé »
-- maison-possession/maison-possession-2/picture/0 : « ___ livres »
-- maison-accord/maison-accord-0/picture/0 : « Un ___ garçon. »
-- maison-accord/maison-accord-1/picture/0 : « Une ___ fille. »
-- maison-accord/maison-accord-2/picture/0 : « Un ___ garçon. »
-- maison-accord/maison-accord-3/picture/0 : « Une ___ fille. »
-- maison-pluriels/maison-pluriels-0/picture/0 : « Un livre → des ___. »
-- maison-pluriels/maison-pluriels-1/picture/0 : « Une boîte → des ___. »
-- maison-pluriels/maison-pluriels-2/picture/0 : « Un manteau → des ___. »
-- maison-pouvoir/maison-pouvoir-0/picture/0 : « Je ___ ouvrir. »
-- maison-pouvoir/maison-pouvoir-1/picture/0 : « Elle ___ ouvrir. »
-- maison-pouvoir/maison-pouvoir-2/picture/0 : « Nous ___ ouvrir. »
-- maison-pouvoir/maison-pouvoir-3/picture/0 : « Vous ___ ouvrir. »
-- supplement-maison-foyer/supplement-maison-foyer-0/picture/0 : « Une ___. »
-- supplement-maison-foyer/supplement-maison-foyer-1/picture/0 : « Le ___ avec le canapé. »
-- supplement-maison-foyer/supplement-maison-foyer-2/picture/0 : « Toute la ___. »
-- supplement-maison-foyer/supplement-maison-foyer-3/picture/0 : « Luc est ___ Claire. »
-- supplement-maison-liens/supplement-maison-liens-0/picture/0 : « Claire »
-- supplement-maison-liens/supplement-maison-liens-0/picture/1 : « Luc »
-- supplement-maison-liens/supplement-maison-liens-0/picture/2 : « Claire est la ___ de Luc. »
-- supplement-maison-liens/supplement-maison-liens-1/picture/0 : « Claire »
-- supplement-maison-liens/supplement-maison-liens-1/picture/1 : « Luc »
-- supplement-maison-liens/supplement-maison-liens-1/picture/2 : « Luc est le ___ de Claire. »
-- supplement-maison-liens/supplement-maison-liens-2/picture/0 : « Claire est une ___. »
-- supplement-maison-liens/supplement-maison-liens-3/picture/0 : « Anne est un ___ de Claire. »
-- supplement-maison-ensemble/supplement-maison-ensemble-0/picture/0 : « Un ___ au café. »
-- supplement-maison-ensemble/supplement-maison-ensemble-1/picture/0 : « Le ___ habite à côté. »
-- supplement-maison-ensemble/supplement-maison-ensemble-2/picture/0 : « Je peux ___ Claire. »
-- supplement-maison-ensemble/supplement-maison-ensemble-3/picture/0 : « ? »
-- supplement-maison-ensemble/supplement-maison-ensemble-3/picture/1 : « Je veux ___ la clé. »
-- supplement-maison-possessions/supplement-maison-possessions-0/picture/0 : « tu »
-- supplement-maison-possessions/supplement-maison-possessions-0/picture/1 : « Tu as ___ livre. »
-- supplement-maison-possessions/supplement-maison-possessions-1/picture/0 : « Il a ___ livre. »
-- supplement-maison-possessions/supplement-maison-possessions-2/picture/0 : « Nous avons ___ livre. »
-- supplement-maison-possessions/supplement-maison-possessions-3/picture/0 : « vous »
-- supplement-maison-possessions/supplement-maison-possessions-3/picture/1 : « Vous avez ___ livre. »
-- supplement-maison-avant-apres/supplement-maison-avant-apres-0/picture/0 : « Ils ont ___ livre. »
-- supplement-maison-avant-apres/supplement-maison-avant-apres-1/picture/0 : « Un ___ livre. »
-- supplement-maison-avant-apres/supplement-maison-avant-apres-2/picture/0 : « Un ___ livre. »
-- maison-peux-0/picture/0 : « Je ___ ouvrir. »
-- maison-peut-0/picture/0 : « Elle ___ ouvrir. »
-- maison-pouvons-0/picture/0 : « Nous ___ ouvrir. »
-- maison-pouvez-0/picture/0 : « Vous ___ ouvrir. »
-- maison-portrait/picture/0 : « Anne · Paul · Luc · Claire »
-- maison-livres-etagere/picture/0 : « un livre → deux livres »
-- maison-livres-sac/picture/0 : « trois livres »
-- maison-livres-famille/picture/0 : « quatre livres »
-- maison-boites-rangement/picture/0 : « une boîte → deux boîtes »
-- maison-boites-livraison/picture/0 : « trois boîtes »
-- maison-boites-cuisine/picture/0 : « quatre boîtes »
-- maison-manteaux-porte/picture/0 : « un manteau → deux manteaux »
-- maison-manteaux-famille/picture/0 : « trois manteaux »
-- maison-manteaux-armoire/picture/0 : « quatre manteaux »
-- maison-accord-objets/picture/0 : « petits manteaux rouges »
-- supplement-maison-sœur-0/picture/0 : « Claire »
-- supplement-maison-sœur-0/picture/1 : « Luc »
-- supplement-maison-sœur-1/picture/0 : « Claire »
-- supplement-maison-sœur-1/picture/1 : « Luc »
-- supplement-maison-sœur-2/picture/0 : « Claire »
-- supplement-maison-sœur-2/picture/1 : « Luc »
-- supplement-maison-frère-0/picture/0 : « Claire »
-- supplement-maison-frère-0/picture/1 : « Luc »
-- supplement-maison-frère-1/picture/0 : « Claire »
-- supplement-maison-frère-1/picture/1 : « Luc »
-- supplement-maison-frère-2/picture/0 : « Claire »
-- supplement-maison-frère-2/picture/1 : « Luc »
-- supplement-maison-ton-0/picture/0 : « tu »
-- supplement-maison-ton-1/picture/0 : « tu »
-- supplement-maison-ton-2/picture/0 : « tu »
-- supplement-maison-votre-0/picture/0 : « vous »
-- supplement-maison-votre-1/picture/0 : « vous »
-- supplement-maison-votre-2/picture/0 : « vous »
-- supplement-maison-chercher-0/picture/0 : « ? »
-- supplement-maison-chercher-1/picture/0 : « ? »
-- supplement-maison-chercher-2/picture/0 : « ? »
+- maison-v2-03/maison-v2-03-1/picture/0 : « Claire »
+- maison-v2-03/maison-v2-03-1/picture/1 : « Luc »
+- maison-v2-03/maison-v2-03-2/picture/0 : « Claire »
+- maison-v2-03/maison-v2-03-2/picture/1 : « Luc »
+- maison-v2-09/maison-v2-09-3/picture/0 : « ? »
 
 ### Carnet
 
-- **maison-famille — La famille** : mère · père · fille · fils
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **maison-possession — À moi** : mon · ma · mes
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - maison-possession-0 : « ___ livre »
-  - maison-possession-1 : « ___ clé »
-  - maison-possession-2 : « ___ livres »
-- **maison-accord — L’accord et la place** : grand · grande · petit · petite
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - maison-accord-0 : « Un ___ garçon. »
-  - maison-accord-1 : « Une ___ fille. »
-  - maison-accord-2 : « Un ___ garçon. »
-  - maison-accord-3 : « Une ___ fille. »
-- **maison-pluriels — Un et plusieurs** : livres · boîtes · manteaux
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - maison-pluriels-0 : « Un livre → des ___. »
-  - maison-pluriels-1 : « Une boîte → des ___. »
-  - maison-pluriels-2 : « Un manteau → des ___. »
-- **maison-pouvoir — La porte et la clé** : peux · peut · pouvons · pouvez
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - maison-pouvoir-0 : « Je ___ ouvrir. »
-  - maison-pouvoir-1 : « Elle ___ ouvrir. »
-  - maison-pouvoir-2 : « Nous ___ ouvrir. »
-  - maison-pouvoir-3 : « Vous ___ ouvrir. »
-- **maison-pieces — Chez Claire** : cuisine · chambre · jardin
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **supplement-maison-foyer — La maison et ceux qui y vivent** : maison · salon · famille · chez
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-maison-foyer-0 : « Une ___. »
-  - supplement-maison-foyer-1 : « Le ___ avec le canapé. »
-  - supplement-maison-foyer-2 : « Toute la ___. »
-  - supplement-maison-foyer-3 : « Luc est ___ Claire. »
-- **supplement-maison-liens — Les liens de famille** : sœur · frère · enfant · parent
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-maison-liens-0 : « Claire est la ___ de Luc. »
-  - supplement-maison-liens-1 : « Luc est le ___ de Claire. »
-  - supplement-maison-liens-2 : « Claire est une ___. »
-  - supplement-maison-liens-3 : « Anne est un ___ de Claire. »
-- **supplement-maison-ensemble — Les gens autour de nous** : ami · voisin · aider · chercher
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-maison-ensemble-0 : « Un ___ au café. »
-  - supplement-maison-ensemble-1 : « Le ___ habite à côté. »
-  - supplement-maison-ensemble-2 : « Je peux ___ Claire. »
-  - supplement-maison-ensemble-3 : « Je veux ___ la clé. »
-- **supplement-maison-possessions — À toi et à nous** : ton · son · notre · votre
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-maison-possessions-0 : « Tu as ___ livre. »
-  - supplement-maison-possessions-1 : « Il a ___ livre. »
-  - supplement-maison-possessions-2 : « Nous avons ___ livre. »
-  - supplement-maison-possessions-3 : « Vous avez ___ livre. »
-- **supplement-maison-avant-apres — Les objets et leurs propriétaires** : leur · nouveau · vieux
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-maison-avant-apres-0 : « Ils ont ___ livre. »
-  - supplement-maison-avant-apres-1 : « Un ___ livre. »
-  - supplement-maison-avant-apres-2 : « Un ___ livre. »
+- **maison-v2-01 — ✦✦** : maison · jardin · chambre · cuisine · salon
+  - Contrastes déjà rencontrés : maison-v2-e-label-home · maison-v2-e-label-garden · maison-v2-e-label-kitchen · maison-v2-e-label-bedroom · maison-v2-e-label-living · maison-v2-e-room-maison-b · maison-v2-e-room-maison-c · maison-v2-e-room-jardin-b · maison-v2-e-room-jardin-c · maison-v2-e-room-cuisine-b · maison-v2-e-room-cuisine-c · maison-v2-e-room-chambre-b · maison-v2-e-room-chambre-c · maison-v2-e-room-salon-b · maison-v2-e-room-salon-c · maison-v2-e-size-grande-1 · maison-v2-e-task-table
+- **maison-v2-02 — ✦✦✦** : mère · père · fille · fils
+  - Contrastes déjà rencontrés : maison-v2-e-kin-mère-a · maison-v2-e-kin-mère-b · maison-v2-e-kin-mère-c · maison-v2-e-kin-père-a · maison-v2-e-kin-père-b · maison-v2-e-kin-père-c · maison-v2-e-kin-fille-a · maison-v2-e-kin-fille-b · maison-v2-e-kin-fille-c · maison-v2-e-kin-fils-a · maison-v2-e-kin-fils-b · maison-v2-e-kin-fils-c · maison-v2-e-friend-b
+- **maison-v2-03 — ✦✦✦✦** : famille · sœur · frère · enfant · parent
+  - Contrastes déjà rencontrés : maison-v2-e-room-maison-c · maison-v2-e-room-jardin-b · maison-v2-e-room-chambre-c · maison-v2-e-room-salon-c · maison-v2-e-kin-sœur-a · maison-v2-e-kin-sœur-b · maison-v2-e-kin-sœur-c · maison-v2-e-kin-frère-a · maison-v2-e-kin-frère-b · maison-v2-e-kin-frère-c · maison-v2-e-kin-enfant-a · maison-v2-e-kin-enfant-b · maison-v2-e-kin-enfant-c · maison-v2-e-kin-parent-a · maison-v2-e-kin-parent-b · maison-v2-e-kin-parent-c · maison-v2-e-family-a · maison-v2-e-family-b · maison-v2-e-family-c · maison-v2-e-task-coat · maison-v2-e-task-give · maison-v2-e-claire-brother-final
+- **maison-v2-04 — ✦** : mon · ma · mes
+  - Contrastes déjà rencontrés : maison-v2-e-label-home · maison-v2-e-label-coat-l · maison-v2-e-label-coat-c · maison-v2-e-label-coat-p · maison-v2-e-first-owned-key · maison-v2-e-room-maison-b · maison-v2-e-room-maison-c · maison-v2-e-room-jardin-b · maison-v2-e-room-chambre-b · maison-v2-e-room-chambre-c · maison-v2-e-room-salon-c · maison-v2-e-kin-mère-a · maison-v2-e-kin-père-a · maison-v2-e-kin-fille-a · maison-v2-e-kin-fils-a · maison-v2-e-kin-sœur-a · maison-v2-e-kin-frère-a · maison-v2-e-kin-enfant-a · maison-v2-e-kin-enfant-b · maison-v2-e-kin-parent-a · maison-v2-e-family-a · maison-v2-e-friend-a · maison-v2-e-friend-b · maison-v2-e-friend-c · maison-v2-e-owner-mon-0 · maison-v2-e-owner-mon-1 · maison-v2-e-owner-mon-2 · maison-v2-e-owner-ma-0 · maison-v2-e-owner-ma-1 · maison-v2-e-owner-ma-2 · maison-v2-e-owner-mes-0 · maison-v2-e-owner-mes-1 · maison-v2-e-owner-mes-2 · maison-v2-e-owner-ton-1 · maison-v2-e-owner-son-1 · maison-v2-e-owner-notre-1 · maison-v2-e-owner-votre-1 · maison-v2-e-owner-leur-1 · maison-v2-e-quality-nouveau-1 · maison-v2-e-quality-vieux-1 · maison-v2-e-quality-beau-1 · maison-v2-e-size-grand-1 · maison-v2-e-size-grande-1 · maison-v2-e-size-petit-1 · maison-v2-e-plural-coat-0 · maison-v2-e-plural-coat-1 · maison-v2-e-plural-coat-2 · maison-v2-e-seek-0 · maison-v2-e-seek-1 · maison-v2-e-seek-2 · maison-v2-e-tree-pot · maison-v2-e-task-letter · maison-v2-e-task-coat · maison-v2-e-task-give · maison-v2-e-luc-coat · maison-v2-e-claire-brother-final
+- **maison-v2-05 — ✦✦** : ton · son · notre · votre · leur
+  - Contrastes déjà rencontrés : maison-v2-e-label-home · maison-v2-e-room-maison-b · maison-v2-e-room-maison-c · maison-v2-e-room-jardin-c · maison-v2-e-room-cuisine-c · maison-v2-e-room-salon-b · maison-v2-e-kin-frère-c · maison-v2-e-kin-parent-c · maison-v2-e-family-b · maison-v2-e-neighbour-a · maison-v2-e-neighbour-b · maison-v2-e-owner-ton-0 · maison-v2-e-owner-ton-1 · maison-v2-e-owner-ton-2 · maison-v2-e-owner-son-0 · maison-v2-e-owner-son-1 · maison-v2-e-owner-son-2 · maison-v2-e-owner-notre-0 · maison-v2-e-owner-notre-1 · maison-v2-e-owner-notre-2 · maison-v2-e-owner-votre-0 · maison-v2-e-owner-votre-1 · maison-v2-e-owner-votre-2 · maison-v2-e-owner-leur-0 · maison-v2-e-owner-leur-1 · maison-v2-e-owner-leur-2 · maison-v2-e-size-grande-1 · maison-v2-e-flower-window · maison-v2-e-flower-bed · maison-v2-e-flower-garden · maison-v2-e-tree-garden · maison-v2-e-task-key
+- **maison-v2-06 — ✦✦✦** : grand · grande · petit · petite
+  - Contrastes déjà rencontrés : maison-v2-e-label-table-b · maison-v2-e-label-chair-a · maison-v2-e-label-book-p · maison-v2-e-label-book-c · maison-v2-e-label-letter-b · maison-v2-e-label-cup-b · maison-v2-e-size-grand-0 · maison-v2-e-size-grand-1 · maison-v2-e-size-grand-2 · maison-v2-e-size-grande-0 · maison-v2-e-size-grande-1 · maison-v2-e-size-grande-2 · maison-v2-e-size-petit-0 · maison-v2-e-size-petit-1 · maison-v2-e-size-petit-2 · maison-v2-e-size-petite-0 · maison-v2-e-size-petite-1 · maison-v2-e-size-petite-2 · maison-v2-e-tree-sapling · maison-v2-e-task-envelope · maison-v2-e-task-book · maison-v2-e-task-cup · maison-v2-e-task-door
+- **maison-v2-07 — ✦✦✦✦** : nouveau · vieux · beau · manteau
+  - Contrastes déjà rencontrés : maison-v2-e-label-coat-l · maison-v2-e-label-coat-c · maison-v2-e-label-coat-p · maison-v2-e-owner-mon-1 · maison-v2-e-owner-mes-1 · maison-v2-e-owner-ton-1 · maison-v2-e-owner-son-1 · maison-v2-e-owner-notre-1 · maison-v2-e-owner-votre-1 · maison-v2-e-owner-leur-1 · maison-v2-e-quality-nouveau-0 · maison-v2-e-quality-nouveau-1 · maison-v2-e-quality-nouveau-d · maison-v2-e-quality-vieux-0 · maison-v2-e-quality-vieux-1 · maison-v2-e-quality-vieux-d · maison-v2-e-quality-beau-0 · maison-v2-e-quality-beau-1 · maison-v2-e-quality-beau-d · maison-v2-e-size-grand-1 · maison-v2-e-size-petit-1 · maison-v2-e-plural-coat-0 · maison-v2-e-plural-coat-1 · maison-v2-e-plural-coat-2 · maison-v2-e-task-letter · maison-v2-e-task-coat · maison-v2-e-task-give · maison-v2-e-luc-coat
+- **maison-v2-08 — ✦** : peux · peut · pouvons · pouvez · peuvent
+  - Contrastes déjà rencontrés : maison-v2-e-can-i-0 · maison-v2-e-can-he-0 · maison-v2-e-can-we-0 · maison-v2-e-can-you-0 · maison-v2-e-can-they-0 · maison-v2-e-cannot-0 · maison-v2-e-help-0 · maison-v2-e-can-i-1 · maison-v2-e-can-he-1 · maison-v2-e-can-we-1 · maison-v2-e-can-you-1 · maison-v2-e-can-they-1 · maison-v2-e-cannot-1 · maison-v2-e-help-1 · maison-v2-e-can-i-2 · maison-v2-e-can-he-2 · maison-v2-e-can-we-2 · maison-v2-e-can-you-2 · maison-v2-e-can-they-2 · maison-v2-e-cannot-2 · maison-v2-e-help-2
+- **maison-v2-09 — ✦✦** : ami · voisin · aider · chercher · chez
+  - Contrastes déjà rencontrés : maison-v2-e-room-maison-b · maison-v2-e-room-maison-c · maison-v2-e-room-salon-c · maison-v2-e-family-a · maison-v2-e-family-b · maison-v2-e-family-c · maison-v2-e-friend-a · maison-v2-e-neighbour-a · maison-v2-e-friend-b · maison-v2-e-neighbour-b · maison-v2-e-friend-c · maison-v2-e-neighbour-c · maison-v2-e-help-0 · maison-v2-e-seek-0 · maison-v2-e-chez-0 · maison-v2-e-help-1 · maison-v2-e-seek-1 · maison-v2-e-chez-1 · maison-v2-e-help-2 · maison-v2-e-seek-2 · maison-v2-e-chez-2 · maison-v2-e-cannot-0 · maison-v2-e-can-i-0 · maison-v2-e-cannot-1 · maison-v2-e-can-i-1 · maison-v2-e-cannot-2 · maison-v2-e-can-i-2
+- **maison-v2-10 — ✦✦✦** : livres · boîtes · manteaux
+  - Contrastes déjà rencontrés : maison-v2-e-owner-mes-0 · maison-v2-e-owner-mes-1 · maison-v2-e-owner-mes-2 · maison-v2-e-plural-book-0 · maison-v2-e-plural-book-1 · maison-v2-e-plural-book-2 · maison-v2-e-plural-box-0 · maison-v2-e-plural-box-1 · maison-v2-e-plural-box-2 · maison-v2-e-plural-coat-0 · maison-v2-e-plural-coat-1 · maison-v2-e-plural-coat-2
 
 ### Mécanisme
 
-**Une place pour Luc**
+**✦**
 
-Lisez la note près de la table. Préparez la maison pour Luc et Claire.
 
-- **maison-nom** : Qui attend Claire ?
-  - « Sa mère Anne. »
-  - « Son père Paul. »
-  - « Son frère Luc. »
-  - « Sa fille. »
-- **maison-livre** : Où mettez-vous la lettre ?
-  - « Dans le grand livre bleu. »
-  - « Dans le petit livre rouge. »
-  - « Dans la petite boîte jaune. »
-  - « Sous le grand livre rouge. »
-- **maison-piece** : Où mettez-vous le livre ?
-  - « Sur la table de la cuisine. »
-  - « Sous le lit de la chambre. »
-  - « Dans le jardin. »
-  - « Devant la gare. »
-- **maison-tasses** : Combien de tasses prenez-vous ?
-  - « Une tasse. »
-  - « Deux tasses. »
-  - « Trois tasses. »
-  - « Quatre tasses. »
-- **maison-porte** : Quelle porte ouvrez-vous ?
-  - « La porte de la chambre. »
-  - « La porte de la gare. »
-  - « La porte du jardin. »
-  - « La porte du café. »
-- **maison-attendre** : Où attendez-vous Luc ?
-  - « Dans la chambre. »
-  - « Sous le grand arbre du jardin. »
-  - « Devant la gare. »
-  - « À côté du café. »
 
-Claire regarde la lettre. « C’est l’écriture de Luc. Vous pouvez la lire avec moi ? »
+Expected physical sequence (internal data for review, never a player translation):
+
+- 1. {"kind":"take","object":"letter-a"} · preuve : maison-v2-e-task-letter
+- 2. {"kind":"place","object":"letter-a","target":"book-l","relation":"in"} · preuve : maison-v2-e-task-envelope
+- 3. {"kind":"take","object":"book-l"} · preuve : maison-v2-e-task-book
+- 4. {"kind":"place","object":"book-l","target":"table-k","relation":"on"} · preuve : maison-v2-e-task-table
+- 5. {"kind":"take","object":"cup-a"} · preuve : maison-v2-e-task-cup
+- 6. {"kind":"place","object":"cup-a","target":"table-k","relation":"on"} · preuve : maison-v2-e-task-cup-place
+- 7. {"kind":"take","object":"key-a"} · preuve : maison-v2-e-task-key
+- 8. {"kind":"operate","object":"gate-g","operation":"open","tool":"key-a"} · preuve : maison-v2-e-task-door
+- 9. {"kind":"take","object":"coat-l"} · preuve : maison-v2-e-task-coat
+- 10. {"kind":"deliver","object":"coat-l","target":"luc"} · preuve : maison-v2-e-task-give
+
+
+✧
 
 ## Les lettres
 
-**Ce que les mots gardent**
-
-Deux lettres, deux voix, une même histoire. Ce qui semblait perdu était simplement en chemin.
-
-**PR B debt — legacy content, not yet migrated.**
+**Situated design checks apply.**
 
 ### Rencontres
 
 | ID | Texte français |
 | --- | --- |
-| lettres-lu-0 | **Le souvenir** — Hier, j’ai lu ta lettre. Le livre est ouvert devant moi. |
-| lettres-lu-1 | **La lettre** — J’ai lu les mots sur le billet, puis j’ai pris le train. |
-| lettres-lu-2 | **Le récit** — J’ai lu ton adresse sur l’enveloppe. Maintenant je sais où tu habites. |
-| lettres-ecrit-0 | **Le souvenir** — Hier, j’ai écrit une lettre. Voici mon crayon et la page. |
-| lettres-ecrit-1 | **La lettre** — J’ai écrit ton adresse sur l’enveloppe. Les mots sont encore sur le papier. |
-| lettres-ecrit-2 | **Le récit** — J’ai écrit : « Je viens demain. » Maintenant, tu peux lire ma promesse. |
-| lettres-pris-0 | **Le souvenir** — J’ai pris la clé sur la table. Maintenant, j’ai la clé. |
-| lettres-pris-1 | **La lettre** — J’ai pris le train à midi. Le billet est dans ma poche. |
-| lettres-pris-2 | **Le récit** — J’ai pris le petit livre rouge. La table est vide maintenant. |
-| lettres-donne-0 | **Le souvenir** — J’ai donné la clé à Claire. Maintenant, Claire a la clé. |
-| lettres-donne-1 | **La lettre** — J’ai donné deux euros au marchand. Il a l’argent. |
-| lettres-donne-2 | **Le récit** — J’ai donné la lettre à mon père. Il tient la lettre. |
-| lettres-vu-0 | **Le souvenir** — J’ai vu Claire dans le jardin. Elle était sous le grand arbre. |
-| lettres-vu-1 | **La lettre** — J’ai vu le train partir. Je l’ai regardé depuis le quai. |
-| lettres-vu-2 | **Le récit** — J’ai vu ta photo sur le mur. Je sais maintenant qui tu es. |
-| lettres-trouve-0 | **Le souvenir** — J’ai trouvé la clé sous le livre. Je la cherchais ; maintenant, je l’ai. |
-| lettres-trouve-1 | **La lettre** — J’ai trouvé ta lettre dans la boîte. Je peux enfin la lire. |
-| lettres-trouve-2 | **Le récit** — J’ai trouvé la maison de Claire. Je ne cherche plus son adresse. |
-| lettres-perdu-0 | **Le souvenir** — J’ai perdu ma clé. Ma poche est vide, je ne peux pas ouvrir. |
-| lettres-perdu-1 | **La lettre** — J’ai perdu ma lettre dans le train. Je la cherche partout. |
-| lettres-perdu-2 | **Le récit** — J’ai perdu mon billet. Le train part sans moi. |
-| lettres-photo-0 | **Le souvenir** — Sur la photo, Claire et Luc sont enfants. |
-| lettres-photo-1 | **La lettre** — Je regarde la photo de ma famille. Elle garde nos visages. |
-| lettres-photo-2 | **Le récit** — Cette photo montre le jardin avant la grande pluie. |
-| lettres-enveloppe-0 | **Le souvenir** — La lettre est dans l’enveloppe. Le timbre est sur l’enveloppe. |
-| lettres-enveloppe-1 | **La lettre** — J’ouvre l’enveloppe pour lire la lettre. |
-| lettres-enveloppe-2 | **Le récit** — Je ferme l’enveloppe. La lettre est prête à partir. |
-| lettres-adresse-0 | **Le souvenir** — L’adresse est écrite au milieu de l’enveloppe : « Claire, 3, rue de la Gare ». |
-| lettres-adresse-1 | **La lettre** — Voici mon adresse. Avec ces mots et ce numéro, vous pouvez trouver ma maison. |
-| lettres-adresse-2 | **Le récit** — Le facteur lit l’adresse. Il apporte la lettre à la bonne maison. |
-| lettres-timbre-0 | **Le souvenir** — Le timbre est le petit carré en haut de l’enveloppe. |
-| lettres-timbre-1 | **La lettre** — J’achète un timbre à la poste et je le colle sur l’enveloppe. |
-| lettres-timbre-2 | **Le récit** — Cette enveloppe ne peut pas partir : elle n’a pas de timbre. |
-| lettres-hier-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Hier, c’était le quatorze. · « 14 · 15 · 16 » |
-| lettres-hier-1 | **La lettre** — Hier, j’ai écrit la lettre. Aujourd’hui, tu la lis. · « Hier » |
-| lettres-hier-2 | **Le récit** — Hier est avant aujourd’hui. La journée d’hier est finie. |
-| lettres-aujourdhui-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Le quinze est entouré. · « 14 · 15 · 16 » |
-| lettres-aujourdhui-1 | **La lettre** — Hier, j’ai écrit. Aujourd’hui, je suis ici et je parle avec toi. |
-| lettres-aujourdhui-2 | **Le récit** — Aujourd’hui est entre hier et demain. C’est notre journée. |
-| lettres-demain-0 | **Le souvenir** — Aujourd’hui, nous sommes le quinze. Demain, nous serons le seize. · « 14 · 15 · 16 » |
-| lettres-demain-1 | **La lettre** — Aujourd’hui, je prépare la table. Demain, Luc vient. |
-| lettres-demain-2 | **Le récit** — Demain est après aujourd’hui. Cette journée n’a pas encore commencé. |
-| lettres-lettre-luc | **La lettre de Luc** — Claire, hier, j’ai pris le train à midi. Dans le train, j’ai écrit ton adresse sur une enveloppe. Puis j’ai perdu la lettre près de l’atelier. Aujourd’hui, j’ai retrouvé ton adresse dans mon livre. Demain, je viens chez toi à six heures. Je t’attends dans le jardin, sous le grand arbre. Ton frère, Luc. · « Luc → Claire » |
-| lettres-lettre-claire | **La réponse de Claire** — Luc, j’ai trouvé ta photo dans ma boîte. J’ai donné ta première lettre à notre père. Je n’ai pas oublié notre promesse. Je peux enfin comprendre ton histoire. Je sais que tu reviens. Je ne veux pas oublier notre promesse. À demain, dans le jardin ! Ta sœur, Claire. · « Claire → Luc » |
-| lettres-journal-claire | **Le carnet de Claire** — Avant de partir, Luc a promis de revenir. Après son départ, j’ai gardé ses lettres. Je regarde toujours notre photo. Je cherche encore sa première lettre. J’ai déjà préparé deux tasses. Bientôt, nous serons ensemble. Ce souvenir est notre histoire ; notre rendez-vous est demain. Je ne veux plus perdre tes lettres. · « Claire » |
-| supplement-lettres-toujours-0 | **La mémoire de Claire** — Le matin, à midi et le soir, Claire boit du café. Elle boit toujours du café : jamais du thé. |
-| supplement-lettres-toujours-1 | **Les mots de Luc** — Le livre est ouvert le matin, à midi et le soir. Il est toujours ouvert, à toute heure. |
-| supplement-lettres-toujours-2 | **Les jours ensemble** — La fleur reste dans le jardin le matin, à midi et le soir. Elle est toujours au même endroit. |
-| supplement-lettres-déjà-0 | **La mémoire de Claire** — La poste ouvre à midi. À dix heures, Luc a déjà écrit la lettre : il a fini avant l’ouverture. |
-| supplement-lettres-déjà-1 | **Les mots de Luc** — Les amis arrivent à une heure. À midi, la table est déjà prête : Claire a fini de la préparer. |
-| supplement-lettres-déjà-2 | **Les jours ensemble** — Luc part à sept heures. À six heures, sa boîte est déjà prête : il l’a fermée avant de partir. |
-| supplement-lettres-enfin-0 | **La mémoire de Claire** — Claire cherche sa clé sous le lit, dans la boîte, derrière la porte. Elle trouve enfin la clé : la longue recherche est terminée. |
-| supplement-lettres-enfin-1 | **Les mots de Luc** — Luc a ouvert cinq boîtes sans trouver la lettre. Il ouvre la sixième : il trouve enfin la lettre. La recherche est terminée. |
-| supplement-lettres-enfin-2 | **Les jours ensemble** — Les voyageurs marchent longtemps sur le chemin. Ils arrivent enfin à la maison : le long voyage est terminé. |
-| supplement-lettres-bientôt-0 | **La mémoire de Claire** — Il est onze heures cinquante-cinq. Le train part à midi. Le train va bientôt partir : dans cinq minutes. |
-| supplement-lettres-bientôt-1 | **Les mots de Luc** — Il est cinq heures cinquante-cinq. Luc arrive à six heures. Il arrive bientôt : dans cinq minutes. |
-| supplement-lettres-bientôt-2 | **Les jours ensemble** — Il est sept heures cinquante-cinq. Le pain sera prêt à huit heures. Bientôt, nous pourrons le manger : dans cinq minutes. |
-| supplement-lettres-histoire-0 | **La mémoire de Claire** — Luc raconte cette histoire : il a pris le train, perdu une lettre, puis retrouvé sa sœur. Chaque image raconte un moment de cette histoire. |
-| supplement-lettres-histoire-1 | **Les mots de Luc** — Dans ce livre, l’histoire commence avec une lettre et finit par des retrouvailles. Les pages racontent les événements dans l’ordre. |
-| supplement-lettres-histoire-2 | **Les jours ensemble** — Claire raconte la même histoire à sa famille. D’abord le départ, puis le voyage, enfin le retour de Luc. |
-| supplement-lettres-souvenir-0 | **La mémoire de Claire** — Cette photo est un souvenir de leur enfance. En la regardant, Claire revoit le jardin où elle jouait avec Luc. |
-| supplement-lettres-souvenir-1 | **Les mots de Luc** — Ce portrait est un souvenir de son père. En le regardant, Claire repense aux histoires qu’il lui racontait autrefois. |
-| supplement-lettres-souvenir-2 | **Les jours ensemble** — Le souvenir du jardin revient à Claire. Elle revoit en pensée les fleurs du jardin où elle jouait avec Luc. |
-| supplement-lettres-promesse-0 | **La mémoire de Claire** — Luc dit : « Demain, je viens. Tu peux compter sur moi. » Claire garde cette promesse. Le lendemain, Luc vient comme il l’a promis. |
-| supplement-lettres-promesse-1 | **Les mots de Luc** — Le père fait une promesse : « Je vais réparer ta chaise. » Puis il tient sa promesse et la chaise est réparée. |
-| supplement-lettres-promesse-2 | **Les jours ensemble** — Claire dit : « Je garderai ta lettre, toujours. » Cette promesse dure : des années plus tard, la lettre est encore dans sa boîte. |
-| supplement-lettres-rendez_vous-0 | **La mémoire de Claire** — Deux amis ont rendez-vous demain à midi dans le jardin. Ils ont choisi ensemble le même lieu et la même heure. |
-| supplement-lettres-rendez_vous-1 | **Les mots de Luc** — Les deux amis ont rendez-vous au café à six heures. Leurs deux calendriers indiquent le café et six heures. |
-| supplement-lettres-rendez_vous-2 | **Les jours ensemble** — Le père a rendez-vous à la gare à huit heures. L’autre voyageur l’attend au lieu et à l’heure convenus. |
-| supplement-lettres-retrouver-0 | **La mémoire de Claire** — Claire veut retrouver sa lettre perdue. Luc lui rapporte la même lettre : elle l’a de nouveau. |
-| supplement-lettres-retrouver-1 | **Les mots de Luc** — Claire peut retrouver la photo de son enfance. Luc lui rapporte la photo : elle la reconnaît, c’est celle qu’elle cherchait. |
-| supplement-lettres-retrouver-2 | **Les jours ensemble** — Luc peut retrouver sa clé perdue. Claire lui rapporte la clé : il la reconnaît, c’est celle qu’il cherchait. |
-| supplement-lettres-revenir-0 | **La mémoire de Claire** — Luc quitte la maison, puis fait le chemin dans l’autre sens. Il veut revenir à la maison d’où il est parti. |
-| supplement-lettres-revenir-1 | **Les mots de Luc** — Le train quitte la gare, fait son voyage et peut revenir à la même gare. Le voyage forme une boucle. |
-| supplement-lettres-revenir-2 | **Les jours ensemble** — Claire va au café. Puis elle doit revenir chez elle : elle refait le chemin vers sa propre maison. |
-| supplement-lettres-oublier-0 | **La mémoire de Claire** — Luc sort sans prendre son livre. Il ne voulait pas oublier son livre, mais il n’y a pas pensé. Dans la rue, il se rappelle le livre resté sur la table. |
-| supplement-lettres-oublier-1 | **Les mots de Luc** — Claire regarde la table et voit la clé de Luc. Il vient de partir sans sa clé : il a dû oublier de la prendre. |
-| supplement-lettres-oublier-2 | **Les jours ensemble** — Luc voulait offrir une fleur à Claire, mais il est parti sans prendre la fleur. Il ne voulait pas oublier son cadeau ; il n’y a plus pensé au moment de partir. |
+| lettres-v2-e-envelope-0 | L’enveloppe. |
+| lettres-v2-e-address-0 | L’adresse. |
+| lettres-v2-e-photo-0 | La photo de Luc. |
+| lettres-v2-e-stamp-0 | Le timbre. |
+| lettres-v2-e-envelope-1 | L’enveloppe. |
+| lettres-v2-e-address-1 | L’adresse. |
+| lettres-v2-e-photo-1 | La photo de Claire. |
+| lettres-v2-e-stamp-1 | Le timbre. |
+| lettres-v2-e-envelope-2 | L’enveloppe. |
+| lettres-v2-e-address-2 | L’adresse. |
+| lettres-v2-e-photo-2 | La photo du jardin. |
+| lettres-v2-e-stamp-2 | Le timbre. |
+| lettres-v2-e-lire-0 | Je peux lire la lettre. |
+| lettres-v2-e-lu-past-0 | Hier, j’ai lu la lettre. |
+| lettres-v2-e-écrire-0 | Je veux écrire une lettre. |
+| lettres-v2-e-écrit-past-0 | Hier, j’ai écrit une lettre. |
+| lettres-v2-e-prendre-0 | Je prends la clé. |
+| lettres-v2-e-pris-past-0 | Hier, j’ai pris la clé. |
+| lettres-v2-e-donner-0 | Je donne la clé. |
+| lettres-v2-e-donné-past-0 | Hier, j’ai donné la clé. |
+| lettres-v2-e-voir-0 | Je veux voir la photo. |
+| lettres-v2-e-vu-past-0 | Hier, j’ai vu la photo. |
+| lettres-v2-e-trouver-0 | Je veux trouver la clé. |
+| lettres-v2-e-trouvé-past-0 | Hier, j’ai trouvé la clé. |
+| lettres-v2-e-perdre-0 | Je ne veux pas perdre ma clé. |
+| lettres-v2-e-perdu-past-0 | Hier, j’ai perdu ma clé. |
+| lettres-v2-e-lire-1 | Je peux lire le billet. |
+| lettres-v2-e-lu-past-1 | Hier, j’ai lu le billet. |
+| lettres-v2-e-écrire-1 | Je veux écrire sur l’enveloppe. |
+| lettres-v2-e-écrit-past-1 | Hier, j’ai écrit sur l’enveloppe. |
+| lettres-v2-e-prendre-1 | Je prends le livre. |
+| lettres-v2-e-pris-past-1 | Hier, j’ai pris le livre. |
+| lettres-v2-e-donner-1 | Je donne la lettre. |
+| lettres-v2-e-donné-past-1 | Hier, j’ai donné la lettre. |
+| lettres-v2-e-voir-1 | Je veux voir la maison. |
+| lettres-v2-e-vu-past-1 | Hier, j’ai vu la maison. |
+| lettres-v2-e-trouver-1 | Je veux trouver la lettre. |
+| lettres-v2-e-trouvé-past-1 | Hier, j’ai trouvé la lettre. |
+| lettres-v2-e-perdre-1 | Je ne veux pas perdre ma lettre. |
+| lettres-v2-e-perdu-past-1 | Hier, j’ai perdu ma lettre. |
+| lettres-v2-e-lire-2 | Je peux lire le livre. |
+| lettres-v2-e-lu-past-2 | Hier, j’ai lu le livre. |
+| lettres-v2-e-écrire-2 | Je veux écrire dans le livre. |
+| lettres-v2-e-écrit-past-2 | Hier, j’ai écrit dans le livre. |
+| lettres-v2-e-prendre-2 | Je prends la lettre. |
+| lettres-v2-e-pris-past-2 | Hier, j’ai pris la lettre. |
+| lettres-v2-e-donner-2 | Je donne la photo. |
+| lettres-v2-e-donné-past-2 | Hier, j’ai donné la photo. |
+| lettres-v2-e-voir-2 | Je veux voir le train. |
+| lettres-v2-e-vu-past-2 | Hier, j’ai vu le train. |
+| lettres-v2-e-trouver-2 | Je veux trouver la photo. |
+| lettres-v2-e-trouvé-past-2 | Hier, j’ai trouvé la photo. |
+| lettres-v2-e-perdre-2 | Je ne veux pas perdre mon billet. |
+| lettres-v2-e-perdu-past-2 | Hier, j’ai perdu mon billet. |
+| lettres-v2-e-crayon-0 | Le crayon. |
+| lettres-v2-e-crayon-1 | Le crayon. |
+| lettres-v2-e-crayon-2 | Le crayon. |
+| lettres-v2-e-possession-claire | Maintenant, j’ai la photo. |
+| lettres-v2-e-possession-anne | Maintenant, j’ai le livre. |
+| lettres-v2-e-possession-luc | Maintenant, j’ai la clé. |
+| lettres-v2-e-hier-0 | Hier, le quatorze. · « 14 · 15 · 16 » |
+| lettres-v2-e-aujourd_hui-0 | Aujourd’hui, le quinze. · « 14 · 15 · 16 » |
+| lettres-v2-e-demain-0 | Demain, le seize. · « 14 · 15 · 16 » |
+| lettres-v2-e-hier-1 | Hier, le quatorze. · « 14 · 15 · 16 » |
+| lettres-v2-e-aujourd_hui-1 | Aujourd’hui, le quinze. · « 14 · 15 · 16 » |
+| lettres-v2-e-demain-1 | Demain, le seize. · « 14 · 15 · 16 » |
+| lettres-v2-e-hier-2 | Hier, le quatorze. · « 14 · 15 · 16 » |
+| lettres-v2-e-aujourd_hui-2 | Aujourd’hui, le quinze. · « 14 · 15 · 16 » |
+| lettres-v2-e-demain-2 | Demain, le seize. · « 14 · 15 · 16 » |
+| lettres-v2-e-five-minutes | 5 min · « 00:00 → 00:05 » |
+| lettres-v2-e-toujours-0 | Matin, midi, soir : toujours ma photo. |
+| lettres-v2-e-déjà-0 | Avant midi, j’ai déjà écrit. |
+| lettres-v2-e-enfin-0 | Je cherche. Enfin, je trouve la clé. |
+| lettres-v2-e-bientôt-0 | Onze heures cinquante-cinq. Bientôt, midi. |
+| lettres-v2-e-histoire-0 | Une histoire : le train, puis la lettre. |
+| lettres-v2-e-souvenir-0 | Un souvenir : la photo du jardin. |
+| lettres-v2-e-promesse-0 | Une promesse : demain, je reviens. |
+| lettres-v2-e-rendez_vous-0 | Notre rendez-vous. Demain, à midi, dans le jardin. |
+| lettres-v2-e-retrouver-0 | Je veux retrouver la même lettre. |
+| lettres-v2-e-revenir-0 | Je veux revenir à la maison. |
+| lettres-v2-e-oublier-0 | Je ne veux pas oublier mon livre. |
+| lettres-v2-e-savoir-0 | Je veux savoir où est la maison. |
+| lettres-v2-e-comprendre-0 | Je veux comprendre la lettre. |
+| lettres-v2-e-mais-0 | Boîte ouverte, mais porte fermée. |
+| lettres-v2-e-toujours-1 | Matin, midi, soir : toujours mon livre. |
+| lettres-v2-e-déjà-1 | Avant midi, j’ai déjà lu. |
+| lettres-v2-e-enfin-1 | Je cherche. Enfin, je trouve la lettre. |
+| lettres-v2-e-bientôt-1 | Cinq heures cinquante-cinq. Bientôt, six heures. |
+| lettres-v2-e-histoire-1 | Notre histoire : la lettre, puis le jardin. |
+| lettres-v2-e-souvenir-1 | Un souvenir : la photo du père. |
+| lettres-v2-e-promesse-1 | Une promesse : demain, je donne la lettre. |
+| lettres-v2-e-rendez_vous-1 | Rendez-vous demain, à six heures, au café. |
+| lettres-v2-e-retrouver-1 | Je veux retrouver la même photo. |
+| lettres-v2-e-revenir-1 | Je veux revenir à la gare. |
+| lettres-v2-e-oublier-1 | Je ne veux pas oublier ma clé. |
+| lettres-v2-e-savoir-1 | Je veux savoir où est la lettre. |
+| lettres-v2-e-comprendre-1 | Je veux comprendre le plan. |
+| lettres-v2-e-mais-1 | Paul a du café, mais pas Anne. |
+| lettres-v2-e-toujours-2 | Matin, midi, soir : toujours la fleur. |
+| lettres-v2-e-déjà-2 | Avant midi, j’ai déjà donné la photo. |
+| lettres-v2-e-enfin-2 | Je cherche. Enfin, je trouve la maison. |
+| lettres-v2-e-bientôt-2 | Sept heures cinquante-cinq. Bientôt, huit heures. |
+| lettres-v2-e-histoire-2 | Notre histoire : le train, la lettre, le jardin. |
+| lettres-v2-e-souvenir-2 | Un souvenir : la photo de notre famille. |
+| lettres-v2-e-promesse-2 | Une promesse : demain, je donne la clé. |
+| lettres-v2-e-rendez_vous-2 | Rendez-vous demain, à huit heures, à la gare. |
+| lettres-v2-e-retrouver-2 | Je veux retrouver la même clé. |
+| lettres-v2-e-revenir-2 | Je veux revenir au café. |
+| lettres-v2-e-oublier-2 | Je ne veux pas oublier ma lettre. |
+| lettres-v2-e-savoir-2 | Je veux savoir où est la clé. |
+| lettres-v2-e-comprendre-2 | Je veux comprendre le livre. |
+| lettres-v2-e-mais-2 | Le panier est ici, mais pas le sac. |
+| lettres-v2-e-return-word | Je reviens. |
+| lettres-v2-e-read-result | Je sais. Je comprends. |
+| lettres-v2-e-today | Aujourd’hui, le quinze. · « 15 » |
+| lettres-v2-e-luc-letter | 14 · Claire, j’ai pris le train à midi. J’ai écrit ton adresse sur l’enveloppe. Puis j’ai perdu ma lettre. Je reviens demain à six heures. Dans le jardin. Luc. |
+| lettres-v2-e-claire-letter | 15 · Luc, hier tu as perdu la lettre. J’ai trouvé ta photo dans ma boîte. J’ai donné ta lettre à notre père. Aujourd’hui, la lettre est dans le jardin. Aujourd’hui, notre rendez-vous est à six heures. Je veux comprendre ton histoire. Claire. |
+| lettres-v2-e-found-address | L’adresse de Claire. |
+| lettres-v2-e-claire-reply | J’ai une photo. |
+| lettres-v2-e-task-key | Prends la clé sous le livre rouge. |
+| lettres-v2-e-task-gate | Ouvre la grande porte du jardin. |
+| lettres-v2-e-task-letter | Prends la lettre d’hier. · « 14 · 15 · 16 » |
+| lettres-v2-e-task-envelope | Dans l’enveloppe. L’adresse est dans le livre rouge. |
+| lettres-v2-e-task-take-envelope | Prends l’enveloppe avec la lettre d’hier, pas l’enveloppe rouge. |
+| lettres-v2-e-task-stamp | Avec le timbre sous la photo de Luc. |
+| lettres-v2-e-task-recipient | Pour ma sœur. Elle a la photo. |
+
+### Écriture sur les objets
+
+- garden-gate : « porte verte »
+- small-gate : « porte du jardin »
+- luc : « Luc »
+- claire : « Claire »
+- anne : « Anne »
+- paul : « Paul »
+- book-red : « livre rouge »
+- key-yellow : « clé jaune »
+- key-red : « clé rouge »
+- letter-14 : « 14 »
+- letter-15 : « 15 »
+- envelope-3 : « 3 »
+- envelope-3 (top) : « rue de la Gare »
+- address-0 : « 3 »
+- address-0 (top) : « rue de la Gare »
+- photo-0 : « photo de Luc »
+- stamp-0 : « timbre »
+- envelope-8 : « enveloppe rouge »
+- envelope-8 (top) : « rue du Jardin »
+- address-1 : « 8 »
+- address-1 (top) : « rue du Jardin »
+- photo-1 : « photo de Claire »
+- stamp-1 : « timbre »
+- envelope-11 : « enveloppe jaune »
+- envelope-11 (top) : « rue du Marché »
+- address-2 : « 11 »
+- address-2 (top) : « rue du Marché »
+- photo-2 : « photo du jardin »
+- stamp-2 : « timbre »
+- pencil-0 : « crayon »
+- pencil-1 : « crayon »
+- pencil-2 : « crayon »
+- five-minutes : « 5 min »
 
 ### Texte dans les illustrations
 
-- lettres-actions/lettres-actions-0/picture/0 : « Hier, j’ai ___.  »
-- lettres-actions/lettres-actions-1/picture/0 : « Hier, j’ai ___.  »
-- lettres-actions/lettres-actions-2/picture/0 : « Hier, j’ai ___.  »
-- lettres-actions/lettres-actions-3/picture/0 : « Hier, j’ai ___.  »
-- lettres-chercher/lettres-chercher-0/picture/0 : « Hier, j’ai ___.  »
-- lettres-chercher/lettres-chercher-1/picture/0 : « Hier, j’ai ___.  »
-- lettres-chercher/lettres-chercher-2/picture/0 : « ? »
-- lettres-chercher/lettres-chercher-2/picture/1 : « Hier, j’ai ___.  »
-- lettres-courrier/lettres-courrier-2/picture/0 : « Claire »
-- lettres-courrier/lettres-courrier-2/picture/1 : « 3, rue de la Gare »
-- lettres-jours/lettres-jours-0/picture/0 : « 14 »
-- lettres-jours/lettres-jours-0/picture/1 : « 15 »
-- lettres-jours/lettres-jours-0/picture/2 : « 16 »
-- lettres-jours/lettres-jours-0/picture/3 : « 14 · 15 · 16 »
-- lettres-jours/lettres-jours-1/picture/0 : « 14 »
-- lettres-jours/lettres-jours-1/picture/1 : « 15 »
-- lettres-jours/lettres-jours-1/picture/2 : « 16 »
-- lettres-jours/lettres-jours-1/picture/3 : « 14 · 15 · 16 »
-- lettres-jours/lettres-jours-2/picture/0 : « 14 »
-- lettres-jours/lettres-jours-2/picture/1 : « 15 »
-- lettres-jours/lettres-jours-2/picture/2 : « 16 »
-- lettres-jours/lettres-jours-2/picture/3 : « 14 · 15 · 16 »
-- supplement-lettres-temps/supplement-lettres-temps-0/picture/0 : « Chaque jour, sans exception : ___. »
-- supplement-lettres-temps/supplement-lettres-temps-1/picture/0 : « Avant l’heure, c’est ___ fait. »
-- supplement-lettres-temps/supplement-lettres-temps-2/picture/0 : « Après une longue attente : ___ ! »
-- supplement-lettres-temps/supplement-lettres-temps-3/picture/0 : « 5 min »
-- supplement-lettres-temps/supplement-lettres-temps-3/picture/1 : « Dans cinq minutes : ___. »
-- supplement-lettres-traces/supplement-lettres-traces-0/picture/0 : « Il raconte une ___. »
-- supplement-lettres-traces/supplement-lettres-traces-1/picture/0 : « Une photo du passé, un ___. »
-- supplement-lettres-traces/supplement-lettres-traces-2/picture/0 : « « Tu peux compter sur moi » : une »
-- supplement-lettres-traces/supplement-lettres-traces-2/picture/1 : « ___. »
-- supplement-lettres-retours/supplement-lettres-retours-0/picture/0 : « Même lieu, même heure : un ___. »
-- supplement-lettres-retours/supplement-lettres-retours-1/picture/0 : « Il veut ___ sa clé perdue. »
-- supplement-lettres-retours/supplement-lettres-retours-2/picture/0 : « Il veut ___ chez lui. »
-- supplement-lettres-retours/supplement-lettres-retours-3/picture/0 : « ? »
-- supplement-lettres-retours/supplement-lettres-retours-3/picture/1 : « Il ne veut pas ___ sa clé. »
-- lettres-troisieme/picture/0 : « ? »
-- lettres-jour/picture/0 : « 14 »
-- lettres-jour/picture/1 : « 15 »
-- lettres-jour/picture/2 : « 16 »
-- lettres-lu-2/picture/0 : « Claire »
-- lettres-lu-2/picture/1 : « 3, rue de la Gare »
-- lettres-ecrit-1/picture/0 : « Claire »
-- lettres-ecrit-1/picture/1 : « 3, rue de la Gare »
-- lettres-donne-1/picture/0 : « € »
-- lettres-donne-1/picture/1 : « € »
-- lettres-perdu-0/picture/0 : « ? »
-- lettres-perdu-1/picture/0 : « ? »
-- lettres-perdu-2/picture/0 : « ? »
-- lettres-adresse-0/picture/0 : « Claire »
-- lettres-adresse-0/picture/1 : « 3, rue de la Gare »
-- lettres-timbre-1/picture/0 : « € »
-- lettres-timbre-1/picture/1 : « € »
-- lettres-hier-0/picture/0 : « 14 »
-- lettres-hier-0/picture/1 : « 15 »
-- lettres-hier-0/picture/2 : « 16 »
-- lettres-hier-0/picture/3 : « 14 · 15 · 16 »
-- lettres-hier-1/picture/0 : « Hier »
-- lettres-hier-2/picture/0 : « 14 »
-- lettres-aujourdhui-0/picture/0 : « 14 »
-- lettres-aujourdhui-0/picture/1 : « 15 »
-- lettres-aujourdhui-0/picture/2 : « 16 »
-- lettres-aujourdhui-0/picture/3 : « 14 · 15 · 16 »
-- lettres-aujourdhui-2/picture/0 : « 15 »
-- lettres-demain-0/picture/0 : « 14 »
-- lettres-demain-0/picture/1 : « 15 »
-- lettres-demain-0/picture/2 : « 16 »
-- lettres-demain-0/picture/3 : « 14 · 15 · 16 »
-- lettres-demain-2/picture/0 : « 16 »
-- lettres-lettre-luc/picture/0 : « Luc → Claire »
-- lettres-lettre-claire/picture/0 : « Claire → Luc »
-- lettres-journal-claire/picture/0 : « Claire »
-- supplement-lettres-bientôt-0/picture/0 : « 5 min »
-- supplement-lettres-bientôt-1/picture/0 : « 5 min »
-- supplement-lettres-bientôt-2/picture/0 : « 5 min »
-- supplement-lettres-promesse-1/picture/0 : « 14 »
-- supplement-lettres-promesse-1/picture/1 : « 15 »
-- supplement-lettres-promesse-1/picture/2 : « 16 »
-- supplement-lettres-oublier-0/picture/0 : « ? »
-- supplement-lettres-oublier-1/picture/0 : « ? »
-- supplement-lettres-oublier-2/picture/0 : « ? »
+- lettres-v2-01/lettres-v2-01-2/picture/0 : « Claire »
+- lettres-v2-01/lettres-v2-01-2/picture/1 : « 3, rue de la Gare »
+- lettres-v2-02/lettres-v2-02-4/picture/0 : « ? »
+- lettres-v2-03/lettres-v2-03-0/picture/0 : « 14 »
+- lettres-v2-03/lettres-v2-03-0/picture/1 : « 15 »
+- lettres-v2-03/lettres-v2-03-1/picture/0 : « 14 »
+- lettres-v2-03/lettres-v2-03-1/picture/1 : « 15 »
+- lettres-v2-03/lettres-v2-03-2/picture/0 : « 14 »
+- lettres-v2-03/lettres-v2-03-2/picture/1 : « 15 »
+- lettres-v2-03/lettres-v2-03-3/picture/0 : « 14 »
+- lettres-v2-03/lettres-v2-03-3/picture/1 : « 15 »
+- lettres-v2-04/lettres-v2-04-0/picture/0 : « 14 »
+- lettres-v2-04/lettres-v2-04-0/picture/1 : « 15 »
+- lettres-v2-04/lettres-v2-04-1/picture/0 : « ? »
+- lettres-v2-04/lettres-v2-04-1/picture/1 : « 14 »
+- lettres-v2-04/lettres-v2-04-1/picture/2 : « 15 »
+- lettres-v2-04/lettres-v2-04-2/picture/0 : « 14 »
+- lettres-v2-04/lettres-v2-04-2/picture/1 : « ? »
+- lettres-v2-04/lettres-v2-04-2/picture/2 : « 15 »
+- lettres-v2-05/lettres-v2-05-0/picture/0 : « 14 »
+- lettres-v2-05/lettres-v2-05-0/picture/1 : « 15 »
+- lettres-v2-05/lettres-v2-05-0/picture/2 : « 16 »
+- lettres-v2-05/lettres-v2-05-0/picture/3 : « 14 · 15 · 16 »
+- lettres-v2-05/lettres-v2-05-1/picture/0 : « 14 »
+- lettres-v2-05/lettres-v2-05-1/picture/1 : « 15 »
+- lettres-v2-05/lettres-v2-05-1/picture/2 : « 16 »
+- lettres-v2-05/lettres-v2-05-1/picture/3 : « 14 · 15 · 16 »
+- lettres-v2-05/lettres-v2-05-2/picture/0 : « 14 »
+- lettres-v2-05/lettres-v2-05-2/picture/1 : « 15 »
+- lettres-v2-05/lettres-v2-05-2/picture/2 : « 16 »
+- lettres-v2-05/lettres-v2-05-2/picture/3 : « 14 · 15 · 16 »
+- lettres-v2-06/lettres-v2-06-3/picture/0 : « 5 min »
+- lettres-v2-07/lettres-v2-07-2/picture/0 : « 16 »
+- lettres-v2-07/lettres-v2-07-2/picture/1 : « 15 »
+- lettres-v2-07/lettres-v2-07-2/picture/2 : « 16 »
+- lettres-v2-08/lettres-v2-08-2/picture/0 : « ? »
 
 ### Carnet
 
-- **lettres-actions — Ce qui a eu lieu** : lu · écrit · pris · donné
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - lettres-actions-0 : « Hier, j’ai ___.  »
-  - lettres-actions-1 : « Hier, j’ai ___.  »
-  - lettres-actions-2 : « Hier, j’ai ___.  »
-  - lettres-actions-3 : « Hier, j’ai ___.  »
-- **lettres-chercher — Avant et après** : vu · trouvé · perdu
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - lettres-chercher-0 : « Hier, j’ai ___.  »
-  - lettres-chercher-1 : « Hier, j’ai ___.  »
-  - lettres-chercher-2 : « Hier, j’ai ___.  »
-- **lettres-courrier — Le courrier** : photo · enveloppe · adresse · timbre
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-- **lettres-jours — Les trois jours** : hier · aujourd_hui · demain
-  - Interface : ← Les pages · LES LIENS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - lettres-jours-0 : « 14 · 15 · 16 »
-  - lettres-jours-1 : « 14 · 15 · 16 »
-  - lettres-jours-2 : « 14 · 15 · 16 »
-- **supplement-lettres-temps — L’attente et les jours** : toujours · déjà · enfin · bientôt
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-lettres-temps-0 : « Chaque jour, sans exception : ___. »
-  - supplement-lettres-temps-1 : « Avant l’heure, c’est ___ fait. »
-  - supplement-lettres-temps-2 : « Après une longue attente : ___ ! »
-  - supplement-lettres-temps-3 : « Dans cinq minutes : ___. »
-- **supplement-lettres-traces — Ce que les lettres gardent** : histoire · souvenir · promesse
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-lettres-traces-0 : « Il raconte une ___. »
-  - supplement-lettres-traces-1 : « Une photo du passé, un ___. »
-  - supplement-lettres-traces-2 : « « Tu peux compter sur moi » : une ___. »
-- **supplement-lettres-retours — Les chemins qui se rejoignent** : rendez_vous · retrouver · revenir · oublier
-  - Interface : ← Les pages · LES MOTS · Le carnet · CE QUE JE COMPRENDS · Fermer
-  - supplement-lettres-retours-0 : « Même lieu, même heure : un ___. »
-  - supplement-lettres-retours-1 : « Il veut ___ sa clé perdue. »
-  - supplement-lettres-retours-2 : « Il veut ___ chez lui. »
-  - supplement-lettres-retours-3 : « Il ne veut pas ___ sa clé. »
+- **lettres-v2-01 — Ⅰ** : photo · enveloppe · adresse · timbre · crayon
+  - Contrastes déjà rencontrés : lettres-v2-e-photo-0 · lettres-v2-e-photo-1 · lettres-v2-e-photo-2 · lettres-v2-e-envelope-0 · lettres-v2-e-envelope-1 · lettres-v2-e-envelope-2 · lettres-v2-e-address-0 · lettres-v2-e-address-1 · lettres-v2-e-address-2 · lettres-v2-e-stamp-0 · lettres-v2-e-stamp-1 · lettres-v2-e-stamp-2 · lettres-v2-e-crayon-0 · lettres-v2-e-crayon-1 · lettres-v2-e-crayon-2
+- **lettres-v2-02 — Ⅱ** : lire · écrire · voir · trouver · perdre
+  - Contrastes déjà rencontrés : lettres-v2-e-lire-0 · lettres-v2-e-lire-1 · lettres-v2-e-lire-2 · lettres-v2-e-écrire-0 · lettres-v2-e-écrire-1 · lettres-v2-e-écrire-2 · lettres-v2-e-voir-0 · lettres-v2-e-voir-1 · lettres-v2-e-voir-2 · lettres-v2-e-trouver-0 · lettres-v2-e-trouver-1 · lettres-v2-e-trouver-2 · lettres-v2-e-perdre-0 · lettres-v2-e-perdre-1 · lettres-v2-e-perdre-2
+- **lettres-v2-03 — Ⅲ** : lu · écrit · pris · donné
+  - Contrastes déjà rencontrés : lettres-v2-e-lu-past-0 · lettres-v2-e-lu-past-1 · lettres-v2-e-lu-past-2 · lettres-v2-e-écrit-past-0 · lettres-v2-e-écrit-past-1 · lettres-v2-e-écrit-past-2 · lettres-v2-e-pris-past-0 · lettres-v2-e-pris-past-1 · lettres-v2-e-pris-past-2 · lettres-v2-e-donné-past-0 · lettres-v2-e-donné-past-1 · lettres-v2-e-donné-past-2
+- **lettres-v2-04 — Ⅳ** : vu · trouvé · perdu
+  - Contrastes déjà rencontrés : lettres-v2-e-vu-past-0 · lettres-v2-e-vu-past-1 · lettres-v2-e-vu-past-2 · lettres-v2-e-trouvé-past-0 · lettres-v2-e-trouvé-past-1 · lettres-v2-e-trouvé-past-2 · lettres-v2-e-perdu-past-0 · lettres-v2-e-perdu-past-1 · lettres-v2-e-perdu-past-2
+- **lettres-v2-05 — Ⅴ** : hier · aujourd_hui · demain
+  - Contrastes déjà rencontrés : lettres-v2-e-hier-0 · lettres-v2-e-hier-1 · lettres-v2-e-hier-2 · lettres-v2-e-aujourd_hui-0 · lettres-v2-e-aujourd_hui-1 · lettres-v2-e-aujourd_hui-2 · lettres-v2-e-demain-0 · lettres-v2-e-demain-1 · lettres-v2-e-demain-2
+  - lettres-v2-05-0 : « 14 · 15 · 16 »
+  - lettres-v2-05-1 : « 14 · 15 · 16 »
+  - lettres-v2-05-2 : « 14 · 15 · 16 »
+- **lettres-v2-06 — Ⅵ** : toujours · déjà · enfin · bientôt
+  - Contrastes déjà rencontrés : lettres-v2-e-toujours-0 · lettres-v2-e-toujours-1 · lettres-v2-e-toujours-2 · lettres-v2-e-déjà-0 · lettres-v2-e-déjà-1 · lettres-v2-e-déjà-2 · lettres-v2-e-enfin-0 · lettres-v2-e-enfin-1 · lettres-v2-e-enfin-2 · lettres-v2-e-bientôt-0 · lettres-v2-e-bientôt-1 · lettres-v2-e-bientôt-2
+- **lettres-v2-07 — Ⅶ** : histoire · souvenir · promesse · rendez_vous · mais
+  - Contrastes déjà rencontrés : lettres-v2-e-histoire-0 · lettres-v2-e-histoire-1 · lettres-v2-e-histoire-2 · lettres-v2-e-souvenir-0 · lettres-v2-e-souvenir-1 · lettres-v2-e-souvenir-2 · lettres-v2-e-promesse-0 · lettres-v2-e-promesse-1 · lettres-v2-e-promesse-2 · lettres-v2-e-rendez_vous-0 · lettres-v2-e-rendez_vous-1 · lettres-v2-e-rendez_vous-2 · lettres-v2-e-mais-0 · lettres-v2-e-mais-1 · lettres-v2-e-mais-2
+- **lettres-v2-08 — Ⅷ** : retrouver · revenir · oublier · savoir · comprendre
+  - Contrastes déjà rencontrés : lettres-v2-e-retrouver-0 · lettres-v2-e-retrouver-1 · lettres-v2-e-retrouver-2 · lettres-v2-e-revenir-0 · lettres-v2-e-revenir-1 · lettres-v2-e-revenir-2 · lettres-v2-e-oublier-0 · lettres-v2-e-oublier-1 · lettres-v2-e-oublier-2 · lettres-v2-e-savoir-0 · lettres-v2-e-savoir-1 · lettres-v2-e-savoir-2 · lettres-v2-e-comprendre-0 · lettres-v2-e-comprendre-1 · lettres-v2-e-comprendre-2
 
 ### Mécanisme
 
-**Une histoire à retrouver**
+**✦**
 
-Lisez les lettres de Luc et de Claire. Remettez les événements dans l’ordre, puis répondez à Luc.
 
-- **lettres-premier** : Hier, d’abord, qu’a fait Luc ?
-  - « Il a pris le train à midi. »
-  - « Il a donné la lettre à Claire. »
-  - « Il a trouvé une photo. »
-  - « Il a ouvert le jardin. »
-- **lettres-deuxieme** : Dans le train, qu’a-t-il écrit ?
-  - « Le prix du billet. »
-  - « L’adresse de Claire. »
-  - « Le nom du café. »
-  - « L’heure du dîner. »
-- **lettres-troisieme** : Puis, qu’a-t-il perdu ?
-  - « Sa clé près du jardin. »
-  - « Sa photo dans la maison. »
-  - « La lettre près de l’atelier. »
-  - « Son billet au café. »
-- **lettres-quatrieme** : Aujourd’hui, où a-t-il retrouvé l’adresse ?
-  - « Dans sa poche. »
-  - « Dans son livre. »
-  - « Sous le banc. »
-  - « Sur le quai. »
-- **lettres-claire** : Qu’a fait Claire avec la première lettre ?
-  - « Elle l’a donnée à son père. »
-  - « Elle l’a perdue dans le train. »
-  - « Elle l’a mise au café. »
-  - « Elle l’a donnée au marchand. »
-- **lettres-jour** : Quand Luc vient-il ?
-  - « Hier à midi. »
-  - « Aujourd’hui à huit heures. »
-  - « Demain à six heures. »
-  - « Demain à midi. »
-- **lettres-lieu** : Où est le rendez-vous ?
-  - « À la gare, devant le train. »
-  - « Au café, près de la fenêtre. »
-  - « Dans le jardin, sous le grand arbre. »
-  - « Au marché, à côté du pain. »
-- **lettres-reponse** : Luc : « Tu as trouvé ma lettre ? »
-  - « Oui. Claire a lu ta lettre. Elle t’attend dans le jardin. »
-  - « Non. Claire ne peut pas lire. »
-  - « Oui. Claire est à la gare et part ce soir. »
-  - « Non. Ta lettre est dans le train. »
 
-Luc ouvre la porte du jardin. Claire se lève. « Tu es là. » « Je suis là. » La lettre a trouvé sa maison. Et vous avez trouvé les mots.
+Expected physical sequence (internal data for review, never a player translation):
+
+- 1. {"kind":"take","object":"key-yellow"} · preuve : lettres-v2-e-task-key
+- 2. {"kind":"operate","object":"garden-gate","operation":"open","tool":"key-yellow"} · preuve : lettres-v2-e-task-gate
+- 3. {"kind":"take","object":"letter-14"} · preuve : lettres-v2-e-task-letter
+- 4. {"kind":"place","object":"letter-14","target":"envelope-3","relation":"in"} · preuve : lettres-v2-e-task-envelope
+- 5. {"kind":"take","object":"envelope-3"} · preuve : lettres-v2-e-task-take-envelope
+- 6. {"kind":"combine","object":"envelope-3","target":"stamp-0"} · preuve : lettres-v2-e-task-stamp
+- 7. {"kind":"deliver","object":"envelope-3","target":"claire"} · preuve : lettres-v2-e-task-recipient
+
+
+✧
 
 ## Formes liées aux lemmes
 
@@ -2296,7 +2280,7 @@ Luc ouvre la porte du jardin. Claire se lève. « Tu es là. » « Je suis là. 
 | train | train | train · trains |
 | billet | billet | billet · billets |
 | quai | quai | quai · quais |
-| minute | minute | minute · minutes |
+| minute | minute | minute · minutes · min |
 | matin | matin | matin |
 | soir | soir | soir |
 | midi | midi | midi |
@@ -2404,3 +2388,16 @@ Luc ouvre la porte du jardin. Claire se lève. « Tu es là. » « Je suis là. 
 | oublier | oublier | oublier · oublie · oublies · oublions · oubliez · oublient |
 | savoir | savoir | savoir · sais · sait · savons · savez · savent |
 | comprendre | comprendre | comprendre · comprends · comprend · comprenons · comprenez · comprennent |
+| de | de | de · d’ · du |
+| à | à | à · au · aux |
+| ce | ce | ce · cet · cette · ces · c’ |
+| fleur | fleur | fleur · fleurs |
+| arbre | arbre | arbre · arbres |
+| porter | porter | porte · porter · portes · portons · portez · portent |
+| plateau | plateau | plateau · plateaux |
+| bouteille | bouteille | bouteille · bouteilles |
+| lui | lui | lui |
+| moi | moi | moi |
+| plein | plein | plein · pleine · pleins · pleines |
+| vide | vide | vide · vides |
+| même | même | même · mêmes |

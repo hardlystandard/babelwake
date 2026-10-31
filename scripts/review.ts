@@ -7,11 +7,18 @@ const testedCanonical=new Set(content.zones.flatMap(z=>z.pages.flatMap(p=>p.word
 const migration=situatedMigrationDebt(content);
 const situated=content.zones.filter(zone=>zone.design==='situated');
 const flags:[string,string][]=[
- ['Le livre. → Dans la boîte sous la table rouge.', 'Elliptical workshop instruction split across an object label and an arrow-led destination. Native review should check its punctuation and clarity on the physical notice board.'],
- ['La bouteille verte est avec le panier.', 'Grammatical but less natural than a precise spatial phrase; review whether the pictured grouping makes « avec » idiomatic.'],
- ['Le train va de la gare à la maison de Claire.', 'Fictional miniature railway stops beside a house; verify the destination wording reads naturally in this setting.'],
- ['Attendez devant le train.', 'Spatial teaching sentence: review against the platform illustration so « devant » means in front of the visible train, without implying standing on the track.'],
- ['Le train pour la maison de Claire', 'Fictional destination; native review should confirm that a named house works as the stop label.']
+ ['Le livre va dans la boîte. La boîte est sous la table rouge.', 'Replaces the old elliptical workorder with two complete short sentences. Native review of the linked spatial referent is still pending.'],
+ ['Pour lui. Il a la bouteille verte.', 'Check the short addressed payment request against the actual bottle-holder and the deliberately plausible wrong recipient.'],
+ ['Tu portes bien le plateau.', 'The balanced carrying scene teaches bien; check whether this is the most natural short encouragement in metropolitan French.'],
+ ['Anne, mon parent.', 'The singular generic kinship noun needs native review; the family scene supplies the mother relationship without an English gloss.'],
+ ['Je veux retrouver ma lettre. La même lettre.', 'Check the repetition and whether it naturally distinguishes recovering the same object from meeting a person again.']
+];
+const superseded:[string,string][]=[
+ ['Le livre. → Dans la boîte sous la table rouge.', 'Two complete workorder sentences now identify the object, destination and nested location.'],
+ ['La bouteille verte est avec le panier.', 'The bottle is now physically placed on a specified table; avec is taught by actual basket contents.'],
+ ['Le train va de la gare à la maison de Claire.', 'The timetable now routes to the gare du Nord or gare du Sud, with actual platforms.'],
+ ['Attendez devant le train.', 'Waiting now happens sur le quai, safely beside the train.'],
+ ['Le train pour la maison de Claire', 'The destination is now a named station service.']
 ];
 const mark=(line:string)=>flags.some(([match])=>line.includes(match))?' ⚑':'';
 const escape=(line:string)=>line.replaceAll('|','\\|').replaceAll('\n',' ');
@@ -19,12 +26,11 @@ const lines=['# Babelwake — revue du français','',
  '> Generated with `npm run content:review`. This is a review inventory, not a claim of native-speaker approval. All visible French, including puzzle alternatives and labels, is listed below. World content remains untranslated.','',
  `Six zones; ${content.lexicon.length} lexicon entries; ${testedCanonical.size} distinct canonical lemmas tested across ${content.zones.reduce((n,z)=>n+z.pages.length,0)} confirmation pages. Inflected entries share a lemma; entry count is not a count of distinct lemmas.`, '',
  '## Portée de la migration située','',
- `PR A validates the situated design only for: ${situated.map(zone=>zone.title).join(', ') || 'none yet'}. The other ${migration.length} zones retain their existing structural checks and are explicitly deferred to PR B. Their paragraph evidence, incidental vocabulary, captioned journal pages and multiple-choice mechanisms have not been declared corrected.`, '',
- '| Zone deferred to PR B | New-rule violations | Untracked-text records | Encounter-order cap |',
- '| --- | --- | --- | --- |',
+ `Situated validation applies to: ${situated.map(zone=>zone.title).join(', ')}. Remaining legacy zones: ${migration.length}. The same physical evidence, text budgets, tracked forms and action rules apply throughout the journey.`, '',
+ ...(migration.length?['| Zone deferred to PR B | New-rule violations | Untracked-text records | Encounter-order cap |','| --- | --- | --- | --- |']:[]),
  ...migration.map(debt=>`| ${debt.zone} | ${debt.violations.length} | ${debt.violations.filter(error=>error.includes('untracked French tokens')).length} | ${content.zones.find(zone=>zone.id===debt.zone)?.encounterOrder?'checked':'not measurable: no situated encounter order'} |`), '',
  ...migration.flatMap(debt=>debt.violations.filter(error=>error.includes('untracked French tokens')).slice(0,2).map(error=>`- PR B debt (${debt.zone}): ${escape(error)}`)), '',
- '## Phrases à revoir','',...flags.map(([quote,note])=>`- ⚑ « ${quote} » — ${note}`),'',
+ '## Phrases à revoir','',...flags.map(([quote,note])=>`- ⚑ « ${quote} » — ${note}`),'', '## Earlier review flags replaced by authored corrections','',...superseded.map(([quote,note])=>`- « ${quote} » — ${note}`),'','These replacements address the design/setting concerns; they do not constitute native-speaker approval.','',
  '## Review boundaries','',
  '- Check accents, elision, gender, number, register, and metropolitan usage.',
  '- Review every scenery exemption: it must be a proper name or noninteractive set dressing, never a tested target or required operational instruction.',
@@ -33,7 +39,7 @@ const lines=['# Babelwake — revue du français','',
  '- Check that every puzzle answer follows from visible evidence; automated golden paths establish reachability, not educational inferability.',
  '- No native-speaker review or zero-French timed playtest has been performed by this generator.',''];
 for(const zone of content.zones){
- lines.push(`## ${zone.title}`,'',...(zone.subtitle?[`**${zone.subtitle}**`,'']:[]),...(zone.intro?[zone.intro+mark(zone.intro),'']:[]),zone.design==='situated'?'**PR A — situated design checks apply.**':'**PR B debt — legacy content, not yet migrated.**','','### Rencontres','','| ID | Texte français |','| --- | --- |');
+ lines.push(`## ${zone.title}`,'',...(zone.subtitle?[`**${zone.subtitle}**`,'']:[]),...(zone.intro?[zone.intro+mark(zone.intro),'']:[]),zone.design==='situated'?'**Situated design checks apply.**':'**PR B debt — legacy content, not yet migrated.**','','### Rencontres','','| ID | Texte français |','| --- | --- |');
  for(const e of zone.evidence)lines.push(`| ${e.id} | ${zone.design==='situated'?'':`**${escape(e.title)}** — `}${escape(e.text)}${mark(e.text)}${e.picture.label?` · « ${escape(e.picture.label)} »`:''} |`);
  if(zone.scene?.length){lines.push('','### Écriture sur les objets','');for(const object of zone.scene){if(object.label)lines.push(`- ${object.id} : « ${escape(object.label)} »`);for(const label of object.labels??[])lines.push(`- ${object.id} (${label.surface}) : « ${escape(label.text)} »`);}}
  const drawn=[...situatedVisibleText(zone).filter(line=>line.id.includes('/picture/')),...(zone.design==='situated'?[]:zone.evidence.flatMap(e=>renderedPictureText(e.picture).map((text,i)=>({id:`${e.id}/picture/${i}`,text}))))];

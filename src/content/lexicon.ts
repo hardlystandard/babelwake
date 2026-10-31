@@ -1396,7 +1396,8 @@ export const lexicon:Lexeme[] = [
     "lemma": "minute",
     "forms": [
       "minute",
-      "minutes"
+      "minutes",
+      "min"
     ],
     "zone": "gare"
   },
@@ -2395,5 +2396,20 @@ export const lexicon:Lexeme[] = [
       "comprennent"
     ],
     "zone": "lettres"
-  }
+  },
+  // Productive function words remain tracked, including their elisions and
+  // contractions; they are never scenery exemptions for operational language.
+  {id:'de',lemma:'de',forms:['de','d’','du'],zone:'marche'},
+  {id:'à',lemma:'à',forms:['à','au','aux'],zone:'cafe'},
+  {id:'ce',lemma:'ce',forms:['ce','cet','cette','ces','c’'],zone:'cafe'},
+  {id:'fleur',lemma:'fleur',forms:['fleur','fleurs'],zone:'maison'},
+  {id:'arbre',lemma:'arbre',forms:['arbre','arbres'],zone:'maison'},
+  {id:'porter',lemma:'porter',forms:['porte','porter','portes','portons','portez','portent'],zone:'cafe'},
+  {id:'plateau',lemma:'plateau',forms:['plateau','plateaux'],zone:'cafe'},
+  {id:'bouteille',lemma:'bouteille',forms:['bouteille','bouteilles'],zone:'marche'},
+  {id:'lui',lemma:'lui',forms:['lui'],zone:'marche'},
+  {id:'moi',lemma:'moi',forms:['moi'],zone:'cafe'},
+  {id:'plein',lemma:'plein',forms:['plein','pleine','pleins','pleines'],zone:'cafe'},
+  {id:'vide',lemma:'vide',forms:['vide','vides'],zone:'cafe'},
+  {id:'même',lemma:'même',forms:['même','mêmes'],zone:'lettres'},
 ];

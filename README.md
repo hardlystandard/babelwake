@@ -2,7 +2,7 @@
 
 A top-down French decipherment game built with strict TypeScript, Vite, Three.js, and DOM/SVG interfaces. Infer words from objects and people, record your own guesses, confirm complete journal pages, and use French to act in the world. The full vocabulary inventory targets 200–300 useful French lexemes.
 
-This correction pass covers the shared interaction and validation changes plus L’atelier. The other five zones retain their earlier content until the atelier changes have been reviewed and merged. They are not presented as corrected content.
+All six places use physical encounters and world actions: the workshop, market, café, railway station, Claire’s home, and the letters/reunion. The authored journey tests more than 200 canonical French learning targets. Native-speaker and beginner playtest acceptance remains unverified.
 
 ## Run
 
@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-Move with WASD/arrows, a gamepad, or by selecting a path. Select a sign, an object, or a person to look closely. Select any French word to write a personal guess; the guess follows the word in the world. J opens the journal. Match every picture on a page before the game checks the whole page. Use objects and follow the people’s instructions to continue.
+Move with WASD/arrows, a gamepad, or by selecting a path. Select a sign, an object, or a person to look closely. When an object supports several actions, choose a diagram; every physically legal alternative remains available. Select any French word to write a personal guess; the guess follows the word in the world. J opens the journal. Match every picture on a page before the game checks the whole page. Use objects and follow the people’s instructions to continue.
 
 ```sh
 npm run check          # content validation, Vitest, strict TypeScript, production build

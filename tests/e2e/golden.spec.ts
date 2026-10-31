@@ -2,6 +2,12 @@ import { expect, test, type Page } from '@playwright/test';
 import type { Content, ZoneId, WorldAction } from '../../src/content/types';
 import type { GameState } from '../../src/game/state';
 import { inferAtelierActions } from './atelier-path';
+import { inferMarcheActions } from './marche-path';
+import { inferCafeActions } from './cafe-path';
+import { inferGareActions } from './gare-path';
+import { inferMaisonActions } from './maison-path';
+import { inferLettresActions } from './lettres-path';
+import { playPhysicalActions } from './physical-path';
 interface DebugGame {
   getState(): GameState;
   loadZone(id: ZoneId): Promise<void>;
@@ -28,8 +34,9 @@ async function solveZone(page: Page, id: ZoneId) {
     await game.loadZone(zoneId);
     return(await game.content()).zones.find(candidate=>candidate.id===zoneId)!;
   },id);
-  const actions=situated.design==='situated'?inferAtelierActions(situated):undefined;
-  return page.evaluate(async ({zoneId,physical}) => {
+  const infer={atelier:inferAtelierActions,marche:inferMarcheActions,cafe:inferCafeActions,gare:inferGareActions,maison:inferMaisonActions,lettres:inferLettresActions};
+  const actions=situated.design==='situated'?infer[id](situated):undefined;
+  const result=await page.evaluate(async ({zoneId}) => {
     const game = (window as unknown as { __BABELWAKE__: DebugGame }).__BABELWAKE__;
     const content = await game.content();
     const zone = content.zones.find(candidate => candidate.id === zoneId)!;
@@ -45,13 +52,10 @@ async function solveZone(page: Page, id: ZoneId) {
       game.confirm(journalPage.id, assignments);
       if (!game.getState().confirmed.includes(journalPage.id)) problems.push(`${journalPage.id}: confirmation failed`);
     }
-    let choices=1;
-    if(physical){
-      for(const action of physical){choices*=game.actions().filter(candidate=>candidate.kind===action.kind).length;if(!game.act(action))problems.push('Physical action unavailable');}
-      if(!game.commit())problems.push('Complete physical arrangement did not validate');
-    }else {await game.solve(zone.puzzle.steps.map(step => step.answer));choices=zone.puzzle.steps.reduce((n,step)=>n*step.choices.length,1);}
-    return { problems, solved: game.getState().solved.includes(zone.puzzle.id), pageCount: zone.pages.length, choices };
-  }, {zoneId:id,physical:actions});
+    return { problems, pageCount: zone.pages.length };
+  }, {zoneId:id});
+  const choices=actions?await playPhysicalActions(page,actions):0;
+  return {...result,choices,solved:await page.evaluate(puzzle=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().solved.includes(puzzle),situated.puzzle.id)};
 }
 for (const [index, id] of order.entries()) {
   test(`${id}: evidence, pages, and applied sequence are reachable`, async ({ page }) => {
@@ -66,7 +70,7 @@ for (const [index, id] of order.entries()) {
       });
       await page.keyboard.press('Escape');
       await page.getByTestId('journal').click();
-      await page.getByTestId('journal-page-gare-aller').click();
+      await page.getByTestId('journal-page-gare-v2-aller').click();
       await expect(page.locator('[data-tile]')).toHaveText(['vais', 'vas', 'allons', 'allez']);
     }
     const result = await solveZone(page, id);

@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test';
 import type { Content, WorldAction } from '../../src/content/types';
 import type { GameState } from '../../src/game/state';
 import { inferAtelierActions } from './atelier-path';
-import {tokenOverlap} from '../../src/game/interactions';
-interface DebugGame { content():Promise<Content>;encounter(id:string):void;confirm(pageId:string,assignments:Record<string,string>):void;getState():GameState;interact(id:string):void;interactions():{held:string|null;history:WorldAction[]};commit():boolean; }
+import {actionKey,tokenOverlap} from '../../src/game/interactions';
+interface DebugGame { content():Promise<Content>;encounter(id:string):void;confirm(pageId:string,assignments:Record<string,string>):void;getState():GameState;interact(id:string):void;interactions():{held:string|null;history:WorldAction[]};actions():WorldAction[];commit():boolean; }
 
 test('atelier physical objects can be used, placed and delivered without a quiz panel',async({page})=>{
   await page.goto('/?debug=1');
@@ -33,9 +33,15 @@ test('atelier physical objects can be used, placed and delivered without a quiz 
       const best=Math.max(...scores.map(s=>s.score));
       expect(scores.filter(s=>s.score===best).map(s=>s.id)).not.toContain(entity);
     }
-    // The same entity callback used by mouse, keyboard and gamepad input.
+    const candidates=await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.actions().filter(candidate=>'target'in candidate?candidate.target===id:candidate.object===id),entity);
+    const choice=candidates.findIndex(candidate=>actionKey(candidate)===actionKey(action));
+    expect(choice).toBeGreaterThanOrEqual(0);
+    // Entity callbacks are shared by mouse, keyboard and gamepad input. The
+    // player then chooses an actual diagram button when a prop has alternatives.
     await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),entity);
-    if(index!==actions.length-1)await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),entity);
+    const afterFirst=await page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interactions().history.length);
+    if(afterFirst===index&&await page.locator('[data-physical-action]').count()===0)await page.evaluate(id=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interact(id),entity);
+    if(await page.locator('[data-physical-action]').count())await page.locator(`[data-physical-action="${choice}"]`).click();
     await expect.poll(()=>page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.interactions().history.length)).toBe(index+1);
     if(index<actions.length-1)expect(await page.evaluate(()=>(window as unknown as {__BABELWAKE__:DebugGame}).__BABELWAKE__.getState().solved)).toEqual([]);
   }

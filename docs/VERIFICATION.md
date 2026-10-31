@@ -2,6 +2,14 @@
 
 [PR B #3](https://github.com/hardlystandard/babelwake/pull/3) applies situated decipherment to all six places. The dated history below describes earlier builds only.
 
+## Post-release controller validation correction
+
+The [v1.0.0 tag run](https://github.com/hardlystandard/babelwake/actions/runs/41162339904) passed 117 unit tests and 25 of 26 browser tests. Its placement test expected `in` but recorded `on`. The trace shows the synthetic D-pad held down for about 3.4 seconds while an external focus assertion polled. The menu repeats held navigation every 230 ms; focus could advance to the next diagram before the separate release/activation calls. The actual focused diagram was activated; no swapped action mapping was observed.
+
+A real-browser reproduction observed `in`, kept the old synthetic hold across a repeat, then activated `on`. Releasing the synthetic direction synchronously in the desired option's focus event kept `in` selected through a 900 ms driver delay and placed it correctly. The test now releases before asserting focus and still checks the exact action history and final placement. Keyboard/gamepad setup also waits for the panel's initial focus before selecting another control. Both focused interaction tests passed ten repetitions each.
+
+Version 1.0.1 corrects this verification harness and records that failure. No game runtime source changed. A fresh build matches 24 of 25 deployed files byte for byte; its generated service worker has identical logic and precache URLs, with a different font URL insertion order and the cache name derived from that order. The patch retains the existing exact 25-file release artifact and does not require a live deployment. Final validation runs are linked from the patch release notes; the failed historical tag run remains part of the record.
+
 ## Acceptance checked in this pass
 
 - All six zones use the strict situated contract; no migration exemptions remain.
